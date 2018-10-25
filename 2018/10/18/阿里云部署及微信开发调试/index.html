@@ -116,21 +116,24 @@
 <meta property="og:site_name" content="HeroBin&#39;s Blog">
 <meta property="og:description" content="阿里云部署阿里云服务器1.阿里云初始化与执行环境安装今天买了一年的阿里云服务器，心疼rmb… 开始安装需要的软件，通过在阿里云网站管理控制台的远程连接或者自己通过ssh命令连接到远程服务器 1sudo ssh root@101.132.138.185 接下来需要安装服务器上需要的一系列软件： 1.1 JDK(这里选择的是JDK1.8)下载地址为http://www.oracle.com/techn">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.herobin.top/uploads/201810181640001.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/201810191139001.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/201810191140001.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/201810191141001.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/201810191204001.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/201810191404001.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/201810191408001.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/201810201451001.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/201810201451002.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/201810201451003.png">
-<meta property="og:updated_time" content="2018-10-22T05:49:13.000Z">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun/201810181640001.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun/201810191139001.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun/201810191140001.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun/201810191141001.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun/201810241942001.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun/201810191204001.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun/201810191404001.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun/201810191408001.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun/201810201451001.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun/201810201451002.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun/201810201451003.png">
+<meta property="og:image" content="http://www.herobin.top/upload/aliyun/201810232115001.png">
+<meta property="og:image" content="http://www.herobin.top/upload/aliyun/201810232115002.png">
+<meta property="og:updated_time" content="2018-10-25T02:03:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿里云部署">
 <meta name="twitter:description" content="阿里云部署阿里云服务器1.阿里云初始化与执行环境安装今天买了一年的阿里云服务器，心疼rmb… 开始安装需要的软件，通过在阿里云网站管理控制台的远程连接或者自己通过ssh命令连接到远程服务器 1sudo ssh root@101.132.138.185 接下来需要安装服务器上需要的一系列软件： 1.1 JDK(这里选择的是JDK1.8)下载地址为http://www.oracle.com/techn">
-<meta name="twitter:image" content="http://www.herobin.top/uploads/201810181640001.png">
+<meta name="twitter:image" content="http://www.herobin.top/uploads/aliyun/201810181640001.png">
 
 
 
@@ -389,7 +392,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-22 13:49:13" itemprop="dateModified" datetime="2018-10-22T13:49:13+08:00">2018-10-22</time>
+                <time title="修改时间：2018-10-25 10:03:36" itemprop="dateModified" datetime="2018-10-25T10:03:36+08:00">2018-10-25</time>
               
             
           </span>
@@ -435,7 +438,7 @@
 <h4 id="1-4Redis-可选，最好预先安装上，这里选择的版本为4-0-2"><a href="#1-4Redis-可选，最好预先安装上，这里选择的版本为4-0-2" class="headerlink" title="1.4Redis(可选，最好预先安装上，这里选择的版本为4.0.2)"></a>1.4Redis(可选，最好预先安装上，这里选择的版本为4.0.2)</h4><p>下载地址为<br><a href="https://redis.io/download" target="_blank" rel="noopener">https://redis.io/download</a></p>
 <p>这里选择<code>redis-4.0.2.tar.gz</code></p>
 <p>将上面的软件都下载到本地,然后通过scp命令上传到服务器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r /Users/binzhang/Documents/Images//1.jpg root@101.132.138.185:.</span><br></pre></td></tr></table></figure></p>
-<p>此时进到远程服务器可以看到已经上传的软件<br><img src="/uploads/201810181640001.png" alt=""></p>
+<p>此时进到远程服务器可以看到已经上传的软件<br><img src="/uploads/aliyun/201810181640001.png" alt=""></p>
 <h4 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h4><p>Java程序需要运行在JRE里边，所以要安装JDK</p>
 <p>添加可执行权限</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x jdk<span class="number">-8</span>u191-linux-x64.rpm</span><br></pre></td></tr></table></figure>
@@ -446,20 +449,23 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh mysql80-community-release-el7<span class="number">-1.</span>noarch.rpm</span><br></pre></td></tr></table></figure>
 <p>安装mysql</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql-community-server</span><br></pre></td></tr></table></figure>
-<p>开启mysql服务<code>service mysqld start</code><br><img src="/uploads/201810191139001.png" alt=""></p>
-<p>mysql安装成功后创建的超级用户<code>root@localhost</code>的密码会被存储在<code>/var/log/mysqld.log</code>，可以使用如下命令查看密码<br><code>grep &#39;temporary&#39; password /var/log/mysqld.log</code><br><img src="/uploads/201810191140001.png" alt=""></p>
+<p>开启mysql服务<code>service mysqld start</code><br><img src="/uploads/aliyun/201810191139001.png" alt=""></p>
+<p>mysql安装成功后创建的超级用户<code>root@localhost</code>的密码会被存储在<code>/var/log/mysqld.log</code>，可以使用如下命令查看密码<br><code>grep &#39;temporary&#39; password /var/log/mysqld.log</code><br><img src="/uploads/aliyun/201810191140001.png" alt=""></p>
 <p>使用mysql生成的<code>root@localhost</code>用户和密码登录数据库，并修改其密码，具体命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;newpassword&apos;;</span><br></pre></td></tr></table></figure>
-<p><img src="/uploads/201810191141001.png" alt=""></p>
+<p><img src="/uploads/aliyun/201810191141001.png" alt=""></p>
+<p>注意这里其实遇到了一个问题，在本地远程连接阿里云数据库新建数据库显示账号没有权限，这里设置全部权限的语句为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">grant all privileges on *.* to &apos;herobin&apos;@&apos;%&apos;;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/aliyun/201810241942001.png" alt=""></p>
 <p>开启远程连接</p>
 <p>通过阿里云控制台开放3306端口</p>
-<p>在阿里云控制台咱们的实例页面下面选择安全组-&gt;配置规则<br><img src="/uploads/201810191204001.png" alt=""></p>
-<p>进入到规则配置页面之后，咱们可以看到目前只有22端口和3389端口支持远程访问，咱们还需要额外开通80端口（微信公众号用），3306端口(mysql)以及6379端口(redis)<br><img src="/uploads/201810191404001.png" alt=""></p>
+<p>在阿里云控制台咱们的实例页面下面选择安全组-&gt;配置规则<br><img src="/uploads/aliyun/201810191204001.png" alt=""></p>
+<p>进入到规则配置页面之后，咱们可以看到目前只有22端口和3389端口支持远程访问，咱们还需要额外开通80端口（微信公众号用），3306端口(mysql)以及6379端口(redis)<br><img src="/uploads/aliyun/201810191404001.png" alt=""></p>
 <p>配置一个支持远程登录的帐号，这里配置一个work帐号<br>10<code>820</code>mysql -u root -p`</p>
 <p><code>use mysql;</code></p>
 <p><code>grant SELECT,UPDATE,INSERT,DELETE on . to ‘work’@’%’ identified by ‘Xiangze230!’</code>;//创建work帐号并授权，同时设置密码</p>
 <p><code>flush privileges;</code>//生效配置</p>
-<p>之后便能在我们本地通过调用mysql指令远程登录阿里云服务器上的mysql server中，<br><code>mysql -uwork -P3306 -h47.104.1.235 –p</code> //本机远程登录mysql指令<br><img src="/uploads/201810191408001.png" alt=""></p>
+<p>之后便能在我们本地通过调用mysql指令远程登录阿里云服务器上的mysql server中，<br><code>mysql -uwork -P3306 -h47.104.1.235 –p</code> //本机远程登录mysql指令<br><img src="/uploads/aliyun/201810191408001.png" alt=""></p>
 <p>注意这里踩了一下坑，在配置好后，我用本地MySQLWorkbench连接服务器数据库显示失败<br>Failed to Connect to MySQL at 101.132.138.185:3306 with user herobin<br>Authentication plugin ‘caching_sha2_password’ cannot be loaded: dlopen(/usr/local/mysql/lib/plugin/caching_sha2_password.so, 2): image not found</p>
 <p>原因：密码加密方式【caching_sha2_password】，客户端不支持。<br>在数据库服务器上登录并修改登录方式：<br>ALTER USER ‘herobin‘@’%’ IDENTIFIED WITH mysql_native_password BY ‘root’; </p>
 <p>连上了哈哈哈哈哈哈。</p>
@@ -468,8 +474,8 @@
 <p>设置redis以支持远程登录</p>
 <p><code>vi redis-4.0.2/redis.conf</code></p>
 <p>将bind 127.0.0.1这句话用井号注释掉，这样就能支持远程连接了</p>
-<p><img src="/uploads/201810201451001.png" alt=""></p>
-<p>此外，还需要给redis.conf添加配置以支持redis作为守护进程一直跑在后台需要加入<code>daemonize yes</code><br><img src="/uploads/201810201451002.png" alt=""></p>
+<p><img src="/uploads/aliyun/201810201451001.png" alt=""></p>
+<p>此外，还需要给redis.conf添加配置以支持redis作为守护进程一直跑在后台需要加入<code>daemonize yes</code><br><img src="/uploads/aliyun/201810201451002.png" alt=""></p>
 <p>安装redis</p>
 <p>去到解压后的目录里</p>
 <p><code>cd redis-4.0.2</code></p>
@@ -479,8 +485,20 @@
 <p>redis连接测试</p>
 <p>通过redis-cli连接到redis服务器</p>
 <p><code>src/redis-cli</code></p>
-<p>当输入ping得到pong的回应之后，证明redis配置已经完成<br><img src="/uploads/201810201451003.png" alt=""></p>
-<h4 id="安装tomcat8"><a href="#安装tomcat8" class="headerlink" title="安装tomcat8"></a>安装tomcat8</h4>
+<p>当输入ping得到pong的回应之后，证明redis配置已经完成<br><img src="/uploads/aliyun/201810201451003.png" alt=""></p>
+<h4 id="安装tomcat8"><a href="#安装tomcat8" class="headerlink" title="安装tomcat8"></a>安装tomcat8</h4><p>解压tomcat压缩包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-8.0.46.tar.gz</span><br></pre></td></tr></table></figure>
+<p>启动tomcat</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./apache-tomcat-8.0.46/bin/startup.sh</span><br></pre></td></tr></table></figure>
+<p><img src="/upload/aliyun/201810232115001.png" alt=""></p>
+<h3 id="1-在服务器上发布并运行自己的web-project"><a href="#1-在服务器上发布并运行自己的web-project" class="headerlink" title="1.在服务器上发布并运行自己的web project"></a>1.在服务器上发布并运行自己的web project</h3><p>修改tomcat默认启动端口，从8080修改为80端口，便于微信登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi apache-tomcat-8.0.46/conf/server.xml</span><br></pre></td></tr></table></figure>
+<p><img src="/upload/aliyun/201810232115002.png" alt=""></p>
+<p>重启tomcat</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./apache-tomcat-8.0.46/bin/shutdown.sh</span><br><span class="line">./apache-tomcat-8.0.46/bin/startup.sh</span><br></pre></td></tr></table></figure>
+<p>把项目里的mysql配置，redis配置（如果有的话）修改为阿里云服务器对应的配置（即ip，端口，密码等配置修改为服务器里安装好的这些软件的对应的配置）</p>
+<p>打出自己项目的war包</p>
+
       
     </div>
 
@@ -593,7 +611,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -648,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#阿里云部署"><span class="nav-number">1.</span> <span class="nav-text">阿里云部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#阿里云服务器"><span class="nav-number">1.1.</span> <span class="nav-text">阿里云服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-阿里云初始化与执行环境安装"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.阿里云初始化与执行环境安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-JDK-这里选择的是JDK1-8"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">1.1 JDK(这里选择的是JDK1.8)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-Tomcat-8"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">1.2    Tomcat 8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-Mysql-这里选择的是Mysql5-7-repo源，后通过centos自带的yum安装"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">1.3 Mysql(这里选择的是Mysql5.7)repo源，后通过centos自带的yum安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4Redis-可选，最好预先安装上，这里选择的版本为4-0-2"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">1.4Redis(可选，最好预先安装上，这里选择的版本为4.0.2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装JDK"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">安装JDK</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Mysql"><span class="nav-number">1.1.1.6.</span> <span class="nav-text">安装Mysql</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装redis"><span class="nav-number">1.1.1.7.</span> <span class="nav-text">安装redis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装tomcat8"><span class="nav-number">1.1.1.8.</span> <span class="nav-text">安装tomcat8</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#阿里云部署"><span class="nav-number">1.</span> <span class="nav-text">阿里云部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#阿里云服务器"><span class="nav-number">1.1.</span> <span class="nav-text">阿里云服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-阿里云初始化与执行环境安装"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.阿里云初始化与执行环境安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-JDK-这里选择的是JDK1-8"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">1.1 JDK(这里选择的是JDK1.8)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-Tomcat-8"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">1.2    Tomcat 8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-Mysql-这里选择的是Mysql5-7-repo源，后通过centos自带的yum安装"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">1.3 Mysql(这里选择的是Mysql5.7)repo源，后通过centos自带的yum安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4Redis-可选，最好预先安装上，这里选择的版本为4-0-2"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">1.4Redis(可选，最好预先安装上，这里选择的版本为4.0.2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装JDK"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">安装JDK</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Mysql"><span class="nav-number">1.1.1.6.</span> <span class="nav-text">安装Mysql</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装redis"><span class="nav-number">1.1.1.7.</span> <span class="nav-text">安装redis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装tomcat8"><span class="nav-number">1.1.1.8.</span> <span class="nav-text">安装tomcat8</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在服务器上发布并运行自己的web-project"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.在服务器上发布并运行自己的web project</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
