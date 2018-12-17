@@ -319,6 +319,331 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/12/17/加密连接数据库明文密码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HeroBin">
+      <meta itemprop="description" content="记录学习生活的点点滴滴">
+      <meta itemprop="image" content="/uploads/we.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HeroBin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/17/加密连接数据库明文密码/" itemprop="url">
+                  加密连接数据库明文密码
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-17 16:45:34 / 修改时间：17:01:27" itemprop="dateCreated datePublished" datetime="2018-12-17T16:45:34+08:00">2018-12-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="数据库密码明文加密"><a href="#数据库密码明文加密" class="headerlink" title="数据库密码明文加密"></a>数据库密码明文加密</h2><p>我们常规的数据库信息都是写在jdbc.properties里面的</p>
+<p><img src="/uploads/databasesafepassword/1.png" alt=""></p>
+<p>这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：</p>
+<p><img src="/uploads/databasesafepassword/2.png" alt=""></p>
+<p>那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,<code>DESUtils</code>和<code>EncryptPropertyPlaceholderConfigurer</code>,所以需要用到的时候可以去coding下熟悉相关逻辑，简要的总结就是DESUtils给我们提供了将我们的数据库用户名和密码通过我们自己设定的key和charset来生成加密后的字符串，将这个字符串拷贝到jdbc.properties中替换掉我们的明文的密码信息。然后再spring-dao.xml中加载jdbc.properties不再使用以前的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<p>换成使用<code>EncryptPropertyPlaceholderConfigurer</code>这个工具类来加载jdbc.properties</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean class=&quot;com.imooc.o2o.util.EncryptPropertyPlaceholderConfigurer&quot;&gt;</span><br><span class="line">		&lt;property name=&quot;locations&quot;&gt;</span><br><span class="line">			&lt;list&gt;</span><br><span class="line">				&lt;value&gt;classpath:jdbc.properties&lt;/value&gt;</span><br><span class="line">				&lt;value&gt;classpath:redis.properties&lt;/value&gt;</span><br><span class="line">			&lt;/list&gt;</span><br><span class="line">		&lt;/property&gt;</span><br><span class="line">		&lt;property name=&quot;fileEncoding&quot; value=&quot;UTF-8&quot;/&gt;</span><br><span class="line">	&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/12/17/Eclipse远程调试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HeroBin">
+      <meta itemprop="description" content="记录学习生活的点点滴滴">
+      <meta itemprop="image" content="/uploads/we.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HeroBin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/17/Eclipse远程调试/" itemprop="url">
+                  Eclipse远程调试
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-17 16:24:19 / 修改时间：16:40:26" itemprop="dateCreated datePublished" datetime="2018-12-17T16:24:19+08:00">2018-12-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>项目现在部署在服务器上，我们想要通过本地Eclipse来远程调试<br>在服务器上输入命名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep tomcat</span><br></pre></td></tr></table></figure>
+<p>可以看到我们tomcat是由root用户启动的,这里需要我们改为其他用户,root启动的进程不支持远程调试,<br>这里我们要改为用普通的账号启动tomcat.</p>
+<p>这里要注意,普通账号是没办法运行root账号安装的软件的.所以我们要用普通账号安装一下tomcat.</p>
+<p>创建新用户的指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser work</span><br></pre></td></tr></table></figure>
+<p>输入密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd work</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/eclipse181217/1.png" alt=""></p>
+<p><code>shudown</code>掉现在的tomcat程序,在tomcat目录下执行<code>bin/shutdown.sh</code></p>
+<p>切换账号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su work</span><br></pre></td></tr></table></figure>
+<p>切换回这个账号的根目录<code>cd ~</code>,可以看到当前的用户路径<code>/home/work</code>,再次上传本地的tomcat到服务器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp apache-tomcat-8.5.35.tar.gz work@101.132.138.185:~</span><br></pre></td></tr></table></figure>
+<p>解压这个tomcat</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf file.tar.gz</span><br></pre></td></tr></table></figure>
+<p>再将我们的代码部署到上面因为没有改端口号用过<code>ip:8080/o2o</code>就可以访问到了.可是微信登录只能访问80端口,所以我们要做一个转发操作.</p>
+<p>切换回<code>root</code>用户关掉<code>firewalld</code>服务,安装<code>iptables-services</code>服务.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line">systemctl disable firewalld.service</span><br><span class="line">yum install iptables-services</span><br></pre></td></tr></table></figure>
+<p>将对80端口的请求转发到8080</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080</span><br><span class="line">service iptables save #让上面的指令生效</span><br></pre></td></tr></table></figure>
+<p>这个时候已经生效了,但是重启服务器就会失效,执行下面两条指令让它永久生效.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart iptables.service</span><br><span class="line">systemctl enable iptables.service</span><br></pre></td></tr></table></figure>
+<p>修改tomcat配置<br>修改<code>bin/catalina.sh</code>  <code>vim catalina.sh</code><br>加入的部分：</p>
+<p><img src="/uploads/eclipse181217/2.png" alt=""></p>
+<p>这句话的意义是 告诉tomcat你要开启一个端口支持远程调试,同时别忘了将服务器的这两个端口号打开</p>
+<p><img src="/uploads/eclipse181217/3.png" alt=""></p>
+<p>切换回<code>work</code> 重启<code>tomcat</code> <code>shutdown</code> <code>start</code></p>
+<p>这个时候再 <code>ps -ef | grep tomcat</code>,就可以发现这个进程是work的了,包括我们设置的调试信息也有了</p>
+<p><img src="/uploads/eclipse181217/4.png" alt=""></p>
+<p>回到我们的eclipse,在启动debug服务器（小昆虫）那里找到 <code>Debug</code> <code>Configuration</code>修改配置如下</p>
+<p><img src="/uploads/eclipse181217/5.png" alt=""></p>
+<p>Eclipse远程调试总结<br>添加新用户，并赋予root权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adduser work</span><br><span class="line">passwd work</span><br></pre></td></tr></table></figure>
+<p>上传tomcat软件，上传程序war包</p>
+<p>将80端口的请求转发至8080端口（永久生效）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service #停止firewall</span><br><span class="line">systemctl disable firewalld.service # 禁止firewall开机启动</span><br><span class="line">yum install iptables-services #安装</span><br><span class="line">iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080</span><br><span class="line">service iptables save</span><br><span class="line">systemctl restart iptables.service</span><br><span class="line">systemctl enable iptables.service</span><br></pre></td></tr></table></figure>
+<p>远程调试tomcat<br><figure class="highlight vim"><figcaption><span>bin/catalina.sh```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">添加</span><br></pre></td></tr></table></figure></p>
+<p>CATALINA_OPTS=”-Xdebug  -Xrunjdwp:transport=dt_socket,address=8888,server=y,suspend=n”<br><code>`</code></p>
+<p>开通阿里云控制台安全组策略8888端口<br>在eclipse debug做对应的配置即可</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/11/05/tensorflow基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1488,7 +1813,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
