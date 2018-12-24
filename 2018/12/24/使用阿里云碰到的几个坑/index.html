@@ -108,25 +108,32 @@
 
 
 
-  <meta name="description" content="could not create connection to databasewen问题解决 今天要将项目部署到阿里云服务器上时，先将项目里的数据库配置信息改为了阿里云上面的数据库信息，运行启动后报错 1could not create connection to databasewen 查找后发现本机是mysql5.6版本的，而阿里云上装的是mysql8.于是去pom文件中将数据库版本改掉，问题">
+  <meta name="description" content="第一个坑阿里云系统重置后远程连接失败问题因故将阿里云系统重置后，要将开发环境scp到服务器上时连接失败，ssh远程连接同样失败。可以发现报错信息如下：  以编辑器进入这个文件vi /Users/binzhang/.ssh/known_hosts将红线框部分删除掉。  问题得到解决，原因是在我们第一次远程连接的时候，本机会将远程机器的信息写到/Users/binzhang/.ssh/known_ho">
 <meta name="keywords" content="java AI life">
 <meta property="og:type" content="article">
-<meta property="og:title" content="could not create connection to databasewen问题解决">
-<meta property="og:url" content="http://www.herobin.top/2018/10/25/database/index.html">
+<meta property="og:title" content="使用阿里云碰到的几个坑">
+<meta property="og:url" content="http://www.herobin.top/2018/12/24/使用阿里云碰到的几个坑/index.html">
 <meta property="og:site_name" content="HeroBin&#39;s Blog">
-<meta property="og:description" content="could not create connection to databasewen问题解决 今天要将项目部署到阿里云服务器上时，先将项目里的数据库配置信息改为了阿里云上面的数据库信息，运行启动后报错 1could not create connection to databasewen 查找后发现本机是mysql5.6版本的，而阿里云上装的是mysql8.于是去pom文件中将数据库版本改掉，问题">
+<meta property="og:description" content="第一个坑阿里云系统重置后远程连接失败问题因故将阿里云系统重置后，要将开发环境scp到服务器上时连接失败，ssh远程连接同样失败。可以发现报错信息如下：  以编辑器进入这个文件vi /Users/binzhang/.ssh/known_hosts将红线框部分删除掉。  问题得到解决，原因是在我们第一次远程连接的时候，本机会将远程机器的信息写到/Users/binzhang/.ssh/known_ho">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-25T03:32:47.000Z">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun181224/3.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun181224/4.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun181224/1.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun181224/2.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun181224/5.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/aliyun181224/6.png">
+<meta property="og:updated_time" content="2018-12-24T07:37:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="could not create connection to databasewen问题解决">
-<meta name="twitter:description" content="could not create connection to databasewen问题解决 今天要将项目部署到阿里云服务器上时，先将项目里的数据库配置信息改为了阿里云上面的数据库信息，运行启动后报错 1could not create connection to databasewen 查找后发现本机是mysql5.6版本的，而阿里云上装的是mysql8.于是去pom文件中将数据库版本改掉，问题">
+<meta name="twitter:title" content="使用阿里云碰到的几个坑">
+<meta name="twitter:description" content="第一个坑阿里云系统重置后远程连接失败问题因故将阿里云系统重置后，要将开发环境scp到服务器上时连接失败，ssh远程连接同样失败。可以发现报错信息如下：  以编辑器进入这个文件vi /Users/binzhang/.ssh/known_hosts将红线框部分删除掉。  问题得到解决，原因是在我们第一次远程连接的时候，本机会将远程机器的信息写到/Users/binzhang/.ssh/known_ho">
+<meta name="twitter:image" content="http://www.herobin.top/uploads/aliyun181224/3.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://www.herobin.top/2018/10/25/database/"/>
+  <link rel="canonical" href="http://www.herobin.top/2018/12/24/使用阿里云碰到的几个坑/"/>
 
 
 
@@ -136,7 +143,7 @@
   };
 </script>
 
-  <title>could not create connection to databasewen问题解决 | HeroBin's Blog</title>
+  <title>使用阿里云碰到的几个坑 | HeroBin's Blog</title>
   
 
 
@@ -319,7 +326,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/10/25/database/">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/12/24/使用阿里云碰到的几个坑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HeroBin">
@@ -336,7 +343,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">could not create connection to databasewen问题解决
+          <h1 class="post-title" itemprop="name headline">使用阿里云碰到的几个坑
               
             
           </h1>
@@ -361,7 +368,7 @@
                 
               
 
-              <time title="创建时间：2018-10-25 11:29:09 / 修改时间：11:32:47" itemprop="dateCreated datePublished" datetime="2018-10-25T11:29:09+08:00">2018-10-25</time>
+              <time title="创建时间：2018-12-24 15:11:19 / 修改时间：15:37:27" itemprop="dateCreated datePublished" datetime="2018-12-24T15:11:19+08:00">2018-12-24</time>
             
 
             
@@ -399,11 +406,21 @@
       
 
       
-        <p>could not create connection to databasewen问题解决</p>
-<p>今天要将项目部署到阿里云服务器上时，先将项目里的数据库配置信息改为了阿里云上面的数据库信息，运行启动后报错</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">could not create connection to databasewen</span><br></pre></td></tr></table></figure>
-<p>查找后发现本机是mysql5.6版本的，而阿里云上装的是mysql8.于是去pom文件中将数据库版本改掉，问题解决。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">	&lt;!-- &lt;version&gt;5.1.37&lt;/version&gt; --&gt;</span><br><span class="line">	&lt;version&gt;8.0.11&lt;/version&gt;</span><br><span class="line">	&lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+        <h3 id="第一个坑"><a href="#第一个坑" class="headerlink" title="第一个坑"></a>第一个坑</h3><h3 id="阿里云系统重置后远程连接失败问题"><a href="#阿里云系统重置后远程连接失败问题" class="headerlink" title="阿里云系统重置后远程连接失败问题"></a>阿里云系统重置后远程连接失败问题</h3><p>因故将阿里云系统重置后，要将开发环境scp到服务器上时连接失败，ssh远程连接同样失败。可以发现报错信息如下：</p>
+<p><img src="/uploads/aliyun181224/3.png" alt=""></p>
+<p>以编辑器进入这个文件<code>vi /Users/binzhang/.ssh/known_hosts</code>将红线框部分删除掉。</p>
+<p><img src="/uploads/aliyun181224/4.png" alt=""></p>
+<p>问题得到解决，原因是在我们第一次远程连接的时候，本机会将远程机器的信息写到<code>/Users/binzhang/.ssh/known_hosts</code>文件中，所以如果远程重装系统了，本机一定要先清理掉。</p>
+<p>解决方法原文：<br><a href="https://blog.csdn.net/wd2014610/article/details/79945424" target="_blank" rel="noopener">https://blog.csdn.net/wd2014610/article/details/79945424</a></p>
+<h3 id="第二个坑"><a href="#第二个坑" class="headerlink" title="第二个坑"></a>第二个坑</h3><h3 id="修改tomcat-server-xml启动报错问题"><a href="#修改tomcat-server-xml启动报错问题" class="headerlink" title="修改tomcat server.xml启动报错问题"></a>修改tomcat server.xml启动报错问题</h3><p>首先我们在root用户目录下新建了一个shopimages文件夹，将shop项目相关的图片都放在了这下面，再通过在server.xml中对路径的补全来访问图片地址，这个时候没有问题</p>
+<p><img src="/uploads/aliyun181224/1.png" alt=""></p>
+<p>因为要进行eclipse的远程调试，而root并不支持远程调试，我们创建了一个新用户work并在work下部署了新的tomcat，在work下的tomcat下修改为同样的配置后报错。将配置修改后问题解决。应为work用户没有访问root目录的权限导致。</p>
+<p><img src="/uploads/aliyun181224/2.png" alt=""></p>
+<h3 id="第三个坑"><a href="#第三个坑" class="headerlink" title="第三个坑"></a>第三个坑</h3><h3 id="本地数据库软件连接不上阿里云上的数据库问题"><a href="#本地数据库软件连接不上阿里云上的数据库问题" class="headerlink" title="本地数据库软件连接不上阿里云上的数据库问题"></a>本地数据库软件连接不上阿里云上的数据库问题</h3><p>在使用本机的MySQL Workbench连接阿里云上的mysql时报如下错误：</p>
+<p><img src="/uploads/aliyun181224/5.png" alt=""></p>
+<p>解决方法：</p>
+<p><img src="/uploads/aliyun181224/6.png" alt=""></p>
+
       
     </div>
 
@@ -430,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/23/c-运行python程序/" rel="next" title="c#运行python程序">
-                <i class="fa fa-chevron-left"></i> c#运行python程序
+              <a href="/2018/12/18/redis的使用/" rel="next" title="redis的使用">
+                <i class="fa fa-chevron-left"></i> redis的使用
               </a>
             
           </div>
@@ -439,10 +456,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/05/tensorflow基础/" rel="prev" title="tensorflow基础">
-                tensorflow基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -487,8 +500,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -552,6 +574,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一个坑"><span class="nav-number">1.</span> <span class="nav-text">第一个坑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阿里云系统重置后远程连接失败问题"><span class="nav-number">2.</span> <span class="nav-text">阿里云系统重置后远程连接失败问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二个坑"><span class="nav-number">3.</span> <span class="nav-text">第二个坑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改tomcat-server-xml启动报错问题"><span class="nav-number">4.</span> <span class="nav-text">修改tomcat server.xml启动报错问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三个坑"><span class="nav-number">5.</span> <span class="nav-text">第三个坑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地数据库软件连接不上阿里云上的数据库问题"><span class="nav-number">6.</span> <span class="nav-text">本地数据库软件连接不上阿里云上的数据库问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
