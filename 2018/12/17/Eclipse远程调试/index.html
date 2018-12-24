@@ -121,7 +121,7 @@
 <meta property="og:image" content="http://www.herobin.top/uploads/eclipse181217/3.png">
 <meta property="og:image" content="http://www.herobin.top/uploads/eclipse181217/4.png">
 <meta property="og:image" content="http://www.herobin.top/uploads/eclipse181217/5.png">
-<meta property="og:updated_time" content="2018-12-18T01:14:35.000Z">
+<meta property="og:updated_time" content="2018-12-24T07:44:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Eclipse远程调试">
 <meta name="twitter:description" content="项目现在部署在服务器上，我们想要通过本地Eclipse来远程调试在服务器上输入命名 1ps -ef | grep tomcat 可以看到我们tomcat是由root用户启动的,这里需要我们改为其他用户,root启动的进程不支持远程调试,这里我们要改为用普通的账号启动tomcat. 这里要注意,普通账号是没办法运行root账号安装的软件的.所以我们要用普通账号安装一下tomcat. 创建新用户的指令">
@@ -384,7 +384,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-18 09:14:35" itemprop="dateModified" datetime="2018-12-18T09:14:35+08:00">2018-12-18</time>
+                <time title="修改时间：2018-12-24 15:44:26" itemprop="dateModified" datetime="2018-12-24T15:44:26+08:00">2018-12-24</time>
               
             
           </span>
@@ -440,7 +440,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080</span><br><span class="line">service iptables save #让上面的指令生效</span><br></pre></td></tr></table></figure>
 <p>这个时候已经生效了,但是重启服务器就会失效,执行下面两条指令让它永久生效.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart iptables.service</span><br><span class="line">systemctl enable iptables.service</span><br></pre></td></tr></table></figure>
-<p>修改tomcat配置<br>修改<code>bin/catalina.sh</code>  <code>vim catalina.sh</code><br>加入的部分：</p>
+<p>修改tomcat配置(work下的)<br>修改<code>bin/catalina.sh</code>  <code>vim catalina.sh</code><br>加入的部分：</p>
 <p><img src="/uploads/eclipse181217/2.png" alt=""></p>
 <p>这句话的意义是 告诉tomcat你要开启一个端口支持远程调试,同时别忘了将服务器的这两个端口号打开</p>
 <p><img src="/uploads/eclipse181217/3.png" alt=""></p>
@@ -561,7 +561,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
