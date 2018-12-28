@@ -108,28 +108,25 @@
 
 
 
-  <meta name="description" content="数据库密码明文加密我们常规的数据库信息都是写在jdbc.properties里面的  这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：  那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,DESUtils和EncryptPropertyPlaceholderConf">
+  <meta name="description" content="在ssm中kapcha的配置主要写在web.xml中，而springboot中并没有使用web.xml文件，所以我们要重新总结下验证码在springboot中的使用。首先我们要将和web.xml中的Kaptcha的相关配置写入到application.properties中 12345678910#Kaptcha的配置kaptcha.border=nokaptcha.textproducer.fo">
 <meta name="keywords" content="java AI life">
 <meta property="og:type" content="article">
-<meta property="og:title" content="加密连接数据库明文密码">
-<meta property="og:url" content="http://www.herobin.top/2018/12/17/加密连接数据库明文密码/index.html">
+<meta property="og:title" content="SpringBoot验证码Kaptcha的使用">
+<meta property="og:url" content="http://www.herobin.top/2018/12/28/SpringBoot验证码Kaptcha的使用/index.html">
 <meta property="og:site_name" content="HeroBin&#39;s Blog">
-<meta property="og:description" content="数据库密码明文加密我们常规的数据库信息都是写在jdbc.properties里面的  这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：  那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,DESUtils和EncryptPropertyPlaceholderConf">
+<meta property="og:description" content="在ssm中kapcha的配置主要写在web.xml中，而springboot中并没有使用web.xml文件，所以我们要重新总结下验证码在springboot中的使用。首先我们要将和web.xml中的Kaptcha的相关配置写入到application.properties中 12345678910#Kaptcha的配置kaptcha.border=nokaptcha.textproducer.fo">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.herobin.top/uploads/databasesafepassword/1.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/databasesafepassword/2.png">
-<meta property="og:updated_time" content="2018-12-17T09:01:27.000Z">
+<meta property="og:updated_time" content="2018-12-28T12:12:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="加密连接数据库明文密码">
-<meta name="twitter:description" content="数据库密码明文加密我们常规的数据库信息都是写在jdbc.properties里面的  这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：  那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,DESUtils和EncryptPropertyPlaceholderConf">
-<meta name="twitter:image" content="http://www.herobin.top/uploads/databasesafepassword/1.png">
+<meta name="twitter:title" content="SpringBoot验证码Kaptcha的使用">
+<meta name="twitter:description" content="在ssm中kapcha的配置主要写在web.xml中，而springboot中并没有使用web.xml文件，所以我们要重新总结下验证码在springboot中的使用。首先我们要将和web.xml中的Kaptcha的相关配置写入到application.properties中 12345678910#Kaptcha的配置kaptcha.border=nokaptcha.textproducer.fo">
 
 
 
 
 
 
-  <link rel="canonical" href="http://www.herobin.top/2018/12/17/加密连接数据库明文密码/"/>
+  <link rel="canonical" href="http://www.herobin.top/2018/12/28/SpringBoot验证码Kaptcha的使用/"/>
 
 
 
@@ -139,7 +136,7 @@
   };
 </script>
 
-  <title>加密连接数据库明文密码 | HeroBin's Blog</title>
+  <title>SpringBoot验证码Kaptcha的使用 | HeroBin's Blog</title>
   
 
 
@@ -322,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/12/17/加密连接数据库明文密码/">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/12/28/SpringBoot验证码Kaptcha的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HeroBin">
@@ -339,7 +336,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">加密连接数据库明文密码
+          <h1 class="post-title" itemprop="name headline">SpringBoot验证码Kaptcha的使用
               
             
           </h1>
@@ -364,7 +361,7 @@
                 
               
 
-              <time title="创建时间：2018-12-17 16:45:34 / 修改时间：17:01:27" itemprop="dateCreated datePublished" datetime="2018-12-17T16:45:34+08:00">2018-12-17</time>
+              <time title="创建时间：2018-12-28 20:01:51 / 修改时间：20:12:11" itemprop="dateCreated datePublished" datetime="2018-12-28T20:01:51+08:00">2018-12-28</time>
             
 
             
@@ -402,14 +399,12 @@
       
 
       
-        <h2 id="数据库密码明文加密"><a href="#数据库密码明文加密" class="headerlink" title="数据库密码明文加密"></a>数据库密码明文加密</h2><p>我们常规的数据库信息都是写在jdbc.properties里面的</p>
-<p><img src="/uploads/databasesafepassword/1.png" alt=""></p>
-<p>这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：</p>
-<p><img src="/uploads/databasesafepassword/2.png" alt=""></p>
-<p>那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,<code>DESUtils</code>和<code>EncryptPropertyPlaceholderConfigurer</code>,所以需要用到的时候可以去coding下熟悉相关逻辑，简要的总结就是DESUtils给我们提供了将我们的数据库用户名和密码通过我们自己设定的key和charset来生成加密后的字符串，将这个字符串拷贝到jdbc.properties中替换掉我们的明文的密码信息。然后再spring-dao.xml中加载jdbc.properties不再使用以前的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot;/&gt;</span><br></pre></td></tr></table></figure>
-<p>换成使用<code>EncryptPropertyPlaceholderConfigurer</code>这个工具类来加载jdbc.properties</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean class=&quot;com.imooc.o2o.util.EncryptPropertyPlaceholderConfigurer&quot;&gt;</span><br><span class="line">		&lt;property name=&quot;locations&quot;&gt;</span><br><span class="line">			&lt;list&gt;</span><br><span class="line">				&lt;value&gt;classpath:jdbc.properties&lt;/value&gt;</span><br><span class="line">				&lt;value&gt;classpath:redis.properties&lt;/value&gt;</span><br><span class="line">			&lt;/list&gt;</span><br><span class="line">		&lt;/property&gt;</span><br><span class="line">		&lt;property name=&quot;fileEncoding&quot; value=&quot;UTF-8&quot;/&gt;</span><br><span class="line">	&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+        <p>在ssm中kapcha的配置主要写在web.xml中，而springboot中并没有使用web.xml文件，<br>所以我们要重新总结下验证码在springboot中的使用。<br>首先我们要将和web.xml中的Kaptcha的相关配置写入到application.properties中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#Kaptcha的配置</span><br><span class="line">kaptcha.border=no</span><br><span class="line">kaptcha.textproducer.font.color=red</span><br><span class="line">kaptcha.textproducer.font.size=43</span><br><span class="line">kaptcha.image.width=135</span><br><span class="line">kaptcha.image.height=50</span><br><span class="line">kaptcha.textproducer.char.string=ACDEFHKPRSTWX345679</span><br><span class="line">kaptcha.noise.color=black</span><br><span class="line">kaptcha.textproducer.char.length=4</span><br><span class="line">kaptcha.textproducer.font.names=Arial</span><br></pre></td></tr></table></figure>
+<p>再在MvcConfiguration类中进行配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">@Value(&quot;$&#123;kaptcha.border&#125;&quot;)</span><br><span class="line">	private String border;</span><br><span class="line">	@Value(&quot;$&#123;kaptcha.textproducer.font.color&#125;&quot;)</span><br><span class="line">	private String fcolor;</span><br><span class="line">	@Value(&quot;$&#123;kaptcha.image.width&#125;&quot;)</span><br><span class="line">	private String width;</span><br><span class="line">	@Value(&quot;$&#123;kaptcha.textproducer.char.string&#125;&quot;)</span><br><span class="line">	private String cString;</span><br><span class="line">	@Value(&quot;$&#123;kaptcha.image.height&#125;&quot;)</span><br><span class="line">	private String height;</span><br><span class="line">	@Value(&quot;$&#123;kaptcha.textproducer.font.size&#125;&quot;)</span><br><span class="line">	private String fsize;</span><br><span class="line">	@Value(&quot;$&#123;kaptcha.noise.color&#125;&quot;)</span><br><span class="line">	private String nColor;</span><br><span class="line">	@Value(&quot;$&#123;kaptcha.textproducer.char.length&#125;&quot;)</span><br><span class="line">	private String clength;</span><br><span class="line">	@Value(&quot;$&#123;kaptcha.textproducer.font.names&#125;&quot;)</span><br><span class="line">	private String fnames;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 由于web.xml不生效了，需要在这里配置Kaptcha验证码Servlet</span><br><span class="line">	 * @return</span><br><span class="line">	 * @throws ServletException</span><br><span class="line">	 */</span><br><span class="line">	@Bean</span><br><span class="line">	public ServletRegistrationBean servletRegistrationBean() throws ServletException&#123;</span><br><span class="line">                //只要在前端访问Kaptcha这个路由就会启动这个servlet</span><br><span class="line">		ServletRegistrationBean servlet = new ServletRegistrationBean(new KaptchaServlet(),&quot;/Kaptcha&quot;);</span><br><span class="line">		servlet.addInitParameter(&quot;keptcha.border&quot;, border);//无边框</span><br><span class="line">		servlet.addInitParameter(&quot;kaptcha.textproducer.font.color&quot;, fcolor);//字体颜色</span><br><span class="line">		servlet.addInitParameter(&quot;kaptcha.image.width&quot;, width);//图片宽度</span><br><span class="line">		servlet.addInitParameter(&quot;kaptcha.textproducer.char.string&quot;, cString);//使用哪些字符生成验证码</span><br><span class="line">		servlet.addInitParameter(&quot;kaptcha.image.height&quot;, height);//图片高度</span><br><span class="line">		servlet.addInitParameter(&quot;kaptcha.textproducer.font.size&quot;, fsize);//字体大小</span><br><span class="line">		servlet.addInitParameter(&quot;kaptcha.noise.color&quot;, nColor);//干扰线的颜色</span><br><span class="line">		servlet.addInitParameter(&quot;kaptcha.textproducer.char.length&quot;, clength);//字符个数</span><br><span class="line">		servlet.addInitParameter(&quot;kaptcha.textproducer.font.names&quot;, fnames);//字体</span><br><span class="line">		return servlet;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>当然还有别忘了pom里面jar包的引入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 验证码相关 --&gt;</span><br><span class="line">&lt;!-- https://mvnrepository.com/artifact/com.github.penggle/kaptcha --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;com.github.penggle&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;kaptcha&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;2.3.2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -436,8 +431,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/17/Eclipse远程调试/" rel="next" title="Eclipse远程调试">
-                <i class="fa fa-chevron-left"></i> Eclipse远程调试
+              <a href="/2018/12/27/SpringBoot初体验/" rel="next" title="SpringBoot初体验">
+                <i class="fa fa-chevron-left"></i> SpringBoot初体验
               </a>
             
           </div>
@@ -446,8 +441,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/18/redis的使用/" rel="prev" title="redis的使用">
-                redis的使用 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/28/SpringBoot项目的打包与部署/" rel="prev" title="SpringBoot项目的打包与部署">
+                SpringBoot项目的打包与部署 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -493,17 +488,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -567,22 +553,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库密码明文加密"><span class="nav-number">1.</span> <span class="nav-text">数据库密码明文加密</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

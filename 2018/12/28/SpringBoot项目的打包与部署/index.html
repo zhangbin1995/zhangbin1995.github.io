@@ -108,28 +108,32 @@
 
 
 
-  <meta name="description" content="数据库密码明文加密我们常规的数据库信息都是写在jdbc.properties里面的  这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：  那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,DESUtils和EncryptPropertyPlaceholderConf">
+  <meta name="description" content="SpringBoot项目的打包与部署1.打包到我们的项目目录下执行打包命令 1mvn clean package -Dmaven.test.skip=true  打包成功后可以看到 BUILD SUCCESS。  target目录下的o2o-0.0.1-SNAPSHOT.jar就是我们打包好的jar包了。这里生成这个版本的jar包的原因是我们在pom.xml中的配置。这里可以通过命令 java -">
 <meta name="keywords" content="java AI life">
 <meta property="og:type" content="article">
-<meta property="og:title" content="加密连接数据库明文密码">
-<meta property="og:url" content="http://www.herobin.top/2018/12/17/加密连接数据库明文密码/index.html">
+<meta property="og:title" content="SpringBoot项目的打包与部署">
+<meta property="og:url" content="http://www.herobin.top/2018/12/28/SpringBoot项目的打包与部署/index.html">
 <meta property="og:site_name" content="HeroBin&#39;s Blog">
-<meta property="og:description" content="数据库密码明文加密我们常规的数据库信息都是写在jdbc.properties里面的  这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：  那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,DESUtils和EncryptPropertyPlaceholderConf">
+<meta property="og:description" content="SpringBoot项目的打包与部署1.打包到我们的项目目录下执行打包命令 1mvn clean package -Dmaven.test.skip=true  打包成功后可以看到 BUILD SUCCESS。  target目录下的o2o-0.0.1-SNAPSHOT.jar就是我们打包好的jar包了。这里生成这个版本的jar包的原因是我们在pom.xml中的配置。这里可以通过命令 java -">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.herobin.top/uploads/databasesafepassword/1.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/databasesafepassword/2.png">
-<meta property="og:updated_time" content="2018-12-17T09:01:27.000Z">
+<meta property="og:image" content="http://www.herobin.top/uploads/springboot181228/1.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/springboot181228/2.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/springboot181228/3.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/springboot181228/4.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/springboot181228/5.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/springboot181228/6.png">
+<meta property="og:updated_time" content="2018-12-28T12:34:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="加密连接数据库明文密码">
-<meta name="twitter:description" content="数据库密码明文加密我们常规的数据库信息都是写在jdbc.properties里面的  这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：  那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,DESUtils和EncryptPropertyPlaceholderConf">
-<meta name="twitter:image" content="http://www.herobin.top/uploads/databasesafepassword/1.png">
+<meta name="twitter:title" content="SpringBoot项目的打包与部署">
+<meta name="twitter:description" content="SpringBoot项目的打包与部署1.打包到我们的项目目录下执行打包命令 1mvn clean package -Dmaven.test.skip=true  打包成功后可以看到 BUILD SUCCESS。  target目录下的o2o-0.0.1-SNAPSHOT.jar就是我们打包好的jar包了。这里生成这个版本的jar包的原因是我们在pom.xml中的配置。这里可以通过命令 java -">
+<meta name="twitter:image" content="http://www.herobin.top/uploads/springboot181228/1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://www.herobin.top/2018/12/17/加密连接数据库明文密码/"/>
+  <link rel="canonical" href="http://www.herobin.top/2018/12/28/SpringBoot项目的打包与部署/"/>
 
 
 
@@ -139,7 +143,7 @@
   };
 </script>
 
-  <title>加密连接数据库明文密码 | HeroBin's Blog</title>
+  <title>SpringBoot项目的打包与部署 | HeroBin's Blog</title>
   
 
 
@@ -322,7 +326,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/12/17/加密连接数据库明文密码/">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/12/28/SpringBoot项目的打包与部署/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HeroBin">
@@ -339,7 +343,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">加密连接数据库明文密码
+          <h1 class="post-title" itemprop="name headline">SpringBoot项目的打包与部署
               
             
           </h1>
@@ -364,7 +368,7 @@
                 
               
 
-              <time title="创建时间：2018-12-17 16:45:34 / 修改时间：17:01:27" itemprop="dateCreated datePublished" datetime="2018-12-17T16:45:34+08:00">2018-12-17</time>
+              <time title="创建时间：2018-12-28 20:15:13 / 修改时间：20:34:12" itemprop="dateCreated datePublished" datetime="2018-12-28T20:15:13+08:00">2018-12-28</time>
             
 
             
@@ -402,14 +406,23 @@
       
 
       
-        <h2 id="数据库密码明文加密"><a href="#数据库密码明文加密" class="headerlink" title="数据库密码明文加密"></a>数据库密码明文加密</h2><p>我们常规的数据库信息都是写在jdbc.properties里面的</p>
-<p><img src="/uploads/databasesafepassword/1.png" alt=""></p>
-<p>这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：</p>
-<p><img src="/uploads/databasesafepassword/2.png" alt=""></p>
-<p>那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,<code>DESUtils</code>和<code>EncryptPropertyPlaceholderConfigurer</code>,所以需要用到的时候可以去coding下熟悉相关逻辑，简要的总结就是DESUtils给我们提供了将我们的数据库用户名和密码通过我们自己设定的key和charset来生成加密后的字符串，将这个字符串拷贝到jdbc.properties中替换掉我们的明文的密码信息。然后再spring-dao.xml中加载jdbc.properties不再使用以前的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot;/&gt;</span><br></pre></td></tr></table></figure>
-<p>换成使用<code>EncryptPropertyPlaceholderConfigurer</code>这个工具类来加载jdbc.properties</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean class=&quot;com.imooc.o2o.util.EncryptPropertyPlaceholderConfigurer&quot;&gt;</span><br><span class="line">		&lt;property name=&quot;locations&quot;&gt;</span><br><span class="line">			&lt;list&gt;</span><br><span class="line">				&lt;value&gt;classpath:jdbc.properties&lt;/value&gt;</span><br><span class="line">				&lt;value&gt;classpath:redis.properties&lt;/value&gt;</span><br><span class="line">			&lt;/list&gt;</span><br><span class="line">		&lt;/property&gt;</span><br><span class="line">		&lt;property name=&quot;fileEncoding&quot; value=&quot;UTF-8&quot;/&gt;</span><br><span class="line">	&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+        <h2 id="SpringBoot项目的打包与部署"><a href="#SpringBoot项目的打包与部署" class="headerlink" title="SpringBoot项目的打包与部署"></a>SpringBoot项目的打包与部署</h2><h3 id="1-打包"><a href="#1-打包" class="headerlink" title="1.打包"></a>1.打包</h3><p>到我们的项目目录下执行打包命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean package -Dmaven.test.skip=true</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/springboot181228/1.png" alt=""></p>
+<p>打包成功后可以看到 <code>BUILD SUCCESS</code>。</p>
+<p><img src="/uploads/springboot181228/2.png" alt=""></p>
+<p>target目录下的o2o-0.0.1-SNAPSHOT.jar就是我们打包好的jar包了。<br>这里生成这个版本的jar包的原因是我们在pom.xml中的配置。<br>这里可以通过命令 java -jar o2o-0.0.1-SNAPSHOT.jar来启动我们的项目（注意要将IDE中已经启动的服务关掉否则会冲突）。</p>
+<p><img src="/uploads/springboot181228/3.png" alt=""></p>
+<p>这个时候访问我们项目 <code>localhost:8080/frontend/index</code> 发现报404。<br>原因是我们并没有将html页面成功打包进去。<br>其实我们将jar改为war就好了。<br>我们常规需要的也是要打包成war包。</p>
+<p><img src="/uploads/springboot181228/4.png" alt=""></p>
+<h3 id="2-部署"><a href="#2-部署" class="headerlink" title="2.部署"></a>2.部署</h3><p>将war包上传到服务器上<br><code>scp o2o-0.0.1-SNAPSHOT.war work@101.132.138.185:~</code><br>将之前的java和tomcat进程都<code>kill</code>掉。<br>去服务器中启动我们的war包程序<br><code>java -jar o2o-0.0.1-SNAPSHOT.war</code><br>这里默认是8080端口，可以在<code>application.properties</code>中设置成其它端口。<br>输入地址，可以访问到了，部署成功。</p>
+<p><img src="/uploads/springboot181228/5.png" alt=""></p>
+<p>这里java -jar 启动有一个问题，当我们的终端与服务器失去连接后，<br>程序就不再运行了<br>那么要如何让服务器能持续的运行呢<br>创建一个脚本文件 startup.sh  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim startup.sh</span><br><span class="line">#!/bin/sh nohup后台运行 （守护进程）</span><br><span class="line">nohup java -jar /home/work/o2o-0.0.1-SNAPSHOT.war &amp;</span><br></pre></td></tr></table></figure>
+<p>保存退出后启动startup.sh就好了<br><code>sh startup.sh</code></p>
+<p><img src="/uploads/springboot181228/6.png" alt=""></p>
+<p>这样就一直跑在我们的服务器了如果要关掉kill掉就好了。</p>
+
       
     </div>
 
@@ -436,8 +449,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/17/Eclipse远程调试/" rel="next" title="Eclipse远程调试">
-                <i class="fa fa-chevron-left"></i> Eclipse远程调试
+              <a href="/2018/12/28/SpringBoot验证码Kaptcha的使用/" rel="next" title="SpringBoot验证码Kaptcha的使用">
+                <i class="fa fa-chevron-left"></i> SpringBoot验证码Kaptcha的使用
               </a>
             
           </div>
@@ -445,10 +458,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/18/redis的使用/" rel="prev" title="redis的使用">
-                redis的使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -577,7 +586,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库密码明文加密"><span class="nav-number">1.</span> <span class="nav-text">数据库密码明文加密</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot项目的打包与部署"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot项目的打包与部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-打包"><span class="nav-number">1.1.</span> <span class="nav-text">1.打包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-部署"><span class="nav-number">1.2.</span> <span class="nav-text">2.部署</span></a></li></ol></li></ol></div>
             
 
           </div>
