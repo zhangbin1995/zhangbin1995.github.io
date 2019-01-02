@@ -319,6 +319,164 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2019/01/02/this-is-incompatible-with-sql-mode-only-full-group-by问题解决/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HeroBin">
+      <meta itemprop="description" content="记录学习生活的点点滴滴">
+      <meta itemprop="image" content="/uploads/we.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HeroBin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/02/this-is-incompatible-with-sql-mode-only-full-group-by问题解决/" itemprop="url">
+                  this is incompatible with sql_mode=only_full_group_by问题解决
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-02 18:34:24 / 修改时间：19:02:46" itemprop="dateCreated datePublished" datetime="2019-01-02T18:34:24+08:00">2019-01-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在编写好xml代码在测试类中测试时报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this is incompatible with sql_mode=only_full_group_by</span><br></pre></td></tr></table></figure>
+<p>看一下<code>ONLY_FULL_GROUP_BY</code>的意思是：对于GROUP BY聚合操作，如果在SELECT中的列，没有在GROUP BY中出现，那么这个SQL是不合法的，因为列不在GROUP BY从句中，也就是说查出来的列必须在group by后面出现否则就会报错，或者这个字段出现在聚合函数里面。</p>
+<p>进入到mysql中查看mysql版本 <code>select version();</code><br>查看sql_model参数命令：<code>SELECT @@GLOBAL.sql_mode;</code><br>                           <code>SELECT @@SESSION.sql_mode;</code><br>可以看到当前sql_mode。</p>
+<p><img src="/uploads/mysql190102/1.png" alt=""></p>
+<p>这里是我改过了的，所以已经没有ONLY_FULL_GROUP_BY了。<br>而我们的解决办法也是去掉这里的ONLY_FULL_GROUP_BY。</p>
+<p>###方法一：</p>
+<p>命令行输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set @@GLOBAL.sql_mode=&apos;&apos;;</span><br><span class="line">set sql_mode =&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>默认关掉ONLY_FULL_GROUP_BY！</p>
+<p>这个时候 在用工具select 一下<br><code>SELECT @@sql_mode;</code><br><code>SELECT @@GLOBAL.sql_mode;</code></p>
+<p>发现已经不存在ONLY_FULL_GROUP_BY,代码运行正常。<br>但是如果你重启Mysql服务的话，发现ONLY_FULL_GROUP_BY还是会存在的。</p>
+<p>###方法二：（推荐）</p>
+<p>想要彻底解决这个问题还是要去配置文件my.cnf中修改，加入下图内容，保存，重启mysql。</p>
+<p><img src="/uploads/mysql190102/2.png" alt=""></p>
+<p>注意这里开始的时候重启有报错，原因是因为mysql8.0以上已经取消了<br><code>NO_AUTO_CREATE_USER</code>这个关键字，删掉sql语句中的这个关键字即可。</p>
+<p><img src="/uploads/mysql190102/3.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service mysqld stop</span><br><span class="line">service mysqld start</span><br></pre></td></tr></table></figure>
+<p>问题解决。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/12/28/SpringBoot项目的打包与部署/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1759,149 +1917,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/10/25/database/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HeroBin">
-      <meta itemprop="description" content="记录学习生活的点点滴滴">
-      <meta itemprop="image" content="/uploads/we.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HeroBin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/25/database/" itemprop="url">
-                  could not create connection to databasewen问题解决
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-25 11:29:09 / 修改时间：11:32:47" itemprop="dateCreated datePublished" datetime="2018-10-25T11:29:09+08:00">2018-10-25</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>could not create connection to databasewen问题解决</p>
-<p>今天要将项目部署到阿里云服务器上时，先将项目里的数据库配置信息改为了阿里云上面的数据库信息，运行启动后报错</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">could not create connection to databasewen</span><br></pre></td></tr></table></figure>
-<p>查找后发现本机是mysql5.6版本的，而阿里云上装的是mysql8.于是去pom文件中将数据库版本改掉，问题解决。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">	&lt;!-- &lt;version&gt;5.1.37&lt;/version&gt; --&gt;</span><br><span class="line">	&lt;version&gt;8.0.11&lt;/version&gt;</span><br><span class="line">	&lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1953,7 +1968,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2012,7 +2027,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

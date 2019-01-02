@@ -108,28 +108,29 @@
 
 
 
-  <meta name="description" content="数据库密码明文加密我们常规的数据库信息都是写在jdbc.properties里面的  这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：  那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,DESUtils和EncryptPropertyPlaceholderConf">
+  <meta name="description" content="在编写好xml代码在测试类中测试时报错 1this is incompatible with sql_mode=only_full_group_by 看一下ONLY_FULL_GROUP_BY的意思是：对于GROUP BY聚合操作，如果在SELECT中的列，没有在GROUP BY中出现，那么这个SQL是不合法的，因为列不在GROUP BY从句中，也就是说查出来的列必须在group by后面出现否则">
 <meta name="keywords" content="java AI life">
 <meta property="og:type" content="article">
-<meta property="og:title" content="加密连接数据库明文密码">
-<meta property="og:url" content="http://www.herobin.top/2018/12/17/加密连接数据库明文密码/index.html">
+<meta property="og:title" content="this is incompatible with sql_mode=only_full_group_by问题解决">
+<meta property="og:url" content="http://www.herobin.top/2019/01/02/this-is-incompatible-with-sql-mode-only-full-group-by问题解决/index.html">
 <meta property="og:site_name" content="HeroBin&#39;s Blog">
-<meta property="og:description" content="数据库密码明文加密我们常规的数据库信息都是写在jdbc.properties里面的  这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：  那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,DESUtils和EncryptPropertyPlaceholderConf">
+<meta property="og:description" content="在编写好xml代码在测试类中测试时报错 1this is incompatible with sql_mode=only_full_group_by 看一下ONLY_FULL_GROUP_BY的意思是：对于GROUP BY聚合操作，如果在SELECT中的列，没有在GROUP BY中出现，那么这个SQL是不合法的，因为列不在GROUP BY从句中，也就是说查出来的列必须在group by后面出现否则">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.herobin.top/uploads/databasesafepassword/1.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/databasesafepassword/2.png">
-<meta property="og:updated_time" content="2018-12-17T09:01:27.000Z">
+<meta property="og:image" content="http://www.herobin.top/uploads/mysql190102/1.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/mysql190102/2.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/mysql190102/3.png">
+<meta property="og:updated_time" content="2019-01-02T11:02:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="加密连接数据库明文密码">
-<meta name="twitter:description" content="数据库密码明文加密我们常规的数据库信息都是写在jdbc.properties里面的  这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：  那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,DESUtils和EncryptPropertyPlaceholderConf">
-<meta name="twitter:image" content="http://www.herobin.top/uploads/databasesafepassword/1.png">
+<meta name="twitter:title" content="this is incompatible with sql_mode=only_full_group_by问题解决">
+<meta name="twitter:description" content="在编写好xml代码在测试类中测试时报错 1this is incompatible with sql_mode=only_full_group_by 看一下ONLY_FULL_GROUP_BY的意思是：对于GROUP BY聚合操作，如果在SELECT中的列，没有在GROUP BY中出现，那么这个SQL是不合法的，因为列不在GROUP BY从句中，也就是说查出来的列必须在group by后面出现否则">
+<meta name="twitter:image" content="http://www.herobin.top/uploads/mysql190102/1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://www.herobin.top/2018/12/17/加密连接数据库明文密码/"/>
+  <link rel="canonical" href="http://www.herobin.top/2019/01/02/this-is-incompatible-with-sql-mode-only-full-group-by问题解决/"/>
 
 
 
@@ -139,7 +140,7 @@
   };
 </script>
 
-  <title>加密连接数据库明文密码 | HeroBin's Blog</title>
+  <title>this is incompatible with sql_mode=only_full_group_by问题解决 | HeroBin's Blog</title>
   
 
 
@@ -322,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/12/17/加密连接数据库明文密码/">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2019/01/02/this-is-incompatible-with-sql-mode-only-full-group-by问题解决/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HeroBin">
@@ -339,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">加密连接数据库明文密码
+          <h1 class="post-title" itemprop="name headline">this is incompatible with sql_mode=only_full_group_by问题解决
               
             
           </h1>
@@ -364,7 +365,7 @@
                 
               
 
-              <time title="创建时间：2018-12-17 16:45:34 / 修改时间：17:01:27" itemprop="dateCreated datePublished" datetime="2018-12-17T16:45:34+08:00">2018-12-17</time>
+              <time title="创建时间：2019-01-02 18:34:24 / 修改时间：19:02:46" itemprop="dateCreated datePublished" datetime="2019-01-02T18:34:24+08:00">2019-01-02</time>
             
 
             
@@ -402,14 +403,26 @@
       
 
       
-        <h2 id="数据库密码明文加密"><a href="#数据库密码明文加密" class="headerlink" title="数据库密码明文加密"></a>数据库密码明文加密</h2><p>我们常规的数据库信息都是写在jdbc.properties里面的</p>
-<p><img src="/uploads/databasesafepassword/1.png" alt=""></p>
-<p>这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：</p>
-<p><img src="/uploads/databasesafepassword/2.png" alt=""></p>
-<p>那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,<code>DESUtils</code>和<code>EncryptPropertyPlaceholderConfigurer</code>,所以需要用到的时候可以去coding下熟悉相关逻辑，简要的总结就是DESUtils给我们提供了将我们的数据库用户名和密码通过我们自己设定的key和charset来生成加密后的字符串，将这个字符串拷贝到jdbc.properties中替换掉我们的明文的密码信息。然后再spring-dao.xml中加载jdbc.properties不再使用以前的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot;/&gt;</span><br></pre></td></tr></table></figure>
-<p>换成使用<code>EncryptPropertyPlaceholderConfigurer</code>这个工具类来加载jdbc.properties</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean class=&quot;com.imooc.o2o.util.EncryptPropertyPlaceholderConfigurer&quot;&gt;</span><br><span class="line">		&lt;property name=&quot;locations&quot;&gt;</span><br><span class="line">			&lt;list&gt;</span><br><span class="line">				&lt;value&gt;classpath:jdbc.properties&lt;/value&gt;</span><br><span class="line">				&lt;value&gt;classpath:redis.properties&lt;/value&gt;</span><br><span class="line">			&lt;/list&gt;</span><br><span class="line">		&lt;/property&gt;</span><br><span class="line">		&lt;property name=&quot;fileEncoding&quot; value=&quot;UTF-8&quot;/&gt;</span><br><span class="line">	&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+        <p>在编写好xml代码在测试类中测试时报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this is incompatible with sql_mode=only_full_group_by</span><br></pre></td></tr></table></figure>
+<p>看一下<code>ONLY_FULL_GROUP_BY</code>的意思是：对于GROUP BY聚合操作，如果在SELECT中的列，没有在GROUP BY中出现，那么这个SQL是不合法的，因为列不在GROUP BY从句中，也就是说查出来的列必须在group by后面出现否则就会报错，或者这个字段出现在聚合函数里面。</p>
+<p>进入到mysql中查看mysql版本 <code>select version();</code><br>查看sql_model参数命令：<code>SELECT @@GLOBAL.sql_mode;</code><br>                           <code>SELECT @@SESSION.sql_mode;</code><br>可以看到当前sql_mode。</p>
+<p><img src="/uploads/mysql190102/1.png" alt=""></p>
+<p>这里是我改过了的，所以已经没有ONLY_FULL_GROUP_BY了。<br>而我们的解决办法也是去掉这里的ONLY_FULL_GROUP_BY。</p>
+<p>###方法一：</p>
+<p>命令行输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set @@GLOBAL.sql_mode=&apos;&apos;;</span><br><span class="line">set sql_mode =&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>默认关掉ONLY_FULL_GROUP_BY！</p>
+<p>这个时候 在用工具select 一下<br><code>SELECT @@sql_mode;</code><br><code>SELECT @@GLOBAL.sql_mode;</code></p>
+<p>发现已经不存在ONLY_FULL_GROUP_BY,代码运行正常。<br>但是如果你重启Mysql服务的话，发现ONLY_FULL_GROUP_BY还是会存在的。</p>
+<p>###方法二：（推荐）</p>
+<p>想要彻底解决这个问题还是要去配置文件my.cnf中修改，加入下图内容，保存，重启mysql。</p>
+<p><img src="/uploads/mysql190102/2.png" alt=""></p>
+<p>注意这里开始的时候重启有报错，原因是因为mysql8.0以上已经取消了<br><code>NO_AUTO_CREATE_USER</code>这个关键字，删掉sql语句中的这个关键字即可。</p>
+<p><img src="/uploads/mysql190102/3.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service mysqld stop</span><br><span class="line">service mysqld start</span><br></pre></td></tr></table></figure>
+<p>问题解决。</p>
+
       
     </div>
 
@@ -436,8 +449,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/17/Eclipse远程调试/" rel="next" title="Eclipse远程调试">
-                <i class="fa fa-chevron-left"></i> Eclipse远程调试
+              <a href="/2018/12/28/SpringBoot项目的打包与部署/" rel="next" title="SpringBoot项目的打包与部署">
+                <i class="fa fa-chevron-left"></i> SpringBoot项目的打包与部署
               </a>
             
           </div>
@@ -445,10 +458,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/18/redis的使用/" rel="prev" title="redis的使用">
-                redis的使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -493,17 +502,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -567,22 +567,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库密码明文加密"><span class="nav-number">1.</span> <span class="nav-text">数据库密码明文加密</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
