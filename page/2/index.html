@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-CN">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -84,7 +84,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '6.4.2',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -121,6 +121,8 @@
 <meta name="twitter:description" content="记录学习生活的点点滴滴">
 
 
+
+  <link rel="alternate" href="/atom.xml" title="HeroBin's Blog" type="application/atom+xml" />
 
 
 
@@ -195,6 +197,7 @@
   <div class="container sidebar-position-left 
   page-home">
     <div class="headband"></div>
+    <a href="https://github.com/zhangbin1995"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -277,6 +280,9 @@
   
 
   
+    
+
+  
 
   
 </nav>
@@ -296,9 +302,6 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
-            
-
           
           <div id="content" class="content">
             
@@ -417,18 +420,16 @@
       
         
           
-            <h1 id="一些tensorflow学习过程中需要注意的随笔"><a href="#一些tensorflow学习过程中需要注意的随笔" class="headerlink" title="一些tensorflow学习过程中需要注意的随笔"></a>一些tensorflow学习过程中需要注意的随笔</h1><p>tensorflow 可以分解为tensor（张量）和flow（流或流动两部分）。</p>
-<p>任意维度的数据可以称作“张量”，如一维数组、二维矩阵、N维数据。tensorflow如果直译为中文，那就是“张量流”，它最初想要表达的含义是保持计算节点不变，让数据在不同的计算设备上传输并计算。</p>
-<p>因为tensorflow主要用于深度学习方面，在深度学习的计算过程中有前向计算和后向传播的过程，所以深度学习中间的每个节点基本上都要执行前向的数值计算，以及后向的残差传播和参数更新。tensorflow把内部的数据都包装成tensor的类型，并且在tensor中包含了前向计算和反向传播时的残差计算，让所有的计算过程都练了起来。</p>
-<p>tensorflow通过一个叫数据流图的方式来组织它的数据和运算。在使用tensorflow实现深度学习算法时，先将所有操作（operation）表达成一张图。张量从算法的开始走到结束完成一次向前运算，而残差从后往前就完成了一次后向传播来更新我们要训练的参数。</p>
-<h3 id="会话"><a href="#会话" class="headerlink" title="会话"></a>会话</h3><p>TensorFlow的计算需要在会话中执行。当创建一个会话时，如果没有传递参数，默认情况下它会启动默认的图来构造图结构，并且会将“图”中定义的op根据定义的情况分发到CPU或者GPU的设备上去。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">v1 = tf.constant(<span class="number">1</span>, name=<span class="string">"value1"</span>)</span><br><span class="line">v2 = tf.constant(<span class="number">1</span>, name=<span class="string">"value2"</span>)</span><br><span class="line">add_op = tf.add(v1, v2, name=<span class="string">"add_op_name"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">  result = sess.run(add_op)</span><br><span class="line">  print(<span class="string">"1 + 1 = %.0f"</span> % result)</span><br></pre></td></tr></table></figure>
-<p>采用with语句包装，可以在结束with语句块的时候，自动销毁会话的资源。</p>
-<p>为什么TensorFlow非得弄一个会话，并且让这些TensorFlow内部的Tensor必须在会话中才能执行，而不是直接使用Python的对象执行呢？这有点类似我们平时用到的Numpy库。我们经常会使用Numpy包来进行一些复杂的计算，比如矩阵乘法。这些计算的内部实现可能是Numpy采用非Python语言写的，从而使得运行效率更高。TensorFlow也类似。因为深度学习的计算很大部分是矩阵和向量的运算，采用GPU的计算运行速度比CPU会有一个数量级上的差别。如果直接使用Python的对象执行，以为python的变量是在CPU上的，所以数据就会频繁地在GPU和CPU的内存传送，效率会大大降低。这对于本来计算量就很大的训练任务简直无法承受了，所以TensorFlow为了更好地避免这些开销，采用会话中的实际计算是在Python之外独立运行的。</p>
-<h3 id="使用placeholder填充方式读取数据"><a href="#使用placeholder填充方式读取数据" class="headerlink" title="使用placeholder填充方式读取数据"></a>使用placeholder填充方式读取数据</h3><p>placeholder填充方式的用法就像它的名字一样，在构建计算图的时候，在要输入的数据的变量的位置采用占位的方式先保留一个placeholder的张量，表示在构建图的时候并不知道这里实际的值是什么，需要在图执行时填充进来。</p>
-<p>如果构建了一个包含placeholder操作的图，当在session中调用run方法时，placeholder占用的变量必须通过feed_dict参数传递进去，否则执行会报错。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">v1 = tf.placeholder(tf.float32)</span><br><span class="line">v2 = tf.placeholder(tf.float32)</span><br><span class="line">v_mul = tf.multiply(v1,v2)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">  <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line"></span><br><span class="line">    value1 = input(<span class="string">"value1: "</span>)</span><br><span class="line">    value2 = input(<span class="string">"value2: "</span>)</span><br><span class="line"></span><br><span class="line">    mul_result = sess.run(v_mul,feed_dict=&#123;v1:value1,v2:value2&#125;)</span><br><span class="line">    print(mul_result)</span><br></pre></td></tr></table></figure>
-          
+          一些tensorflow学习过程中需要注意的随笔tensorflow 可以分解为tensor（张量）和flow（流或流动两部分）。
+任意维度的数据可以称作“张量”，如一维数组、二维矩阵、N维数据。tensorflow如果直译为中文，那就是“张量流”，它最初想要表达的含义是保持计算节点不变，让数据在不
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/05/tensorflow基础/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -566,12 +567,18 @@
       
         
           
-            <p>could not create connection to databasewen问题解决</p>
-<p>今天要将项目部署到阿里云服务器上时，先将项目里的数据库配置信息改为了阿里云上面的数据库信息，运行启动后报错</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">could not create connection to databasewen</span><br></pre></td></tr></table></figure>
-<p>查找后发现本机是mysql5.6版本的，而阿里云上装的是mysql8.于是去pom文件中将数据库版本改掉，问题解决。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">	&lt;!-- &lt;version&gt;5.1.37&lt;/version&gt; --&gt;</span><br><span class="line">	&lt;version&gt;8.0.11&lt;/version&gt;</span><br><span class="line">	&lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-          
+          could not create connection to databasewen问题解决
+今天要将项目部署到阿里云服务器上时，先将项目里的数据库配置信息改为了阿里云上面的数据库信息，运行启动后报错
+1could not create connection to databasewen
+查找后发现
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/25/database/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -709,20 +716,16 @@
       
         
           
-            <p>最近做实验室的水体项目，需要在c#中运行python程序。</p>
-<p>开始百度到可以通过IronPython直接在c#中调用py文件，在试了一个简单的helloworld确实可以之后就以为搞定搁置了一段时间，在python程序写好后运行发现了问题，IronPython中并不能导入python的第三方模块如numpy。在google之后发现，IronPython是基于.Net平台的，只能加载CLR Assembly，除了标准库，不能加载一般的C Extension。而numpy这种恰好是编译过的，根本不可能在IronPython上正常使用，至此，IronPython方式作废。</p>
-<p>想到的第二种方式是将Python文件打包为exe文件，再在c#中调用exe，这里是在python文件中写好main方法的，这样调用exe就可以直接执行，只要传入参数就好了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    render(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])</span><br></pre></td></tr></table></figure>
-<p>这里面传入的四个参数是水体渲染需要的四个参数，第一个是文件路径，第二个是左上右下坐标，第三个是样本点坐标，第四个是样本点对应的值。这里本来后三个是数组格式的，但是在c#中传入double类型的二维数组之后出错，估计是因为python中没有指定数据类型的概念导致，所以将c#中的数组转化为拼接的字符串传了进来，在python程序中再将字符串按照对应的参数转化为数组。至此搞定了。</p>
-<p>将python程序打包成exe是通过pyinstaller</p>
-<p>通过pip安装pyinstaller</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyinstaller</span><br></pre></td></tr></table></figure>
-<p>生成exe</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller yourprogram.py</span><br></pre></td></tr></table></figure>
-<p>这样生成的是一个文件夹，生成单一可直接执行的最好用 -F的 方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller -F yourprogram.py</span><br></pre></td></tr></table></figure>
-
-          
+          最近做实验室的水体项目，需要在c#中运行python程序。
+开始百度到可以通过IronPython直接在c#中调用py文件，在试了一个简单的helloworld确实可以之后就以为搞定搁置了一段时间，在python程序写好后运行发现了问题，IronPython中并不能导入python的第三方模块如nu
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/23/c-运行python程序/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -872,84 +875,19 @@
       
         
           
-            <h1 id="阿里云部署"><a href="#阿里云部署" class="headerlink" title="阿里云部署"></a>阿里云部署</h1><h2 id="阿里云服务器"><a href="#阿里云服务器" class="headerlink" title="阿里云服务器"></a>阿里云服务器</h2><h3 id="1-阿里云初始化与执行环境安装"><a href="#1-阿里云初始化与执行环境安装" class="headerlink" title="1.阿里云初始化与执行环境安装"></a>1.阿里云初始化与执行环境安装</h3><p>今天买了一年的阿里云服务器</p>
-<p>开始安装需要的软件，通过在阿里云网站管理控制台的远程连接或者自己通过ssh命令连接到远程服务器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ssh root@101.132.138.185</span><br></pre></td></tr></table></figure>
-<p>接下来需要安装服务器上需要的一系列软件：</p>
-<h4 id="1-1-JDK-这里选择的是JDK1-8"><a href="#1-1-JDK-这里选择的是JDK1-8" class="headerlink" title="1.1 JDK(这里选择的是JDK1.8)"></a>1.1 JDK(这里选择的是JDK1.8)</h4><p>下载地址为<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
-<p>选择的是<code>jdk-8u144-linux-x64.rpm</code></p>
-<h4 id="1-2-Tomcat-8"><a href="#1-2-Tomcat-8" class="headerlink" title="1.2    Tomcat 8"></a>1.2    Tomcat 8</h4><p>下载地址为<br><a href="http://tomcat.apache.org/download-80.cgi#8.0.46" target="_blank" rel="noopener">http://tomcat.apache.org/download-80.cgi#8.0.46</a></p>
-<p>选择的是<code>apache-tomcat-8.0.46.tar.gz</code></p>
-<h4 id="1-3-Mysql-这里选择的是Mysql5-7-repo源，后通过centos自带的yum安装"><a href="#1-3-Mysql-这里选择的是Mysql5-7-repo源，后通过centos自带的yum安装" class="headerlink" title="1.3 Mysql(这里选择的是Mysql5.7)repo源，后通过centos自带的yum安装"></a>1.3 Mysql(这里选择的是Mysql5.7)repo源，后通过centos自带的yum安装</h4><p>下载的地址为<br><a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a></p>
-<p>这里选择<code>mysql57-community-release-el7-11.noarch.rpm</code></p>
-<h4 id="1-4Redis-可选，最好预先安装上，这里选择的版本为4-0-2"><a href="#1-4Redis-可选，最好预先安装上，这里选择的版本为4-0-2" class="headerlink" title="1.4Redis(可选，最好预先安装上，这里选择的版本为4.0.2)"></a>1.4Redis(可选，最好预先安装上，这里选择的版本为4.0.2)</h4><p>下载地址为<br><a href="https://redis.io/download" target="_blank" rel="noopener">https://redis.io/download</a></p>
-<p>这里选择<code>redis-4.0.2.tar.gz</code></p>
-<p>将上面的软件都下载到本地,然后通过scp命令上传到服务器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r /Users/binzhang/Documents/Images//1.jpg root@101.132.138.185:.</span><br></pre></td></tr></table></figure></p>
-<p>此时进到远程服务器可以看到已经上传的软件<br><img src="/uploads/aliyun/201810181640001.png" alt=""></p>
-<h4 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h4><p>Java程序需要运行在JRE里边，所以要安装JDK</p>
-<p>添加可执行权限</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x jdk<span class="number">-8</span>u191-linux-x64.rpm</span><br></pre></td></tr></table></figure>
-<p>安装RPM软件包</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh jdk<span class="number">-8</span>u191-linux-x64.rpm</span><br></pre></td></tr></table></figure>
-<p>查看java的版本信息<code>java -version</code>，若出现版本信息则成功</p>
-<h4 id="安装Mysql"><a href="#安装Mysql" class="headerlink" title="安装Mysql"></a>安装Mysql</h4><p>安装用来配置mysql的yum源的rpm包</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh mysql80-community-release-el7<span class="number">-1.</span>noarch.rpm</span><br></pre></td></tr></table></figure>
-<p>安装mysql</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql-community-server</span><br></pre></td></tr></table></figure>
-<p>开启mysql服务<code>service mysqld start</code><br><img src="/uploads/aliyun/201810191139001.png" alt=""></p>
-<p>mysql安装成功后创建的超级用户<code>root@localhost</code>的密码会被存储在<code>/var/log/mysqld.log</code>，可以使用如下命令查看密码<br><code>grep &#39;temporary&#39; password /var/log/mysqld.log</code><br><img src="/uploads/aliyun/201810191140001.png" alt=""></p>
-<p>使用mysql生成的<code>root@localhost</code>用户和密码登录数据库，并修改其密码，具体命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;newpassword&apos;;</span><br></pre></td></tr></table></figure>
-<p><img src="/uploads/aliyun/201810191141001.png" alt=""></p>
-<p>注意这里其实遇到了一个问题，在本地远程连接阿里云数据库新建数据库显示账号没有权限，这里设置全部权限的语句为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line"># 创建新用户并赋权</span><br><span class="line"># 参数说明</span><br><span class="line"># username：你将创建的用户名 这里是herobin</span><br><span class="line"># host：指定该用户在哪个主机上可以登录，如果是本地用户可用localhost，如果想让该用户可以从任意远程主机登录，可以使用通配符%</span><br><span class="line"># password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器</span><br><span class="line">CREATE USER &apos;username&apos;@&apos;host&apos; IDENTIFIED BY &apos;password&apos;;</span><br><span class="line">grant all privileges on *.* to &apos;herobin&apos;@&apos;%&apos;;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
-<p><img src="/uploads/aliyun/201810241942001.png" alt=""></p>
-<p>开启远程连接</p>
-<p>通过阿里云控制台开放3306端口</p>
-<p>在阿里云控制台咱们的实例页面下面选择安全组-&gt;配置规则<br><img src="/uploads/aliyun/201810191204001.png" alt=""></p>
-<p>进入到规则配置页面之后，咱们可以看到目前只有22端口和3389端口支持远程访问，咱们还需要额外开通80端口（微信公众号用），3306端口(mysql)以及6379端口(redis)<br><img src="/uploads/aliyun/201810191404001.png" alt=""></p>
-<p>之后便能在我们本地通过调用mysql指令远程登录阿里云服务器上的mysql server中，<br><code>mysql -uwork -P3306 -h47.104.1.235 –p</code> //本机远程登录mysql指令<br><img src="/uploads/aliyun/201810191408001.png" alt=""></p>
-<p>注意这里踩了一下坑，在配置好后，我用本地MySQLWorkbench连接服务器数据库显示失败<br>Failed to Connect to MySQL at 101.132.138.185:3306 with user herobin<br>Authentication plugin ‘caching_sha2_password’ cannot be loaded: dlopen(/usr/local/mysql/lib/plugin/caching_sha2_password.so, 2): image not found</p>
-<p>原因：密码加密方式【caching_sha2_password】，客户端不支持。<br>在数据库服务器上登录并修改登录方式：<br>ALTER USER ‘herobin‘@’%’ IDENTIFIED WITH mysql_native_password BY ‘root’; </p>
-<p>连上了哈哈哈哈哈哈。</p>
-<h4 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h4><p>redis安装很简单，首先解压redis安装包</p>
-<p><code>tar -zxvf redis-4.0.2.tar.gz</code></p>
-<p>设置redis以支持远程登录</p>
-<p><code>vi redis-4.0.2/redis.conf</code></p>
-<p>将bind 127.0.0.1这句话用井号注释掉，这样就能支持远程连接了</p>
-<p><img src="/uploads/aliyun/201810201451001.png" alt=""></p>
-<p>此外，还需要给redis.conf添加配置以支持redis作为守护进程一直跑在后台需要加入<code>daemonize yes</code><br><img src="/uploads/aliyun/201810201451002.png" alt=""></p>
-<p>安装redis</p>
-<p>去到解压后的目录里</p>
-<p><code>cd redis-4.0.2</code></p>
-<p><code>make</code> //安装redis</p>
-<p>启动redis服务</p>
-<p><code>src/redis-server redis.conf</code></p>
-<p>redis连接测试</p>
-<p>通过redis-cli连接到redis服务器</p>
-<p><code>src/redis-cli</code></p>
-<p>当输入ping得到pong的回应之后，证明redis配置已经完成<br><img src="/uploads/aliyun/201810201451003.png" alt=""></p>
-<h4 id="安装tomcat8"><a href="#安装tomcat8" class="headerlink" title="安装tomcat8"></a>安装tomcat8</h4><p>解压tomcat压缩包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-8.0.46.tar.gz</span><br></pre></td></tr></table></figure>
-<p>启动tomcat</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./apache-tomcat-8.0.46/bin/startup.sh</span><br></pre></td></tr></table></figure>
-<p><img src="/upload/aliyun/201810232115001.png" alt=""></p>
-<h3 id="1-在服务器上发布并运行自己的web-project"><a href="#1-在服务器上发布并运行自己的web-project" class="headerlink" title="1.在服务器上发布并运行自己的web project"></a>1.在服务器上发布并运行自己的web project</h3><p>修改tomcat默认启动端口，从8080修改为80端口，便于微信登录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi apache-tomcat-8.0.46/conf/server.xml</span><br></pre></td></tr></table></figure>
-<p><img src="/upload/aliyun/201810232115002.png" alt=""></p>
-<p>重启tomcat</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./apache-tomcat-8.0.46/bin/shutdown.sh</span><br><span class="line">./apache-tomcat-8.0.46/bin/startup.sh</span><br></pre></td></tr></table></figure>
-<p>把项目里的mysql配置，redis配置（如果有的话）修改为阿里云服务器对应的配置（即ip，端口，密码等配置修改为服务器里安装好的这些软件的对应的配置）</p>
-<p>打出自己项目的war包<br><code>export -&gt; war file</code></p>
-<p>将export出来的war包上传到服务器tomcat的webapps目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp o2o.war root@101.132.138.185:/root/apache-tomcat-8.5.34/webapps</span><br></pre></td></tr></table></figure></p>
-<p>这里要注意上面的命令是上传一个文件的方式，如果是上传目录（文件夹）会报错<br><code>not a regular file</code> 这时要加上<code>-r</code>就可以了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r upload root@101.132.138.185:/root/shopImages</span><br></pre></td></tr></table></figure>
-<p>上传成功后，没过几秒tomcat便会在webapps目录下自动从项目war包中解析出项目工程目录来，之后通过ip+请求路径的形式便能访问到自己的项目(因为已经设置成80端口)，这是http访问默认的端口，所以不需要在URL添加端口信息了。</p>
-<p>此时输入<code>http://101.132.138.185/o2o/frontend/index</code>已经可以访问页面了</p>
-<p>遗留问题：页面图片获取不到</p>
-<p>图片问题找到了：<br>我们在前端访问服务器上的图片除了数据库中的图片路径还应该加上我们tomcat在服务器上部署的路径才能访问到目标路径。</p>
-
-          
+          阿里云部署阿里云服务器1.阿里云初始化与执行环境安装今天买了一年的阿里云服务器
+开始安装需要的软件，通过在阿里云网站管理控制台的远程连接或者自己通过ssh命令连接到远程服务器
+1sudo ssh root@101.132.138.185
+接下来需要安装服务器上需要的一系列软件：
+1.1 JDK(这里
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/18/阿里云部署及微信开发调试/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1087,27 +1025,33 @@
       
         
           
-            <p>今天问了下师兄找工作要做哪些准备，简单整理可以分为基础类和专业类两方面的准备：</p>
-<p>基础类：</p>
-<blockquote>
-<ul>
-<li>计算机网络</li>
-<li>操作系统</li>
-<li>数据结构（要刷题）</li>
-</ul>
-</blockquote>
-<p>专业类(java)：</p>
-<blockquote>
-<ul>
-<li>虚拟机(jvm) 要刷3-5遍</li>
-<li>jdk底层源码，如ArrayList,HashMap…</li>
-<li>Spring源码</li>
-<li>MyBatis源码</li>
-</ul>
-</blockquote>
-<p>时间已经比较紧迫了，还是要拼一波进大公司的，加油。</p>
+          今天问了下师兄找工作要做哪些准备，简单整理可以分为基础类和专业类两方面的准备：
+基础类：
 
-          
+
+计算机网络
+操作系统
+数据结构（要刷题）
+
+
+专业类(java)：
+
+
+虚拟机(jvm) 要刷3-5遍
+jdk底层源码，如ArrayList,HashMap…
+Spring源码
+MyBatis源码
+
+
+时间
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/17/找工作的准备/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1257,13 +1201,20 @@
       
         
           
-            <h2 id="原始文档"><a href="#原始文档" class="headerlink" title="原始文档"></a>原始文档</h2><h3 id="啦啦啦啦啦啦"><a href="#啦啦啦啦啦啦" class="headerlink" title="啦啦啦啦啦啦"></a>啦啦啦啦啦啦</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: 嗯，留下了一点基础的命令，其他删掉了。</p>
+          原始文档啦啦啦啦啦啦1$ hexo new "My New Post"
+1$ hexo server
+1$ hexo generate
+1$ hexo deploy
+More info: 嗯，留下了一点基础的命令，其他删掉了。
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/16/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1413,25 +1364,20 @@
       
         
           
-            <h3 id="coding上传项目步骤"><a href="#coding上传项目步骤" class="headerlink" title="coding上传项目步骤"></a>coding上传项目步骤</h3><blockquote>
-<ul>
-<li>step1:在coding上面创建一个项目myboke</li>
-<li>step2：使用git init创建.git文件夹和.gitigonre文件，帮组本地与远程的链接</li>
-<li>step3：使用git pull &lt;项目地址&gt;同步项目上面的文件</li>
-<li>step4: git add * 添加项目下面的所有文件</li>
-<li>step5: git commit -m ‘备注’ 将文件添加在cache中并添加备注</li>
-<li>step6:git remote add &lt;名字（随意）&gt; shh地址<br>git remote add origin <a href="http://coding...." target="_blank" rel="noopener">http://coding....</a>.</li>
-<li>step7:git push  </li>
-<li>step8：最后在coding网站中查看是否上传成功</li>
-</ul>
-</blockquote>
-<p>创建分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch dev</span><br></pre></td></tr></table></figure>
-<p>切换分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev</span><br></pre></td></tr></table></figure>
-<p>上传代码到分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &apos; &apos;</span><br><span class="line">git remote add origin 远程仓库地址</span><br><span class="line">git push -u origin dev</span><br></pre></td></tr></table></figure>
-          
+          coding上传项目步骤
+
+step1:在coding上面创建一个项目myboke
+step2：使用git init创建.git文件夹和.gitigonre文件，帮组本地与远程的链接
+step3：使用git pull &lt;项目地址&gt;同步项目上面的文件
+step4: git add * 添加
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/17/git coding的使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1581,18 +1527,25 @@
       
         
           
-            <p>经过两天的折腾，总算搭好了自己的博客网站。</p>
-<p>姑且用来记录生活和学习吧。</p>
-<h3 id="先立下几条flag"><a href="#先立下几条flag" class="headerlink" title="先立下几条flag:"></a>先立下几条flag:</h3><blockquote>
-<ul>
-<li>好好学习，天天向上</li>
-<li>和大想好好的</li>
-<li>不要老是不开心，不喜欢的人和事远离就好，不融入，不评判</li>
-</ul>
-</blockquote>
-<p>综上。</p>
+          经过两天的折腾，总算搭好了自己的博客网站。
+姑且用来记录生活和学习吧。
+先立下几条flag:
+
+好好学习，天天向上
+和大想好好的
+不要老是不开心，不喜欢的人和事远离就好，不融入，不评判
+
+
+综上。
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/16/flag/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1708,6 +1661,13 @@
           
 
           
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
 
           
 
@@ -1739,7 +1699,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -1753,6 +1714,13 @@
 
 
 
+  
+  <div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+  
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
 
@@ -1761,7 +1729,7 @@
 
 
 
-  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.4.2</div>
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
 
 
 
@@ -1814,6 +1782,8 @@
 
 
 
+  
+
 
 
 
@@ -1841,6 +1811,11 @@
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
 
   
 
@@ -1853,13 +1828,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.4.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.2"></script>
-
-
 
   
 
@@ -1912,5 +1880,10 @@
 
   
 
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
 </body>
 </html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
