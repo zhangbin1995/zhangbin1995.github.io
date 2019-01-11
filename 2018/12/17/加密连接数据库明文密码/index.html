@@ -86,7 +86,7 @@
     root: '/',
     scheme: 'Mist',
     version: '6.4.2',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="数据库密码明文加密我们常规的数据库信息都是写在jdbc.properties里面的  这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：  那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,DESUtils和EncryptPropertyPlaceholderConf">
-<meta name="keywords" content="java AI life">
+<meta name="keywords" content="java,数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="加密连接数据库明文密码">
 <meta property="og:url" content="http://www.herobin.top/2018/12/17/加密连接数据库明文密码/index.html">
@@ -118,7 +118,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.herobin.top/uploads/databasesafepassword/1.png">
 <meta property="og:image" content="http://www.herobin.top/uploads/databasesafepassword/2.png">
-<meta property="og:updated_time" content="2018-12-17T09:01:27.000Z">
+<meta property="og:updated_time" content="2019-01-11T05:38:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="加密连接数据库明文密码">
 <meta name="twitter:description" content="数据库密码明文加密我们常规的数据库信息都是写在jdbc.properties里面的  这样直接将数据库账号名和密码放在代码中是有一定风险的，存在被黑客窃取的可能，所以我们可以使用加密过的字符串来替换其中的明文密码。效果如图：  那么这一串加密过的字符串是怎么得到的呢？这里我们使用的是DES加密算法，这里主要用到了两个类,DESUtils和EncryptPropertyPlaceholderConf">
@@ -367,16 +367,46 @@
                 
               
 
-              <time title="创建时间：2018-12-17 16:45:34 / 修改时间：17:01:27" itemprop="dateCreated datePublished" datetime="2018-12-17T16:45:34+08:00">2018-12-17</time>
+              <time title="创建时间：2018-12-17 16:45:34" itemprop="dateCreated datePublished" datetime="2018-12-17T16:45:34+08:00">2018-12-17</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-11 13:38:58" itemprop="dateModified" datetime="2019-01-11T13:38:58+08:00">2019-01-11</time>
               
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -434,6 +464,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          
+            <a href="/tags/数据库/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
+          
+        </div>
       
 
       
@@ -537,21 +575,64 @@
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
               
                 
                 
                 <div class="site-state-item site-state-tags">
-                  
+                  <a href="/tags/index.html">
                     
                     
                       
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">标签</span>
-                  
+                  </a>
                 </div>
               
             </nav>
@@ -626,18 +707,18 @@
 
 
 
-
+<!-- 
   
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
 
 
   <span class="post-meta-divider">|</span>
+ -->
 
-
-
+<!-- 
   <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
-
+ -->
 
 <div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -652,10 +733,17 @@
 
 
 
-<div class="theme-info">
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">
   <div class="powered-by"></div>
   <span class="post-count">博客全站共15.9k字</span>
 </div>
+ 
+
+
         
 
 

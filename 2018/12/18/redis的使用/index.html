@@ -86,7 +86,7 @@
     root: '/',
     scheme: 'Mist',
     version: '6.4.2',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="java中融入redis缓存技术的使用redis相关的配置文件及工具类等： 12345678pom.xml       导入redis.clients jedis 这里用到的版本号 2.9.0spring-redis.xml    这里能直接使用redis.properties里定义的属性是因为在spring-dao.xml引入了redis.propertiesweb.xml(这里已经通过spri">
-<meta name="keywords" content="java AI life">
+<meta name="keywords" content="java,redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redis的使用">
 <meta property="og:url" content="http://www.herobin.top/2018/12/18/redis的使用/index.html">
@@ -120,7 +120,7 @@
 <meta property="og:image" content="http://www.herobin.top/uploads/redis181218/2.png">
 <meta property="og:image" content="http://www.herobin.top/uploads/redis181218/3.png">
 <meta property="og:image" content="http://www.herobin.top/uploads/redis181218/4.png">
-<meta property="og:updated_time" content="2018-12-18T05:36:53.000Z">
+<meta property="og:updated_time" content="2019-01-11T05:44:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis的使用">
 <meta name="twitter:description" content="java中融入redis缓存技术的使用redis相关的配置文件及工具类等： 12345678pom.xml       导入redis.clients jedis 这里用到的版本号 2.9.0spring-redis.xml    这里能直接使用redis.properties里定义的属性是因为在spring-dao.xml引入了redis.propertiesweb.xml(这里已经通过spri">
@@ -369,16 +369,46 @@
                 
               
 
-              <time title="创建时间：2018-12-18 11:26:45 / 修改时间：13:36:53" itemprop="dateCreated datePublished" datetime="2018-12-18T11:26:45+08:00">2018-12-18</time>
+              <time title="创建时间：2018-12-18 11:26:45" itemprop="dateCreated datePublished" datetime="2018-12-18T11:26:45+08:00">2018-12-18</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-11 13:44:54" itemprop="dateModified" datetime="2019-01-11T13:44:54+08:00">2019-01-11</time>
               
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -459,6 +489,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          
+            <a href="/tags/redis/" rel="tag"><i class="fa fa-tag"></i> redis</a>
+          
+        </div>
       
 
       
@@ -562,21 +600,64 @@
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
               
                 
                 
                 <div class="site-state-item site-state-tags">
-                  
+                  <a href="/tags/index.html">
                     
                     
                       
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">标签</span>
-                  
+                  </a>
                 </div>
               
             </nav>
@@ -651,18 +732,18 @@
 
 
 
-
+<!-- 
   
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
 
 
   <span class="post-meta-divider">|</span>
+ -->
 
-
-
+<!-- 
   <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
-
+ -->
 
 <div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -677,10 +758,17 @@
 
 
 
-<div class="theme-info">
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">
   <div class="powered-by"></div>
   <span class="post-count">博客全站共15.9k字</span>
 </div>
+ 
+
+
         
 
 

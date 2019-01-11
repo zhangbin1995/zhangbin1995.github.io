@@ -86,7 +86,7 @@
     root: '/',
     scheme: 'Mist',
     version: '6.4.2',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -109,14 +109,14 @@
 
 
   <meta name="description" content="ArrayList简介ArrayList 的底层是数组队列，相当于动态数组。与 Java 中的数组相比，它的容量能动态增长。在添加大量元素前，应用程序可以使用ensureCapacity操作来增加 ArrayList 实例的容量。这可以减少递增式再分配的数量。 它继承于 AbstractList，实现了 List, RandomAccess, Cloneable, java.io.Serializ">
-<meta name="keywords" content="java AI life">
+<meta name="keywords" content="java,源码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="源码阅读-ArrayList">
 <meta property="og:url" content="http://www.herobin.top/2019/01/10/源码阅读-ArrayList/index.html">
 <meta property="og:site_name" content="HeroBin&#39;s Blog">
 <meta property="og:description" content="ArrayList简介ArrayList 的底层是数组队列，相当于动态数组。与 Java 中的数组相比，它的容量能动态增长。在添加大量元素前，应用程序可以使用ensureCapacity操作来增加 ArrayList 实例的容量。这可以减少递增式再分配的数量。 它继承于 AbstractList，实现了 List, RandomAccess, Cloneable, java.io.Serializ">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-10T08:13:13.000Z">
+<meta property="og:updated_time" content="2019-01-11T05:40:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="源码阅读-ArrayList">
 <meta name="twitter:description" content="ArrayList简介ArrayList 的底层是数组队列，相当于动态数组。与 Java 中的数组相比，它的容量能动态增长。在添加大量元素前，应用程序可以使用ensureCapacity操作来增加 ArrayList 实例的容量。这可以减少递增式再分配的数量。 它继承于 AbstractList，实现了 List, RandomAccess, Cloneable, java.io.Serializ">
@@ -364,16 +364,46 @@
                 
               
 
-              <time title="创建时间：2019-01-10 14:00:42 / 修改时间：16:13:13" itemprop="dateCreated datePublished" datetime="2019-01-10T14:00:42+08:00">2019-01-10</time>
+              <time title="创建时间：2019-01-10 14:00:42" itemprop="dateCreated datePublished" datetime="2019-01-10T14:00:42+08:00">2019-01-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-11 13:40:10" itemprop="dateModified" datetime="2019-01-11T13:40:10+08:00">2019-01-11</time>
               
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -458,6 +488,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          
+            <a href="/tags/源码/" rel="tag"><i class="fa fa-tag"></i> 源码</a>
+          
+        </div>
       
 
       
@@ -557,21 +595,64 @@
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
               
                 
                 
                 <div class="site-state-item site-state-tags">
-                  
+                  <a href="/tags/index.html">
                     
                     
                       
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">标签</span>
-                  
+                  </a>
                 </div>
               
             </nav>
@@ -646,18 +727,18 @@
 
 
 
-
+<!-- 
   
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
 
 
   <span class="post-meta-divider">|</span>
+ -->
 
-
-
+<!-- 
   <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
-
+ -->
 
 <div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -672,10 +753,17 @@
 
 
 
-<div class="theme-info">
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">
   <div class="powered-by"></div>
   <span class="post-count">博客全站共15.9k字</span>
 </div>
+ 
+
+
         
 
 
