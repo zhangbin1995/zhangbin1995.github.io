@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="在CSS中，html中的标签元素大体被分为三种不同的类型：块状元素、内联元素(又叫行内元素)和内联块状元素。 常用的块状元素有： 1&amp;lt;div&amp;gt;、&amp;lt;p&amp;gt;、&amp;lt;h1&amp;gt;...&amp;lt;h6&amp;gt;、&amp;lt;ol&amp;gt;、&amp;lt;ul&amp;gt;、&amp;lt;dl&amp;gt;、&amp;lt;table&amp;gt;、&amp;lt;address&amp;gt;、&amp;lt;blockquote&amp;gt; 、&amp;lt;f">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS基础">
+<meta property="og:url" content="http://www.herobin.top/2017/11/06/CSS基础/index.html">
+<meta property="og:site_name" content="HeroBin&#39;s Blog">
+<meta property="og:description" content="在CSS中，html中的标签元素大体被分为三种不同的类型：块状元素、内联元素(又叫行内元素)和内联块状元素。 常用的块状元素有： 1&amp;lt;div&amp;gt;、&amp;lt;p&amp;gt;、&amp;lt;h1&amp;gt;...&amp;lt;h6&amp;gt;、&amp;lt;ol&amp;gt;、&amp;lt;ul&amp;gt;、&amp;lt;dl&amp;gt;、&amp;lt;table&amp;gt;、&amp;lt;address&amp;gt;、&amp;lt;blockquote&amp;gt; 、&amp;lt;f">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.herobin.top/uploads/171106css/1.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/171106css/2.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/171106css/3.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/171106css/4.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/171106css/5.png">
+<meta property="og:updated_time" content="2019-01-11T08:18:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS基础">
+<meta name="twitter:description" content="在CSS中，html中的标签元素大体被分为三种不同的类型：块状元素、内联元素(又叫行内元素)和内联块状元素。 常用的块状元素有： 1&amp;lt;div&amp;gt;、&amp;lt;p&amp;gt;、&amp;lt;h1&amp;gt;...&amp;lt;h6&amp;gt;、&amp;lt;ol&amp;gt;、&amp;lt;ul&amp;gt;、&amp;lt;dl&amp;gt;、&amp;lt;table&amp;gt;、&amp;lt;address&amp;gt;、&amp;lt;blockquote&amp;gt; 、&amp;lt;f">
+<meta name="twitter:image" content="http://www.herobin.top/uploads/171106css/1.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="HeroBin's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://www.herobin.top/2017/11/06/CSS基础/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>CSS基础 | HeroBin's Blog</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f6e0affa56b837b3134c1b097c760963";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/zhangbin1995"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HeroBin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">向阳而生</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2017/11/06/CSS基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HeroBin">
+      <meta itemprop="description" content="记录学习生活的点点滴滴">
+      <meta itemprop="image" content="/uploads/we.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HeroBin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-11-06 15:26:58" itemprop="dateCreated datePublished" datetime="2017-11-06T15:26:58+08:00">2017-11-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-11 16:18:39" itemprop="dateModified" datetime="2019-01-11T16:18:39+08:00">2019-01-11</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在CSS中，html中的标签元素大体被分为三种不同的类型：<strong>块状元素、内联元素(又叫行内元素)和内联块状元素</strong>。</p>
+<p>常用的块状元素有：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;、&lt;p&gt;、&lt;h1&gt;...&lt;h6&gt;、&lt;ol&gt;、&lt;ul&gt;、&lt;dl&gt;、&lt;table&gt;、&lt;address&gt;、&lt;blockquote&gt; 、&lt;form&gt;</span><br></pre></td></tr></table></figure>
+<p>常用的内联元素有：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a&gt;、&lt;span&gt;、&lt;br&gt;、&lt;i&gt;、&lt;em&gt;、&lt;strong&gt;、&lt;label&gt;、&lt;q&gt;、&lt;var&gt;、&lt;cite&gt;、&lt;code&gt;</span><br></pre></td></tr></table></figure>
+<p>常用的内联块状元素有：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img&gt;、&lt;input&gt;</span><br></pre></td></tr></table></figure>
+<p>什么是块级元素？</p>
+<p>在html中<code>&lt;div&gt;、 &lt;p&gt;、&lt;h1&gt;、&lt;form&gt;、&lt;ul&gt;</code> 和 <code>&lt;li&gt;</code>就是块级元素。设置<code>display:block</code>就是将元素显示为块级元素。如下代码就是将内联元素a转换为块状元素，从而使a元素具有块状元素特点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a&#123;display:block;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>块级元素特点：</strong></p>
+<blockquote>
+<ul>
+<li>1、每个块级元素都从新的一行开始，并且其后的元素也另起一行。（真霸道，一个块级元素独占一行）</li>
+<li>2、元素的高度、宽度、行高以及顶和底边距都可设置。</li>
+<li>3、元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度。</li>
+</ul>
+</blockquote>
+<p><strong>元素分类–内联元素</strong></p>
+<p>在<code>html</code>中，<code>&lt;span&gt;、&lt;a&gt;、&lt;label&gt;、 &lt;strong&gt;</code> 和<code>&lt;em&gt;</code>就是典型的内联元素（行内元素）（inline）元素。当然块状元素也可以通过代码<code>display:inline</code>将元素设置为内联元素。如下代码就是将块状元素div转换为内联元素，从而使 div 元素具有内联元素特点。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    display:inline;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div&gt;我要变成内联元素&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>内联元素特点：</strong></p>
+<blockquote>
+<ul>
+<li>1、和其他元素都在一行上；</li>
+<li>2、元素的高度、宽度及顶部和底部边距不可设置；</li>
+<li>3、元素的宽度就是它包含的文字或图片的宽度，不可改变。</li>
+</ul>
+</blockquote>
+<p><strong>元素分类–内联块状元素</strong></p>
+<p>内联块状元素<code>（inline-block）</code>就是同时具备内联元素、块状元素的特点，代码<code>display:inline-block</code>就是将元素设置为内联块状元素。</p>
+<p>(css2.1新增)，<code>&lt;img&gt;、&lt;input&gt;</code>标签就是这种内联块状标签。</p>
+<p><strong>inline-block 元素特点：</strong></p>
+<blockquote>
+<ul>
+<li>1、和其他元素都在一行上；</li>
+<li>2、元素的高度、宽度、行高以及顶和底边距都可设置。</li>
+</ul>
+</blockquote>
+<p><strong>css布局模型</strong></p>
+<p>清楚了<code>CSS</code> 盒模型的基本概念、 盒模型类型， 我们就可以深入探讨网页布局的基本模型了。布局模型与盒模型一样都是 CSS 最基本、 最核心的概念。 但布局模型是建立在盒模型基础之上，又不同于我们常说的 CSS 布局样式或 CSS 布局模板。如果说布局模型是本，那么 CSS 布局模板就是末了，是外在的表现形式。</p>
+<p>CSS包含3种基本的布局模型，用英文概括为：<code>Flow</code>、<code>Layer</code> 和 <code>Float</code>。</p>
+<p><strong>在网页中，元素有三种布局模型：</strong></p>
+<blockquote>
+<ul>
+<li>1、流动模型（Flow）</li>
+<li>2、浮动模型 (Float)</li>
+<li>3、层模型（Layer）</li>
+</ul>
+</blockquote>
+<p><strong>流动模型（一）</strong><br>先来说一说流动模型，流动（Flow）是默认的网页布局模式。也就是说网页在默认状态下的 HTML 网页元素都是根据流动模型来分布网页内容的。</p>
+<p><strong>流动布局模型具有2个比较典型的特征：</strong></p>
+<p>第一点，块状元素都会在所处的包含元素内自上而下按顺序垂直延伸分布，因为在默认状态下，块状元素的宽度都为100%。实际上，块状元素都会以行的形式占据位置。</p>
+<p><strong>流动模型（二）</strong></p>
+<p>第二点，在流动模型下，内联元素都会在所处的包含元素内从左到右水平分布显示。（内联元素可不像块状元素这么霸道独占一行）</p>
+<p><strong>浮动模型</strong></p>
+<p>块状元素这么霸道都是独占一行，如果现在我们想让两个块状元素并排显示，怎么办呢？不要着急，设置元素浮动就可以实现这一愿望。<br>任何元素在默认情况下是不能浮动的，但可以用 CSS 定义为浮动，如 div、p、table、img 等元素都可以被定义为浮动。如下代码可以实现两个 div 元素一行显示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    width:200px;</span><br><span class="line">    height:200px;</span><br><span class="line">    border:2px red solid;</span><br><span class="line">    float:left;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;div2&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>效果图</p>
+<p><img src="/uploads/171106css/1.png" alt=""></p>
+<p>当然你也可以同时设置两个元素右浮动也可以实现一行显示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    width:200px;</span><br><span class="line">    height:200px;</span><br><span class="line">    border:2px red solid;</span><br><span class="line">    float:right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果图</p>
+<p><img src="/uploads/171106css/2.png" alt=""></p>
+<p>又有小伙伴问了，设置两个元素一左一右可以实现一行显示吗？当然可以：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    width:200px;</span><br><span class="line">    height:200px;</span><br><span class="line">    border:2px red solid;</span><br><span class="line">&#125;</span><br><span class="line">#div1&#123;float:left;&#125;</span><br><span class="line">#div2&#123;float:right;&#125;</span><br></pre></td></tr></table></figure>
+<p>效果图</p>
+<p><img src="/uploads/171106css/3.png" alt=""></p>
+<p><strong>什么是层模型？</strong></p>
+<p>什么是层布局模型？层布局模型就像是图像软件PhotoShop中非常流行的图层编辑功能一样，每个图层能够精确定位操作，但在网页设计领域，由于网页大小的活动性，层布局没能受到热捧。但是在网页上局部使用层布局还是有其方便之处的。下面我们来学习一下html中的层布局。</p>
+<p>如何让html元素在网页中精确定位，就像图像软件PhotoShop中的图层一样可以对每个图层能够精确定位操作。CSS定义了一组定位（positioning）属性来支持层布局模型。</p>
+<p><strong>层模型有三种形式：</strong></p>
+<blockquote>
+<ul>
+<li>1、绝对定位(position: absolute)</li>
+<li>2、相对定位(position: relative)</li>
+<li>3、固定定位(position: fixed)</li>
+</ul>
+</blockquote>
+<p><strong>层模型–绝对定位</strong></p>
+<p>如果想为元素设置层模型中的绝对定位，需要设置position:absolute(表示绝对定位)，这条语句的作用将元素从文档流中拖出来，然后使用left、right、top、bottom属性相对于其最接近的一个具有定位属性的父包含块进行绝对定位。如果不存在这样的包含块，则相对于body元素，即相对于浏览器窗口。</p>
+<p>如下面代码可以实现div元素相对于浏览器窗口向右移动100px，向下移动50px。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    width:200px;</span><br><span class="line">    height:200px;</span><br><span class="line">    border:2px red solid;</span><br><span class="line">    position:absolute;</span><br><span class="line">    left:100px;</span><br><span class="line">    top:50px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="/uploads/171106css/4.png" alt=""></p>
+<p><strong>层模型–相对定位</strong></p>
+<p>如果想为元素设置层模型中的相对定位，需要设置position:relative（表示相对定位），它通过left、right、top、bottom属性确定元素在正常文档流中的偏移位置。相对定位完成的过程是首先按static(float)方式生成一个元素(并且元素像层一样浮动了起来)，然后相对于以前的位置移动，移动的方向和幅度由left、right、top、bottom属性确定，偏移前的位置保留不动。</p>
+<p>如下代码实现相对于以前位置向下移动50px，向右移动100px;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#div1&#123;</span><br><span class="line">    width:200px;</span><br><span class="line">    height:200px;</span><br><span class="line">    border:2px red solid;</span><br><span class="line">    position:relative;</span><br><span class="line">    left:100px;</span><br><span class="line">    top:50px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>效果图：</p>
+<p><img src="/uploads/171106css/5.png" alt=""></p>
+<p><strong>层模型–固定定位</strong></p>
+<p><code>fixed</code>：表示固定定位，与absolute定位类型类似，但它的相对移动的坐标是视图（屏幕内的网页窗口）本身。由于视图本身是固定的，它不会随浏览器窗口的滚动条滚动而变化，除非你在屏幕中移动浏览器窗口的屏幕位置，或改变浏览器窗口的显示大小，因此固定定位的元素会始终位于浏览器窗口内视图的某个位置，不会受文档流动影响，这与background-attachment:fixed;属性功能相同。以下代码可以实现相对于浏览器视图向右移动100px，向下移动50px。并且拖动滚动条时位置固定不变。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#div1&#123;</span><br><span class="line">    width:200px;</span><br><span class="line">    height:200px;</span><br><span class="line">    border:2px red solid;</span><br><span class="line">    position:fixed;</span><br><span class="line">    left:100px;</span><br><span class="line">    top:50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/26/python基础/" rel="next" title="python基础">
+                <i class="fa fa-chevron-left"></i> python基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/08/bootstrap基础/" rel="prev" title="bootstrap基础">
+                bootstrap基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/we.jpg"
+                alt="HeroBin" />
+            
+              <p class="site-author-name" itemprop="name">HeroBin</p>
+              <p class="site-description motion-element" itemprop="description">记录学习生活的点点滴滴</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HeroBin</span>
+
+  
+
+  
+</div>
+
+
+
+<!-- 
+  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+ -->
+
+<!-- 
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+ -->
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共28.9k字</span>
+</div>
+ 
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

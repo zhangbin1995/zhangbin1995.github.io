@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="在jQuery中 $() 方法等价于 jQuery() 方法，前者比较常用，是后者的简写。一般只有在$() 与其他语言冲突时才会使用jQuery() 方法。 #id 选择器 jquery能使用CSS选择器来操作网页中的标签元素。如果你想要通过一个id号去查找一个元素，就可以使用如下格式的选择器： 12$(&amp;quot;#my_id&amp;quot;)其中#my_id表示根据id选择器获取页面中指定的标签元">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery基础">
+<meta property="og:url" content="http://www.herobin.top/2017/11/10/jquery基础/index.html">
+<meta property="og:site_name" content="HeroBin&#39;s Blog">
+<meta property="og:description" content="在jQuery中 $() 方法等价于 jQuery() 方法，前者比较常用，是后者的简写。一般只有在$() 与其他语言冲突时才会使用jQuery() 方法。 #id 选择器 jquery能使用CSS选择器来操作网页中的标签元素。如果你想要通过一个id号去查找一个元素，就可以使用如下格式的选择器： 12$(&amp;quot;#my_id&amp;quot;)其中#my_id表示根据id选择器获取页面中指定的标签元">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.herobin.top/uploads/171110jquery/1.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/171110jquery/2.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/171110jquery/3.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/171110jquery/4.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/171110jquery/1.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/171110jquery/6.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/171110jquery/7.png">
+<meta property="og:updated_time" content="2019-01-11T12:57:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jquery基础">
+<meta name="twitter:description" content="在jQuery中 $() 方法等价于 jQuery() 方法，前者比较常用，是后者的简写。一般只有在$() 与其他语言冲突时才会使用jQuery() 方法。 #id 选择器 jquery能使用CSS选择器来操作网页中的标签元素。如果你想要通过一个id号去查找一个元素，就可以使用如下格式的选择器： 12$(&amp;quot;#my_id&amp;quot;)其中#my_id表示根据id选择器获取页面中指定的标签元">
+<meta name="twitter:image" content="http://www.herobin.top/uploads/171110jquery/1.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="HeroBin's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://www.herobin.top/2017/11/10/jquery基础/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>jquery基础 | HeroBin's Blog</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f6e0affa56b837b3134c1b097c760963";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/zhangbin1995"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HeroBin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">向阳而生</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2017/11/10/jquery基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HeroBin">
+      <meta itemprop="description" content="记录学习生活的点点滴滴">
+      <meta itemprop="image" content="/uploads/we.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HeroBin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jquery基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-11-10 19:42:28" itemprop="dateCreated datePublished" datetime="2017-11-10T19:42:28+08:00">2017-11-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-11 20:57:10" itemprop="dateModified" datetime="2019-01-11T20:57:10+08:00">2019-01-11</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在jQuery中 <code>$()</code> 方法等价于 <code>jQuery()</code> 方法，前者比较常用，是后者的简写。一般只有在<code>$()</code> 与其他语言冲突时才会使用<code>jQuery()</code> 方法。</p>
+<p><strong>#id 选择器</strong></p>
+<p>jquery能使用CSS选择器来操作网页中的标签元素。如果你想要通过一个id号去查找一个元素，就可以使用如下格式的选择器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#my_id&quot;)</span><br><span class="line">其中#my_id表示根据id选择器获取页面中指定的标签元素，且返回唯一一个元素。</span><br></pre></td></tr></table></figure>
+<p><strong>element 选择器</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(“element”)</span><br><span class="line">其中element就是元素的名称  例如：$(&quot;div&quot;)</span><br></pre></td></tr></table></figure>
+<p><strong>.class 选择器</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(“.class”)</span><br><span class="line">其中.class参数表示元素的CSS类别(类选择器)名称。</span><br></pre></td></tr></table></figure>
+<p><strong>* 选择器</strong></p>
+<p><code>$(“*”)</code><br>选择器中的参数就一个“<em>”，既没有“#”号，也没有“.”号。 由于该选择器的特殊性，它常与其他元素组合使用，表示获取其他元素中的全部子元素。<br>`$(“form </em>“).attr(“disabled”, “true”)`;</p>
+<p><strong>sele1,sele2,seleN选择器</strong></p>
+<p><code>$(“sele1,sele2,seleN”)</code><br>其中参数sele1、sele2到seleN为有效选择器，每个选择器之间用“，”号隔开，它们可以是之前提及的各种类型选择器，如<code>$(“#id”)、$(“.class”)、$(“selector”)</code>选择器等。<br><code>$(&quot;.red,.green&quot;).html(&quot;hi,我们的样子很美哦!&quot;);</code></p>
+<p><strong>ance desc选择器</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;ance desc&quot;)</span><br></pre></td></tr></table></figure>
+<p>其中ance desc是使用空格隔开的两个参数。ance参数（ancestor祖先的简写）表示父元素；desc参数（descendant后代的简写）表示后代元素，即包括子元素、孙元素等等。两个参数都可以通过选择器来获取。比如家族姓氏“div”，家族几代人里，都有名字里带“span”的，就可以用这个ance desc选择器把这几个人给定位出来。</p>
+<p><strong>parent &gt; child选择器</strong></p>
+<p>与上一节介绍的ance desc选择器相比，<code>parent &gt; child</code>选择器的范围要小些，它所选择的目标是子集元素，相当于一个家庭中的子辈们，但不包括孙辈，它的调用格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(“parent &gt; child”)</span><br><span class="line">child参数获取的元素都是parent选择器的子元素，它们之间通过“&gt;”符号来表示一种层次关系。</span><br></pre></td></tr></table></figure>
+<p><strong>prev + next选择器</strong></p>
+<p>俗话说“远亲不如近邻”，而通过prev + next选择器就可以查找与“prev”元素紧邻的下一个“next”元素，格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(“prev + next”)</span><br></pre></td></tr></table></figure>
+<p>其中参数prev为任何有效的选择器，参数“next”为另外一个有效选择器，它们之间的“+”表示一种上下的层次关系，也就是说，“prev”元素最紧邻的下一个元素由“next”选择器返回的并且只返回唯的一个元素。</p>
+<p><strong>prev ~ siblings选择器</strong></p>
+<p>与上一节中介绍的<code>prev + next</code>层次选择器相同，<code>prev ~ siblings</code>选择器也是查找<code>prev</code> 元素之后的相邻元素，但前者只获取第一个相邻的元素，而后者则获取prev 元素后面全部相邻的元素，它的调用格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(“prev ~ siblings”)</span><br></pre></td></tr></table></figure>
+<p>其中参数prev与siblings两者之间通过“~”符号形成一种层次相邻的关系，表明siblings选择器获取的元素都是prev元素之后的同辈元素。</p>
+<p><strong>:first过滤选择器</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$(“li:first”)   $(&quot;li:last&quot;)</span><br><span class="line">        &lt;ol&gt;</span><br><span class="line">            &lt;li&gt;葡萄&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;香蕉&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;橘子&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;西瓜&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;苹果&lt;/li&gt;</span><br><span class="line">        &lt;/ol&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            $(&quot;li:last&quot;).css(&quot;background-color&quot;, &quot;red&quot;);</span><br><span class="line">        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>:eq(index)过滤选择器</strong></p>
+<p>如果想从一组标签元素数组中，灵活选择任意的一个标签元素，我们可以使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:eq(index)</span><br></pre></td></tr></table></figure>
+<p>其中参数<code>index</code>表示索引号（即：一个整数），它从0开始，如果index的值为3，表示选择的是第4个元素</p>
+<p><strong>:contains(text)过滤选择器</strong></p>
+<p>有时候我们可能希望按照文本内容来查找一个或多个元素，那么使用<code>:contains(text)</code>选择器会更加方便， 它的功能是选择包含指定字符串的全部元素，它通常与其他元素结合使用，获取包含<code>text</code>字符串内容的全部元素对象。其中参数text表示页面中的文字。</p>
+<p><strong>:has(selector)过滤选择器</strong></p>
+<p>还可以使用包含的元素名称来过滤，<code>:has(selector)</code>过滤选择器的功能是获取选择器中包含指定元素名称的全部元素，其中selector参数就是包含的元素名称，是被包含元素。</p>
+<p>例如：获取指定包含某个元素名的全部<li>元素，并改变它们显示文字的颜色，如下图所示：</li></p>
+<p><img src="/uploads/171110jquery/1.png" alt=""></p>
+<p><strong>:hidden过滤选择器</strong></p>
+<p><code>:hidden</code>过滤选择器的功能是获取全部不可见的元素，这些不可见的元素中包括<code>type</code>属性值为<code>hidden</code>的元素。</p>
+<p>例如，调用<code>:hidden</code>选择器获取不可见的<code>&lt;p&gt;</code>元素，并将该元素的内容显示在<code>&lt;div&gt;</code>元素中，如下图所示：</p>
+<p><img src="/uploads/171110jquery/2.png" alt=""></p>
+<p><strong>:visible过滤选择器</strong></p>
+<p>与上一节的<code>:hidden</code>过滤选择器相反，<code>:visible</code>过滤选择器获取的是全部可见的元素，也就是说，只要不将元素的<code>display</code>属性值设置为<code>none</code>，那么，都可以通过该选择器获取。</p>
+<p><strong>[attribute=value]属性选择器</strong></p>
+<p>属性作为DOM元素的一个重要特征，也可以用于选择器中，从本节开始将介绍通过元素属性获取元素的选择器，<code>[attribute=value]</code>属性选择器的功能是获取与属性名和属性值完全相同的全部元素，其中<code>[]</code>是专用于属性选择器的括号符，参数<code>attribute</code>表示属性名称，<code>value</code>参数表示属性值。</p>
+<p>例如，使用<code>[attribute=value]</code>属性选择器，获取指定属性名和对应值的全部<code>&lt;li&gt;</code>元素，并设置它们显示的文字颜色，如图所示：</p>
+<p><img src="/uploads/171110jquery/3.png" alt=""></p>
+<p><strong>[attribute!=value]属性选择器</strong></p>
+<p><code>$(&quot;li[title!=&#39;我最爱&#39;]&quot;)</code>   &lt;— 上面改成</p>
+<p><strong>[attribute*=value]属性选择器</strong></p>
+<p>介绍一个功能更为强大的属性选择器<code>[attribute*=value]</code>，它可以获取属性值中包含指定内容的全部元素，其中[]是专用于属性选择器的括号符，参数attribute表示属性名称，value参数表示对应的属性值。</p>
+<p>例如，使用<code>[attribute*=value]</code>属性选择器，获取属性值中包含某一指定内容的全部<code>&lt;li&gt;</code>元素，并设置它们显示的文字颜色，如下图所示：</p>
+<p><img src="/uploads/171110jquery/4.png" alt=""></p>
+<p><strong>:first-child子元素过滤选择器</strong></p>
+<p>通过上面章节的学习，我们知道使用<code>:first</code>过滤选择器可以获取指定父元素中的首个子元素，但该选择器返回的只有一个元素，并不是一个集合，而使用<code>:first-child</code>子元素过滤选择器则可以获取每个父元素中返回的首个子元素，它是一个集合，常用多个集合数据的选择处理。</p>
+<p>如下图，如果想把页面中每个<code>ul</code>中的第一个<code>li</code>获取到，并改变其颜色。则可以使用<br><code>: first-child</code></p>
+<p><img src="/uploads/171110jquery/1.png" alt=""></p>
+<p><strong>:input表单选择器</strong></p>
+<p>如何获取表单全部元素？<code>:input</code>表单选择器可以实现，它的功能是返回全部的表单元素，不仅包括所有<code>&lt;input&gt;</code>标记的表单元素，而且还包括<code>&lt;textarea&gt;</code>、<code>&lt;select&gt;</code> 和 <code>&lt;button&gt;</code>标记的表单元素，因此，它选择的表单元素是最广的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#frmTest :input&quot;).addClass(&quot;bg_blue&quot;);</span><br></pre></td></tr></table></figure>
+<p><strong>:text表单文本选择器</strong></p>
+<p><code>:text</code>表单文本选择器可以获取表单中全部单行的文本输入框元素，单行的文本输入框就像一个不换行的字条工具，使用非常广泛。</p>
+<p>通过<code>:text</code>表单选择器只获取单行的文本输入框元素，对于<code>&lt;textarea&gt;</code>区域文本、按钮元素无效.</p>
+<p><strong>:password表单密码选择器</strong></p>
+<p><strong>:radio单选按钮选择器</strong></p>
+<p><strong>:checkbox复选框选择器</strong></p>
+<p><strong>:submit提交按钮选择器</strong></p>
+<p><strong>:image图像域选择器</strong></p>
+<p>当一个<code>&lt;input&gt;</code>元素的<code>type</code>属性值设为<code>image</code>时，该元素就是一个图像域，使用<code>:image</code>选择器可以快速获取该类全部元素。</p>
+<p><strong>:button表单按钮选择器</strong></p>
+<p><strong>:checked选中状态选择器</strong></p>
+<p>有一些元素存在选中状态，如复选框、单选按钮元素，选中时<code>checked</code>属性值为<code>checked</code>，调用<code>:checked</code>可以获取处于选中状态的全部元素</p>
+<p><strong>:selected选中状态选择器</strong></p>
+<p>与<code>:checked</code>选择器相比，<code>:selected</code>选择器只能获取<code>&lt;select&gt;</code>下拉列表框中全部处于选中状态的<code>&lt;option&gt;</code>选项元素。</p>
+<p><strong>使用attr()方法控制元素的属性</strong></p>
+<p><code>attr()</code>方法的作用是设置或者返回元素的属性，其中attr(属性名)格式是获取元素属性名的值，attr(属性名，属性值)格式则是设置元素属性名的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">        &lt;a href=&quot;http://127.0.0.1&quot; id=&quot;a1&quot;&gt;点我就变&lt;/a&gt;</span><br><span class="line">        &lt;div&gt;我改变后的地址是：&lt;span id=&quot;tip&quot;&gt;&lt;/span&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            $(&quot;#a1&quot;).attr(&quot;href&quot; , &quot;www.imooc.com&quot;);   //赋值</span><br><span class="line">            var $url = $(&quot;#a1&quot;).attr(&quot;href&quot;);          //取值</span><br><span class="line">            $(&quot;#tip&quot;).html($url);</span><br><span class="line">        &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>操作元素的内容</strong></p>
+<p>使用<code>html()</code>和<code>text()</code>方法操作元素的内容，当两个方法的参数为空时，表示获取该元素的内容，而如果方法中包含参数，则表示将参数值设置为元素内容。</p>
+<p><strong>操作元素的样式</strong></p>
+<p>通过<code>addClass()</code>和<code>css()</code>方法可以方便地操作元素中的样式，前者括号中的参数为增加元素的样式名称，后者直接将样式的属性内容写在括号中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#content&quot;).css(&#123;&quot;background-color&quot;:&quot;red&quot;,&quot;color&quot;:&quot;white&quot;&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>移除属性和样式</strong></p>
+<p>使用<code>removeAttr(name)</code>和<code>removeClass(class)</code>分别可以实现移除元素的属性和样式的功能，前者方法中参数表示移除属性名，后者方法中参数则表示移除的样式名</p>
+<p><strong>使用append()方法向元素内追加内容</strong></p>
+<p><code>append(content)</code>方法的功能是向指定的元素中追加内容，被追加的<code>content</code>参数，可以是字符、HTML元素标记，还可以是一个返回字符串内容的函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h3&gt;append()方法追加内容&lt;/h3&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            function rethtml() &#123;</span><br><span class="line">                var $html = &quot;&lt;div id=&apos;test&apos; title=&apos;hi&apos;&gt;我是调用函数创建的&lt;/div&gt;&quot;</span><br><span class="line">                return $html;</span><br><span class="line">            &#125;</span><br><span class="line">            $(&quot;body&quot;).append(rethtml());</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>使用appendTo()方法向被选元素内插入内容</strong></p>
+<p><code>appendTo()</code>方法也可以向指定的元素内插入内容，它的使用格式是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$(content).appendTo(selector)</span><br><span class="line">参数content表示需要插入的内容，参数selector表示被选的元素，即把content内容插入selector元素内，默认是在尾部。</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h3&gt;appendTo()方法插入内容&lt;/h3&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;span class=&quot;green&quot;&gt;小乌龟&lt;/span&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            var $html = &quot;&lt;span class=&apos;red&apos;&gt;小青蛙&lt;/span&gt;&quot;</span><br><span class="line">            $($html).appendTo(&quot;div&quot;);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>使用before()和after()在元素前后插入内容</strong></p>
+<p>使用<code>before()</code>和<code>after()</code>方法可以在元素的前后插入内容，它们分别表示在整个元素的前面和后面插入指定的元素或内容，调用格式分别为：<br><code>$(selector).before(content)</code>和<code>$(selector).after(content)</code><br>其中参数content表示插入的内容，该内容可以是元素或HTML字符串。</p>
+<p><strong>使用clone()方法复制元素</strong></p>
+<p>调用<code>clone()</code>方法可以生成一个被选元素的副本，即复制了一个被选元素，包含它的节点、文本和属性，它的调用格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(selector).clone()</span><br><span class="line">其中参数selector可以是一个元素或HTML内容。</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h3&gt;使用clone()方法复制元素&lt;/h3&gt;</span><br><span class="line">        &lt;span class=&quot;red&quot; title=&quot;hi&quot;&gt;我是美猴王&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            $(&quot;body&quot;).append($(&quot;.red&quot;).clone());</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>替换内容</strong></p>
+<p><code>replaceWith()</code>和<code>replaceAll()</code>方法都可以用于替换元素或元素中的内容，但它们调用时，内容和被替换元素所在的位置不同，分别为如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(selector).replaceWith(content)和$(content).replaceAll(selector)</span><br><span class="line">参数selector为被替换的元素，content为替换的内容。</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h3&gt;使用replaceAll()方法替换元素内容&lt;/h3&gt;</span><br><span class="line">        &lt;span class=&quot;green&quot; title=&quot;hi&quot;&gt;我是屌丝&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            var $html = &quot;&lt;span class=&apos;red&apos; title=&apos;hi&apos;&gt;我是土豪&lt;/span&gt;&quot;;</span><br><span class="line">            $($html).replaceAll($(&quot;.green&quot;));</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>使用wrap()和wrapInner()方法包裹元素和内容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h3&gt;使用wrapInner()方法包裹元素&lt;/h3&gt;</span><br><span class="line">        &lt;span class=&quot;red&quot; title=&apos;hi&apos;&gt;我的身体有点歪&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            $(&quot;.red&quot;).wrapInner(&quot;&lt;i&gt;&lt;/i&gt;&quot;);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>使用each()方法遍历元素</strong></p>
+<p>使用<code>each()</code>方法可以遍历指定的元素集合，在遍历时，通过回调函数返回遍历元素的序列号，它的调用格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$(selector).each(function(index))</span><br><span class="line">参数function为遍历时的回调函数，index为遍历元素的序列号，它从0开始。</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h3&gt;使用each()方法遍历元素&lt;/h3&gt;</span><br><span class="line">        &lt;span class=&quot;green&quot;&gt;香蕉&lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;green&quot;&gt;桃子&lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;green&quot;&gt;葡萄&lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;green&quot;&gt;荔枝&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            $(&quot;span&quot;).each(function(index)&#123;</span><br><span class="line">                if(index==2)&#123;</span><br><span class="line">                    $(this).addClass(&quot;red&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>使用remove()和empty()方法删除元素</strong></p>
+<p><code>remove()</code>方法删除所选元素本身和子元素，该方法可以通过添加过滤参数指定需要删除的某些元素，而<code>empty()</code>方法则只删除所选元素的子元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h3&gt;使用empty()方法删除元素&lt;/h3&gt;</span><br><span class="line">        &lt;span class=&quot;green&quot;&gt;香蕉&lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;green&quot;&gt;桃子&lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;green&quot;&gt;葡萄&lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;green&quot;&gt;荔枝&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            //$(&quot;span&quot;).remove(&quot;.green&quot;);</span><br><span class="line">            $(&quot;span&quot;).empty();</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>页面加载时触发ready()事件</strong></p>
+<p><code>ready()</code>事件类似于<code>onLoad()</code>事件，但前者只要页面的DOM结构加载后便触发，而后者必须在页面全部元素加载成功才触发，<code>ready()</code>可以写多个，按顺序执行。此外，下列写法是相等的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#125;)等价于$(function()&#123;&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>使用bind()方法绑定元素的事件</strong></p>
+<p><code>bind()</code>方法绑定元素的事件非常方便，绑定前，需要知道被绑定的元素名，绑定的事件名称，事件中执行的函数内容就可以，它的绑定格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(selector).bind(event,[data] function)</span><br><span class="line">参数event为事件名称，多个事件名称用空格隔开，function为事件执行的函数。</span><br></pre></td></tr></table></figure>
+<p><strong>使用hover()方法切换事件</strong></p>
+<p><code>hover()</code>方法的功能是当鼠标移到所选元素上时，执行方法中的第一个函数，鼠标移出时，执行方法中的第二个函数，实现事件的切实效果，调用格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$(selector).hover(over，out);</span><br><span class="line">over参数为移到所选元素上触发的函数，out参数为移出元素时触发的函数。</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h3&gt;hover()方法切换事件&lt;/h3&gt;</span><br><span class="line">        &lt;div&gt;别走！你就是土豪&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            $(function () &#123;</span><br><span class="line">                $(&quot;div&quot;).hover(</span><br><span class="line">                function () &#123;</span><br><span class="line">                    $(this).addClass(&quot;orange&quot;);</span><br><span class="line">                &#125;,</span><br><span class="line">                function () &#123;</span><br><span class="line">                    $(this).removeClass(&quot;orange&quot;)</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>使用toggle()方法绑定多个函数</strong></p>
+<p><code>toggle()</code>方法可以在元素的click事件中绑定两个或两个以上的函数，同时，它还可以实现元素的隐藏与显示的切换，绑定多个函数的调用格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).toggle(fun1(),fun2(),funN(),...)</span><br></pre></td></tr></table></figure>
+<p>其中，fun1，fun2就是多个函数的名称<br>例如，使用<code>toggle()</code>方法，当每次点击<code>&lt;div&gt;</code>元素时，显示不同内容，如下图所示：</p>
+<p><img src="/uploads/171110jquery/6.png" alt=""></p>
+<p><strong>用作隐藏和显示的切换用法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">        &lt;h3&gt;toggle()方法绑定多个函数&lt;/h3&gt;</span><br><span class="line">        &lt;input id=&quot;btntest&quot; type=&quot;button&quot; value=&quot;点一下我&quot; /&gt;</span><br><span class="line">        &lt;div&gt;我是动态显示的&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            $(function () &#123;</span><br><span class="line">                $(&quot;#btntest&quot;).bind(&quot;click&quot;, function () &#123;</span><br><span class="line">                    $(&quot;div&quot;).toggle();</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>使用unbind()方法移除元素绑定的事件</strong></p>
+<p><code>unbind()</code>方法可以移除元素已绑定的事件，它的调用格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).unbind(event,fun)</span><br></pre></td></tr></table></figure>
+<p>其中参数event表示需要移除的事件名称，多个事件名用空格隔开，fun参数为事件执行时调用的函数名称。<br>例如，点击按钮时，使用<code>unbind()</code>方法移除<code>&lt;div&gt;</code>元素中已绑定的<code>dblclick</code>事件，如下图所示：</p>
+<p><img src="/uploads/171110jquery/7.png" alt=""></p>
+<p><strong>使用one()方法绑定元素的一次性事件</strong></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/08/bootstrap基础/" rel="next" title="bootstrap基础">
+                <i class="fa fa-chevron-left"></i> bootstrap基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/16/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/we.jpg"
+                alt="HeroBin" />
+            
+              <p class="site-author-name" itemprop="name">HeroBin</p>
+              <p class="site-description motion-element" itemprop="description">记录学习生活的点点滴滴</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HeroBin</span>
+
+  
+
+  
+</div>
+
+
+
+<!-- 
+  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+ -->
+
+<!-- 
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+ -->
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共28.9k字</span>
+</div>
+ 
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

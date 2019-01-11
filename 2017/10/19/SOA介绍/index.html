@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="一、SOA是什么SOA的全称是Service-Oriented Architecture，面向服务架构。是一种架构，不是一种具体的开发技术。 要真正理解什么是SOA需要从软件开发的技术发展史谈起。 真正的软件开发从开始到现在经历了四个阶段，也可以说成是四代：   1、汇编语言开发 2、面向过程的软件 3、面向对象的组件开发 4、面向服务的架构开发，也是今天要谈论的SOA架构   SOA与前面三代的">
+<meta name="keywords" content="其他">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SOA介绍">
+<meta property="og:url" content="http://www.herobin.top/2017/10/19/SOA介绍/index.html">
+<meta property="og:site_name" content="HeroBin&#39;s Blog">
+<meta property="og:description" content="一、SOA是什么SOA的全称是Service-Oriented Architecture，面向服务架构。是一种架构，不是一种具体的开发技术。 要真正理解什么是SOA需要从软件开发的技术发展史谈起。 真正的软件开发从开始到现在经历了四个阶段，也可以说成是四代：   1、汇编语言开发 2、面向过程的软件 3、面向对象的组件开发 4、面向服务的架构开发，也是今天要谈论的SOA架构   SOA与前面三代的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-11T06:49:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SOA介绍">
+<meta name="twitter:description" content="一、SOA是什么SOA的全称是Service-Oriented Architecture，面向服务架构。是一种架构，不是一种具体的开发技术。 要真正理解什么是SOA需要从软件开发的技术发展史谈起。 真正的软件开发从开始到现在经历了四个阶段，也可以说成是四代：   1、汇编语言开发 2、面向过程的软件 3、面向对象的组件开发 4、面向服务的架构开发，也是今天要谈论的SOA架构   SOA与前面三代的">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="HeroBin's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://www.herobin.top/2017/10/19/SOA介绍/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>SOA介绍 | HeroBin's Blog</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f6e0affa56b837b3134c1b097c760963";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/zhangbin1995"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HeroBin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">向阳而生</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2017/10/19/SOA介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HeroBin">
+      <meta itemprop="description" content="记录学习生活的点点滴滴">
+      <meta itemprop="image" content="/uploads/we.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HeroBin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SOA介绍
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-10-19 14:42:23" itemprop="dateCreated datePublished" datetime="2017-10-19T14:42:23+08:00">2017-10-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-11 14:49:36" itemprop="dateModified" datetime="2019-01-11T14:49:36+08:00">2019-01-11</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一、SOA是什么"><a href="#一、SOA是什么" class="headerlink" title="一、SOA是什么"></a>一、SOA是什么</h3><p>SOA的全称是Service-Oriented Architecture，面向服务架构。是一种架构，不是一种具体的开发技术。</p>
+<p>要真正理解什么是SOA需要从软件开发的技术发展史谈起。</p>
+<p>真正的软件开发从开始到现在经历了四个阶段，也可以说成是四代：</p>
+<blockquote>
+<ul>
+<li>1、汇编语言开发</li>
+<li>2、面向过程的软件</li>
+<li>3、面向对象的组件开发</li>
+<li>4、面向服务的架构开发，也是今天要谈论的SOA架构</li>
+</ul>
+</blockquote>
+<p>SOA与前面三代的软件开发技术对比，不同点是SOA超越了软件开发语言本身。是一种面向服务的架构，与软件开发语言无关。</p>
+<p>但就软件开发本身来说，SOA是一种技术，又超越了所有具体的技术。</p>
+<h3 id="二、SOA的技术革命"><a href="#二、SOA的技术革命" class="headerlink" title="二、SOA的技术革命"></a>二、SOA的技术革命</h3><p>SOA既然能成为第四代软件开发技术，究竟带来什么革命。</p>
+<p>首先，SOA是一种开发思想。是一种松耦合的框架。可以让软件超越开发语言。</p>
+<p>其次，SOA的开发需要SOA体系的支撑，就像J2EE应用一样，离不开应用服务器。SOA也一样，也有一个类似J2EE服务器的东西支持着整个SOA体系架构—-ESB（<br>Enterprise Service Bus），企业服务总线。通过这个总线，将多个系统连接起来。</p>
+<p>其次，SOA是基于消息请求响应的一个系统，对请求类型有高度的兼容性。与一个Web应用容器相比，web应用容器只能处理HTTP请求，而 SOA的ESB可以接受HTTP、FTP、WebService、JMS…等请求。这就使得SOA架构具有高度的兼容性，可以将不同的平台集成到一 起，从而相互协调工作。</p>
+<h3 id="三、SOA火起来的真正原因"><a href="#三、SOA火起来的真正原因" class="headerlink" title="三、SOA火起来的真正原因"></a>三、SOA火起来的真正原因</h3><blockquote>
+<ul>
+<li>1、软件开发技术的不断提高。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>2、硬件性能的提升，价格下降，投出SOA所消耗的成本为企业所能忍受。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>3、SOA受到了IMB、Oracle、Sun、Microsoft等大公司的热力追捧，被捧红了，实际上，一直以来都是这些公司在引领软件应用的潮流。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>4、SOA技术革命每年有上千亿美元的市场价值。软件要升级，这些服务提供商才可以买出更多的中间件服务器，卖出更多的硬件，赚取更多利润。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>5、很多企业的软件应用系统已经满足不了信息高度集成化的要求，为了提高企业的核心竞争力，企业不惜重金，上SOA。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>6、SOA的招牌很响亮，超越了一切，兼容了一切。它不摒弃旧系统，而是将很多旧系统继承起来，就可以实现。—–实际上，我个人认为这是一个骗局。</li>
+</ul>
+</blockquote>
+<h3 id="四、SOA最有前景的舞台"><a href="#四、SOA最有前景的舞台" class="headerlink" title="四、SOA最有前景的舞台"></a>四、SOA最有前景的舞台</h3><blockquote>
+<ul>
+<li>1、基于SOA是的思想和技术，SOA最适合最擅长的就是系统集成。而系统集成的关键就是提取公共的有价值的服务。各个系统通过暴露服务，经过ESB这条总线连接后，就将几个系统集成起来了。这在新一代软件开发中也许会得到应用。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>2、SOA的架构注定SOA在中小企业内部没有多大价值。中小企业的摊子还不够大。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>3、SOA系统集成难点在于抽取公共的服务。对于老的系统来说，抽取服务就是抽筋。很难很难，意味着要修改软件，要适合SOA的胃口。因此，对一些不同语言开发的系统来说，使用SOA进行系统实际上是扯淡。</li>
+</ul>
+</blockquote>
+<h3 id="五、SOA发展现状"><a href="#五、SOA发展现状" class="headerlink" title="五、SOA发展现状"></a>五、SOA发展现状</h3><p>对SOA口号叫的最响的是IBM，出书最多的也是IBM，成功的案例还没看到。所有的大公司都在忽悠，希望拿到第一笔大单。</p>
+<p>SOA以来ESB，ESB本身也是一种中间件，或者说是一个增强了的企业应用服务器。目前开源的有几个，也没见过成功的案例。估计SOA技术从起步到成熟还有很长一段路要走。ESB的实现还需要一个发展过程。</p>
+<p>相反与SOA有紧密联系WebService技术已经深入人心。现在用的比较多。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/其他/" rel="tag"><i class="fa fa-tag"></i> 其他</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/17/git coding的使用/" rel="next" title="git coding的使用">
+                <i class="fa fa-chevron-left"></i> git coding的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/22/sqlserver数据库大小写不敏感问题/" rel="prev" title="sqlserver数据库大小写不敏感问题">
+                sqlserver数据库大小写不敏感问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/we.jpg"
+                alt="HeroBin" />
+            
+              <p class="site-author-name" itemprop="name">HeroBin</p>
+              <p class="site-description motion-element" itemprop="description">记录学习生活的点点滴滴</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、SOA是什么"><span class="nav-number">1.</span> <span class="nav-text">一、SOA是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、SOA的技术革命"><span class="nav-number">2.</span> <span class="nav-text">二、SOA的技术革命</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、SOA火起来的真正原因"><span class="nav-number">3.</span> <span class="nav-text">三、SOA火起来的真正原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、SOA最有前景的舞台"><span class="nav-number">4.</span> <span class="nav-text">四、SOA最有前景的舞台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、SOA发展现状"><span class="nav-number">5.</span> <span class="nav-text">五、SOA发展现状</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HeroBin</span>
+
+  
+
+  
+</div>
+
+
+
+<!-- 
+  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+ -->
+
+<!-- 
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+ -->
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共28.9k字</span>
+</div>
+ 
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
