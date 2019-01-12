@@ -108,24 +108,18 @@
 
 
 
-  <meta name="description" content="项目现在部署在服务器上，我们想要通过本地Eclipse来远程调试在服务器上输入命名 1ps -ef | grep tomcat 可以看到我们tomcat是由root用户启动的,这里需要我们改为其他用户,root启动的进程不支持远程调试,这里我们要改为用普通的账号启动tomcat. 这里要注意,普通账号是没办法运行root账号安装的软件的.所以我们要用普通账号安装一下tomcat. 创建新用户的指令">
-<meta name="keywords" content="java">
+  <meta name="description" content="查询目录中内容：ls 123456ls [选项] [文件或目录]        -a 显示所有的文件，包括隐藏文件        -l  显示详细信息      ls -l  等同于 ll        -d  查看目录属性        -h  人性化显示文件大小        -i  显示inode -rw-r–r– 123- （最前面的-）文件类型（-文件   d 目录   l 软链接文件）">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Eclipse远程调试">
-<meta property="og:url" content="http://www.herobin.top/2018/12/17/Eclipse远程调试/index.html">
+<meta property="og:title" content="linux命令行">
+<meta property="og:url" content="http://www.herobin.top/2017/12/05/linux命令行/index.html">
 <meta property="og:site_name" content="HeroBin&#39;s Blog">
-<meta property="og:description" content="项目现在部署在服务器上，我们想要通过本地Eclipse来远程调试在服务器上输入命名 1ps -ef | grep tomcat 可以看到我们tomcat是由root用户启动的,这里需要我们改为其他用户,root启动的进程不支持远程调试,这里我们要改为用普通的账号启动tomcat. 这里要注意,普通账号是没办法运行root账号安装的软件的.所以我们要用普通账号安装一下tomcat. 创建新用户的指令">
+<meta property="og:description" content="查询目录中内容：ls 123456ls [选项] [文件或目录]        -a 显示所有的文件，包括隐藏文件        -l  显示详细信息      ls -l  等同于 ll        -d  查看目录属性        -h  人性化显示文件大小        -i  显示inode -rw-r–r– 123- （最前面的-）文件类型（-文件   d 目录   l 软链接文件）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.herobin.top/uploads/eclipse181217/1.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/eclipse181217/2.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/eclipse181217/3.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/eclipse181217/4.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/eclipse181217/5.png">
-<meta property="og:updated_time" content="2019-01-11T05:44:05.000Z">
+<meta property="og:updated_time" content="2019-01-12T11:18:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eclipse远程调试">
-<meta name="twitter:description" content="项目现在部署在服务器上，我们想要通过本地Eclipse来远程调试在服务器上输入命名 1ps -ef | grep tomcat 可以看到我们tomcat是由root用户启动的,这里需要我们改为其他用户,root启动的进程不支持远程调试,这里我们要改为用普通的账号启动tomcat. 这里要注意,普通账号是没办法运行root账号安装的软件的.所以我们要用普通账号安装一下tomcat. 创建新用户的指令">
-<meta name="twitter:image" content="http://www.herobin.top/uploads/eclipse181217/1.png">
+<meta name="twitter:title" content="linux命令行">
+<meta name="twitter:description" content="查询目录中内容：ls 123456ls [选项] [文件或目录]        -a 显示所有的文件，包括隐藏文件        -l  显示详细信息      ls -l  等同于 ll        -d  查看目录属性        -h  人性化显示文件大小        -i  显示inode -rw-r–r– 123- （最前面的-）文件类型（-文件   d 目录   l 软链接文件）">
 
 
 
@@ -134,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="http://www.herobin.top/2018/12/17/Eclipse远程调试/"/>
+  <link rel="canonical" href="http://www.herobin.top/2017/12/05/linux命令行/"/>
 
 
 
@@ -144,7 +138,7 @@
   };
 </script>
 
-  <title>Eclipse远程调试 | HeroBin's Blog</title>
+  <title>linux命令行 | HeroBin's Blog</title>
   
 
 
@@ -328,7 +322,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/12/17/Eclipse远程调试/">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2017/12/05/linux命令行/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HeroBin">
@@ -345,7 +339,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Eclipse远程调试
+          <h1 class="post-title" itemprop="name headline">linux命令行
               
             
           </h1>
@@ -370,7 +364,7 @@
                 
               
 
-              <time title="创建时间：2018-12-17 16:24:19" itemprop="dateCreated datePublished" datetime="2018-12-17T16:24:19+08:00">2018-12-17</time>
+              <time title="创建时间：2017-12-05 19:01:48" itemprop="dateCreated datePublished" datetime="2017-12-05T19:01:48+08:00">2017-12-05</time>
             
 
             
@@ -387,7 +381,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-11 13:44:05" itemprop="dateModified" datetime="2019-01-11T13:44:05+08:00">2019-01-11</time>
+                <time title="修改时间：2019-01-12 19:18:43" itemprop="dateModified" datetime="2019-01-12T19:18:43+08:00">2019-01-12</time>
               
             
           </span>
@@ -404,7 +398,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
 
                 
                 
@@ -443,46 +437,92 @@
       
 
       
-        <p>项目现在部署在服务器上，我们想要通过本地Eclipse来远程调试<br>在服务器上输入命名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep tomcat</span><br></pre></td></tr></table></figure>
-<p>可以看到我们tomcat是由root用户启动的,这里需要我们改为其他用户,root启动的进程不支持远程调试,<br>这里我们要改为用普通的账号启动tomcat.</p>
-<p>这里要注意,普通账号是没办法运行root账号安装的软件的.所以我们要用普通账号安装一下tomcat.</p>
-<p>创建新用户的指令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser work</span><br></pre></td></tr></table></figure>
-<p>输入密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd work</span><br></pre></td></tr></table></figure>
-<p><img src="/uploads/eclipse181217/1.png" alt=""></p>
-<p><code>shudown</code>掉现在的tomcat程序,在tomcat目录下执行<code>bin/shutdown.sh</code></p>
-<p>切换账号</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su work</span><br></pre></td></tr></table></figure>
-<p>切换回这个账号的根目录<code>cd ~</code>,可以看到当前的用户路径<code>/home/work</code>,再次上传本地的tomcat到服务器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp apache-tomcat-8.5.35.tar.gz work@101.132.138.185:~</span><br></pre></td></tr></table></figure>
-<p>解压这个tomcat</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf file.tar.gz</span><br></pre></td></tr></table></figure>
-<p>再将我们的代码部署到上面因为没有改端口号用过<code>ip:8080/o2o</code>就可以访问到了.可是微信登录只能访问80端口,所以我们要做一个转发操作.</p>
-<p>切换回<code>root</code>用户关掉<code>firewalld</code>服务,安装<code>iptables-services</code>服务.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line">systemctl disable firewalld.service</span><br><span class="line">yum install iptables-services</span><br></pre></td></tr></table></figure>
-<p>将对80端口的请求转发到8080</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080</span><br><span class="line">service iptables save #让上面的指令生效</span><br></pre></td></tr></table></figure>
-<p>这个时候已经生效了,但是重启服务器就会失效,执行下面两条指令让它永久生效.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart iptables.service</span><br><span class="line">systemctl enable iptables.service</span><br></pre></td></tr></table></figure>
-<p>修改tomcat配置(work下的)<br>修改<code>bin/catalina.sh</code>  <code>vim catalina.sh</code><br>加入的部分：</p>
-<p><img src="/uploads/eclipse181217/2.png" alt=""></p>
-<p>这句话的意义是 告诉tomcat你要开启一个端口支持远程调试,同时别忘了将服务器的这两个端口号打开</p>
-<p><img src="/uploads/eclipse181217/3.png" alt=""></p>
-<p>切换回<code>work</code> 重启<code>tomcat</code> <code>shutdown</code> <code>start</code></p>
-<p>这个时候再 <code>ps -ef | grep tomcat</code>,就可以发现这个进程是work的了,包括我们设置的调试信息也有了</p>
-<p><img src="/uploads/eclipse181217/4.png" alt=""></p>
-<p>回到我们的eclipse,在启动debug服务器（小昆虫）那里找到 <code>Debug</code> <code>Configuration</code>修改配置如下</p>
-<p><img src="/uploads/eclipse181217/5.png" alt=""></p>
-<p>Eclipse远程调试总结<br>添加新用户，并赋予root权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adduser work</span><br><span class="line">passwd work</span><br></pre></td></tr></table></figure>
-<p>上传tomcat软件，上传程序war包</p>
-<p>将80端口的请求转发至8080端口（永久生效）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service #停止firewall</span><br><span class="line">systemctl disable firewalld.service # 禁止firewall开机启动</span><br><span class="line">yum install iptables-services #安装</span><br><span class="line">iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080</span><br><span class="line">service iptables save</span><br><span class="line">systemctl restart iptables.service</span><br><span class="line">systemctl enable iptables.service</span><br></pre></td></tr></table></figure>
-<p>远程调试tomcat<code>vim bin/catalina.sh</code>添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CATALINA_OPTS=&quot;-Xdebug  -Xrunjdwp:transport=dt_socket,address=8888,server=y,suspend=n&quot;</span><br></pre></td></tr></table></figure>
-<p>开通阿里云控制台安全组策略8888端口<br>在eclipse debug做对应的配置即可</p>
+        <p><strong>查询目录中内容：ls</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls [选项] [文件或目录]</span><br><span class="line">        -a 显示所有的文件，包括隐藏文件</span><br><span class="line">        -l  显示详细信息      ls -l  等同于 ll</span><br><span class="line">        -d  查看目录属性</span><br><span class="line">        -h  人性化显示文件大小</span><br><span class="line">        -i  显示inode</span><br></pre></td></tr></table></figure>
+<p><strong>-rw-r–r–</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- （最前面的-）文件类型（-文件   d 目录   l 软链接文件）</span><br><span class="line">    rw-             r--          r--</span><br><span class="line">  u所有者     g所属组  o其他人</span><br></pre></td></tr></table></figure>
+<p><strong>普通用户切换到root</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure>
+<p><strong>创建文件夹 mkdir</strong></p>
+<p><strong>创建级联的  mkdir -p</strong></p>
+<p><strong>切换所在目录：cd(change directory)</strong></p>
+<p><strong>cd/cd ~ 进入当前用户的家目录</strong></p>
+<p><strong>cd - 进入上次目录</strong></p>
+<p><strong>cd .. 进入上一级目录</strong></p>
+<p><strong>cd . 进入当前目录</strong></p>
+<p><strong>cd / 根目录下</strong></p>
+<p><strong>pwd</strong></p>
+<p>当前所处的目录,显示整个路径名</p>
+<p><strong>rmdir： remove empty directories删除空目录 （用的少）</strong></p>
+<p><strong>rm：删除</strong></p>
+<p><strong>rm -rf （r：目录   f：强制）</strong></p>
+<p><strong>复制命令：cp</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-r  复制目录   </span><br><span class="line">-p连带文件属性复制</span><br><span class="line">-d  若源文件是链接文件，则复制链接属性   </span><br><span class="line">-a 相当于 -pdr  复制的文件和原文件将完全一样  包括创建时间等</span><br></pre></td></tr></table></figure>
+<p><strong>剪切或改名：mv</strong></p>
+<p><strong>/ 根目录</strong></p>
+<p><strong>/bin 存放必要的命令</strong></p>
+<p><strong>/boot 存放内核以及启动所需的文件等</strong></p>
+<p><strong>/dev 存放设备文件</strong></p>
+<p><strong>/etc 存放系统的配置文件</strong></p>
+<p><strong>/home 用户文件的主目录，用户数据存放在其主目录中</strong></p>
+<p><strong>/lib 存放必要的运行库</strong></p>
+<p><strong>/mnt 存放临时的映射文件系统，我们常把软驱和光驱挂装在这里的floppy和cdrom子目录下。</strong></p>
+<p><strong>/proc 存放存储进程和系统信息</strong></p>
+<p><strong>/root 超级用户的主目录</strong></p>
+<p><strong>/sbin 存放系统管理程序</strong></p>
+<p><strong>/tmp 存放临时文件的目录</strong></p>
+<p><strong>/usr 包含了一般不需要修改的应用程序，命令程序文件、程序库、手册和其它文档。</strong></p>
+<p><strong>/var 包含系统产生的经常变化的文件</strong></p>
+<p><strong>链接命令：ln</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -s  [原文件] [目标文件]      （link）</span><br><span class="line">功能描述：生成链接文件 </span><br><span class="line">        选项：-s   创建软链接</span><br></pre></td></tr></table></figure>
+<p>硬链接特征：</p>
+<blockquote>
+<ul>
+<li>1.拥有相同的i节点和存储block块，可以看做是同一个文件</li>
+<li>2.可通过i节点识别</li>
+<li>3.不能跨分区</li>
+<li>4.不能针对目录使用</li>
+</ul>
+</blockquote>
+<p>软链接特征：</p>
+<blockquote>
+<ul>
+<li>1.类似Windows快捷方式</li>
+<li>2.软链接拥有自己的I节点和Block块，但是数据块中只保存原文件的文件名和I节点号，并没有实际的文件数据</li>
+<li>3.Irwxrwxrwx   I软链接 软链接文件权限都为rwxrwxrwx</li>
+<li>4.修改任意文件，另一个都改变</li>
+<li>5.删除原文件，软链接不能使用</li>
+</ul>
+</blockquote>
+<p>原文件删除软链接失效，不影响硬链接的使用</p>
+<p><strong>文件搜索命令：locate（快）     find（慢）</strong></p>
+<p><strong>locate 文件名    在后台数据库中按文件名搜索</strong></p>
+<p><strong>find  [搜索范围] [搜索条件]    find / -name install.log   /(全路径)   -name（条件）</strong></p>
+<p><strong>grep：搜索字符串命令</strong></p>
+<p>grep [选项] 字符串  文件名    -i（忽略大小写）-v（排除指定字符串）</p>
+<p><strong>whereis :  搜索命令的命令    搜索命令所在路径及帮助文档所在位置</strong></p>
+<p>选项：-b （只查找可执行文件）  -m：（只查找帮助文件）</p>
+<p><strong>通配符  *  ?  []</strong></p>
+<p><strong>find命令和grep命令的区别</strong></p>
+<p>find命令：在系统当中搜索符合条件的文件名，如果需要匹配，使用通配符匹配，通配符是完全匹配</p>
+<p>grep命令：在文件当中搜索符合条件的字符串，如果需要匹配，使用正则表达式进行匹配，正则表达式是包含匹配</p>
+<p><strong>帮助命令man </strong></p>
+<p>man（manual的缩写）命令：获取指定命令的帮助   例：man ls</p>
+<p>查看命令拥有哪个级别的帮助：man -if 相当于 whatis</p>
+<p>查看和命令相关的所有帮助：man -k  相当于 apropos</p>
+<p><strong>linux中常用的压缩格式：.zip  .gz  .bz2   .tar.gz    .tar.bz2</strong></p>
+<p><strong>.zip格式压缩</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zip 压缩文件名 源文件</span><br><span class="line">zip -r 压缩文件名 源文件（压缩目录）</span><br><span class="line">unzip 解压缩</span><br></pre></td></tr></table></figure>
+<p><strong>.gz 格式压缩</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gzip 源文件  ：  压缩为.gz格式的压缩文件，源文件会消失</span><br><span class="line">gzip  -c  源文件 &gt; 压缩文件 ： 压缩为.gz 格式，源文件保留  例：gzip -c cangls &gt; cangls.gz</span><br><span class="line">gzip -r 目录：压缩目录下所有的子文件，但是不能压缩目录</span><br><span class="line">gzip -d 压缩文件 ： 解压缩</span><br><span class="line">gunzip 压缩文件 ：解压缩文件（解压缩目录也要加 -r）</span><br></pre></td></tr></table></figure>
+<p><strong>.bz2格式解压缩</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bzip2 -d 压缩文件</span><br><span class="line">bunzip2 压缩文件：解压缩  -k 保留压缩文件</span><br><span class="line">.tar.gz   .tar.bz2  :  先打包再压缩</span><br><span class="line">打包命令：tar -cvf 打包文件名  源文件</span><br><span class="line">选项：-c：打包  -v：显示过程 -f：指定打包后的文件名 例：tar -cvf longzls.tar  longzls</span><br></pre></td></tr></table></figure>
+<p><strong>解打包： tar -xvf 打包文件名   x：解打包</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.tar.gz 压缩格式</span><br><span class="line">其实.tar.gz格式是先打包为.tar格式，再压缩为.gz格式</span><br><span class="line">tar -zcvf 压缩包名.tar.gz  源文件  -z：压缩为.tar.gz格式</span><br><span class="line">tar -zxvf 压缩包名.tar.gz  -c  解压缩路径  -x：解压缩.tar.gz格式  -c：指定解压缩路径</span><br><span class="line"></span><br><span class="line">例：tar -zcvf /temp/country.tar.gz japan china </span><br><span class="line"></span><br><span class="line">tar -ztvf test.tar.gz：只查看不解压</span><br></pre></td></tr></table></figure>
+<p><strong>shutdown [选项] [时间]</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">选项：-c：取消前一个关机命令</span><br><span class="line">            -h：关机</span><br><span class="line">            -r：重启</span><br></pre></td></tr></table></figure>
+<p><strong>其他关机命令：halt  poweroff    init 0</strong></p>
+<p><strong>其他重启命令：reboot  init 6</strong></p>
 
       
     </div>
@@ -503,7 +543,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
           
         </div>
       
@@ -516,8 +556,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/05/tensorflow基础/" rel="next" title="tensorflow基础">
-                <i class="fa fa-chevron-left"></i> tensorflow基础
+              <a href="/2017/12/02/mysql基础知识整理/" rel="next" title="mysql基础知识整理">
+                <i class="fa fa-chevron-left"></i> mysql基础知识整理
               </a>
             
           </div>
@@ -526,8 +566,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/17/加密连接数据库明文密码/" rel="prev" title="加密连接数据库明文密码">
-                加密连接数据库明文密码 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/16/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
