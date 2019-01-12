@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="约束：按功能划分： NOT NULL, RPIMARY KEY, UNIQUE KEY, DEFAULT，FOREIGN KEY 按数据列的数目划分： 表级约束&amp;amp;列级约束 外键约束： 外键约束的要求：   1.父表和子表必须使用相同的存储引擎，而且禁止使用临时表 2.数据表的存储引擎只能为InnoDB 3.外键列和参照列必须具有相似的数据类型。其中数字的长度或是否有符号位必须相同；而字符的">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql基础知识整理">
+<meta property="og:url" content="http://www.herobin.top/2017/12/02/mysql基础知识整理/index.html">
+<meta property="og:site_name" content="HeroBin&#39;s Blog">
+<meta property="og:description" content="约束：按功能划分： NOT NULL, RPIMARY KEY, UNIQUE KEY, DEFAULT，FOREIGN KEY 按数据列的数目划分： 表级约束&amp;amp;列级约束 外键约束： 外键约束的要求：   1.父表和子表必须使用相同的存储引擎，而且禁止使用临时表 2.数据表的存储引擎只能为InnoDB 3.外键列和参照列必须具有相似的数据类型。其中数字的长度或是否有符号位必须相同；而字符的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.herobin.top/uploads/171202mysql/1.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/171202mysql/2.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/171202mysql/3.png">
+<meta property="og:updated_time" content="2019-01-12T10:59:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mysql基础知识整理">
+<meta name="twitter:description" content="约束：按功能划分： NOT NULL, RPIMARY KEY, UNIQUE KEY, DEFAULT，FOREIGN KEY 按数据列的数目划分： 表级约束&amp;amp;列级约束 外键约束： 外键约束的要求：   1.父表和子表必须使用相同的存储引擎，而且禁止使用临时表 2.数据表的存储引擎只能为InnoDB 3.外键列和参照列必须具有相似的数据类型。其中数字的长度或是否有符号位必须相同；而字符的">
+<meta name="twitter:image" content="http://www.herobin.top/uploads/171202mysql/1.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="HeroBin's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://www.herobin.top/2017/12/02/mysql基础知识整理/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>mysql基础知识整理 | HeroBin's Blog</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f6e0affa56b837b3134c1b097c760963";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/zhangbin1995"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HeroBin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">向阳而生</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2017/12/02/mysql基础知识整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HeroBin">
+      <meta itemprop="description" content="记录学习生活的点点滴滴">
+      <meta itemprop="image" content="/uploads/we.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HeroBin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">mysql基础知识整理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-12-02 16:35:54" itemprop="dateCreated datePublished" datetime="2017-12-02T16:35:54+08:00">2017-12-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-12 18:59:17" itemprop="dateModified" datetime="2019-01-12T18:59:17+08:00">2019-01-12</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="约束："><a href="#约束：" class="headerlink" title="约束："></a>约束：</h3><p><strong>按功能划分：</strong></p>
+<p><code>NOT NULL</code>, <code>RPIMARY KEY</code>, <code>UNIQUE KEY</code>, <code>DEFAULT</code>，<code>FOREIGN KEY</code></p>
+<p><strong>按数据列的数目划分：</strong></p>
+<p>表级约束&amp;列级约束</p>
+<p><strong>外键约束：</strong></p>
+<p><strong>外键约束的要求：</strong></p>
+<blockquote>
+<ul>
+<li>1.父表和子表必须使用相同的存储引擎，而且禁止使用临时表</li>
+<li>2.数据表的存储引擎只能为InnoDB</li>
+<li>3.外键列和参照列必须具有相似的数据类型。其中数字的长度或是否有符号位必须相同；而字符的长度可以不同。<ul>
+<li>4.外键列和参照列必须创建索引。如果外键列不存在索引的话，MySQL将自动创建索引。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>外键约束的参照操作：</strong></p>
+<blockquote>
+<ul>
+<li>1.CASCADE:从父表删除或更新且自动删除或更新子表中匹配的行</li>
+<li>2.SET NULL:从父表删除或更新行，并设置子表中的外键列为NULL.如果使用该选项，必须保证子表列没有指定NOT NULL.</li>
+<li>3.RESTRICT:拒绝对父表的删除或更新操作。</li>
+<li>4.NO ACTION:标准SQL的关键字，在MySQL中与RESTRICT相同。</li>
+</ul>
+</blockquote>
+<p><strong>表级约束与列级约束</strong></p>
+<blockquote>
+<ul>
+<li>对一个数据列建立的约束，称为列级约束。</li>
+<li>对多个数据列建立的约束，称为表级约束。</li>
+<li>列级约束既可以在列声明时声明，也可以在列定以后声明。</li>
+<li>表级约束只能在列定义后声明。</li>
+</ul>
+</blockquote>
+<h3 id="修改数据表"><a href="#修改数据表" class="headerlink" title="修改数据表"></a>修改数据表</h3><p><strong>添加单列</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name ADD [COLUMN] col_name column_definition [FIRST | AFTER col_name]</span><br></pre></td></tr></table></figure>
+<p><strong>添加多列</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name ADD[COLUMN] (col_name column_defination,........)</span><br></pre></td></tr></table></figure>
+<p><strong>删除列</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name DROP [COLUMN] col_name</span><br><span class="line">ALTER TABLE user DROP password，DROP username</span><br></pre></td></tr></table></figure>
+<p><strong>添加唯一约束</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name ADD [CONSTRAINT [symbol]] UNIQUE [INDEX | KEY] [index_name] [index_type] (index_col_name,.....)</span><br></pre></td></tr></table></figure>
+<p><code>index_name</code> : 索引名字</p>
+<p>（显示数据表中索引名字：<code>SHOW INDEXS FROM tbl_name</code>）</p>
+<p><strong>添加外键约束</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name ADD [CONSTRAINT [symbol]] FOREIGN KEY  [index_name]  (index_col_name,....)  reference_definition</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例：ALTER TABLE user2 ADD FOREIGN KEY (pid) REFERENCE provinces (id)</span><br></pre></td></tr></table></figure>
+<p><strong>删除主键约束</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name DROP PRIMARY KEY</span><br></pre></td></tr></table></figure>
+<p><strong>删除唯一约束</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name DROP &#123;INDEX | KEY&#125; index_name</span><br><span class="line">例：ALTER TABLE user DROP INDEX username</span><br><span class="line">(注意是删除username上的唯一约束，而不是删除掉这个字段)</span><br></pre></td></tr></table></figure>
+<p><strong>删除外键约束</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name DROP FOREIGN KEY fk_symbol</span><br></pre></td></tr></table></figure>
+<p><strong>修改列定义</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name MODIFY [COLUMN] col_name column_definition [FIRST | AFTER  col_name]</span><br><span class="line">例：ALTER TABLE user MODIFY id SMALLINT UNSIGNED NOT NULL FIRST</span><br></pre></td></tr></table></figure>
+<p><strong>修改列名称</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name CHANGE [COLUMN] old_col_name new_col_name column_definition [FIRST | AFTER col_name]</span><br></pre></td></tr></table></figure>
+<h3 id="数据表更名"><a href="#数据表更名" class="headerlink" title="数据表更名"></a>数据表更名</h3><h4 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tbl_name RENAME [TO | AS]  new_tbl_name </span><br><span class="line">例：ALTER TABLE user2 RENAME user3</span><br></pre></td></tr></table></figure>
+<h4 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RENAME TABLE tbl_name TO new_tbl_name [, tbl_name2  TO new_name2] .....</span><br></pre></td></tr></table></figure>
+<p><strong>插入记录 INSERT</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT [INTO] tbl_name [(col_name)] &#123;VALUES | VALUE&#125; (&#123;expr | DEFAULT&#125;,.......),&#123;......&#125;,......</span><br><span class="line">例：INSERT  users VALUES (NULL，&quot;tom&quot;，&quot;456&quot;，25，1)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT [INTO] tbl_name SET col_name = &#123;expr | DEFAULT&#125;,......</span><br></pre></td></tr></table></figure>
+<p>说明：与第一种方式的区别在于，此方法可以使用子查询（SubQuery）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT [INTO] tbl_name [(col_name,.....)] SELECT .....</span><br></pre></td></tr></table></figure>
+<p>说明：此方法可以将查询结果插入到指定数据表</p>
+<p><strong>更新记录（单表更新）UPDATE</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UPDATE [LOW_PRIORITY] [IGNORE] table_reference SET col_name1 = &#123;expr | DEFAULT&#125;  [,  col_name2 = </span><br><span class="line">            &#123;expr2 | DEFAULT&#125;].....  [WHERE where_condition]</span><br></pre></td></tr></table></figure>
+<p>若不加where条件 ， 表示修改所有的表中记录</p>
+<p><strong>DELETE 删除记录（单表删除）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM tbl_name [WHERE where_condition]</span><br></pre></td></tr></table></figure>
+<p><strong>SELECT 查找记录</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT select_expr [, select_expr ...  ][FROM table_references][WHERE where_condition][GROUP BY &#123;col_name | position&#125; [ASC | DESC],  .....  ][HAVING where_condition][ORDER BY &#123;col_name | expr | position&#125; [ASC | DESC],..... [LIMIT  &#123;[offset,] row_count | row_count OFFSET offset&#125; ]</span><br></pre></td></tr></table></figure>
+<p><strong>查询表达式</strong></p>
+<p>每一个表达式表示想要的一列，必须有至少一个<br>多个列之间以英文逗号分隔<br>星号<code>（*）</code>表示所有列。<code>tbl_name.*</code> 可以表示命名表的所有列。</p>
+<p>查询表达式可以使用 <code>[ AS ] alias_name</code> 为其赋予别名。</p>
+<p>别名可用于<code>GROUP BY</code>，<code>ORDER BY</code> 或 <code>HAVING</code> 字句。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">例：SELECT username, id FROM users</span><br><span class="line">SELECT users.username, users.id FROM users(使用多表连接时使用) WHERE 条件表达式对记录进行过滤，如果没有指定WHERE字句，则显示所有记录。</span><br></pre></td></tr></table></figure>
+<p>在WHERE表达式中，可以使用MySQL支持的函数或运算符。 </p>
+<p><strong>GROUP BY查询结果分组</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[GROUP BY &#123;col_name | position&#125; [ASC | DESC （升序降序） ],...... ] HAVING  对分组条件进行指定</span><br><span class="line">例：SELECT sex FROM users GROUP BY sex;</span><br><span class="line">SELECT sex, age FROM users GROUP BY sex HAVING age &gt; 35 ;</span><br></pre></td></tr></table></figure>
+<p><strong>ORDER BY对查询结果进行排序</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ORDER BY &#123;col_name | expr | position&#125;  [ASC | DESC],...... ]</span><br><span class="line">按id降序排列：SELECT * FROM users ORDER BY id DESC;</span><br></pre></td></tr></table></figure>
+<p><strong>LIMIT限制查询结果返回的数量</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[LIMIT  &#123;[offset,]  row_count | row_count  OFFSET offset  &#125;]</span><br><span class="line"> 例：SELECT * FROM users LIMIT 2;       （返回前两条记录）</span><br><span class="line">SELECT * FROM users LIMIT 2,2;  （返回第三四条记录）</span><br></pre></td></tr></table></figure>
+<p><strong>子查询</strong></p>
+<p>子查询（Subquery）是指出现在其他SQL语句内的SELECT子句。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例如：SELECT  *  FROM t1 WHERE col1 = ( SELECT col2 FROM t2 );</span><br><span class="line">其中SELECT *  FROM t1  ,  称为Outer Query / Outer Statement</span><br><span class="line">SELECT col2 FROM t2 , 称为SubQuery</span><br></pre></td></tr></table></figure>
+<p>子查询指嵌套在查询内部，且必须始终出现在圆括号内。</p>
+<p>子查询可以包含多个关键字或条件，<br>如<code>DISTINCT</code>,  <code>GROUP BY</code> ,   <code>ORDER BY</code>,   <code>LIMIT</code>,  函数等。</p>
+<p>子查询的外层查询可以是：<code>SELECT</code> ,  <code>INSERT</code> , <code>UPDATE</code> , <code>SET</code> 或 <code>DO</code>。</p>
+<p>子查询可以返回标量、一行、一列或子查询。</p>
+<p>子查询条件关键字：<code>ANY SOME ALL</code></p>
+<p><strong>使用[ NOT ]  IN 的子查询</strong></p>
+<p><strong>使用[ NOT ]  EXISTS 的子查询</strong></p>
+<p><strong>INSERT …. SELECT</strong></p>
+<p>将查询结果写入到数据表.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT [INTO] tbl_name [(col_name,...)] SELECT ...</span><br></pre></td></tr></table></figure>
+<p><strong>多表更新</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE table_references SET col_name1 = &#123;expr | DEFAULT&#125;[, col_name = &#123;expr | DEFAULT&#125;]...[WHERE where_condition]</span><br></pre></td></tr></table></figure>
+<p><strong>CREATE … SELECT</strong></p>
+<p>创建数据表同时将查询结果写入到数据表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE [IF NOT EXISTS]  tbl_name [(create_definition,....)]select_statement</span><br></pre></td></tr></table></figure>
+<p><strong>连接</strong></p>
+<p>MySQL在SELECT语句，多表更新，多表删除语句中支持JOIN操作。</p>
+<p><img src="/uploads/171202mysql/1.png" alt=""></p>
+<p>连接条件</p>
+<p>使用ON关键字来设定连接条件，也可以使用WHERE来代替。</p>
+<p>通常使用ON关键字来设定连接条件。</p>
+<p>使用WHERE关键字进行结果集记录的过滤。</p>
+<blockquote>
+<ul>
+<li>1、内连接：在MySQL中JOIN,INNER JOIN,CROSS JOIN是等价的</li>
+<li>2、外连接：LEFT JOIN左外连接；RIGHT JOIN右外连接</li>
+<li>3、连接条件：使用ON设定连接条件，也可以用WHERE代替<br>(ON：设定连接条件;WHERE：进行结果集记录的过滤)</li>
+<li>4：内连接是返回左表及右表符合连接条件的记录</li>
+<li>5、例如：SELECT * FROM tabA JOIN tabB ON tabA.name = tabB.name;表示返回都含有的name值对应的字段</li>
+</ul>
+</blockquote>
+<p><img src="/uploads/171202mysql/2.png" alt=""></p>
+<p><img src="/uploads/171202mysql/3.png" alt=""></p>
+<p><strong>外连接</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A LEFT JOIN B join_condition</span><br></pre></td></tr></table></figure>
+<p>数据表B的结果集依赖数据表A</p>
+<p>数据表A的结果集根据左连接条件依赖所有数据表（B表除外）</p>
+<p>左外连接条件决定如何检索数据表B（在没有指定WHERE条件的情况下）</p>
+<p>如果数据表A的某条记录符合WHERE条件，但是在数据表B不存在符合连接条件的记录，将生成一个所有列为空的额外的B行。</p>
+<p>如果使用内连接查找的记录在连接数据表中不存在，并且在WHERE字句中尝试以下操作：col_name IS NULL时，如果col_name被定义为NOT NULL，MySQL将在找到符合连接条件的记录后停止搜索更多的行。</p>
+<p><strong>自身连接</strong></p>
+<p>同一个数据表对其自身进行连接。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例：SELECT s.type_id , s.type_name , p.type_id  FROM tdb_goods AS s LEFT JOIN  tdb_goods AS p;</span><br></pre></td></tr></table></figure>
+<p><strong>多表删除</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DELETE tbl_name [.*] [, tbl_name[.*]]... FROM table_references[WHERE where_condition]</span><br><span class="line">DELETE t1 FROM tdb_goods AS t1 LEFT JOIN (SELECT goods_id, goods_name FROM tdb_goods  GROUP BY  goods_name HAVING count(goods_name) &gt;=2 ) AS t2 ON</span><br><span class="line">t1.goods_name = t2.goods_name  WHERE t1.goods_id &gt; t2.goods_id;</span><br></pre></td></tr></table></figure>
+<p><strong>子查询:</strong></p>
+<p>出现在sql语句中的select子句，而子查询必须要出现在小括号()内，他的外层可以是select语句，insert语句，update语句，delete语句，而且在子查询中可以包含多个关键词:group by ，order by ，limit以及相关函数。引发子查询的情况有比较运算符 ，in(NOT)in运算符,exist(NOT EXIST)引发的子查询.</p>
+<p><strong>连接:</strong></p>
+<p>连接分为外连接和内连接，内连接主要显示的是左表和右表当中都符合连接条件的记录。外链接有分为左外连接和右外连接，左外连接显示的是左表中的全部记录和右表符合条件的记录，右外连接和左外连接相反，mysql中的select，多表更新和删除都可以用到内连接，左，右连接。</p>
+<p><strong>函数</strong></p>
+<p>查询api吧。。。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/24/Idea常用快捷键/" rel="next" title="Idea常用快捷键">
+                <i class="fa fa-chevron-left"></i> Idea常用快捷键
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/16/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/we.jpg"
+                alt="HeroBin" />
+            
+              <p class="site-author-name" itemprop="name">HeroBin</p>
+              <p class="site-description motion-element" itemprop="description">记录学习生活的点点滴滴</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#约束："><span class="nav-number">1.</span> <span class="nav-text">约束：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改数据表"><span class="nav-number">2.</span> <span class="nav-text">修改数据表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据表更名"><span class="nav-number">3.</span> <span class="nav-text">数据表更名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一："><span class="nav-number">3.1.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二："><span class="nav-number">3.2.</span> <span class="nav-text">方法二：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HeroBin</span>
+
+  
+
+  
+</div>
+
+
+
+<!-- 
+  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+ -->
+
+<!-- 
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+ -->
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共32.3k字</span>
+</div>
+ 
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
