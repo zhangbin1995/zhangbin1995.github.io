@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.herobin.top/"/>
-  <updated>2019-01-12T11:19:47.000Z</updated>
+  <updated>2019-01-11T05:40:10.000Z</updated>
   <id>http://www.herobin.top/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>mysql存储过程</title>
-    <link href="http://www.herobin.top/2019/01/12/mysql%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/"/>
-    <id>http://www.herobin.top/2019/01/12/mysql存储过程/</id>
-    <published>2019-01-12T11:19:47.000Z</published>
-    <updated>2019-01-12T11:19:47.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>源码阅读-ArrayList</title>
@@ -471,6 +457,34 @@
     
     
       <category term="其他" scheme="http://www.herobin.top/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql存储过程</title>
+    <link href="http://www.herobin.top/2017/12/13/mysql%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/"/>
+    <id>http://www.herobin.top/2017/12/13/mysql存储过程/</id>
+    <published>2017-12-13T11:19:47.000Z</published>
+    <updated>2019-01-12T11:47:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/uploads/20171213mysql/1.png" alt=""></p><h4 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h4><p>存储过程是SQL语句和控制语句的预编译集合，以一个名称存储并作为一个单元处理。</p><h4 id="存储过程的优点"><a href="#存储过程的优点" class="headerlink" title="存储过程的优点"></a>存储过程的优点</h4><blockquote><ul><li>增强SQL语句的功能和灵活性</li><li>实现较快的执行速度</li><li>减少网络流量</li></ul></blockquote><p><img src="/uploads/20171213mysql/2.png" alt=""></p><blockquote><ul><li>IN：表示该参数的值必须在调用存储过程时指定</li><li>OUT：表示该参数的值可以被存储过程改变，并且可以返回。</li><li>INOUT：表示该参数的调用时指定，并且可以被改变和返回。</li></ul></blockquote><p><img src="/uploads/20171213mysql/3.png" alt=""></p><p><img src="/uploads/20171213mysql/4.png" alt=""></p><h4 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h4><p>MySQL可以将数据以不同的技术存储在文件（内存）中，这种技术就成为存储引擎。</p><p>每一种存储引擎使用不同的存储机制、索引技巧、锁定水平，最终提供广泛且不同的功能。</p><p><img src="/uploads/20171213mysql/5.png" alt=""></p><h4 id="并发控制"><a href="#并发控制" class="headerlink" title="并发控制"></a>并发控制</h4><p>当多个连接对记录进行修改时保证数据的一致性和完整性。</p><p><img src="/uploads/20171213mysql/6.png" alt=""></p><p><img src="/uploads/20171213mysql/7.png" alt=""></p><h4 id="事物"><a href="#事物" class="headerlink" title="事物"></a>事物</h4><p><img src="/uploads/20171213mysql/8.png" alt=""></p><p><img src="/uploads/20171213mysql/9.png" alt=""></p><p>外键：是保证数据一致性的策略。</p><p>索引：是对数据表中一列或多列的值进行排序的一种结构。</p><p><img src="/uploads/20171213mysql/10.png" alt=""></p><p><img src="/uploads/20171213mysql/11.png" alt=""></p><p><img src="/uploads/20171213mysql/12.png" alt=""></p><p><img src="/uploads/20171213mysql/13.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/uploads/20171213mysql/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;存储过程&quot;&gt;&lt;a href=&quot;#存储过程&quot; class=&quot;headerlink&quot; title=&quot;存储过程&quot;&gt;&lt;/a&gt;存储过程&lt;/h4&gt;&lt;p&gt;存储过程是SQ
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://www.herobin.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="数据库" scheme="http://www.herobin.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="mysql" scheme="http://www.herobin.top/tags/mysql/"/>
     
   </entry>
   
