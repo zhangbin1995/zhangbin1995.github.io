@@ -108,18 +108,29 @@
 
 
 
-  <meta name="description" content="一、SOA是什么SOA的全称是Service-Oriented Architecture，面向服务架构。是一种架构，不是一种具体的开发技术。 要真正理解什么是SOA需要从软件开发的技术发展史谈起。 真正的软件开发从开始到现在经历了四个阶段，也可以说成是四代：   1、汇编语言开发 2、面向过程的软件 3、面向对象的组件开发 4、面向服务的架构开发，也是今天要谈论的SOA架构   SOA与前面三代的">
-<meta name="keywords" content="其他">
+  <meta name="description" content="可见性可见性：一个线程对共享变量值的修改，能够及时地被其他线程看到。 共享变量：如果一个变量在多个线程的工作内存中都存在副本，那么这个变量就是这几个线程的共享变量 Java内存模型（JMM）Java内存模型（Java Memory Model）描述了Java程序中各种变量（线程共享变量）的访问规则，以及在JVM中将变量存储到内存和从内存中读取出变量这样的底层细节。 所有的变量都存储在主内存中。 每">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SOA介绍">
-<meta property="og:url" content="http://www.herobin.top/2017/10/19/SOA介绍/index.html">
+<meta property="og:title" content="java多线程之内存可见性">
+<meta property="og:url" content="http://www.herobin.top/2018/01/04/java多线程之内存可见性/index.html">
 <meta property="og:site_name" content="HeroBin&#39;s Blog">
-<meta property="og:description" content="一、SOA是什么SOA的全称是Service-Oriented Architecture，面向服务架构。是一种架构，不是一种具体的开发技术。 要真正理解什么是SOA需要从软件开发的技术发展史谈起。 真正的软件开发从开始到现在经历了四个阶段，也可以说成是四代：   1、汇编语言开发 2、面向过程的软件 3、面向对象的组件开发 4、面向服务的架构开发，也是今天要谈论的SOA架构   SOA与前面三代的">
+<meta property="og:description" content="可见性可见性：一个线程对共享变量值的修改，能够及时地被其他线程看到。 共享变量：如果一个变量在多个线程的工作内存中都存在副本，那么这个变量就是这几个线程的共享变量 Java内存模型（JMM）Java内存模型（Java Memory Model）描述了Java程序中各种变量（线程共享变量）的访问规则，以及在JVM中将变量存储到内存和从内存中读取出变量这样的底层细节。 所有的变量都存储在主内存中。 每">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-11T06:49:36.000Z">
+<meta property="og:image" content="http://www.herobin.top/uploads/180104java1/1.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/180104java1/2.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/180104java1/3.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/180104java1/4.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/180104java1/5.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/180104java1/6.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/180104java1/7.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/180104java1/8.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/180104java1/9.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/180104java1/10.png">
+<meta property="og:updated_time" content="2019-01-13T03:58:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SOA介绍">
-<meta name="twitter:description" content="一、SOA是什么SOA的全称是Service-Oriented Architecture，面向服务架构。是一种架构，不是一种具体的开发技术。 要真正理解什么是SOA需要从软件开发的技术发展史谈起。 真正的软件开发从开始到现在经历了四个阶段，也可以说成是四代：   1、汇编语言开发 2、面向过程的软件 3、面向对象的组件开发 4、面向服务的架构开发，也是今天要谈论的SOA架构   SOA与前面三代的">
+<meta name="twitter:title" content="java多线程之内存可见性">
+<meta name="twitter:description" content="可见性可见性：一个线程对共享变量值的修改，能够及时地被其他线程看到。 共享变量：如果一个变量在多个线程的工作内存中都存在副本，那么这个变量就是这几个线程的共享变量 Java内存模型（JMM）Java内存模型（Java Memory Model）描述了Java程序中各种变量（线程共享变量）的访问规则，以及在JVM中将变量存储到内存和从内存中读取出变量这样的底层细节。 所有的变量都存储在主内存中。 每">
+<meta name="twitter:image" content="http://www.herobin.top/uploads/180104java1/1.png">
 
 
 
@@ -128,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="http://www.herobin.top/2017/10/19/SOA介绍/"/>
+  <link rel="canonical" href="http://www.herobin.top/2018/01/04/java多线程之内存可见性/"/>
 
 
 
@@ -138,7 +149,7 @@
   };
 </script>
 
-  <title>SOA介绍 | HeroBin's Blog</title>
+  <title>java多线程之内存可见性 | HeroBin's Blog</title>
   
 
 
@@ -322,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2017/10/19/SOA介绍/">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/01/04/java多线程之内存可见性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HeroBin">
@@ -339,7 +350,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SOA介绍
+          <h1 class="post-title" itemprop="name headline">java多线程之内存可见性
               
             
           </h1>
@@ -364,7 +375,7 @@
                 
               
 
-              <time title="创建时间：2017-10-19 14:42:23" itemprop="dateCreated datePublished" datetime="2017-10-19T14:42:23+08:00">2017-10-19</time>
+              <time title="创建时间：2018-01-04 11:33:46" itemprop="dateCreated datePublished" datetime="2018-01-04T11:33:46+08:00">2018-01-04</time>
             
 
             
@@ -381,7 +392,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-11 14:49:36" itemprop="dateModified" datetime="2019-01-11T14:49:36+08:00">2019-01-11</time>
+                <time title="修改时间：2019-01-13 11:58:48" itemprop="dateModified" datetime="2019-01-13T11:58:48+08:00">2019-01-13</time>
               
             
           </span>
@@ -398,7 +409,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
 
                 
                 
@@ -437,71 +448,94 @@
       
 
       
-        <h3 id="一、SOA是什么"><a href="#一、SOA是什么" class="headerlink" title="一、SOA是什么"></a>一、SOA是什么</h3><p>SOA的全称是Service-Oriented Architecture，面向服务架构。是一种架构，不是一种具体的开发技术。</p>
-<p>要真正理解什么是SOA需要从软件开发的技术发展史谈起。</p>
-<p>真正的软件开发从开始到现在经历了四个阶段，也可以说成是四代：</p>
-<blockquote>
+        <h3 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h3><p><strong>可见性：</strong>一个线程对共享变量值的修改，能够及时地被其他线程看到。</p>
+<p><strong>共享变量：</strong>如果一个变量在多个线程的工作内存中都存在副本，那么这个变量就是这几个线程的共享变量</p>
+<h3 id="Java内存模型（JMM）"><a href="#Java内存模型（JMM）" class="headerlink" title="Java内存模型（JMM）"></a>Java内存模型（JMM）</h3><p>Java内存模型（Java Memory Model）描述了Java程序中各种变量（线程共享变量）的访问规则，以及在JVM中将变量存储到内存和从内存中读取出变量这样的底层细节。</p>
+<p>所有的变量都存储在主内存中。</p>
+<p>每个线程都有自己独立的工作内存，里面保存该线程使用到的变量的副本。（主内存中该变量的一份拷贝）</p>
+<p><img src="/uploads/180104java1/1.png" alt=""></p>
+<h3 id="两条规定"><a href="#两条规定" class="headerlink" title="两条规定"></a>两条规定</h3><blockquote>
 <ul>
-<li>1、汇编语言开发</li>
-<li>2、面向过程的软件</li>
-<li>3、面向对象的组件开发</li>
-<li>4、面向服务的架构开发，也是今天要谈论的SOA架构</li>
-</ul>
-</blockquote>
-<p>SOA与前面三代的软件开发技术对比，不同点是SOA超越了软件开发语言本身。是一种面向服务的架构，与软件开发语言无关。</p>
-<p>但就软件开发本身来说，SOA是一种技术，又超越了所有具体的技术。</p>
-<h3 id="二、SOA的技术革命"><a href="#二、SOA的技术革命" class="headerlink" title="二、SOA的技术革命"></a>二、SOA的技术革命</h3><p>SOA既然能成为第四代软件开发技术，究竟带来什么革命。</p>
-<p>首先，SOA是一种开发思想。是一种松耦合的框架。可以让软件超越开发语言。</p>
-<p>其次，SOA的开发需要SOA体系的支撑，就像J2EE应用一样，离不开应用服务器。SOA也一样，也有一个类似J2EE服务器的东西支持着整个SOA体系架构—-ESB（<br>Enterprise Service Bus），企业服务总线。通过这个总线，将多个系统连接起来。</p>
-<p>其次，SOA是基于消息请求响应的一个系统，对请求类型有高度的兼容性。与一个Web应用容器相比，web应用容器只能处理HTTP请求，而 SOA的ESB可以接受HTTP、FTP、WebService、JMS…等请求。这就使得SOA架构具有高度的兼容性，可以将不同的平台集成到一 起，从而相互协调工作。</p>
-<h3 id="三、SOA火起来的真正原因"><a href="#三、SOA火起来的真正原因" class="headerlink" title="三、SOA火起来的真正原因"></a>三、SOA火起来的真正原因</h3><blockquote>
-<ul>
-<li>1、软件开发技术的不断提高。</li>
+<li>线程对共享变量的所有操作都必须在自己的工作内存中进行，不能直接从主内存中读写。</li>
 </ul>
 </blockquote>
 <blockquote>
 <ul>
-<li>2、硬件性能的提升，价格下降，投出SOA所消耗的成本为企业所能忍受。</li>
+<li>不同线程之间无法直接访问其他线程工作内存中的变量，线程间变量值的传递需要通过主内存来完成。</li>
 </ul>
 </blockquote>
+<p><img src="/uploads/180104java1/2.png" alt=""></p>
+<p>要实现共享变量的可见性，必须保证两点：</p>
 <blockquote>
 <ul>
-<li>3、SOA受到了IMB、Oracle、Sun、Microsoft等大公司的热力追捧，被捧红了，实际上，一直以来都是这些公司在引领软件应用的潮流。</li>
+<li>线程修改后的共享变量值能够及时从工作内存刷新到主内存中。</li>
+<li>其他线程能够及时把共享变量的最新值从主内存更新到自己的工作内存中</li>
 </ul>
 </blockquote>
+<h3 id="Java语言层次支持的可见性实现方式："><a href="#Java语言层次支持的可见性实现方式：" class="headerlink" title="Java语言层次支持的可见性实现方式："></a>Java语言层次支持的可见性实现方式：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    synchronized</span><br><span class="line">    volatile</span><br></pre></td></tr></table></figure>
+<p><strong>synchronized能够实现：</strong></p>
+<p>原子性（同步）</p>
+<p>可见性</p>
+<p>JMM关于synchronized的两条规定：</p>
 <blockquote>
 <ul>
-<li>4、SOA技术革命每年有上千亿美元的市场价值。软件要升级，这些服务提供商才可以买出更多的中间件服务器，卖出更多的硬件，赚取更多利润。</li>
+<li>线程解锁前，必须把共享变量的最新值刷新到主内存中。</li>
+<li>线程加锁时，将清空工作内存中共享变量的值，从而使用共享变量时需要从主内存中重新读取最新的值<pre><code>（注意：加锁和解锁需要是同一把锁）
+</code></pre></li>
 </ul>
 </blockquote>
+<p>线程解锁前对共享变量的修改在下次加锁时对其他线程可见</p>
+<p><img src="/uploads/180104java1/3.png" alt="">           </p>
+<h3 id="重排序"><a href="#重排序" class="headerlink" title="重排序"></a>重排序</h3><p><strong>重排序：</strong>代码书写的顺序与实际执行的顺序不同，指令重排序是编译器或处理器为了提高程序性能而做的优化</p>
 <blockquote>
 <ul>
-<li>5、很多企业的软件应用系统已经满足不了信息高度集成化的要求，为了提高企业的核心竞争力，企业不惜重金，上SOA。</li>
+<li>1.编译器优化的重排序（编译器优化）</li>
+<li>2.指令级并行重排序（处理器优化）</li>
+<li>3.内存系统的重排序（处理器优化）</li>
 </ul>
 </blockquote>
+<p>as-if-serial：无论如何重排序，程序执行的结果应该与代码顺序执行的结果一致（Java编译器、运行时和处理器都会保证Java在单线程下遵循as-if-serial语义）</p>
+<p><img src="/uploads/180104java1/4.png" alt=""></p>
+<h3 id="可见性分析"><a href="#可见性分析" class="headerlink" title="可见性分析"></a>可见性分析</h3><p>导致共享变量在线程间不可见的原因：      synchronized解决方案</p>
 <blockquote>
 <ul>
-<li>6、SOA的招牌很响亮，超越了一切，兼容了一切。它不摒弃旧系统，而是将很多旧系统继承起来，就可以实现。—–实际上，我个人认为这是一个骗局。</li>
+<li>1.线程的交叉执行       ——&gt;   原子性</li>
+<li>2.重排序结合线程交叉执行       ——&gt;   原子性</li>
+<li>3.共享变量更新后的值没有在工作内存与主内存间及时更新    ——&gt;   可见性</li>
 </ul>
 </blockquote>
-<h3 id="四、SOA最有前景的舞台"><a href="#四、SOA最有前景的舞台" class="headerlink" title="四、SOA最有前景的舞台"></a>四、SOA最有前景的舞台</h3><blockquote>
-<ul>
-<li>1、基于SOA是的思想和技术，SOA最适合最擅长的就是系统集成。而系统集成的关键就是提取公共的有价值的服务。各个系统通过暴露服务，经过ESB这条总线连接后，就将几个系统集成起来了。这在新一代软件开发中也许会得到应用。</li>
-</ul>
-</blockquote>
+<h3 id="volatile实现可见性"><a href="#volatile实现可见性" class="headerlink" title="volatile实现可见性"></a>volatile实现可见性</h3><p>volatile如何实现内存可见性：</p>
 <blockquote>
 <ul>
-<li>2、SOA的架构注定SOA在中小企业内部没有多大价值。中小企业的摊子还不够大。</li>
+<li>深入来说：通过加入内存屏障和禁止重排序优化来实现的。</li>
+<li>对volatile变量执行写操作时，会在写操作后加入一条store屏障指令。</li>
+<li>对volatile变量执行读操作时，会在读操作前加入一条load屏障指令。</li>
 </ul>
 </blockquote>
-<blockquote>
+<h3 id="volatile如何实现内存可见性："><a href="#volatile如何实现内存可见性：" class="headerlink" title="volatile如何实现内存可见性："></a>volatile如何实现内存可见性：</h3><p>通俗的讲：volatile变量在每次被线程访问时，都强迫从主内存中重读该变量的值，而当该变量发生变化时，又会强迫线程将最新的值刷新到主内存。这样任何时刻，不同的线程总能看到该变量的最新值。</p>
+<h4 id="线程写volatile变量的过程："><a href="#线程写volatile变量的过程：" class="headerlink" title="线程写volatile变量的过程："></a>线程写volatile变量的过程：</h4><blockquote>
 <ul>
-<li>3、SOA系统集成难点在于抽取公共的服务。对于老的系统来说，抽取服务就是抽筋。很难很难，意味着要修改软件，要适合SOA的胃口。因此，对一些不同语言开发的系统来说，使用SOA进行系统实际上是扯淡。</li>
+<li>1.改变线程工作内存中volatile变量副本的值。</li>
+<li>2.将改变后的副本的值从工作内存刷新到主内存。</li>
 </ul>
 </blockquote>
-<h3 id="五、SOA发展现状"><a href="#五、SOA发展现状" class="headerlink" title="五、SOA发展现状"></a>五、SOA发展现状</h3><p>对SOA口号叫的最响的是IBM，出书最多的也是IBM，成功的案例还没看到。所有的大公司都在忽悠，希望拿到第一笔大单。</p>
-<p>SOA以来ESB，ESB本身也是一种中间件，或者说是一个增强了的企业应用服务器。目前开源的有几个，也没见过成功的案例。估计SOA技术从起步到成熟还有很长一段路要走。ESB的实现还需要一个发展过程。</p>
-<p>相反与SOA有紧密联系WebService技术已经深入人心。现在用的比较多。</p>
+<h4 id="线程读volatile变量的过程："><a href="#线程读volatile变量的过程：" class="headerlink" title="线程读volatile变量的过程："></a>线程读volatile变量的过程：</h4><blockquote>
+<ul>
+<li>1.从主内存中读取volatile变量的最新值到线程的工作内存中。</li>
+<li>2.从工作内存中读取volatile变量的副本。</li>
+</ul>
+</blockquote>
+<p>volatile不能保证volatile变量复合操作的原子性</p>
+<p><img src="/uploads/180104java1/5.png" alt=""></p>
+<p><img src="/uploads/180104java1/6.png" alt=""></p>
+<p>在多进程（线程）的操作系统中不能被其它进程（线程）打断的操作就叫原子操作，文件的原子操作是指操作文件时的不能被打断的操作。原子操作是不可分割的，在执行过程中不会被任何其它任务或事件中断。</p>
+<p>回滚就是回到事务开始之前的状态</p>
+<p>我们把这种要么一起成功（A帐户成功减少1000，同时B帐户成功增加1000），要么一起失败（A帐户回到原来状态，B帐户也回到原来状态）的操作叫原子性操作。</p>
+<p>如果把一个事务可看作是一个程序,它要么完整的被执行,要么完全不执行。这种特性就叫原子性</p>
+<p><img src="/uploads/180104java1/7.png" alt=""></p>
+<p><img src="/uploads/180104java1/8.png" alt=""></p>
+<p><img src="/uploads/180104java1/9.png" alt=""></p>
+<p><img src="/uploads/180104java1/10.png" alt=""></p>
 
       
     </div>
@@ -522,7 +556,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/其他/" rel="tag"><i class="fa fa-tag"></i> 其他</a>
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
           
         </div>
       
@@ -535,8 +569,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/17/git coding的使用/" rel="next" title="git coding的使用">
-                <i class="fa fa-chevron-left"></i> git coding的使用
+              <a href="/2017/12/13/mysql存储过程/" rel="next" title="mysql存储过程">
+                <i class="fa fa-chevron-left"></i> mysql存储过程
               </a>
             
           </div>
@@ -545,8 +579,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/22/sqlserver数据库大小写不敏感问题/" rel="prev" title="sqlserver数据库大小写不敏感问题">
-                sqlserver数据库大小写不敏感问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/16/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -736,7 +770,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、SOA是什么"><span class="nav-number">1.</span> <span class="nav-text">一、SOA是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、SOA的技术革命"><span class="nav-number">2.</span> <span class="nav-text">二、SOA的技术革命</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、SOA火起来的真正原因"><span class="nav-number">3.</span> <span class="nav-text">三、SOA火起来的真正原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、SOA最有前景的舞台"><span class="nav-number">4.</span> <span class="nav-text">四、SOA最有前景的舞台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、SOA发展现状"><span class="nav-number">5.</span> <span class="nav-text">五、SOA发展现状</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#可见性"><span class="nav-number">1.</span> <span class="nav-text">可见性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java内存模型（JMM）"><span class="nav-number">2.</span> <span class="nav-text">Java内存模型（JMM）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两条规定"><span class="nav-number">3.</span> <span class="nav-text">两条规定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java语言层次支持的可见性实现方式："><span class="nav-number">4.</span> <span class="nav-text">Java语言层次支持的可见性实现方式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重排序"><span class="nav-number">5.</span> <span class="nav-text">重排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可见性分析"><span class="nav-number">6.</span> <span class="nav-text">可见性分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#volatile实现可见性"><span class="nav-number">7.</span> <span class="nav-text">volatile实现可见性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#volatile如何实现内存可见性："><span class="nav-number">8.</span> <span class="nav-text">volatile如何实现内存可见性：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线程写volatile变量的过程："><span class="nav-number">8.1.</span> <span class="nav-text">线程写volatile变量的过程：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线程读volatile变量的过程："><span class="nav-number">8.2.</span> <span class="nav-text">线程读volatile变量的过程：</span></a></li></ol></li></ol></div>
             
 
           </div>
