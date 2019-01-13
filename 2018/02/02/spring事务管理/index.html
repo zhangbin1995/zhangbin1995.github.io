@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="什么是事务：事务指的是逻辑上的一组操作，这组操作要么全部成功，要么全部失败.（银行转账） 事务的特性：原子性 一致性 隔离性 持久性   原子性：原子性是指事务是一个不可分割的工作单位，事务中的操作要么都发生，要么都不发生     一致性：一致性指事务前后数据的完整性必须保持一致     隔离性：隔离性指多个用户并发访问数据库时，一个用户的事务不能被其他用户的事务所干扰，多个并发事务之间数据要相互">
+<meta name="keywords" content="java,spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring事务管理">
+<meta property="og:url" content="http://www.herobin.top/2018/02/02/spring事务管理/index.html">
+<meta property="og:site_name" content="HeroBin&#39;s Blog">
+<meta property="og:description" content="什么是事务：事务指的是逻辑上的一组操作，这组操作要么全部成功，要么全部失败.（银行转账） 事务的特性：原子性 一致性 隔离性 持久性   原子性：原子性是指事务是一个不可分割的工作单位，事务中的操作要么都发生，要么都不发生     一致性：一致性指事务前后数据的完整性必须保持一致     隔离性：隔离性指多个用户并发访问数据库时，一个用户的事务不能被其他用户的事务所干扰，多个并发事务之间数据要相互">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-13T07:54:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="spring事务管理">
+<meta name="twitter:description" content="什么是事务：事务指的是逻辑上的一组操作，这组操作要么全部成功，要么全部失败.（银行转账） 事务的特性：原子性 一致性 隔离性 持久性   原子性：原子性是指事务是一个不可分割的工作单位，事务中的操作要么都发生，要么都不发生     一致性：一致性指事务前后数据的完整性必须保持一致     隔离性：隔离性指多个用户并发访问数据库时，一个用户的事务不能被其他用户的事务所干扰，多个并发事务之间数据要相互">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="HeroBin's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://www.herobin.top/2018/02/02/spring事务管理/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>spring事务管理 | HeroBin's Blog</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f6e0affa56b837b3134c1b097c760963";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/zhangbin1995"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HeroBin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">向阳而生</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/02/02/spring事务管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HeroBin">
+      <meta itemprop="description" content="记录学习生活的点点滴滴">
+      <meta itemprop="image" content="/uploads/we.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HeroBin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">spring事务管理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-02 12:45:29" itemprop="dateCreated datePublished" datetime="2018-02-02T12:45:29+08:00">2018-02-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-13 15:54:44" itemprop="dateModified" datetime="2019-01-13T15:54:44+08:00">2019-01-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="什么是事务："><a href="#什么是事务：" class="headerlink" title="什么是事务："></a>什么是事务：</h3><p>事务指的是逻辑上的一组操作，这组操作要么全部成功，要么全部失败.（银行转账）</p>
+<h4 id="事务的特性："><a href="#事务的特性：" class="headerlink" title="事务的特性："></a>事务的特性：</h4><p><strong>原子性 一致性 隔离性 持久性</strong></p>
+<blockquote>
+<ul>
+<li>原子性：原子性是指事务是一个不可分割的工作单位，事务中的操作要么都发生，要么都不发生</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>一致性：一致性指事务前后数据的完整性必须保持一致</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>隔离性：隔离性指多个用户并发访问数据库时，一个用户的事务不能被其他用户的事务所干扰，多个并发事务之间数据要相互隔离</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>持久性：持久性是指一个事务一旦被提交，它对数据库中数据的改变就是永久性的，即使数据库发生故障也不应该对其有任何影响</li>
+</ul>
+</blockquote>
+<p><strong>Spring事务管理高层抽象主要包括3个接口</strong></p>
+<blockquote>
+<ul>
+<li>PlatformTransactionManager：事务管理器</li>
+<li>TransactionDefinition：事务定义信息（隔离、传播、超时、只读）</li>
+<li>TransactionStatus：事务具体运行状态</li>
+</ul>
+</blockquote>
+<p>Spring为不同的持久化框架提供了不同PlatformTransactionManager接口实现</p>
+<p>DataSourceTransactionManager：使用Spring JDBC或iBatis进行持久化数据时使用</p>
+<p>HibernateTransactionManager：使用Hibernate3.0版本进行持久化数据时使用</p>
+<h3 id="Spring支持两种方式事务管理"><a href="#Spring支持两种方式事务管理" class="headerlink" title="Spring支持两种方式事务管理"></a>Spring支持两种方式事务管理</h3><blockquote>
+<ul>
+<li>编程式的事务管理:在实际应用中很少使用,通过TransactionTemplate手动管理事务</li>
+<li>通过XML配置声明式事务:开发中推荐使用（代码侵入性最小）<br>  Spring的声明式事务是通过AOP实现的</li>
+</ul>
+</blockquote>
+<h4 id="编程式的事务管理："><a href="#编程式的事务管理：" class="headerlink" title="编程式的事务管理："></a>编程式的事务管理：</h4><p>配置文件编写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 配置事务管理器 --&gt;</span><br><span class="line">&lt;bean id = &quot;transactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionmanager&quot;&gt;</span><br><span class="line">    &lt;property name = &quot;dataSource&quot; ref = &quot;dataSource&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line">&lt;!-- 配置事务管理的模板：Spring为了简化事务管理的代码而提供的类 --&gt;</span><br><span class="line">&lt;bean id = &quot;transactionTemplate&quot; class=&quot;org.springframework.transaction.support.TransactionTemplate&quot;&gt;</span><br><span class="line">    &lt;property name = &quot;transactionManager&quot; ref = &quot;transactionManager&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<p>代码文件编写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public void transfer(final String out, final String in, final Double money)&#123;</span><br><span class="line">    transactionTemplate.execute(new TransactionCallbackWithoutResult)&#123;</span><br><span class="line">        @override</span><br><span class="line">        protected void doInTransactionWithoutResult(TransactionStatus transactionStatus)&#123;</span><br><span class="line">            accountDao.outMoney(out, money);</span><br><span class="line">            int i = i/0;//用于异常时检测事务完整性</span><br><span class="line">            accountDao.inMoney(in, money);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="声明式的事务管理："><a href="#声明式的事务管理：" class="headerlink" title="声明式的事务管理："></a>声明式的事务管理：</h4><p>声明式事务管理方式一：TransactionProxyFactoryBean   （不常用）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 配置事务管理器： --&gt;</span><br><span class="line">&lt;bean id = &quot;transactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionmanager&quot;&gt;</span><br><span class="line">    &lt;property name = &quot;dataSource&quot; ref = &quot;dataSource&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line">&lt;!-- 配置业务层的代理： --&gt;</span><br><span class="line">&lt;bean id = &quot;acountServiceProxy&quot; class = &quot;org.springframework.transaction.interceptor.TransactionProxyFactoryBean&quot;&gt;</span><br><span class="line">    &lt;!-- 配置目标对象 --&gt;</span><br><span class="line">    &lt;property name = &quot;target&quot; ref = &quot;accountService&quot;/&gt;</span><br><span class="line">    &lt;!-- 注入事务管理器 --&gt;</span><br><span class="line">    &lt;property name = &quot;transactionManager&quot; ref = &quot;transactionManager&quot;/&gt;    </span><br><span class="line">    &lt;!-- 注入事务属性 --&gt;</span><br><span class="line">    &lt;property name = &quot;transactionAttributes&quot;&gt;</span><br><span class="line">        &lt;props&gt;</span><br><span class="line">            &lt;!-- prop的格式：</span><br><span class="line">                        * PROPAGATION  ： 事务的传播行为</span><br><span class="line">                        * ISOLATION  ： 事务的隔离级别</span><br><span class="line">                        * readOnly  ： 只读（不可以进行修改，插入，删除）</span><br><span class="line">                        * -Exception  ： 发生哪些异常回滚事务</span><br><span class="line">                        * +Exception： 发生哪些异常不回滚</span><br><span class="line">             --&gt;</span><br><span class="line">            &lt;prop key=&quot;transfer&quot;&gt;PROPAGATION_REQUIRED,redaOnly,...&lt;/prop&gt;</span><br><span class="line">        &lt;/props&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<p>声明式事务管理方式二：基于AspectJ使用xml方式  基于tx/aop</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id = &quot;transactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionmanager&quot;&gt;</span><br><span class="line">    &lt;property name = &quot;dataSource&quot; ref = &quot;dataSource&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line">&lt;tx:advice id = &quot;txAdvice&quot; transaction-manager=&quot;transactionManager&quot;&gt;</span><br><span class="line">    &lt;tx:attributes&gt;</span><br><span class="line">        &lt;tx:method name=&quot;transfer&quot; propagation=&quot;REQUIRED&quot;/&gt;</span><br><span class="line">    &lt;/tx:attributes&gt;</span><br><span class="line">&lt;/tx:advice&gt;</span><br><span class="line">&lt;aop:config&gt;</span><br><span class="line">    &lt;aop:pointcut expression=&quot;execution(* cn.service.*Service.*(..))&quot; id=&quot;serviceMethod&quot;/&gt;</span><br><span class="line">    &lt;aop:advisor pointcut-ref=&quot;serviceMethod&quot; advice-ref=&quot;txAdvice&quot;/&gt;</span><br><span class="line">&lt;/aop:config&gt;</span><br></pre></td></tr></table></figure>
+<p>声明式事务管理方式三：基于注解的事务管理</p>
+<p>配置文件编写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 配置事务管理器 --&gt;</span><br><span class="line">&lt;bean id = &quot;transactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionmanager&quot;&gt;</span><br><span class="line">    &lt;property name = &quot;dataSource&quot; ref = &quot;dataSource&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line">&lt;!-- 开启注解事务 --&gt;</span><br><span class="line">&lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot;/&gt;</span><br><span class="line">使用的时候在需要事务的地方（通常是service层）加注解@Transactional</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          
+            <a href="/tags/spring/" rel="tag"><i class="fa fa-tag"></i> spring</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/29/spring基础/" rel="next" title="spring基础">
+                <i class="fa fa-chevron-left"></i> spring基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/16/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/we.jpg"
+                alt="HeroBin" />
+            
+              <p class="site-author-name" itemprop="name">HeroBin</p>
+              <p class="site-description motion-element" itemprop="description">记录学习生活的点点滴滴</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">31</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是事务："><span class="nav-number">1.</span> <span class="nav-text">什么是事务：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#事务的特性："><span class="nav-number">1.1.</span> <span class="nav-text">事务的特性：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring支持两种方式事务管理"><span class="nav-number">2.</span> <span class="nav-text">Spring支持两种方式事务管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编程式的事务管理："><span class="nav-number">2.1.</span> <span class="nav-text">编程式的事务管理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声明式的事务管理："><span class="nav-number">2.2.</span> <span class="nav-text">声明式的事务管理：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HeroBin</span>
+
+  
+
+  
+</div>
+
+
+
+<!-- 
+  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+ -->
+
+<!-- 
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+ -->
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共38.5k字</span>
+</div>
+ 
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

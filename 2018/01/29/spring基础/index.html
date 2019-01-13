@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Spring：轻量级的控制反转（IOC）和面向切面（AOP）的容器框架.   -从大小与开销两方面而言Spring都是轻量的 -通过控制反转（IOC）的技术达到松耦合的目的 -提供了面向切面的编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发 -包含并管理应用对象的配置和生命周期，这个意义上是一种容器 -将简单的组件配置、组合成为复杂的应用，这个意义上是框架   IOC：控制反">
+<meta name="keywords" content="java,spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring基础">
+<meta property="og:url" content="http://www.herobin.top/2018/01/29/spring基础/index.html">
+<meta property="og:site_name" content="HeroBin&#39;s Blog">
+<meta property="og:description" content="Spring：轻量级的控制反转（IOC）和面向切面（AOP）的容器框架.   -从大小与开销两方面而言Spring都是轻量的 -通过控制反转（IOC）的技术达到松耦合的目的 -提供了面向切面的编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发 -包含并管理应用对象的配置和生命周期，这个意义上是一种容器 -将简单的组件配置、组合成为复杂的应用，这个意义上是框架   IOC：控制反">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-13T07:44:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="spring基础">
+<meta name="twitter:description" content="Spring：轻量级的控制反转（IOC）和面向切面（AOP）的容器框架.   -从大小与开销两方面而言Spring都是轻量的 -通过控制反转（IOC）的技术达到松耦合的目的 -提供了面向切面的编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发 -包含并管理应用对象的配置和生命周期，这个意义上是一种容器 -将简单的组件配置、组合成为复杂的应用，这个意义上是框架   IOC：控制反">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="HeroBin's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://www.herobin.top/2018/01/29/spring基础/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>spring基础 | HeroBin's Blog</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f6e0affa56b837b3134c1b097c760963";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/zhangbin1995"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HeroBin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">向阳而生</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/01/29/spring基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HeroBin">
+      <meta itemprop="description" content="记录学习生活的点点滴滴">
+      <meta itemprop="image" content="/uploads/we.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HeroBin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">spring基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-01-29 15:02:43" itemprop="dateCreated datePublished" datetime="2018-01-29T15:02:43+08:00">2018-01-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-13 15:44:59" itemprop="dateModified" datetime="2019-01-13T15:44:59+08:00">2019-01-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>Spring：</strong>轻量级的控制反转（IOC）和面向切面（AOP）的容器框架.</p>
+<blockquote>
+<ul>
+<li>-从大小与开销两方面而言Spring都是轻量的</li>
+<li>-通过控制反转（IOC）的技术达到松耦合的目的</li>
+<li>-提供了面向切面的编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发</li>
+<li>-包含并管理应用对象的配置和生命周期，这个意义上是一种容器</li>
+<li>-将简单的组件配置、组合成为复杂的应用，这个意义上是框架</li>
+</ul>
+</blockquote>
+<p><strong>IOC：</strong>控制反转，控制权的转移，应用程序本身不负责依赖对象的创建和维护，而是由外部容器负责创建和维护</p>
+<p><strong>DI（依赖注入）</strong>是其一种实现方式</p>
+<p><strong>目的：</strong>创建对象并且组装对象之间的关系</p>
+<p>控制被反转后，获得依赖对象的过程由自身管理变成了由IOC容器主动注入。</p>
+<p><strong>注入方式：</strong></p>
+<blockquote>
+<ul>
+<li>设值注入 （set） </li>
+<li>构造注入</li>
+</ul>
+</blockquote>
+<p><strong>bean的作用域：</strong></p>
+<blockquote>
+<ul>
+<li>singleton：单例，指一个Bean容器中只存在一份</li>
+<li>prototype：每次请求（每次使用）创建新的实例，destory方式不生效</li>
+<li>request：每次http请求创建一个实例且仅在当前request内有效</li>
+<li>session：同上，每次http请求创建，当前session内有效</li>
+<li>global session：基于portlet的web中有效，如果是在web中，同session     </li>
+</ul>
+</blockquote>
+<p><strong>bean的自动装配（Autowiring）</strong></p>
+<blockquote>
+<ul>
+<li>No：不做任何操作</li>
+<li>byname：根据属性名自动装配。此选项将检查容器并根据名字查找与属性完全一致的bean，并将其与属性自动装配</li>
+<li>byType：如果容器中存在一个与指定属性类型相同的bean，那么将于该属性自动装配；如果存在过个该类型bean，那么抛出异常，并指出不能使用byType方式进行自动装配；如果没有找到相匹配的bean，则什么事都不发生</li>
+<li>Constructor：与byType方式类似，不同之处在于它应用于构造器参数。如果容器中没有找到与构造器参数类型一致的bean，那么抛出异常</li>
+</ul>
+</blockquote>
+<p><strong>注解：</strong></p>
+<p>@configuration是一个通用注解，可用于任何bean</p>
+<p>@Repository，@Service，@Controller是更有针对性的注解</p>
+<blockquote>
+<ul>
+<li>@Repository通常用于注解Dao类，即持久层</li>
+<li>@Service通常用于注解Service类，即服务层</li>
+<li>@Controller通常用于Controller类，即控制层（MVC）</li>
+</ul>
+</blockquote>
+<p>通常情况下自动查找的Spring组件，其scope是singleton，可以设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@scope(&quot;prototype&quot;)</span><br><span class="line">@Repository</span><br><span class="line">public class stuDao imp.........</span><br></pre></td></tr></table></figure>
+<p><strong>@Required注解适用于bean属性的setter方法（不常用）</strong></p>
+<p>这个注解仅仅表示，受影响的bean属性必须在配置时被填充，通过在bean定义或通过自动装配一个明确的属性值</p>
+<p><strong>@Autowired：</strong>“传统”的setter方法。这种自动注入，既可以用在setter方法上，也可以用在成员变量和构造器上。用在成员变量的话那么就不需要定义setter方法了。</p>
+<p>默认情况下，如果因找不到合适的bean将会导致autowired失败抛出异常，可以通过下面的方式避免</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">private class UserService&#123;</span><br><span class="line">    private UserDao userDao;</span><br><span class="line">    @Autowired(required=false)</span><br><span class="line">    public void setUserDao(UserDao userDao)&#123;</span><br><span class="line">        this.userDao = userDao;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在使用Spring框架中@Autowired标签时默认情况下使用 @Autowired 注释进行自动注入时，Spring 容器中匹配的候选 Bean 数目必须有且仅有一个。当找不到一个匹配的 Bean 时，Spring 容器将抛出BeanCreationException 异常，并指出必须至少拥有一个匹配的 Bean。Spring 允许我们通过 @Qualifier 注释指定注入 Bean 的名称，这样歧义就消除了，可以通过下面的方法解决异常。</p>
+<p>@Qualifier(“XXX”) 中的 XX是 Bean 的名称，所以 @Autowired 和 @Qualifier 结合使用时，自动注入的策略就从 byType 转变成 byName 了。@Autowired 可以对成员变量、方法以及构造函数进行注释，而 @Qualifier 的标注对象是成员变量、方法入参、构造函数入参</p>
+<p><strong>基于java的容器注解</strong><br><code>@Bean</code>标识一个用于配置和初始化一个由<code>SpringIoC</code>容器管理的新对象的方法，类似于XML配置文件的<code>&lt;bean/&gt;</code></p>
+<p>可以在<code>Spring</code>的<code>@Component</code>注解的类中使用<code>@Bean</code>注解任何方法（仅仅是可以）</p>
+<p>上一点中，通常使用的是<code>@Configuration</code>.</p>
+<p><code>@Bean</code>中可以有可选项<code>name，initMethod，destoryMethod</code>等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class StoreConfig&#123;</span><br><span class="line">    @Bean(name = &quot;store&quot;,initMethod = &quot;&quot;,destoryMethod = &quot;&quot;)</span><br><span class="line">    public Store stringStore()&#123;</span><br><span class="line">        return new StringStore();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在<code>applicationContext.xml</code>中配置数据库文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 引入外部属性文件 --&gt;</span><br><span class="line">    &lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot;/&gt;</span><br><span class="line">    &lt;!-- 配置C3P0连接池: --&gt;</span><br><span class="line">    &lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;driverClass&quot; value=&quot;$&#123;jdbc.driver&#125;&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;jdbcUrl&quot; value=&quot;$&#123;jdbc.url&#125;&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;user&quot; value=&quot;$&#123;jdbc.user&#125;&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;password&quot; value=&quot;$&#123;jdbc.password&#125;&quot;/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">@Resource(name = &quot;&quot;)</span><br><span class="line">public void setStudent(Student student)&#123;</span><br><span class="line">    this.student = student;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果没有显式的指定<code>@Resource</code>的<code>name</code>，默认的名称是从属性名或者<code>setter</code>方法得出.</p>
+<p><strong>AOP：</strong>Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术</p>
+<p>主要的功能是：</p>
+<blockquote>
+<ul>
+<li>日志记录</li>
+<li>性能统计</li>
+<li>安全控制</li>
+<li>事务处理</li>
+<li>异常处理等等</li>
+</ul>
+</blockquote>
+<p>AOP实现方式</p>
+<blockquote>
+<ul>
+<li>预编译：AspectJ</li>
+<li>运行期动态代理（JDK动态代理、CGLib动态代理）：SpringAOP、JbossAOP</li>
+</ul>
+</blockquote>
+<p><strong>AOP几个相关概念：</strong></p>
+<blockquote>
+<ul>
+<li>切面（Aspect）：一个关注点的模块化，这个关注点可能会横切多个对象</li>
+<li>连接点（Joinpoint）：程序执行过程中的某个特定的点</li>
+<li>通知（Advice）：在切面的某个特定的连接点上执行的动作</li>
+<li>切入点（Pointcut）：匹配连接点的断言，在AOP中通知和一个切入点表达式关联</li>
+<li>引入（Introduction）：在不修改类代码的前提下，为类添加新的方法和属性</li>
+<li>目标对象（Target Object）：被一个或者多个切面所通知的对象</li>
+<li>AOP代理（AOP Proxy）：AOP框架创建的对象，用来实现切面契约（aspect contract）（包括通知方法执行等功能）</li>
+<li>织入（Weaving）：把切面连接到其他的应用程序类型或者对象上，并创建一个被通知的对象，分为：编译时织入、类加载时织入、执行时织入</li>
+</ul>
+</blockquote>
+<p><strong>Advice的类型：</strong></p>
+<blockquote>
+<ul>
+<li>前置通知（Before Advice）：在某连接点（join point）之前执行的通知，但不能阻止连接点前的执行（除非他抛出一个异常）</li>
+<li>返回后通知（After returning advice）：在某连接点（join point）正常完成后执行的通知</li>
+<li>抛出异常后通知（After throwing advice）：在方法抛出异常退出时执行的通知</li>
+<li>后通知（After（finally）advice）：当某连接点退出的时候执行的通知（不论是正常返回还是异常返回）</li>
+<li>环绕通知（Around Advice）：包围一个连接点（join point）的通知</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;aop:config&gt;</span><br><span class="line">    &lt;aop:aspect id=&quot;testAspectAOP&quot; ref=&quot;testAspect&quot;&gt;</span><br><span class="line">            &lt;aop:pointcut id=&quot;testService&quot; expression=&quot;execution(* com.service..(..))&quot; id=&quot;p1&quot;/&gt;</span><br><span class="line">            &lt;aop:before method=&quot;before&quot; point-ref=&quot;p1&quot;/&gt;</span><br><span class="line">    &lt;/aop:aspect&gt;</span><br><span class="line">&lt;/aop:config&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>Spring的AOP实现</strong><br>纯java实现，无需特殊的编译过程，不需要控制类加载器层次</p>
+<p>目前只支持方法执行连接点（通知Spring Bean的方法执行）</p>
+<p>不是为了提供最完整的AOP实现；而是侧重于提供一种AOP实现和Spring IoC容器之间的整合，用于帮助解决企业应用中的常见问题</p>
+<p><strong>Schema——based AOP</strong><br>Spring所有的切面和通知器都必须放在一个<code>&lt;aop:config&gt;</code>内（可以配置包含多个<code>&lt;aop:config&gt;</code>元素），每一个<code>&lt;aop:config&gt;</code>可以包含<code>pointcut</code>，<code>advisor</code>和<code>aspect</code>元素（他们必须按照这个顺序进行声明）</p>
+<p><code>&lt;aop:config&gt;</code>风格的配置大量使用了<code>Spring</code>的自动代理机制</p>
+<p><strong>配置切面aspect</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;testAspect&quot; class=&quot;com.imooc.aop.schema.advice.TestAspect&quot;&gt;&lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">&lt;aop:config&gt;</span><br><span class="line">    &lt;aop:aspect id=&quot;testAspectAOP&quot; ref=&quot;testAspect&quot;&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;/aop:aspect&gt;</span><br><span class="line">&lt;/aop:config&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>切入点（pointcut）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">execution(public * *(..))：切入点为执行所有public方法时</span><br><span class="line">execution(* set*(..))：切入点为执行所有set开始的方法时</span><br><span class="line">execution(* com.service.AccountService.*(..))：切入点为执行AccountService类中的所有方法时</span><br><span class="line">execution(* com.service..(..))：切入点为执行com.service包下的所有方法时</span><br><span class="line">execution(* com.service...(..))：切入点为执行com.service包及其子包下的所有方法时</span><br><span class="line">&lt;aop:config&gt;</span><br><span class="line">    &lt;aop:aspect id=&quot;testAspectAOP&quot; ref=&quot;testAspect&quot;&gt;</span><br><span class="line">            &lt;aop:pointcut id=&quot;testService&quot; expression=&quot;execution(* com.service..(..))&quot; id=&quot;p1&quot;/&gt;</span><br><span class="line">    &lt;/aop:aspect&gt;</span><br><span class="line">&lt;/aop:config&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>Introductions</strong><br>简介允许一个切面声明一个实现指定接口的通知对象，并且提供了一个接口实现类来代替这些对象</p>
+<p>由<code>&lt;aop:aspect&gt;</code>中的<code>&lt;aop:declare-parents&gt;</code>元素声明该元素用于声明所匹配的类型拥有一个新的parent</p>
+<p>advisor就像一个小的自包含的方面，只有一个advice</p>
+<p>切面自身通过一个bean表示，而且必须实现某个advice接口，同时，advisor也可以很好的利用AspectJ的切入点表达式</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          
+            <a href="/tags/spring/" rel="tag"><i class="fa fa-tag"></i> spring</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/04/java多线程之内存可见性/" rel="next" title="java多线程之内存可见性">
+                <i class="fa fa-chevron-left"></i> java多线程之内存可见性
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/02/spring事务管理/" rel="prev" title="spring事务管理">
+                spring事务管理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/we.jpg"
+                alt="HeroBin" />
+            
+              <p class="site-author-name" itemprop="name">HeroBin</p>
+              <p class="site-description motion-element" itemprop="description">记录学习生活的点点滴滴</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">31</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HeroBin</span>
+
+  
+
+  
+</div>
+
+
+
+<!-- 
+  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+ -->
+
+<!-- 
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+ -->
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共38.5k字</span>
+</div>
+ 
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
