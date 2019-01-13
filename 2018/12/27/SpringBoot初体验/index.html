@@ -109,27 +109,27 @@
 
 
   <meta name="description" content="首先SpringBoot的开发有两种主流的软件Idea和Spring Tool Suite（感觉就是集成了spring开发环境的eclipse）。这里我们选用后者。可在springboot的官网spring.io里下载。配置好jdk和maven的配置信息。  创建项目 new -&amp;gt; spring starter project输入配置信息，这里我们选用了springboot2.1.1版本选中">
-<meta name="keywords" content="java,spring,springboot">
+<meta name="keywords" content="java,springboot,spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot初体验">
 <meta property="og:url" content="http://www.herobin.top/2018/12/27/SpringBoot初体验/index.html">
 <meta property="og:site_name" content="HeroBin&#39;s Blog">
 <meta property="og:description" content="首先SpringBoot的开发有两种主流的软件Idea和Spring Tool Suite（感觉就是集成了spring开发环境的eclipse）。这里我们选用后者。可在springboot的官网spring.io里下载。配置好jdk和maven的配置信息。  创建项目 new -&amp;gt; spring starter project输入配置信息，这里我们选用了springboot2.1.1版本选中">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.herobin.top/uploads/springboot181227/1.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/springboot181227/2.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/springboot181227/3.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/springboot181227/4.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/springboot181227/5.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/springboot181227/6.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/springboot181227/7.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/springboot181227/8.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/springboot181227/9.png">
-<meta property="og:updated_time" content="2019-01-11T05:45:19.000Z">
+<meta property="og:image" content="http://www.herobin.top/uploads/181227springboot/1.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/181227springboot/2.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/181227springboot/3.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/181227springboot/4.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/181227springboot/5.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/181227springboot/6.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/181227springboot/7.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/181227springboot/8.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/181227springboot/9.png">
+<meta property="og:updated_time" content="2019-01-13T09:07:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot初体验">
 <meta name="twitter:description" content="首先SpringBoot的开发有两种主流的软件Idea和Spring Tool Suite（感觉就是集成了spring开发环境的eclipse）。这里我们选用后者。可在springboot的官网spring.io里下载。配置好jdk和maven的配置信息。  创建项目 new -&amp;gt; spring starter project输入配置信息，这里我们选用了springboot2.1.1版本选中">
-<meta name="twitter:image" content="http://www.herobin.top/uploads/springboot181227/1.png">
+<meta name="twitter:image" content="http://www.herobin.top/uploads/181227springboot/1.png">
 
 
 
@@ -391,7 +391,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-11 13:45:19" itemprop="dateModified" datetime="2019-01-11T13:45:19+08:00">2019-01-11</time>
+                <time title="修改时间：2019-01-13 17:07:33" itemprop="dateModified" datetime="2019-01-13T17:07:33+08:00">2019-01-13</time>
               
             
           </span>
@@ -448,24 +448,24 @@
 
       
         <p>首先SpringBoot的开发有两种主流的软件Idea和Spring Tool Suite（感觉就是集成了spring开发环境的eclipse）。<br>这里我们选用后者。可在springboot的官网spring.io里下载。<br>配置好jdk和maven的配置信息。</p>
-<p><img src="/uploads/springboot181227/1.png" alt=""></p>
+<p><img src="/uploads/181227springboot/1.png" alt=""></p>
 <p>创建项目 <code>new -&gt; spring starter project</code><br>输入配置信息，这里我们选用了springboot2.1.1版本<br>选中我们需要的部分包。</p>
-<p><img src="/uploads/springboot181227/2.png" alt=""></p>
+<p><img src="/uploads/181227springboot/2.png" alt=""></p>
 <p>另外还要注意最好将我们的maven配置改为阿里云镜像仓库(maven安装目录下的conf/setting.xml中)。</p>
-<p><img src="/uploads/springboot181227/3.png" alt=""></p>
+<p><img src="/uploads/181227springboot/3.png" alt=""></p>
 <p>application.properties是springboot非常核心的一个部分。<br>几乎所有的配置信息都会写在这里面包括端口，数据库，mybatis，redis，验证码等等。不过在初始编辑application.properties时写中文注释可以会乱码，编码改为utf8即可。</p>
 <p>修改pom文件，写入我们需要的jar包依赖，和ssm比较，因为我们新建的时候预先引入了web和mybatis两个模块，所以这两个不用再次引入，因为springboot自带测试所以junit也不需要了(去掉spring，mybatis，junit)。<br>将dao entity mapper创建好后在测试用例中测试报错如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.AbstractMethodError: Method com/mchange/v2/c3p0/impl/NewProxyPreparedStatement.isClosed()Z is abstract</span><br></pre></td></tr></table></figure>
 <p>将pom中的c3p0镜像替换后问题得到解决</p>
-<p><img src="/uploads/springboot181227/4.png" alt=""></p>
+<p><img src="/uploads/181227springboot/4.png" alt=""></p>
 <p>将全部package及webapp写好后启动springboot发现跳转到了测试接口hello springboot中，发现是将value写成了name（小坑注意）。</p>
-<p><img src="/uploads/springboot181227/5.png" alt=""></p>
+<p><img src="/uploads/181227springboot/5.png" alt=""></p>
 <p>再次访问index接口发现前端报错404。</p>
-<p><img src="/uploads/springboot181227/6.png" alt=""></p>
+<p><img src="/uploads/181227springboot/6.png" alt=""></p>
 <p>这里是因为以前的springboot的版本是1.5.8，这里我们使用了2.1.1.<br>在新版本中WebMvcConfigurationAdapter已经废弃，使用了系统建议的WebMvcConfigurationSupport也出现了上图的问题。考虑应该是静态资源的配置问题和视图跳转控制器的问题，也就是原属于WebMvcConfigurationAdapter的addResourceHandlers方法和addViewController方法没有起到应该起到的作用。<br>解决方法：<br>1.解决视图跳转问题，不再采用继承WebMvcConfigurationSupport的方式，改为直接实现WebMvcConfigurer接口，将生成视图解析器由方法转为@Bean注解的类生成</p>
-<p><img src="/uploads/springboot181227/7.png" alt=""></p>
+<p><img src="/uploads/181227springboot/7.png" alt=""></p>
 <p>跳转成功解决。<br>2.跳转成功解决后发现前端页面加载静态资源出错</p>
-<p><img src="/uploads/springboot181227/8.png" alt=""></p>
+<p><img src="/uploads/181227springboot/8.png" alt=""></p>
 <p>这里其实是我们的addResourceHandlers方法编写错误了，其实重写的时候并不需要对resource进行重写，空方法即可。但是这里我们要写好对图片路径的拼接。（这里是替代ssm中在tomcat的server.xml中docBase配置的替代）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 静态资源配置</span><br><span class="line"> */</span><br><span class="line">@Override</span><br><span class="line">public void addResourceHandlers(ResourceHandlerRegistry registry) &#123;</span><br><span class="line">	//registry.addResourceHandler(&quot;/resources/**&quot;).addResourceLocations(&quot;/resources/&quot;);</span><br><span class="line">	registry.addResourceHandler(&quot;/upload/**&quot;).addResourceLocations(&quot;file:/Users/binzhang/Documents/shopImages/upload/&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此时发现前端还是访问不到我们的图片，在network中可以看到url<br><a href="http://localhost:8080/upload/item/shop/1.jpg" target="_blank" rel="noopener">http://localhost:8080/upload/item/shop/1.jpg</a><br>直接拷贝到浏览器也发现找不到该图片<br>这是因为在application.properties中我们配置了前缀</p>
@@ -473,7 +473,7 @@
 <p>所以我们也要将项目的前缀追加到我们访问图片的路径地址中<br><a href="http://localhost:8080/o2o/upload/item/shop/1.jpg" target="_blank" rel="noopener">http://localhost:8080/o2o/upload/item/shop/1.jpg</a><br>这样我们就可以访问到了。<br>在代码中添加前缀的步骤(前端实现)：<br>1.在common.js中加入getContextPath方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 获取项目的ContextPath以便修正图片路由让其正常显示</span><br><span class="line"> * @returns</span><br><span class="line"> */</span><br><span class="line">function getContextPath()&#123;</span><br><span class="line">	return &quot;/o2o/&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>2.在需要加载图片页面对应的js中加载图片的地方添加getContextPath前缀就好了</p>
-<p><img src="/uploads/springboot181227/9.png" alt=""></p>
+<p><img src="/uploads/181227springboot/9.png" alt=""></p>
 <p>注意主要忘了在对应的html中引入common.js。<br>至此，我们的springboot项目可以正常运行了。</p>
 
       
@@ -497,9 +497,9 @@
           
             <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
           
-            <a href="/tags/spring/" rel="tag"><i class="fa fa-tag"></i> spring</a>
-          
             <a href="/tags/springboot/" rel="tag"><i class="fa fa-tag"></i> springboot</a>
+          
+            <a href="/tags/spring/" rel="tag"><i class="fa fa-tag"></i> spring</a>
           
         </div>
       
@@ -754,7 +754,7 @@
   <span class="post-meta-divider">|</span>
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共38.5k字</span>
+  <span class="post-count">博客全站共38.9k字</span>
 </div>
  
 

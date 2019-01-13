@@ -116,14 +116,14 @@
 <meta property="og:site_name" content="HeroBin&#39;s Blog">
 <meta property="og:description" content="在编写好xml代码在测试类中测试时报错 1this is incompatible with sql_mode=only_full_group_by 看一下ONLY_FULL_GROUP_BY的意思是：对于GROUP BY聚合操作，如果在SELECT中的列，没有在GROUP BY中出现，那么这个SQL是不合法的，因为列不在GROUP BY从句中，也就是说查出来的列必须在group by后面出现否则">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.herobin.top/uploads/mysql190102/1.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/mysql190102/2.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/mysql190102/3.png">
-<meta property="og:updated_time" content="2019-01-11T05:47:14.000Z">
+<meta property="og:image" content="http://www.herobin.top/uploads/190102mysql/1.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/190102mysql/2.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/190102mysql/3.png">
+<meta property="og:updated_time" content="2019-01-13T09:10:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="this is incompatible with sql_mode=only_full_group_by问题解决">
 <meta name="twitter:description" content="在编写好xml代码在测试类中测试时报错 1this is incompatible with sql_mode=only_full_group_by 看一下ONLY_FULL_GROUP_BY的意思是：对于GROUP BY聚合操作，如果在SELECT中的列，没有在GROUP BY中出现，那么这个SQL是不合法的，因为列不在GROUP BY从句中，也就是说查出来的列必须在group by后面出现否则">
-<meta name="twitter:image" content="http://www.herobin.top/uploads/mysql190102/1.png">
+<meta name="twitter:image" content="http://www.herobin.top/uploads/190102mysql/1.png">
 
 
 
@@ -385,7 +385,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-11 13:47:14" itemprop="dateModified" datetime="2019-01-11T13:47:14+08:00">2019-01-11</time>
+                <time title="修改时间：2019-01-13 17:10:02" itemprop="dateModified" datetime="2019-01-13T17:10:02+08:00">2019-01-13</time>
               
             
           </span>
@@ -445,16 +445,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this is incompatible with sql_mode=only_full_group_by</span><br></pre></td></tr></table></figure>
 <p>看一下<code>ONLY_FULL_GROUP_BY</code>的意思是：对于GROUP BY聚合操作，如果在SELECT中的列，没有在GROUP BY中出现，那么这个SQL是不合法的，因为列不在GROUP BY从句中，也就是说查出来的列必须在group by后面出现否则就会报错，或者这个字段出现在聚合函数里面。</p>
 <p>进入到mysql中查看mysql版本 <code>select version();</code><br>查看sql_model参数命令：<code>SELECT @@GLOBAL.sql_mode;</code><br>                           <code>SELECT @@SESSION.sql_mode;</code><br>可以看到当前sql_mode。</p>
-<p><img src="/uploads/mysql190102/1.png" alt=""></p>
+<p><img src="/uploads/190102mysql/1.png" alt=""></p>
 <p>这里是我改过了的，所以已经没有ONLY_FULL_GROUP_BY了。<br>而我们的解决办法也是去掉这里的ONLY_FULL_GROUP_BY。</p>
 <h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p>命令行输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set @@GLOBAL.sql_mode=&apos;&apos;;</span><br><span class="line">set sql_mode =&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</span><br></pre></td></tr></table></figure></p>
 <p>默认关掉ONLY_FULL_GROUP_BY！</p>
 <p>这个时候 在用工具select 一下<br><code>SELECT @@sql_mode;</code><br><code>SELECT @@GLOBAL.sql_mode;</code></p>
 <p>发现已经不存在ONLY_FULL_GROUP_BY,代码运行正常。<br>但是如果你重启Mysql服务的话，发现ONLY_FULL_GROUP_BY还是会存在的。</p>
 <h3 id="方法二：（推荐）"><a href="#方法二：（推荐）" class="headerlink" title="方法二：（推荐）"></a>方法二：（推荐）</h3><p>想要彻底解决这个问题还是要去配置文件my.cnf中修改，加入下图内容，保存，重启mysql。</p>
-<p><img src="/uploads/mysql190102/2.png" alt=""></p>
+<p><img src="/uploads/190102mysql/2.png" alt=""></p>
 <p>注意这里开始的时候重启有报错，原因是因为mysql8.0以上已经取消了<br><code>NO_AUTO_CREATE_USER</code>这个关键字，删掉sql语句中的这个关键字即可。</p>
-<p><img src="/uploads/mysql190102/3.png" alt=""></p>
+<p><img src="/uploads/190102mysql/3.png" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service mysqld stop</span><br><span class="line">service mysqld start</span><br></pre></td></tr></table></figure>
 <p>问题解决。</p>
@@ -758,7 +758,7 @@
   <span class="post-meta-divider">|</span>
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共38.5k字</span>
+  <span class="post-count">博客全站共38.9k字</span>
 </div>
  
 
