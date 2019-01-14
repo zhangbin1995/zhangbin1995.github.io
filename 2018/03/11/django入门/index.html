@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="django初体验Django-python web开发框架目前最流行的Python Web开发框架 Django框架负责处理大部分web开发底层细节，我们可以专注于开发web应用，避免重复制造轮子 为什么使用Django  1.快速开发  用python开发    数据库ORM系统 2.大量内置应用  后台管理系统admin     用户认证系统auth    会话系统sessions 3.安全">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="django入门">
+<meta property="og:url" content="http://www.herobin.top/2018/03/11/django入门/index.html">
+<meta property="og:site_name" content="HeroBin&#39;s Blog">
+<meta property="og:description" content="django初体验Django-python web开发框架目前最流行的Python Web开发框架 Django框架负责处理大部分web开发底层细节，我们可以专注于开发web应用，避免重复制造轮子 为什么使用Django  1.快速开发  用python开发    数据库ORM系统 2.大量内置应用  后台管理系统admin     用户认证系统auth    会话系统sessions 3.安全">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-14T02:15:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="django入门">
+<meta name="twitter:description" content="django初体验Django-python web开发框架目前最流行的Python Web开发框架 Django框架负责处理大部分web开发底层细节，我们可以专注于开发web应用，避免重复制造轮子 为什么使用Django  1.快速开发  用python开发    数据库ORM系统 2.大量内置应用  后台管理系统admin     用户认证系统auth    会话系统sessions 3.安全">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="HeroBin's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://www.herobin.top/2018/03/11/django入门/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>django入门 | HeroBin's Blog</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f6e0affa56b837b3134c1b097c760963";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/zhangbin1995"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HeroBin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">向阳而生</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/03/11/django入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HeroBin">
+      <meta itemprop="description" content="记录学习生活的点点滴滴">
+      <meta itemprop="image" content="/uploads/we.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HeroBin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">django入门
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-11 09:23:45" itemprop="dateCreated datePublished" datetime="2018-03-11T09:23:45+08:00">2018-03-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-14 10:15:16" itemprop="dateModified" datetime="2019-01-14T10:15:16+08:00">2019-01-14</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="django初体验"><a href="#django初体验" class="headerlink" title="django初体验"></a>django初体验</h2><h3 id="Django-python-web开发框架"><a href="#Django-python-web开发框架" class="headerlink" title="Django-python web开发框架"></a>Django-python web开发框架</h3><p>目前最流行的Python Web开发框架</p>
+<p>Django框架负责处理大部分web开发底层细节，我们可以专注于开发web应用，避免重复制造轮子</p>
+<h3 id="为什么使用Django"><a href="#为什么使用Django" class="headerlink" title="为什么使用Django"></a>为什么使用Django</h3><blockquote>
+<ul>
+<li>1.快速开发  用python开发    数据库ORM系统</li>
+<li>2.大量内置应用  后台管理系统admin     用户认证系统auth    会话系统sessions</li>
+<li>3.安全性高  表单验证    SQL注入    跨站点攻击</li>
+<li>4.易于拓展 </li>
+</ul>
+</blockquote>
+<p>指定在python3中安装django</p>
+<p><code>python3 -m pip install django</code></p>
+<p>安装django </p>
+<p><code>pip install django</code></p>
+<p>新建django项目并启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject mysite</span><br><span class="line">cd mysite</span><br><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+<p>现在服务已经启动 可以去 <code>127.0.0.1:8000</code>查看了 </p>
+<p><strong>工程目录详解</strong></p>
+<blockquote>
+<ul>
+<li>manage.py    管理项目：包括数据库建立、服务器运行、测试…</li>
+<li>mysite目录    </li>
+<li>settings.py    配置文件：应用、中间件、数据库、静态目录各类配置…</li>
+<li>urls.py URL映射配置文件：决定一个url访问被哪个程序（函数）响应</li>
+<li>wsgi.py Python应用程序或框架和Web服务器之间接口 </li>
+<li>manage.py     可以自己指定端口 python manage.py runserver 0.0.0.0:8080</li>
+</ul>
+</blockquote>
+<h3 id="最常用的几个manage-py的命令"><a href="#最常用的几个manage-py的命令" class="headerlink" title="最常用的几个manage.py的命令"></a>最常用的几个manage.py的命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">runserver		启动服务器</span><br><span class="line">migrate、makemigrations 数据库相关的</span><br><span class="line">shell  </span><br><span class="line">django中使用应用来分割功能	例如 游戏网站 -&gt; 分为四个应用：游戏新闻、游戏论坛、Blog系统、在线商城</span><br></pre></td></tr></table></figure>
+<h3 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h3><blockquote>
+<ul>
+<li>1.创建应用blog    python manage.py startapp blog</li>
+<li>2.添加blog应用    mysite/settings.py -&gt; INSTALLED_APPS</li>
+</ul>
+</blockquote>
+<p><strong>应用目录详解</strong></p>
+<blockquote>
+<ul>
+<li>views.py        相应客户请求返回html页面</li>
+<li>models.py    定义数据库中的表</li>
+<li>admin.py        admin相关</li>
+<li>test.py        测试相关</li>
+</ul>
+</blockquote>
+<h3 id="django概述"><a href="#django概述" class="headerlink" title="django概述"></a>django概述</h3><p>一次web访问的实质</p>
+<p>1.客户发送http请求到web服务器</p>
+<p>2.web服务器返回html页面给客户</p>
+<blockquote>
+<ul>
+<li>1.URL配置    建立URL和与响应函数之间的关系</li>
+<li>2.视图Views    响应客户http请求，进行逻辑处理，返回给用户html页面</li>
+<li>3.模型Models    描述我们服务器存储的数据（数据库的表）</li>
+<li>4.模板templates    用来生产html页面，返回给用户的html，是由数据（模型）和模板渲染出来的。</li>
+</ul>
+</blockquote>
+<h3 id="django入门与实践"><a href="#django入门与实践" class="headerlink" title="django入门与实践"></a>django入门与实践</h3><h4 id="什么是Django"><a href="#什么是Django" class="headerlink" title="什么是Django"></a>什么是Django</h4><p>Django是一个基于Python的高级WEB开发框架</p>
+<p>它能够让开发人员进行高效且快速的开发</p>
+<p>高度集成（不用自己造轮子），免费并且开源</p>
+<h4 id="浏览器浏览网页的基本原理"><a href="#浏览器浏览网页的基本原理" class="headerlink" title="浏览器浏览网页的基本原理"></a>浏览器浏览网页的基本原理</h4><p>本质是网络通信，即通过网络进行数据传递</p>
+<p>浏览器经过通信后获取到该页面的源代码文档（HTML等）</p>
+<p>浏览器解析文档后以适当的形式展现给用户</p>
+<h4 id="安装Django两种方式"><a href="#安装Django两种方式" class="headerlink" title="安装Django两种方式"></a>安装Django两种方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Django==1.10.2</span><br></pre></td></tr></table></figure>
+<p>下载源码，进入根目录执行python setup.py install</p>
+<h4 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h4><p>打开命令行，进入想要安置项目的目录<br>命令行输入：django-admin startproject myblog<br>若没有报错，则创建项目成功<br>进入到项目中 cd myblog<br>启动项目 python manage.py runserver<br>指定端口 python manage.py runserver 9999</p>
+<h4 id="Templates介绍"><a href="#Templates介绍" class="headerlink" title="Templates介绍"></a>Templates介绍</h4><p><strong>什么是Templates</strong></p>
+<blockquote>
+<ul>
+<li>HTML文件</li>
+<li>使用了Django模板语言（Django Template Language，DTL）</li>
+<li>可以使用第三方模板（如Jinja2）</li>
+</ul>
+</blockquote>
+<h4 id="开发第一个Template"><a href="#开发第一个Template" class="headerlink" title="开发第一个Template"></a>开发第一个Template</h4><p><strong>步骤</strong></p>
+<blockquote>
+<ul>
+<li>在APP的根目录下创建名为Templates的目录</li>
+<li>在该目录下创建HTML文件</li>
+<li>在views.py中返回render()</li>
+</ul>
+</blockquote>
+<p><strong>DTL初步使用</strong></p>
+<blockquote>
+<ul>
+<li>render()函数中支持一个dict（字典）类型函数</li>
+<li>该字典是后台传递到模板的参数，键为参数名</li>
+<li>在模板中使用来直接使用<br><strong>注意</strong></li>
+</ul>
+</blockquote>
+<p>Django查找Template</p>
+<blockquote>
+<ul>
+<li>Django按照INSTALLED_APPS中的添加顺序查找Templates</li>
+<li>不同APP下Templates目录中的同名.html文件会造成冲突</li>
+</ul>
+</blockquote>
+<p>解决Templates冲突方案</p>
+<blockquote>
+<ul>
+<li>在APP的Templates目录下创建以APP名为名称的目录</li>
+<li>将html文件放入新创建的目录下</li>
+</ul>
+</blockquote>
+<h4 id="Models介绍"><a href="#Models介绍" class="headerlink" title="Models介绍"></a>Models介绍</h4><p><strong>Django中的Models是什么？</strong></p>
+<blockquote>
+<ul>
+<li>通常，一个Model对应数据库的一张数据表</li>
+<li>Django中Models以类的形式表现</li>
+<li>它包含了一些基本字段以及数据的一些行为</li>
+</ul>
+</blockquote>
+<p><strong>ORM</strong></p>
+<blockquote>
+<ul>
+<li>对象关系映射（Object Relation Mapping）</li>
+<li>实现了对象和数据库之间的映射</li>
+<li>隐藏了数据访问的细节，不需要编写SQL语句</li>
+</ul>
+</blockquote>
+<p><strong>编写Models</strong></p>
+<p>步骤</p>
+<blockquote>
+<ul>
+<li>在应用根目录下创建models.py，并引入models模块（自动生成）</li>
+<li>创建类，继承models.Model，该类即是一张数据表</li>
+<li>在类中创建字段</li>
+</ul>
+</blockquote>
+<p>字段创建</p>
+<blockquote>
+<ul>
+<li>字段即类里面的属性（变量）</li>
+<li>attr = models.CharField(max_length=64)</li>
+</ul>
+</blockquote>
+<p><a href="http://docs.djangoproject.com/en/1.10/ref/models/fields/" target="_blank" rel="noopener">http://docs.djangoproject.com/en/1.10/ref/models/fields/</a></p>
+<p><strong>生成数据表</strong></p>
+<p>步骤</p>
+<blockquote>
+<ul>
+<li>命令行进入manage.py同级目录</li>
+<li>执行python manage.py makemigretions app名（可选）</li>
+<li>再执行python manage.py migrate</li>
+</ul>
+</blockquote>
+<p>查看</p>
+<blockquote>
+<ul>
+<li>Django会自动在app/migrations/目录下生成移植文件</li>
+<li>执行python manage.py sqlmigrate 应用名 文件id 查看SQL语句</li>
+<li>默认sqlite3的数据库在项目根目录下db.sqlite3</li>
+</ul>
+</blockquote>
+<p>查看并编辑db.sqlite3</p>
+<blockquote>
+<ul>
+<li>使用第三方软件</li>
+<li>SQLite Export Personal</li>
+<li>轻量级，完全免费</li>
+</ul>
+</blockquote>
+<p><strong>页面呈现数据</strong></p>
+<p>后台步骤</p>
+<blockquote>
+<ul>
+<li>views.py中import models</li>
+<li>article = models.Article.objects.get(pk=1)</li>
+<li>render(request,page,{‘article’:article})</li>
+</ul>
+</blockquote>
+<p>前端步骤</p>
+<blockquote>
+<ul>
+<li>模板可直接使用对象以及对象的 . 操作</li>
+<li>
+</li>
+</ul>
+</blockquote>
+<h4 id="Admin简介"><a href="#Admin简介" class="headerlink" title="Admin简介"></a>Admin简介</h4><p><strong>什么是Admin</strong></p>
+<blockquote>
+<ul>
+<li>Admin是Django自带的一个功能强大的自动化数据管理界面</li>
+<li>被授权的用户可直接在Admin中管理数据库</li>
+<li>Django提供了许多针对Admin的定制功能</li>
+</ul>
+</blockquote>
+<p><strong>配置Admin</strong></p>
+<p>创建用户</p>
+<blockquote>
+<ul>
+<li>python manage.py createsuperuser    创建超级用户<br> （zhangbin    <a href="mailto:752658686@qq.com" target="_blank" rel="noopener">752658686@qq.com</a>    zhangbin）</li>
+<li>localhost:8000/admin/    Admin入口</li>
+<li>修改settings.py中LANGUAGE_CODE = ‘zh_Hans</li>
+</ul>
+</blockquote>
+<p>配置应用</p>
+<blockquote>
+<ul>
+<li>在应用下admin.py中引入自身的models模块（或里面的模型类）</li>
+<li>编辑admin.py：admin.site.register(models.Article)</li>
+</ul>
+</blockquote>
+<p>修改数据</p>
+<blockquote>
+<ul>
+<li>点击Article超链接进入Article列表页面</li>
+<li>点击任意一条数据，进入编辑页面修改</li>
+<li>编辑页面下方一排按钮可执行相应操作</li>
+</ul>
+</blockquote>
+<p>修改数据默认显示名称（在admin下的）</p>
+<p>步骤</p>
+<blockquote>
+<ul>
+<li>在Article类下添加一个方法</li>
+<li>根据Python版本选择<code>__str__(self)(python3)</code>或<code>__unicode_(self)(python2.7)</code></li>
+<li>return self.title</li>
+</ul>
+</blockquote>
+<p>模板For循环<br><code></code></p>
+<h4 id="Django中的超链接"><a href="#Django中的超链接" class="headerlink" title="Django中的超链接"></a>Django中的超链接</h4><p>超链接目标地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`href`后面是目标地址</span><br><span class="line"></span><br><span class="line">`Template`中可以用 `&#123;% url &apos;app_name: url_name&apos; param %&#125;`</span><br><span class="line"></span><br><span class="line">其中`app_name`和`url_name`都在`url`中配置</span><br><span class="line"></span><br><span class="line">使用`request.POST[&apos;参数名&apos;]`获取表单数据</span><br><span class="line"></span><br><span class="line">`models.Article.objects.create(title,content)`创建对象</span><br><span class="line"></span><br><span class="line">涉及`POST`方法提交表单的，前端页面加上`&#123;% csrf_token %&#125;`</span><br></pre></td></tr></table></figure>
+<h4 id="Templates过滤器"><a href="#Templates过滤器" class="headerlink" title="Templates过滤器"></a>Templates过滤器</h4><p>什么是过滤器</p>
+<p>写在模板中，属于Django模板语言</p>
+<p>可以修改模板中的变量，从而显示不同的内容</p>
+<p>怎么使用过滤器？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; value | filter &#125;&#125;</span><br><span class="line">例子：&#123;&#123; list_nums | length &#125;&#125;  这样显示的就是长度而不是集合了</span><br><span class="line">过滤器可叠加：&#123;&#123; value | filter1 | filter2 | ... &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>django访问不存在的对象时不会报错 只会传空</p>
+<p>更多Django内建过滤器<br><a href="https://docs.djangoproject.com/en/1.10/ref/templates/builtins/#ref-templates-builtins-filters" target="_blank" rel="noopener">https://docs.djangoproject.com/en/1.10/ref/templates/builtins/#ref-templates-builtins-filters</a></p>
+<h4 id="Django-Shell"><a href="#Django-Shell" class="headerlink" title="Django Shell"></a>Django Shell</h4><p>什么是Django Shell？</p>
+<p>它是一个Python的交互式命令行程序</p>
+<p>它自动引入了我们的项目环境</p>
+<p>我们可以使用它与我们的项目进行交互</p>
+<h4 id="如何使用Django-Shell？"><a href="#如何使用Django-Shell？" class="headerlink" title="如何使用Django Shell？"></a>如何使用Django Shell？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python manage.py shell</span><br><span class="line">from blog.models import Article</span><br><span class="line">Article.objects.all()</span><br></pre></td></tr></table></figure>
+<p>有什么用？</p>
+<p>我们可以使用Django shell来进行一些调试工作</p>
+<p>测试未知的方法</p>
+<h4 id="Admin增强"><a href="#Admin增强" class="headerlink" title="Admin增强"></a>Admin增强</h4><p>创建admin配置类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">classArticleAdmin(admin.ModelAdmin)</span><br><span class="line">注册：admin.site.register(Article,ArticleAdmin)</span><br><span class="line">显示其他字段</span><br><span class="line">list_display = (&apos;title&apos;,&apos;content&apos;)</span><br><span class="line">list_displaty同时支持tuple和list(tuple类型只有一个数据，别忘了加逗号)</span><br><span class="line">过滤器</span><br><span class="line">list_filter = (&apos;pub_time&apos;,)  这样就会有今天 过去七天 过去一个月 这些...</span><br></pre></td></tr></table></figure>
+<p>官方文档<br><a href="http://docs.djangoproject.com/en/1.10/ref/contrib/admin/" target="_blank" rel="noopener">http://docs.djangoproject.com/en/1.10/ref/contrib/admin/</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/05/全面解析Java注解/" rel="next" title="全面解析Java注解">
+                <i class="fa fa-chevron-left"></i> 全面解析Java注解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/01/python数据分析/" rel="prev" title="python数据分析">
+                python数据分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/we.jpg"
+                alt="HeroBin" />
+            
+              <p class="site-author-name" itemprop="name">HeroBin</p>
+              <p class="site-description motion-element" itemprop="description">记录学习生活的点点滴滴</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">33</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#django初体验"><span class="nav-number">1.</span> <span class="nav-text">django初体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Django-python-web开发框架"><span class="nav-number">1.1.</span> <span class="nav-text">Django-python web开发框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么使用Django"><span class="nav-number">1.2.</span> <span class="nav-text">为什么使用Django</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最常用的几个manage-py的命令"><span class="nav-number">1.3.</span> <span class="nav-text">最常用的几个manage.py的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建应用"><span class="nav-number">1.4.</span> <span class="nav-text">创建应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#django概述"><span class="nav-number">1.5.</span> <span class="nav-text">django概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#django入门与实践"><span class="nav-number">1.6.</span> <span class="nav-text">django入门与实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Django"><span class="nav-number">1.6.1.</span> <span class="nav-text">什么是Django</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器浏览网页的基本原理"><span class="nav-number">1.6.2.</span> <span class="nav-text">浏览器浏览网页的基本原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Django两种方式"><span class="nav-number">1.6.3.</span> <span class="nav-text">安装Django两种方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建项目"><span class="nav-number">1.6.4.</span> <span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Templates介绍"><span class="nav-number">1.6.5.</span> <span class="nav-text">Templates介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开发第一个Template"><span class="nav-number">1.6.6.</span> <span class="nav-text">开发第一个Template</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Models介绍"><span class="nav-number">1.6.7.</span> <span class="nav-text">Models介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Admin简介"><span class="nav-number">1.6.8.</span> <span class="nav-text">Admin简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Django中的超链接"><span class="nav-number">1.6.9.</span> <span class="nav-text">Django中的超链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Templates过滤器"><span class="nav-number">1.6.10.</span> <span class="nav-text">Templates过滤器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Django-Shell"><span class="nav-number">1.6.11.</span> <span class="nav-text">Django Shell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用Django-Shell？"><span class="nav-number">1.6.12.</span> <span class="nav-text">如何使用Django Shell？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Admin增强"><span class="nav-number">1.6.13.</span> <span class="nav-text">Admin增强</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HeroBin</span>
+
+  
+
+  
+</div>
+
+
+
+<!-- 
+  
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+ -->
+
+<!-- 
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+ -->
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共41.4k字</span>
+</div>
+ 
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

@@ -146,9 +146,9 @@
     
       <category term="java" scheme="http://www.herobin.top/tags/java/"/>
     
-      <category term="springboot" scheme="http://www.herobin.top/tags/springboot/"/>
-    
       <category term="spring" scheme="http://www.herobin.top/tags/spring/"/>
+    
+      <category term="springboot" scheme="http://www.herobin.top/tags/springboot/"/>
     
   </entry>
   
@@ -436,6 +436,64 @@
   </entry>
   
   <entry>
+    <title>python数据分析</title>
+    <link href="http://www.herobin.top/2018/04/01/python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    <id>http://www.herobin.top/2018/04/01/python数据分析/</id>
+    <published>2018-04-01T02:55:12.000Z</published>
+    <updated>2019-01-14T02:03:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>1.数据分析的含义与目标</strong></p><blockquote><ul><li>统计分析方法</li><li>提取有用信息</li><li>研究、概括、总结</li></ul></blockquote><p><strong>2.Python与数据分析</strong></p><blockquote><ul><li>python：Guido van Rossum 1989圣诞假期</li><li>特点：简洁 开发效率高 运算速度慢 胶水特性</li><li>数据分析：</li><li>numpy    scipy    matplotlib    pandas    scikit-learn keras……</li></ul></blockquote><p><strong>3.Python数据分析大家族</strong></p><blockquote><ul><li>numpy：数据结构基础</li><li>scipy：强大的科学计算方法（矩阵分析、信号分析、数理分析……）</li><li>matplotlib：丰富的可视化套件（可以做图表）</li><li>pandas：基础数据分析套件</li><li>scikit-learn：强大的数据分析建模库</li><li>keras：人工神经网络</li></ul></blockquote><p><strong>4.Python环境搭建</strong></p><blockquote><ul><li>平台：Windows、Linux、MacOS</li><li>科学计算工具：Anaconda</li></ul></blockquote><p><strong>一、numpy</strong></p><blockquote><ul><li>关键词：开源    数据计算扩展</li><li>功能：ndarray    多维操作    线性代数</li><li>官网：<a href="http://www.numpy.org/" target="_blank" rel="noopener">http://www.numpy.org/</a></li></ul></blockquote><p>numpy是python语言的一个扩充程序库。支持高级大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。numpy内部解除了python的PIL（全局解释器锁），运行效率极好，是大量机器学习框架的基础库！</p><p><a href="https://www.jianshu.com/p/83c8ef18a1e8" target="_blank" rel="noopener">https://www.jianshu.com/p/83c8ef18a1e8</a></p><p><strong>二、matplotlib</strong></p><blockquote><ul><li>关键词：绘图库</li><li>官网：<a href="http://matplotlib.org/" target="_blank" rel="noopener">http://matplotlib.org/</a></li><li>Matplotlib是Python 2D绘图领域的基础套件，它让使用者将数据图形化，并提供多样化的输出格式。</li><li><a href="https://www.jianshu.com/p/f2782e741a75" target="_blank" rel="noopener">https://www.jianshu.com/p/f2782e741a75</a></li></ul></blockquote><p><strong>三、scipy</strong></p><blockquote><ul><li>关键词：数值计算库</li><li>官网：<a href="http://www.scipy.org/" target="_blank" rel="noopener">http://www.scipy.org/</a></li><li>1.Integral    积分</li><li>2.Optimizer    优化器</li><li>3.Interpolation    插值</li><li>4.Linear    线性计算与矩阵分解</li><li>5.Others    </li></ul></blockquote><p><strong>四、pandas</strong></p><blockquote><ul><li>关键词：数据分析库</li><li>官网：<a href="http://pandas.pydata.org/" target="_blank" rel="noopener">http://pandas.pydata.org/</a></li><li>Pandas是基于Numpy开发出的，专门用于数据分析的开源Python库</li><li>1.Series&amp;DataFram    基础数据结构</li><li>2.Basic&amp;Select&amp;Set    基本操作</li><li>3.Missing Data Processing    缺失值处理</li><li>4.Merge&amp;Reshape    表统计与整合</li><li>5.Time Series&amp;Graph&amp;Files    时间、绘图、文件操作</li></ul></blockquote><p><strong>五、scikit-learn</strong></p><blockquote><ul><li>关键词：数据挖掘建模    机器学习</li><li>官网：<a href="http://scikit-learn.org/" target="_blank" rel="noopener">http://scikit-learn.org/</a></li><li>机器学习：因子-&gt;结果</li><li>结果：不打标记-&gt;无监督学习（例如：聚类）<br>  打标记-&gt;监督学习<pre><code>有限离散-&gt;分类连续-&gt;回归</code></pre></li></ul></blockquote><p><strong>六、keras</strong></p><blockquote><ul><li>关键词：人工神经网络</li><li>官网：<a href="https://keras.io/" target="_blank" rel="noopener">https://keras.io/</a></li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;1.数据分析的含义与目标&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;统计分析方法&lt;/li&gt;
+&lt;li&gt;提取有用信息&lt;/li&gt;
+&lt;li&gt;研究、概括、总结&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;2.Py
+      
+    
+    </summary>
+    
+      <category term="python" scheme="http://www.herobin.top/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://www.herobin.top/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>django入门</title>
+    <link href="http://www.herobin.top/2018/03/11/django%E5%85%A5%E9%97%A8/"/>
+    <id>http://www.herobin.top/2018/03/11/django入门/</id>
+    <published>2018-03-11T01:23:45.000Z</published>
+    <updated>2019-01-14T02:15:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="django初体验"><a href="#django初体验" class="headerlink" title="django初体验"></a>django初体验</h2><h3 id="Django-python-web开发框架"><a href="#Django-python-web开发框架" class="headerlink" title="Django-python web开发框架"></a>Django-python web开发框架</h3><p>目前最流行的Python Web开发框架</p><p>Django框架负责处理大部分web开发底层细节，我们可以专注于开发web应用，避免重复制造轮子</p><h3 id="为什么使用Django"><a href="#为什么使用Django" class="headerlink" title="为什么使用Django"></a>为什么使用Django</h3><blockquote><ul><li>1.快速开发  用python开发    数据库ORM系统</li><li>2.大量内置应用  后台管理系统admin     用户认证系统auth    会话系统sessions</li><li>3.安全性高  表单验证    SQL注入    跨站点攻击</li><li>4.易于拓展 </li></ul></blockquote><p>指定在python3中安装django</p><p><code>python3 -m pip install django</code></p><p>安装django </p><p><code>pip install django</code></p><p>新建django项目并启动</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject mysite</span><br><span class="line">cd mysite</span><br><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure><p>现在服务已经启动 可以去 <code>127.0.0.1:8000</code>查看了 </p><p><strong>工程目录详解</strong></p><blockquote><ul><li>manage.py    管理项目：包括数据库建立、服务器运行、测试…</li><li>mysite目录    </li><li>settings.py    配置文件：应用、中间件、数据库、静态目录各类配置…</li><li>urls.py URL映射配置文件：决定一个url访问被哪个程序（函数）响应</li><li>wsgi.py Python应用程序或框架和Web服务器之间接口 </li><li>manage.py     可以自己指定端口 python manage.py runserver 0.0.0.0:8080</li></ul></blockquote><h3 id="最常用的几个manage-py的命令"><a href="#最常用的几个manage-py的命令" class="headerlink" title="最常用的几个manage.py的命令"></a>最常用的几个manage.py的命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">runserver启动服务器</span><br><span class="line">migrate、makemigrations 数据库相关的</span><br><span class="line">shell  </span><br><span class="line">django中使用应用来分割功能例如 游戏网站 -&gt; 分为四个应用：游戏新闻、游戏论坛、Blog系统、在线商城</span><br></pre></td></tr></table></figure><h3 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h3><blockquote><ul><li>1.创建应用blog    python manage.py startapp blog</li><li>2.添加blog应用    mysite/settings.py -&gt; INSTALLED_APPS</li></ul></blockquote><p><strong>应用目录详解</strong></p><blockquote><ul><li>views.py        相应客户请求返回html页面</li><li>models.py    定义数据库中的表</li><li>admin.py        admin相关</li><li>test.py        测试相关</li></ul></blockquote><h3 id="django概述"><a href="#django概述" class="headerlink" title="django概述"></a>django概述</h3><p>一次web访问的实质</p><p>1.客户发送http请求到web服务器</p><p>2.web服务器返回html页面给客户</p><blockquote><ul><li>1.URL配置    建立URL和与响应函数之间的关系</li><li>2.视图Views    响应客户http请求，进行逻辑处理，返回给用户html页面</li><li>3.模型Models    描述我们服务器存储的数据（数据库的表）</li><li>4.模板templates    用来生产html页面，返回给用户的html，是由数据（模型）和模板渲染出来的。</li></ul></blockquote><h3 id="django入门与实践"><a href="#django入门与实践" class="headerlink" title="django入门与实践"></a>django入门与实践</h3><h4 id="什么是Django"><a href="#什么是Django" class="headerlink" title="什么是Django"></a>什么是Django</h4><p>Django是一个基于Python的高级WEB开发框架</p><p>它能够让开发人员进行高效且快速的开发</p><p>高度集成（不用自己造轮子），免费并且开源</p><h4 id="浏览器浏览网页的基本原理"><a href="#浏览器浏览网页的基本原理" class="headerlink" title="浏览器浏览网页的基本原理"></a>浏览器浏览网页的基本原理</h4><p>本质是网络通信，即通过网络进行数据传递</p><p>浏览器经过通信后获取到该页面的源代码文档（HTML等）</p><p>浏览器解析文档后以适当的形式展现给用户</p><h4 id="安装Django两种方式"><a href="#安装Django两种方式" class="headerlink" title="安装Django两种方式"></a>安装Django两种方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Django==1.10.2</span><br></pre></td></tr></table></figure><p>下载源码，进入根目录执行python setup.py install</p><h4 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h4><p>打开命令行，进入想要安置项目的目录<br>命令行输入：django-admin startproject myblog<br>若没有报错，则创建项目成功<br>进入到项目中 cd myblog<br>启动项目 python manage.py runserver<br>指定端口 python manage.py runserver 9999</p><h4 id="Templates介绍"><a href="#Templates介绍" class="headerlink" title="Templates介绍"></a>Templates介绍</h4><p><strong>什么是Templates</strong></p><blockquote><ul><li>HTML文件</li><li>使用了Django模板语言（Django Template Language，DTL）</li><li>可以使用第三方模板（如Jinja2）</li></ul></blockquote><h4 id="开发第一个Template"><a href="#开发第一个Template" class="headerlink" title="开发第一个Template"></a>开发第一个Template</h4><p><strong>步骤</strong></p><blockquote><ul><li>在APP的根目录下创建名为Templates的目录</li><li>在该目录下创建HTML文件</li><li>在views.py中返回render()</li></ul></blockquote><p><strong>DTL初步使用</strong></p><blockquote><ul><li>render()函数中支持一个dict（字典）类型函数</li><li>该字典是后台传递到模板的参数，键为参数名</li><li>在模板中使用来直接使用<br><strong>注意</strong></li></ul></blockquote><p>Django查找Template</p><blockquote><ul><li>Django按照INSTALLED_APPS中的添加顺序查找Templates</li><li>不同APP下Templates目录中的同名.html文件会造成冲突</li></ul></blockquote><p>解决Templates冲突方案</p><blockquote><ul><li>在APP的Templates目录下创建以APP名为名称的目录</li><li>将html文件放入新创建的目录下</li></ul></blockquote><h4 id="Models介绍"><a href="#Models介绍" class="headerlink" title="Models介绍"></a>Models介绍</h4><p><strong>Django中的Models是什么？</strong></p><blockquote><ul><li>通常，一个Model对应数据库的一张数据表</li><li>Django中Models以类的形式表现</li><li>它包含了一些基本字段以及数据的一些行为</li></ul></blockquote><p><strong>ORM</strong></p><blockquote><ul><li>对象关系映射（Object Relation Mapping）</li><li>实现了对象和数据库之间的映射</li><li>隐藏了数据访问的细节，不需要编写SQL语句</li></ul></blockquote><p><strong>编写Models</strong></p><p>步骤</p><blockquote><ul><li>在应用根目录下创建models.py，并引入models模块（自动生成）</li><li>创建类，继承models.Model，该类即是一张数据表</li><li>在类中创建字段</li></ul></blockquote><p>字段创建</p><blockquote><ul><li>字段即类里面的属性（变量）</li><li>attr = models.CharField(max_length=64)</li></ul></blockquote><p><a href="http://docs.djangoproject.com/en/1.10/ref/models/fields/" target="_blank" rel="noopener">http://docs.djangoproject.com/en/1.10/ref/models/fields/</a></p><p><strong>生成数据表</strong></p><p>步骤</p><blockquote><ul><li>命令行进入manage.py同级目录</li><li>执行python manage.py makemigretions app名（可选）</li><li>再执行python manage.py migrate</li></ul></blockquote><p>查看</p><blockquote><ul><li>Django会自动在app/migrations/目录下生成移植文件</li><li>执行python manage.py sqlmigrate 应用名 文件id 查看SQL语句</li><li>默认sqlite3的数据库在项目根目录下db.sqlite3</li></ul></blockquote><p>查看并编辑db.sqlite3</p><blockquote><ul><li>使用第三方软件</li><li>SQLite Export Personal</li><li>轻量级，完全免费</li></ul></blockquote><p><strong>页面呈现数据</strong></p><p>后台步骤</p><blockquote><ul><li>views.py中import models</li><li>article = models.Article.objects.get(pk=1)</li><li>render(request,page,{‘article’:article})</li></ul></blockquote><p>前端步骤</p><blockquote><ul><li>模板可直接使用对象以及对象的 . 操作</li><li></li></ul></blockquote><h4 id="Admin简介"><a href="#Admin简介" class="headerlink" title="Admin简介"></a>Admin简介</h4><p><strong>什么是Admin</strong></p><blockquote><ul><li>Admin是Django自带的一个功能强大的自动化数据管理界面</li><li>被授权的用户可直接在Admin中管理数据库</li><li>Django提供了许多针对Admin的定制功能</li></ul></blockquote><p><strong>配置Admin</strong></p><p>创建用户</p><blockquote><ul><li>python manage.py createsuperuser    创建超级用户<br> （zhangbin    <a href="mailto:752658686@qq.com" target="_blank" rel="noopener">752658686@qq.com</a>    zhangbin）</li><li>localhost:8000/admin/    Admin入口</li><li>修改settings.py中LANGUAGE_CODE = ‘zh_Hans</li></ul></blockquote><p>配置应用</p><blockquote><ul><li>在应用下admin.py中引入自身的models模块（或里面的模型类）</li><li>编辑admin.py：admin.site.register(models.Article)</li></ul></blockquote><p>修改数据</p><blockquote><ul><li>点击Article超链接进入Article列表页面</li><li>点击任意一条数据，进入编辑页面修改</li><li>编辑页面下方一排按钮可执行相应操作</li></ul></blockquote><p>修改数据默认显示名称（在admin下的）</p><p>步骤</p><blockquote><ul><li>在Article类下添加一个方法</li><li>根据Python版本选择<code>__str__(self)(python3)</code>或<code>__unicode_(self)(python2.7)</code></li><li>return self.title</li></ul></blockquote><p>模板For循环<br><code></code></p><h4 id="Django中的超链接"><a href="#Django中的超链接" class="headerlink" title="Django中的超链接"></a>Django中的超链接</h4><p>超链接目标地址</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`href`后面是目标地址</span><br><span class="line"></span><br><span class="line">`Template`中可以用 `&#123;% url &apos;app_name: url_name&apos; param %&#125;`</span><br><span class="line"></span><br><span class="line">其中`app_name`和`url_name`都在`url`中配置</span><br><span class="line"></span><br><span class="line">使用`request.POST[&apos;参数名&apos;]`获取表单数据</span><br><span class="line"></span><br><span class="line">`models.Article.objects.create(title,content)`创建对象</span><br><span class="line"></span><br><span class="line">涉及`POST`方法提交表单的，前端页面加上`&#123;% csrf_token %&#125;`</span><br></pre></td></tr></table></figure><h4 id="Templates过滤器"><a href="#Templates过滤器" class="headerlink" title="Templates过滤器"></a>Templates过滤器</h4><p>什么是过滤器</p><p>写在模板中，属于Django模板语言</p><p>可以修改模板中的变量，从而显示不同的内容</p><p>怎么使用过滤器？</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; value | filter &#125;&#125;</span><br><span class="line">例子：&#123;&#123; list_nums | length &#125;&#125;  这样显示的就是长度而不是集合了</span><br><span class="line">过滤器可叠加：&#123;&#123; value | filter1 | filter2 | ... &#125;&#125;</span><br></pre></td></tr></table></figure><p>django访问不存在的对象时不会报错 只会传空</p><p>更多Django内建过滤器<br><a href="https://docs.djangoproject.com/en/1.10/ref/templates/builtins/#ref-templates-builtins-filters" target="_blank" rel="noopener">https://docs.djangoproject.com/en/1.10/ref/templates/builtins/#ref-templates-builtins-filters</a></p><h4 id="Django-Shell"><a href="#Django-Shell" class="headerlink" title="Django Shell"></a>Django Shell</h4><p>什么是Django Shell？</p><p>它是一个Python的交互式命令行程序</p><p>它自动引入了我们的项目环境</p><p>我们可以使用它与我们的项目进行交互</p><h4 id="如何使用Django-Shell？"><a href="#如何使用Django-Shell？" class="headerlink" title="如何使用Django Shell？"></a>如何使用Django Shell？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python manage.py shell</span><br><span class="line">from blog.models import Article</span><br><span class="line">Article.objects.all()</span><br></pre></td></tr></table></figure><p>有什么用？</p><p>我们可以使用Django shell来进行一些调试工作</p><p>测试未知的方法</p><h4 id="Admin增强"><a href="#Admin增强" class="headerlink" title="Admin增强"></a>Admin增强</h4><p>创建admin配置类</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">classArticleAdmin(admin.ModelAdmin)</span><br><span class="line">注册：admin.site.register(Article,ArticleAdmin)</span><br><span class="line">显示其他字段</span><br><span class="line">list_display = (&apos;title&apos;,&apos;content&apos;)</span><br><span class="line">list_displaty同时支持tuple和list(tuple类型只有一个数据，别忘了加逗号)</span><br><span class="line">过滤器</span><br><span class="line">list_filter = (&apos;pub_time&apos;,)  这样就会有今天 过去七天 过去一个月 这些...</span><br></pre></td></tr></table></figure><p>官方文档<br><a href="http://docs.djangoproject.com/en/1.10/ref/contrib/admin/" target="_blank" rel="noopener">http://docs.djangoproject.com/en/1.10/ref/contrib/admin/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;django初体验&quot;&gt;&lt;a href=&quot;#django初体验&quot; class=&quot;headerlink&quot; title=&quot;django初体验&quot;&gt;&lt;/a&gt;django初体验&lt;/h2&gt;&lt;h3 id=&quot;Django-python-web开发框架&quot;&gt;&lt;a href=&quot;#Djan
+      
+    
+    </summary>
+    
+      <category term="python" scheme="http://www.herobin.top/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://www.herobin.top/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>全面解析Java注解</title>
     <link href="http://www.herobin.top/2018/03/05/%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90Java%E6%B3%A8%E8%A7%A3/"/>
     <id>http://www.herobin.top/2018/03/05/全面解析Java注解/</id>
@@ -524,60 +582,6 @@
       <category term="java" scheme="http://www.herobin.top/tags/java/"/>
     
       <category term="spring" scheme="http://www.herobin.top/tags/spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java多线程之内存可见性</title>
-    <link href="http://www.herobin.top/2018/01/04/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E5%86%85%E5%AD%98%E5%8F%AF%E8%A7%81%E6%80%A7/"/>
-    <id>http://www.herobin.top/2018/01/04/java多线程之内存可见性/</id>
-    <published>2018-01-04T03:33:46.000Z</published>
-    <updated>2019-01-13T03:58:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h3><p><strong>可见性：</strong>一个线程对共享变量值的修改，能够及时地被其他线程看到。</p><p><strong>共享变量：</strong>如果一个变量在多个线程的工作内存中都存在副本，那么这个变量就是这几个线程的共享变量</p><h3 id="Java内存模型（JMM）"><a href="#Java内存模型（JMM）" class="headerlink" title="Java内存模型（JMM）"></a>Java内存模型（JMM）</h3><p>Java内存模型（Java Memory Model）描述了Java程序中各种变量（线程共享变量）的访问规则，以及在JVM中将变量存储到内存和从内存中读取出变量这样的底层细节。</p><p>所有的变量都存储在主内存中。</p><p>每个线程都有自己独立的工作内存，里面保存该线程使用到的变量的副本。（主内存中该变量的一份拷贝）</p><p><img src="/uploads/180104java1/1.png" alt=""></p><h3 id="两条规定"><a href="#两条规定" class="headerlink" title="两条规定"></a>两条规定</h3><blockquote><ul><li>线程对共享变量的所有操作都必须在自己的工作内存中进行，不能直接从主内存中读写。</li></ul></blockquote><blockquote><ul><li>不同线程之间无法直接访问其他线程工作内存中的变量，线程间变量值的传递需要通过主内存来完成。</li></ul></blockquote><p><img src="/uploads/180104java1/2.png" alt=""></p><p>要实现共享变量的可见性，必须保证两点：</p><blockquote><ul><li>线程修改后的共享变量值能够及时从工作内存刷新到主内存中。</li><li>其他线程能够及时把共享变量的最新值从主内存更新到自己的工作内存中</li></ul></blockquote><h3 id="Java语言层次支持的可见性实现方式："><a href="#Java语言层次支持的可见性实现方式：" class="headerlink" title="Java语言层次支持的可见性实现方式："></a>Java语言层次支持的可见性实现方式：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    synchronized</span><br><span class="line">    volatile</span><br></pre></td></tr></table></figure><p><strong>synchronized能够实现：</strong></p><p>原子性（同步）</p><p>可见性</p><p>JMM关于synchronized的两条规定：</p><blockquote><ul><li>线程解锁前，必须把共享变量的最新值刷新到主内存中。</li><li>线程加锁时，将清空工作内存中共享变量的值，从而使用共享变量时需要从主内存中重新读取最新的值<pre><code>（注意：加锁和解锁需要是同一把锁）</code></pre></li></ul></blockquote><p>线程解锁前对共享变量的修改在下次加锁时对其他线程可见</p><p><img src="/uploads/180104java1/3.png" alt="">           </p><h3 id="重排序"><a href="#重排序" class="headerlink" title="重排序"></a>重排序</h3><p><strong>重排序：</strong>代码书写的顺序与实际执行的顺序不同，指令重排序是编译器或处理器为了提高程序性能而做的优化</p><blockquote><ul><li>1.编译器优化的重排序（编译器优化）</li><li>2.指令级并行重排序（处理器优化）</li><li>3.内存系统的重排序（处理器优化）</li></ul></blockquote><p>as-if-serial：无论如何重排序，程序执行的结果应该与代码顺序执行的结果一致（Java编译器、运行时和处理器都会保证Java在单线程下遵循as-if-serial语义）</p><p><img src="/uploads/180104java1/4.png" alt=""></p><h3 id="可见性分析"><a href="#可见性分析" class="headerlink" title="可见性分析"></a>可见性分析</h3><p>导致共享变量在线程间不可见的原因：      synchronized解决方案</p><blockquote><ul><li>1.线程的交叉执行       ——&gt;   原子性</li><li>2.重排序结合线程交叉执行       ——&gt;   原子性</li><li>3.共享变量更新后的值没有在工作内存与主内存间及时更新    ——&gt;   可见性</li></ul></blockquote><h3 id="volatile实现可见性"><a href="#volatile实现可见性" class="headerlink" title="volatile实现可见性"></a>volatile实现可见性</h3><p>volatile如何实现内存可见性：</p><blockquote><ul><li>深入来说：通过加入内存屏障和禁止重排序优化来实现的。</li><li>对volatile变量执行写操作时，会在写操作后加入一条store屏障指令。</li><li>对volatile变量执行读操作时，会在读操作前加入一条load屏障指令。</li></ul></blockquote><h3 id="volatile如何实现内存可见性："><a href="#volatile如何实现内存可见性：" class="headerlink" title="volatile如何实现内存可见性："></a>volatile如何实现内存可见性：</h3><p>通俗的讲：volatile变量在每次被线程访问时，都强迫从主内存中重读该变量的值，而当该变量发生变化时，又会强迫线程将最新的值刷新到主内存。这样任何时刻，不同的线程总能看到该变量的最新值。</p><h4 id="线程写volatile变量的过程："><a href="#线程写volatile变量的过程：" class="headerlink" title="线程写volatile变量的过程："></a>线程写volatile变量的过程：</h4><blockquote><ul><li>1.改变线程工作内存中volatile变量副本的值。</li><li>2.将改变后的副本的值从工作内存刷新到主内存。</li></ul></blockquote><h4 id="线程读volatile变量的过程："><a href="#线程读volatile变量的过程：" class="headerlink" title="线程读volatile变量的过程："></a>线程读volatile变量的过程：</h4><blockquote><ul><li>1.从主内存中读取volatile变量的最新值到线程的工作内存中。</li><li>2.从工作内存中读取volatile变量的副本。</li></ul></blockquote><p>volatile不能保证volatile变量复合操作的原子性</p><p><img src="/uploads/180104java1/5.png" alt=""></p><p><img src="/uploads/180104java1/6.png" alt=""></p><p>在多进程（线程）的操作系统中不能被其它进程（线程）打断的操作就叫原子操作，文件的原子操作是指操作文件时的不能被打断的操作。原子操作是不可分割的，在执行过程中不会被任何其它任务或事件中断。</p><p>回滚就是回到事务开始之前的状态</p><p>我们把这种要么一起成功（A帐户成功减少1000，同时B帐户成功增加1000），要么一起失败（A帐户回到原来状态，B帐户也回到原来状态）的操作叫原子性操作。</p><p>如果把一个事务可看作是一个程序,它要么完整的被执行,要么完全不执行。这种特性就叫原子性</p><p><img src="/uploads/180104java1/7.png" alt=""></p><p><img src="/uploads/180104java1/8.png" alt=""></p><p><img src="/uploads/180104java1/9.png" alt=""></p><p><img src="/uploads/180104java1/10.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;可见性&quot;&gt;&lt;a href=&quot;#可见性&quot; class=&quot;headerlink&quot; title=&quot;可见性&quot;&gt;&lt;/a&gt;可见性&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;可见性：&lt;/strong&gt;一个线程对共享变量值的修改，能够及时地被其他线程看到。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;共享
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mysql存储过程</title>
-    <link href="http://www.herobin.top/2017/12/13/mysql%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/"/>
-    <id>http://www.herobin.top/2017/12/13/mysql存储过程/</id>
-    <published>2017-12-13T11:19:47.000Z</published>
-    <updated>2019-01-13T08:56:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/uploads/171213mysql/1.png" alt=""></p><h4 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h4><p>存储过程是SQL语句和控制语句的预编译集合，以一个名称存储并作为一个单元处理。</p><h4 id="存储过程的优点"><a href="#存储过程的优点" class="headerlink" title="存储过程的优点"></a>存储过程的优点</h4><blockquote><ul><li>增强SQL语句的功能和灵活性</li><li>实现较快的执行速度</li><li>减少网络流量</li></ul></blockquote><p><img src="/uploads/171213mysql/2.png" alt=""></p><blockquote><ul><li>IN：表示该参数的值必须在调用存储过程时指定</li><li>OUT：表示该参数的值可以被存储过程改变，并且可以返回。</li><li>INOUT：表示该参数的调用时指定，并且可以被改变和返回。</li></ul></blockquote><p><img src="/uploads/171213mysql/3.png" alt=""></p><p><img src="/uploads/171213mysql/4.png" alt=""></p><h4 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h4><p>MySQL可以将数据以不同的技术存储在文件（内存）中，这种技术就成为存储引擎。</p><p>每一种存储引擎使用不同的存储机制、索引技巧、锁定水平，最终提供广泛且不同的功能。</p><p><img src="/uploads/171213mysql/5.png" alt=""></p><h4 id="并发控制"><a href="#并发控制" class="headerlink" title="并发控制"></a>并发控制</h4><p>当多个连接对记录进行修改时保证数据的一致性和完整性。</p><p><img src="/uploads/171213mysql/6.png" alt=""></p><p><img src="/uploads/171213mysql/7.png" alt=""></p><h4 id="事物"><a href="#事物" class="headerlink" title="事物"></a>事物</h4><p><img src="/uploads/171213mysql/8.png" alt=""></p><p><img src="/uploads/171213mysql/9.png" alt=""></p><p>外键：是保证数据一致性的策略。</p><p>索引：是对数据表中一列或多列的值进行排序的一种结构。</p><p><img src="/uploads/171213mysql/10.png" alt=""></p><p><img src="/uploads/171213mysql/11.png" alt=""></p><p><img src="/uploads/171213mysql/12.png" alt=""></p><p><img src="/uploads/171213mysql/13.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;/uploads/171213mysql/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h4 id=&quot;存储过程&quot;&gt;&lt;a href=&quot;#存储过程&quot; class=&quot;headerlink&quot; title=&quot;存储过程&quot;&gt;&lt;/a&gt;存储过程&lt;/h4&gt;&lt;p&gt;存储过程是SQL语
-      
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://www.herobin.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="数据库" scheme="http://www.herobin.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-      <category term="mysql" scheme="http://www.herobin.top/tags/mysql/"/>
     
   </entry>
   
