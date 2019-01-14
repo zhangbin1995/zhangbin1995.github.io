@@ -200,9 +200,9 @@
     
       <category term="java" scheme="http://www.herobin.top/tags/java/"/>
     
-      <category term="springboot" scheme="http://www.herobin.top/tags/springboot/"/>
-    
       <category term="spring" scheme="http://www.herobin.top/tags/spring/"/>
+    
+      <category term="springboot" scheme="http://www.herobin.top/tags/springboot/"/>
     
   </entry>
   
