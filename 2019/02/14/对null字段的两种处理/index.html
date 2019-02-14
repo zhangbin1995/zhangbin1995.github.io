@@ -108,24 +108,18 @@
 
 
 
-  <meta name="description" content="项目现在部署在服务器上，我们想要通过本地Eclipse来远程调试在服务器上输入命名 1ps -ef | grep tomcat 可以看到我们tomcat是由root用户启动的,这里需要我们改为其他用户,root启动的进程不支持远程调试,这里我们要改为用普通的账号启动tomcat. 这里要注意,普通账号是没办法运行root账号安装的软件的.所以我们要用普通账号安装一下tomcat. 创建新用户的指令">
-<meta name="keywords" content="java">
+  <meta name="description" content="在查询订单列表时，有的订单详情为空返回值为null，不利于前端展示，如下： 1234567891011121314151617181920212223242526272829303132&amp;#123;    &amp;quot;code&amp;quot;: 0,    &amp;quot;msg&amp;quot;: &amp;quot;成功&amp;quot;,    &amp;quot;data&amp;quot;: [        &amp;#123;">
+<meta name="keywords" content="java,springboot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Eclipse远程调试">
-<meta property="og:url" content="http://www.herobin.top/2018/12/17/Eclipse远程调试/index.html">
+<meta property="og:title" content="对null字段的两种处理">
+<meta property="og:url" content="http://www.herobin.top/2019/02/14/对null字段的两种处理/index.html">
 <meta property="og:site_name" content="HeroBin&#39;s Blog">
-<meta property="og:description" content="项目现在部署在服务器上，我们想要通过本地Eclipse来远程调试在服务器上输入命名 1ps -ef | grep tomcat 可以看到我们tomcat是由root用户启动的,这里需要我们改为其他用户,root启动的进程不支持远程调试,这里我们要改为用普通的账号启动tomcat. 这里要注意,普通账号是没办法运行root账号安装的软件的.所以我们要用普通账号安装一下tomcat. 创建新用户的指令">
+<meta property="og:description" content="在查询订单列表时，有的订单详情为空返回值为null，不利于前端展示，如下： 1234567891011121314151617181920212223242526272829303132&amp;#123;    &amp;quot;code&amp;quot;: 0,    &amp;quot;msg&amp;quot;: &amp;quot;成功&amp;quot;,    &amp;quot;data&amp;quot;: [        &amp;#123;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.herobin.top/uploads/181217eclipse/1.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/181217eclipse/2.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/181217eclipse/3.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/181217eclipse/4.png">
-<meta property="og:image" content="http://www.herobin.top/uploads/181217eclipse/5.png">
-<meta property="og:updated_time" content="2019-01-13T09:05:15.000Z">
+<meta property="og:updated_time" content="2019-02-14T00:58:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eclipse远程调试">
-<meta name="twitter:description" content="项目现在部署在服务器上，我们想要通过本地Eclipse来远程调试在服务器上输入命名 1ps -ef | grep tomcat 可以看到我们tomcat是由root用户启动的,这里需要我们改为其他用户,root启动的进程不支持远程调试,这里我们要改为用普通的账号启动tomcat. 这里要注意,普通账号是没办法运行root账号安装的软件的.所以我们要用普通账号安装一下tomcat. 创建新用户的指令">
-<meta name="twitter:image" content="http://www.herobin.top/uploads/181217eclipse/1.png">
+<meta name="twitter:title" content="对null字段的两种处理">
+<meta name="twitter:description" content="在查询订单列表时，有的订单详情为空返回值为null，不利于前端展示，如下： 1234567891011121314151617181920212223242526272829303132&amp;#123;    &amp;quot;code&amp;quot;: 0,    &amp;quot;msg&amp;quot;: &amp;quot;成功&amp;quot;,    &amp;quot;data&amp;quot;: [        &amp;#123;">
 
 
 
@@ -134,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="http://www.herobin.top/2018/12/17/Eclipse远程调试/"/>
+  <link rel="canonical" href="http://www.herobin.top/2019/02/14/对null字段的两种处理/"/>
 
 
 
@@ -144,7 +138,7 @@
   };
 </script>
 
-  <title>Eclipse远程调试 | HeroBin's Blog</title>
+  <title>对null字段的两种处理 | HeroBin's Blog</title>
   
 
 
@@ -359,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2018/12/17/Eclipse远程调试/">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2019/02/14/对null字段的两种处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HeroBin">
@@ -376,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Eclipse远程调试
+          <h1 class="post-title" itemprop="name headline">对null字段的两种处理
               
             
           </h1>
@@ -401,24 +395,12 @@
                 
               
 
-              <time title="创建时间：2018-12-17 16:24:19" itemprop="dateCreated datePublished" datetime="2018-12-17T16:24:19+08:00">2018-12-17</time>
+              <time title="创建时间：2019-02-14 08:46:36 / 修改时间：08:58:50" itemprop="dateCreated datePublished" datetime="2019-02-14T08:46:36+08:00">2019-02-14</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-13 17:05:15" itemprop="dateModified" datetime="2019-01-13T17:05:15+08:00">2019-01-13</time>
               
             
           </span>
@@ -474,46 +456,21 @@
       
 
       
-        <p>项目现在部署在服务器上，我们想要通过本地Eclipse来远程调试<br>在服务器上输入命名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep tomcat</span><br></pre></td></tr></table></figure>
-<p>可以看到我们tomcat是由root用户启动的,这里需要我们改为其他用户,root启动的进程不支持远程调试,<br>这里我们要改为用普通的账号启动tomcat.</p>
-<p>这里要注意,普通账号是没办法运行root账号安装的软件的.所以我们要用普通账号安装一下tomcat.</p>
-<p>创建新用户的指令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser work</span><br></pre></td></tr></table></figure>
-<p>输入密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd work</span><br></pre></td></tr></table></figure>
-<p><img src="/uploads/181217eclipse/1.png" alt=""></p>
-<p><code>shudown</code>掉现在的tomcat程序,在tomcat目录下执行<code>bin/shutdown.sh</code></p>
-<p>切换账号</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su work</span><br></pre></td></tr></table></figure>
-<p>切换回这个账号的根目录<code>cd ~</code>,可以看到当前的用户路径<code>/home/work</code>,再次上传本地的tomcat到服务器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp apache-tomcat-8.5.35.tar.gz work@101.132.138.185:~</span><br></pre></td></tr></table></figure>
-<p>解压这个tomcat</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf file.tar.gz</span><br></pre></td></tr></table></figure>
-<p>再将我们的代码部署到上面因为没有改端口号用过<code>ip:8080/o2o</code>就可以访问到了.可是微信登录只能访问80端口,所以我们要做一个转发操作.</p>
-<p>切换回<code>root</code>用户关掉<code>firewalld</code>服务,安装<code>iptables-services</code>服务.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line">systemctl disable firewalld.service</span><br><span class="line">yum install iptables-services</span><br></pre></td></tr></table></figure>
-<p>将对80端口的请求转发到8080</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080</span><br><span class="line">service iptables save #让上面的指令生效</span><br></pre></td></tr></table></figure>
-<p>这个时候已经生效了,但是重启服务器就会失效,执行下面两条指令让它永久生效.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart iptables.service</span><br><span class="line">systemctl enable iptables.service</span><br></pre></td></tr></table></figure>
-<p>修改tomcat配置(work下的)<br>修改<code>bin/catalina.sh</code>  <code>vim catalina.sh</code><br>加入的部分：</p>
-<p><img src="/uploads/181217eclipse/2.png" alt=""></p>
-<p>这句话的意义是 告诉tomcat你要开启一个端口支持远程调试,同时别忘了将服务器的这两个端口号打开</p>
-<p><img src="/uploads/181217eclipse/3.png" alt=""></p>
-<p>切换回<code>work</code> 重启<code>tomcat</code> <code>shutdown</code> <code>start</code></p>
-<p>这个时候再 <code>ps -ef | grep tomcat</code>,就可以发现这个进程是work的了,包括我们设置的调试信息也有了</p>
-<p><img src="/uploads/181217eclipse/4.png" alt=""></p>
-<p>回到我们的eclipse,在启动debug服务器（小昆虫）那里找到 <code>Debug</code> <code>Configuration</code>修改配置如下</p>
-<p><img src="/uploads/181217eclipse/5.png" alt=""></p>
-<p>Eclipse远程调试总结<br>添加新用户，并赋予root权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adduser work</span><br><span class="line">passwd work</span><br></pre></td></tr></table></figure>
-<p>上传tomcat软件，上传程序war包</p>
-<p>将80端口的请求转发至8080端口（永久生效）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service #停止firewall</span><br><span class="line">systemctl disable firewalld.service # 禁止firewall开机启动</span><br><span class="line">yum install iptables-services #安装</span><br><span class="line">iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080</span><br><span class="line">service iptables save</span><br><span class="line">systemctl restart iptables.service</span><br><span class="line">systemctl enable iptables.service</span><br></pre></td></tr></table></figure>
-<p>远程调试tomcat<code>vim bin/catalina.sh</code>添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CATALINA_OPTS=&quot;-Xdebug  -Xrunjdwp:transport=dt_socket,address=8888,server=y,suspend=n&quot;</span><br></pre></td></tr></table></figure>
-<p>开通阿里云控制台安全组策略8888端口<br>在eclipse debug做对应的配置即可</p>
+        <p>在查询订单列表时，有的订单详情为空返回值为null，不利于前端展示，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;code&quot;: 0,</span><br><span class="line">    &quot;msg&quot;: &quot;成功&quot;,</span><br><span class="line">    &quot;data&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;orderId&quot;: &quot;1550025663184309586&quot;,</span><br><span class="line">            &quot;buyerName&quot;: &quot;admin&quot;,</span><br><span class="line">            &quot;buyerPhone&quot;: &quot;123456&quot;,</span><br><span class="line">            &quot;buyerAddress&quot;: &quot;11111&quot;,</span><br><span class="line">            &quot;buyerOpenid&quot;: &quot;123456&quot;,</span><br><span class="line">            &quot;orderAmount&quot;: 3.2,</span><br><span class="line">            &quot;orderStatus&quot;: 0,</span><br><span class="line">            &quot;payStatus&quot;: 0,</span><br><span class="line">            &quot;createTime&quot;: &quot;2019-02-13T16:41:06.000+0000&quot;,</span><br><span class="line">            &quot;updateTime&quot;: &quot;2019-02-13T16:41:06.000+0000&quot;,</span><br><span class="line">            &quot;orderDetailList&quot;: null</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;orderId&quot;: &quot;1550025830175838897&quot;,</span><br><span class="line">            &quot;buyerName&quot;: &quot;admin&quot;,</span><br><span class="line">            &quot;buyerPhone&quot;: &quot;123456&quot;,</span><br><span class="line">            &quot;buyerAddress&quot;: &quot;11111&quot;,</span><br><span class="line">            &quot;buyerOpenid&quot;: &quot;123456&quot;,</span><br><span class="line">            &quot;orderAmount&quot;: 3.2,</span><br><span class="line">            &quot;orderStatus&quot;: 0,</span><br><span class="line">            &quot;payStatus&quot;: 0,</span><br><span class="line">            &quot;createTime&quot;: &quot;2019-02-13T16:43:48.000+0000&quot;,</span><br><span class="line">            &quot;updateTime&quot;: &quot;2019-02-13T16:43:48.000+0000&quot;,</span><br><span class="line">            &quot;orderDetailList&quot;: null</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到上面<strong>orderDetailList</strong>的值为<strong>null</strong>。</p>
+<p>这里我们可以给orderDTO添加注释<strong>JsonInclude</strong>来解决：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@JsonInclude(JsonInclude.Include.NON_NULL)</span><br></pre></td></tr></table></figure>
+<p>这样为空的属性就不会返回给前端了，运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;code&quot;: 0,</span><br><span class="line">    &quot;msg&quot;: &quot;成功&quot;,</span><br><span class="line">    &quot;data&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;orderId&quot;: &quot;1550025663184309586&quot;,</span><br><span class="line">            &quot;buyerName&quot;: &quot;admin&quot;,</span><br><span class="line">            &quot;buyerPhone&quot;: &quot;123456&quot;,</span><br><span class="line">            &quot;buyerAddress&quot;: &quot;11111&quot;,</span><br><span class="line">            &quot;buyerOpenid&quot;: &quot;123456&quot;,</span><br><span class="line">            &quot;orderAmount&quot;: 3.2,</span><br><span class="line">            &quot;orderStatus&quot;: 0,</span><br><span class="line">            &quot;payStatus&quot;: 0,</span><br><span class="line">            &quot;createTime&quot;: &quot;2019-02-13T16:41:06.000+0000&quot;,</span><br><span class="line">            &quot;updateTime&quot;: &quot;2019-02-13T16:41:06.000+0000&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;orderId&quot;: &quot;1550025830175838897&quot;,</span><br><span class="line">            &quot;buyerName&quot;: &quot;admin&quot;,</span><br><span class="line">            &quot;buyerPhone&quot;: &quot;123456&quot;,</span><br><span class="line">            &quot;buyerAddress&quot;: &quot;11111&quot;,</span><br><span class="line">            &quot;buyerOpenid&quot;: &quot;123456&quot;,</span><br><span class="line">            &quot;orderAmount&quot;: 3.2,</span><br><span class="line">            &quot;orderStatus&quot;: 0,</span><br><span class="line">            &quot;payStatus&quot;: 0,</span><br><span class="line">            &quot;createTime&quot;: &quot;2019-02-13T16:43:48.000+0000&quot;,</span><br><span class="line">            &quot;updateTime&quot;: &quot;2019-02-13T16:43:48.000+0000&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>也可以在<strong>application.yml</strong>中配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    driver-class-name: com.mysql.jdbc.Driver</span><br><span class="line">    username: herobin</span><br><span class="line">    password: Zhangbin1995@</span><br><span class="line">    url: jdbc:mysql://101.132.138.185:3306/sell?characterEncoding=utf-8&amp;useSSL=false</span><br><span class="line">  jpa:</span><br><span class="line">    show-sql: true</span><br><span class="line">    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect</span><br><span class="line">    hibernate.ddl-auto: update</span><br><span class="line">  # 配置所有的类只返回非空属性 </span><br><span class="line">  jackson:</span><br><span class="line">    default-property-inclusion: non_null</span><br><span class="line">server:</span><br><span class="line">  servlet:</span><br><span class="line">    context-path: /sell</span><br></pre></td></tr></table></figure>
+<p>可是有的时候我们想要返回orderDetailList，还是值不为空，而是一个方括号。</p>
+<p>可以在orderDTO中给orderDetailList赋初值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;OrderDetail&gt; orderDetailList = new ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;code&quot;: 0,</span><br><span class="line">    &quot;msg&quot;: &quot;成功&quot;,</span><br><span class="line">    &quot;data&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;orderId&quot;: &quot;1550025663184309586&quot;,</span><br><span class="line">            &quot;buyerName&quot;: &quot;admin&quot;,</span><br><span class="line">            &quot;buyerPhone&quot;: &quot;123456&quot;,</span><br><span class="line">            &quot;buyerAddress&quot;: &quot;11111&quot;,</span><br><span class="line">            &quot;buyerOpenid&quot;: &quot;123456&quot;,</span><br><span class="line">            &quot;orderAmount&quot;: 3.2,</span><br><span class="line">            &quot;orderStatus&quot;: 0,</span><br><span class="line">            &quot;payStatus&quot;: 0,</span><br><span class="line">            &quot;createTime&quot;: &quot;2019-02-13T16:41:06.000+0000&quot;,</span><br><span class="line">            &quot;updateTime&quot;: &quot;2019-02-13T16:41:06.000+0000&quot;,</span><br><span class="line">            &quot;orderDetailList&quot;: []</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;orderId&quot;: &quot;1550025830175838897&quot;,</span><br><span class="line">            &quot;buyerName&quot;: &quot;admin&quot;,</span><br><span class="line">            &quot;buyerPhone&quot;: &quot;123456&quot;,</span><br><span class="line">            &quot;buyerAddress&quot;: &quot;11111&quot;,</span><br><span class="line">            &quot;buyerOpenid&quot;: &quot;123456&quot;,</span><br><span class="line">            &quot;orderAmount&quot;: 3.2,</span><br><span class="line">            &quot;orderStatus&quot;: 0,</span><br><span class="line">            &quot;payStatus&quot;: 0,</span><br><span class="line">            &quot;createTime&quot;: &quot;2019-02-13T16:43:48.000+0000&quot;,</span><br><span class="line">            &quot;updateTime&quot;: &quot;2019-02-13T16:43:48.000+0000&quot;,</span><br><span class="line">            &quot;orderDetailList&quot;: []</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同理，String类型和int类型也都可以通过赋初值的方法避免null问题。</p>
 
       
     </div>
@@ -536,6 +493,8 @@
           
             <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
           
+            <a href="/tags/springboot/" rel="tag"><i class="fa fa-tag"></i> springboot</a>
+          
         </div>
       
 
@@ -547,8 +506,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/05/tensorflow基础/" rel="next" title="tensorflow基础">
-                <i class="fa fa-chevron-left"></i> tensorflow基础
+              <a href="/2019/02/13/PageRequest过时替换/" rel="next" title="PageRequest过时替换">
+                <i class="fa fa-chevron-left"></i> PageRequest过时替换
               </a>
             
           </div>
@@ -556,10 +515,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/17/加密连接数据库明文密码/" rel="prev" title="加密连接数据库明文密码">
-                加密连接数据库明文密码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
