@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.herobin.top/"/>
-  <updated>2019-02-22T05:51:08.969Z</updated>
+  <updated>2019-02-22T06:09:06.810Z</updated>
   <id>http://www.herobin.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>centos下安装docker</title>
+    <link href="http://www.herobin.top/2019/02/22/centos%E4%B8%8B%E5%AE%89%E8%A3%85docker/"/>
+    <id>http://www.herobin.top/2019/02/22/centos下安装docker/</id>
+    <published>2019-02-22T06:08:05.000Z</published>
+    <updated>2019-02-22T06:09:06.810Z</updated>
+    
+    <content type="html"><![CDATA[<p>更多文章欢迎访问个人博客 <a href="http://www.herobin.top">www.herobin.top</a></p><h2 id="1-检查内核版本"><a href="#1-检查内核版本" class="headerlink" title="1. 检查内核版本"></a>1. 检查内核版本</h2><p><code>uname -r</code><br>返回的值大于3.10即可。</p><h2 id="2-使用sudo或root权限的用户登录终端。"><a href="#2-使用sudo或root权限的用户登录终端。" class="headerlink" title="2. 使用sudo或root权限的用户登录终端。"></a>2. 使用sudo或root权限的用户登录终端。</h2><h2 id="3-卸载旧版本（如果安装过旧版本的话）"><a href="#3-卸载旧版本（如果安装过旧版本的话）" class="headerlink" title="3. 卸载旧版本（如果安装过旧版本的话）"></a>3. 卸载旧版本（如果安装过旧版本的话）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ yum remove docker \</span><br><span class="line">docker-common \</span><br><span class="line">docker-selinux \</span><br><span class="line">docker-engine</span><br></pre></td></tr></table></figure><h2 id="4-安装需要的软件包"><a href="#4-安装需要的软件包" class="headerlink" title="4. 安装需要的软件包"></a>4. 安装需要的软件包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#yum-util提供yum-config-manager功能</span><br><span class="line">#另外两个是devicemapper驱动依赖的</span><br><span class="line">$ yum install -y yum-utils \</span><br><span class="line">  device-mapper-persistent-data \</span><br><span class="line">  lvm2</span><br></pre></td></tr></table></figure><h2 id="5-设置yum源"><a href="#5-设置yum源" class="headerlink" title="5. 设置yum源"></a>5. 设置yum源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ yum-config-manager \</span><br><span class="line">    --add-repo \</span><br><span class="line">    https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure><h2 id="6-安装docker"><a href="#6-安装docker" class="headerlink" title="6. 安装docker"></a>6. 安装docker</h2><h3 id="6-1-安装最新版本"><a href="#6-1-安装最新版本" class="headerlink" title="6.1. 安装最新版本"></a>6.1. 安装最新版本</h3><p><code>yum install -y docker-ce</code></p><h3 id="6-2-安装指定版本"><a href="#6-2-安装指定版本" class="headerlink" title="6.2. 安装指定版本"></a>6.2. 安装指定版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#查询版本列表</span><br><span class="line">$ yum list docker-ce --showduplicates | sort -r</span><br><span class="line">已加载插件：fastestmirror, langpacks</span><br><span class="line">已安装的软件包</span><br><span class="line">可安装的软件包</span><br><span class="line"> * updates: mirrors.163.com</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line"> * extras: mirrors.163.com</span><br><span class="line">docker-ce.x86_64            17.09.1.ce-1.el7.centos            docker-ce-stable</span><br><span class="line">docker-ce.x86_64            17.09.0.ce-1.el7.centos            docker-ce-stable</span><br><span class="line">...</span><br><span class="line">#指定版本安装(这里的例子是安装上面列表中的第二个)</span><br><span class="line">$ yum install -y docker-ce-17.09.0.ce</span><br></pre></td></tr></table></figure><h2 id="7-启动docker"><a href="#7-启动docker" class="headerlink" title="7. 启动docker"></a>7. 启动docker</h2><p><code>systemctl start docker.service</code></p><h2 id="8-验证安装是否成功（有client和service两部分表示docker安装启动都成功了）"><a href="#8-验证安装是否成功（有client和service两部分表示docker安装启动都成功了）" class="headerlink" title="8.验证安装是否成功（有client和service两部分表示docker安装启动都成功了）"></a>8.验证安装是否成功（有client和service两部分表示docker安装启动都成功了）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ docker version</span><br><span class="line">Client:</span><br><span class="line"> Version:      17.09.0-ce</span><br><span class="line"> API version:  1.32</span><br><span class="line"> Go version:   go1.8.3</span><br><span class="line"> Git commit:   afdb6d4</span><br><span class="line"> Built:        Tue Sep 26 22:41:23 2017</span><br><span class="line"> OS/Arch:      linux/amd64</span><br><span class="line"></span><br><span class="line">Server:</span><br><span class="line"> Version:      17.09.0-ce</span><br><span class="line"> API version:  1.32 (minimum version 1.12)</span><br><span class="line"> Go version:   go1.8.3</span><br><span class="line"> Git commit:   afdb6d4</span><br><span class="line"> Built:        Tue Sep 26 22:42:49 2017</span><br><span class="line"> OS/Arch:      linux/amd64</span><br><span class="line"> Experimental: false</span><br></pre></td></tr></table></figure><p>原文链接：<br><a href="https://www.imooc.com/article/16448" target="_blank" rel="noopener">https://www.imooc.com/article/16448</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;更多文章欢迎访问个人博客 &lt;a href=&quot;http://www.herobin.top&quot;&gt;www.herobin.top&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-检查内核版本&quot;&gt;&lt;a href=&quot;#1-检查内核版本&quot; class=&quot;headerlink&quot; title=&quot;1. 
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
+    
+      <category term="服务器" scheme="http://www.herobin.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>mac下安装docker</title>
@@ -519,33 +547,6 @@
       <category term="springboot" scheme="http://www.herobin.top/tags/springboot/"/>
     
       <category term="spring" scheme="http://www.herobin.top/tags/spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>定期给数据库以及图片进行备份</title>
-    <link href="http://www.herobin.top/2018/12/24/%E5%AE%9A%E6%9C%9F%E7%BB%99%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87%E8%BF%9B%E8%A1%8C%E5%A4%87%E4%BB%BD/"/>
-    <id>http://www.herobin.top/2018/12/24/定期给数据库以及图片进行备份/</id>
-    <published>2018-12-24T11:31:53.000Z</published>
-    <updated>2019-01-13T09:01:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="定期给数据库以及图片进行备份"><a href="#定期给数据库以及图片进行备份" class="headerlink" title="定期给数据库以及图片进行备份"></a>定期给数据库以及图片进行备份</h2><h3 id="实现服务器每天零点零分对数据库和图片进行自动备份"><a href="#实现服务器每天零点零分对数据库和图片进行自动备份" class="headerlink" title="实现服务器每天零点零分对数据库和图片进行自动备份"></a>实现服务器每天零点零分对数据库和图片进行自动备份</h3><p>利用linux自带的crontab实现数据库以及图片的定期备份。<br>登录阿里云服务器后<br>创建一个文件夹保存我们的备份文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir backup</span><br><span class="line">cd backup</span><br><span class="line">mkdir sql</span><br><span class="line">mkdir image</span><br></pre></td></tr></table></figure><h4 id="备份数据库信息"><a href="#备份数据库信息" class="headerlink" title="备份数据库信息"></a>备份数据库信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd sql</span><br><span class="line">mysqldump -uroot -pyourpassword o2o &gt; /root/backup/sql/o2o`date +%Y%m%d%H%M%S`.sql</span><br></pre></td></tr></table></figure><p><img src="/uploads/181224backup/1.png" alt=""></p><p>可以看到sql备份文件已经生成了。</p><h4 id="备份图片压缩包"><a href="#备份图片压缩包" class="headerlink" title="备份图片压缩包"></a>备份图片压缩包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zcvf /root/backup/image/image `date +%Y%m%d%H%M%S`.tar.gz /root/shopimages/upload/</span><br></pre></td></tr></table></figure><p>就可以发现图片的压缩包生成在目录<code>root/backup/image</code>下了</p><p>新建 <code>backup.sh</code>文件将前面的两行指令编辑进去</p><p><code>vim backup.sh</code></p><p><img src="/uploads/181224backup/2.png" alt=""></p><p>执行<br><code>sh backup.sh</code><br>可以发现 <code>sql</code>和<code>image</code>下都生成了新的备份文件.</p><h4 id="通过linux的crontab来设定定时任务实现定期备份"><a href="#通过linux的crontab来设定定时任务实现定期备份" class="headerlink" title="通过linux的crontab来设定定时任务实现定期备份"></a>通过<code>linux</code>的<code>crontab</code>来设定定时任务实现定期备份</h4><p>查看当前已有的定时任务</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -l</span><br></pre></td></tr></table></figure><p>因为现在还没有，所以没有查出来</p><p>现在编写定时任务定期执行我们的<code>backup.sh</code></p><p>这里我们使用在线Cron表达式生成器来生成我们的命令（百度：在线cron表达式生成器）</p><p>注意这里是不支持秒和年的  只支持从分钟到周这五个</p><p>选中分钟 将Cron表达式中的？前面的五个*拷贝出来去<code>contab -e</code>中使用（每分钟执行一次的意思）<br>使用 <code>crontab -e</code> 命令可以设置我们的命令</p><p><img src="/uploads/181224backup/3.png" alt=""></p><p>通过命令 <code>tail -f /var/log/cron</code> 可以看到我们定期备份的cron命令已经执行。</p><p><img src="/uploads/181224backup/4.png" alt=""></p><p>我们就可以发现每分钟都会生成新的备份文件了，当然现实场景中我们并不需要每分钟都备份。</p><p>我们去备份每天的凌晨备份，拷贝对应的正则表达式</p><p>因为这里秒数我们是没办法准确控制0秒的,所以拷贝从第二个零开始</p><p><img src="/uploads/181224backup/5.png" alt=""></p><p>去<code>crontab -e</code> 中将原来的每分钟的替换掉</p><p><img src="/uploads/181224backup/6.png" alt=""></p><p>这里会报错，将？改为*就好了，后面可以去具体了解crontab。</p><p><img src="/uploads/181224backup/7.png" alt=""></p><p>这样就是每天的零点零分去执行一次了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;定期给数据库以及图片进行备份&quot;&gt;&lt;a href=&quot;#定期给数据库以及图片进行备份&quot; class=&quot;headerlink&quot; title=&quot;定期给数据库以及图片进行备份&quot;&gt;&lt;/a&gt;定期给数据库以及图片进行备份&lt;/h2&gt;&lt;h3 id=&quot;实现服务器每天零点零分对数据库和图
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
-    
-      <category term="数据库" scheme="http://www.herobin.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
