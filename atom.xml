@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.herobin.top/"/>
-  <updated>2019-02-22T06:09:06.810Z</updated>
+  <updated>2019-02-22T08:09:53.300Z</updated>
   <id>http://www.herobin.top/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker运行nginx镜像</title>
+    <link href="http://www.herobin.top/2019/02/22/docker%E8%BF%90%E8%A1%8Cnginx%E9%95%9C%E5%83%8F/"/>
+    <id>http://www.herobin.top/2019/02/22/docker运行nginx镜像/</id>
+    <published>2019-02-22T08:09:17.000Z</published>
+    <updated>2019-02-22T08:09:53.300Z</updated>
+    
+    <content type="html"><![CDATA[<p>更多文章欢迎访问个人博客 <a href="http://www.herobin.top">www.herobin.top</a></p><h1 id="下载并运行nginx镜像"><a href="#下载并运行nginx镜像" class="headerlink" title="下载并运行nginx镜像"></a>下载并运行nginx镜像</h1><p>在网易云的镜像中心找到nginx的镜像<br><a href="https://c.163yun.com/hub#/m/home/" target="_blank" rel="noopener">https://c.163yun.com/hub#/m/home/</a></p><p>复制nginx的下载地址：hub.c.163.com/library/nginx:latest<br>使用<code>docker pull hub.c.163.com/library/nginx:latest</code><br>下载nginx镜像到本地</p><p>这时再使用<code>docker images</code>可以查看到本地已有的nignx镜像</p><p>使用<code>docker run hub.c.163.com/library/nginx</code><br>发现没有任何输出，新建窗口输入<code>docker ps</code>可以查看本机当前运行的所有容器。<br><img src="https://img-blog.csdnimg.cn/20190222154801493.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这时只要通过<code>ctrl+c</code>既可以停止程序，所以我们通常推荐在后台运行镜像 通过加 <code>-d</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d hub.c.163.com/library/nginx</span><br></pre></td></tr></table></figure></p><p>运行后可以通过docker exec命令进入指定镜像：<br><img src="https://img-blog.csdnimg.cn/20190222154959818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看到</p><blockquote><ol><li>docker run nginx镜像成功后返回一串此镜像运行的唯一标识id。</li><li>通过docker exec –help查看 docker exec命令帮助。</li><li>通过docker exec -it 603 bash来进入已运行的nginx镜像  这里只输入了604因为已经可以唯一标识确定，若不能再多输。</li><li>可通过exit命令退出镜像。</li><li>可以使用docker stop 603命令来结束nginx镜像的运行。</li></ol></blockquote><h1 id="网络访问nginx"><a href="#网络访问nginx" class="headerlink" title="网络访问nginx"></a>网络访问nginx</h1><p>运行了docker中的nginx后要怎样才能在网络（浏览器）中访问到nginx呢？</p><h2 id="docker网络类型"><a href="#docker网络类型" class="headerlink" title="docker网络类型"></a>docker网络类型</h2><blockquote><ul><li><ol><li>bridge模式（桥接，默认类型，实现网络独立性）：docker默认的网络设置，此模式会为每一个容器分配Network Namespace、设置IP等，并将一个主机上的Docker容器连接到一个虚拟网桥上。</li></ol></li><li><ol start="2"><li>host模式：容器不会获得一个独立的Network Namespace，而是和宿主机共用一个Network Namespace。容器将不会虚拟出自己的网卡，配置自己的IP等，而是使用宿主机的IP和端口。</li></ol></li><li><ol start="3"><li>none模式：Docker容器拥有自己的Network Namespace，但是，并不为Docker容器进行任何网络配置。docker将不会和外界的任何网络进行通讯。</li></ol></li><li><ol start="4"><li>container模式：新创建的容器和已经存在的一个容器共享一个Network Namespace，而不是和宿主机共享。新创建的容器不会创建自己的网卡，配置自己的IP，而是和一个指定的容器共享IP、端口范围等。</li></ol></li></ul></blockquote><h2 id="进行访问"><a href="#进行访问" class="headerlink" title="进行访问"></a>进行访问</h2><blockquote><p>docker启动 -p 的使用： docker run -d -p 主机端口:容器端口 容器的名称<br>docker启动  -P 的使用（所有的监听端口都会和主机建立一个映射）： docker run -d -P 容器名称<br>停止docker：docker stop 容器Id</p></blockquote><p><strong>-p 的使用</strong><br><img src="https://img-blog.csdnimg.cn/20190222160001413.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190222160025665.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p><strong>-P 的使用</strong><br><img src="https://img-blog.csdnimg.cn/20190222160040439.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190222160049948.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;更多文章欢迎访问个人博客 &lt;a href=&quot;http://www.herobin.top&quot;&gt;www.herobin.top&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;下载并运行nginx镜像&quot;&gt;&lt;a href=&quot;#下载并运行nginx镜像&quot; class=&quot;headerlink&quot; ti
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
+    
+      <category term="服务器" scheme="http://www.herobin.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+      <category term="docker" scheme="http://www.herobin.top/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>centos下安装docker</title>
@@ -518,35 +548,6 @@
       <category term="java" scheme="http://www.herobin.top/tags/java/"/>
     
       <category term="springboot" scheme="http://www.herobin.top/tags/springboot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot初体验</title>
-    <link href="http://www.herobin.top/2018/12/27/SpringBoot%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
-    <id>http://www.herobin.top/2018/12/27/SpringBoot初体验/</id>
-    <published>2018-12-27T11:09:40.000Z</published>
-    <updated>2019-01-13T09:07:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>首先SpringBoot的开发有两种主流的软件Idea和Spring Tool Suite（感觉就是集成了spring开发环境的eclipse）。<br>这里我们选用后者。可在springboot的官网spring.io里下载。<br>配置好jdk和maven的配置信息。</p><p><img src="/uploads/181227springboot/1.png" alt=""></p><p>创建项目 <code>new -&gt; spring starter project</code><br>输入配置信息，这里我们选用了springboot2.1.1版本<br>选中我们需要的部分包。</p><p><img src="/uploads/181227springboot/2.png" alt=""></p><p>另外还要注意最好将我们的maven配置改为阿里云镜像仓库(maven安装目录下的conf/setting.xml中)。</p><p><img src="/uploads/181227springboot/3.png" alt=""></p><p>application.properties是springboot非常核心的一个部分。<br>几乎所有的配置信息都会写在这里面包括端口，数据库，mybatis，redis，验证码等等。不过在初始编辑application.properties时写中文注释可以会乱码，编码改为utf8即可。</p><p>修改pom文件，写入我们需要的jar包依赖，和ssm比较，因为我们新建的时候预先引入了web和mybatis两个模块，所以这两个不用再次引入，因为springboot自带测试所以junit也不需要了(去掉spring，mybatis，junit)。<br>将dao entity mapper创建好后在测试用例中测试报错如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.AbstractMethodError: Method com/mchange/v2/c3p0/impl/NewProxyPreparedStatement.isClosed()Z is abstract</span><br></pre></td></tr></table></figure><p>将pom中的c3p0镜像替换后问题得到解决</p><p><img src="/uploads/181227springboot/4.png" alt=""></p><p>将全部package及webapp写好后启动springboot发现跳转到了测试接口hello springboot中，发现是将value写成了name（小坑注意）。</p><p><img src="/uploads/181227springboot/5.png" alt=""></p><p>再次访问index接口发现前端报错404。</p><p><img src="/uploads/181227springboot/6.png" alt=""></p><p>这里是因为以前的springboot的版本是1.5.8，这里我们使用了2.1.1.<br>在新版本中WebMvcConfigurationAdapter已经废弃，使用了系统建议的WebMvcConfigurationSupport也出现了上图的问题。考虑应该是静态资源的配置问题和视图跳转控制器的问题，也就是原属于WebMvcConfigurationAdapter的addResourceHandlers方法和addViewController方法没有起到应该起到的作用。<br>解决方法：<br>1.解决视图跳转问题，不再采用继承WebMvcConfigurationSupport的方式，改为直接实现WebMvcConfigurer接口，将生成视图解析器由方法转为@Bean注解的类生成</p><p><img src="/uploads/181227springboot/7.png" alt=""></p><p>跳转成功解决。<br>2.跳转成功解决后发现前端页面加载静态资源出错</p><p><img src="/uploads/181227springboot/8.png" alt=""></p><p>这里其实是我们的addResourceHandlers方法编写错误了，其实重写的时候并不需要对resource进行重写，空方法即可。但是这里我们要写好对图片路径的拼接。（这里是替代ssm中在tomcat的server.xml中docBase配置的替代）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 静态资源配置</span><br><span class="line"> */</span><br><span class="line">@Override</span><br><span class="line">public void addResourceHandlers(ResourceHandlerRegistry registry) &#123;</span><br><span class="line">//registry.addResourceHandler(&quot;/resources/**&quot;).addResourceLocations(&quot;/resources/&quot;);</span><br><span class="line">registry.addResourceHandler(&quot;/upload/**&quot;).addResourceLocations(&quot;file:/Users/binzhang/Documents/shopImages/upload/&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>此时发现前端还是访问不到我们的图片，在network中可以看到url<br><a href="http://localhost:8080/upload/item/shop/1.jpg" target="_blank" rel="noopener">http://localhost:8080/upload/item/shop/1.jpg</a><br>直接拷贝到浏览器也发现找不到该图片<br>这是因为在application.properties中我们配置了前缀</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#加入/o2o前缀</span><br><span class="line">server.servlet.context-path=/o2o</span><br></pre></td></tr></table></figure><p>所以我们也要将项目的前缀追加到我们访问图片的路径地址中<br><a href="http://localhost:8080/o2o/upload/item/shop/1.jpg" target="_blank" rel="noopener">http://localhost:8080/o2o/upload/item/shop/1.jpg</a><br>这样我们就可以访问到了。<br>在代码中添加前缀的步骤(前端实现)：<br>1.在common.js中加入getContextPath方法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 获取项目的ContextPath以便修正图片路由让其正常显示</span><br><span class="line"> * @returns</span><br><span class="line"> */</span><br><span class="line">function getContextPath()&#123;</span><br><span class="line">return &quot;/o2o/&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>2.在需要加载图片页面对应的js中加载图片的地方添加getContextPath前缀就好了</p><p><img src="/uploads/181227springboot/9.png" alt=""></p><p>注意主要忘了在对应的html中引入common.js。<br>至此，我们的springboot项目可以正常运行了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;首先SpringBoot的开发有两种主流的软件Idea和Spring Tool Suite（感觉就是集成了spring开发环境的eclipse）。&lt;br&gt;这里我们选用后者。可在springboot的官网spring.io里下载。&lt;br&gt;配置好jdk和maven的配置信息。&lt;
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
-    
-      <category term="springboot" scheme="http://www.herobin.top/tags/springboot/"/>
-    
-      <category term="spring" scheme="http://www.herobin.top/tags/spring/"/>
     
   </entry>
   
