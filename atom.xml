@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.herobin.top/"/>
-  <updated>2019-02-22T08:09:53.300Z</updated>
+  <updated>2019-02-23T02:31:33.720Z</updated>
   <id>http://www.herobin.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第一个docker化的java应用</title>
+    <link href="http://www.herobin.top/2019/02/23/%E7%AC%AC%E4%B8%80%E4%B8%AAdocker%E5%8C%96%E7%9A%84java%E5%BA%94%E7%94%A8/"/>
+    <id>http://www.herobin.top/2019/02/23/第一个docker化的java应用/</id>
+    <published>2019-02-23T02:30:24.000Z</published>
+    <updated>2019-02-23T02:31:33.720Z</updated>
+    
+    <content type="html"><![CDATA[<p>更多文章欢迎访问个人博客 <a href="http://www.herobin.top">www.herobin.top</a></p><h1 id="制作镜像Dockerfile"><a href="#制作镜像Dockerfile" class="headerlink" title="制作镜像Dockerfile"></a>制作镜像Dockerfile</h1><p>这里制作镜像主要分为三步</p><blockquote><p>Dockerfile<br>docker build<br>Jpress：<a href="http://jpress.io/" target="_blank" rel="noopener">http://jpress.io/</a> (开源java web应用 博客平台)</p></blockquote><h2 id="下载tomcat镜像"><a href="#下载tomcat镜像" class="headerlink" title="下载tomcat镜像"></a>下载tomcat镜像</h2><p>首先我们的镜像是要依托tomcat运行的，所以先到网易云的镜像中心下载tomcat的镜像<br><code>docker pull hub.c.163.com/library/tomcat:latest</code><br>在tomcat镜像的介绍中可以看到使用方法，如找到启动方法，查看tomcat路径等。<br><img src="https://img-blog.csdnimg.cn/20190223101110914.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h2 id="新建编辑Dockerfile"><a href="#新建编辑Dockerfile" class="headerlink" title="新建编辑Dockerfile"></a>新建编辑Dockerfile</h2><p><code>vi Dockerfile</code><br><img src="https://img-blog.csdnimg.cn/20190223101157473.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h2 id="通过docker-build生成镜像"><a href="#通过docker-build生成镜像" class="headerlink" title="通过docker build生成镜像"></a>通过docker build生成镜像</h2><p><img src="https://img-blog.csdnimg.cn/20190223101234630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里<code>-t jpress:latest</code>是指定了镜像名字和标签，注意后面有个 . 用于查找当前目录下的构建文件，即Dockerfile<br>用<code>docker images</code>查看，发现有了jpress。<br><img src="https://img-blog.csdnimg.cn/20190223101406218.png" alt="在这里插入图片描述"></p><h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><p>在tomcat的镜像中心我们可以看到运行指令，执行：<br><code>docker run -d -p 8888:8080 jpress</code><br>启动镜像，发现可以访问我们的jpress程序了。<br><img src="https://img-blog.csdnimg.cn/20190223101536180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里要正常使用jpress需要配置好数据库信息。<br>我们也可以在docker中安装运行一个mysql数据库。<br>去镜像中心下载mysql镜像：<br><code>docker pull hub.c.163.com/library/mysql:latest</code><br>同样可以在介绍中看到使用方式。<br><img src="https://img-blog.csdnimg.cn/2019022310170214.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>下载完后新建一个名为jpress的数据库并将mysql运行起来：<br> <code>docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=jpress hub.c.163.com/library/mysql:latest</code><br>回到网站将信息配置好。<br><img src="https://img-blog.csdnimg.cn/20190223101844313.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>注意这里点击下一步的时候失败了，使用docker ps命令发现mysql镜像并没有执行，再次执行run发现启动报错。<br><img src="https://img-blog.csdnimg.cn/20190223102027764.png" alt="在这里插入图片描述"><br>因为本机有mysql服务正在使用，3306端口是占用状态的，将3306改为3307即可。<br>再下一页配置好网站信息，jpress网站即搭建成功可以正常使用了。<br><img src="https://img-blog.csdnimg.cn/20190223102143790.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;更多文章欢迎访问个人博客 &lt;a href=&quot;http://www.herobin.top&quot;&gt;www.herobin.top&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;制作镜像Dockerfile&quot;&gt;&lt;a href=&quot;#制作镜像Dockerfile&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
+    
+      <category term="服务器" scheme="http://www.herobin.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>docker运行nginx镜像</title>
@@ -511,33 +539,6 @@
       
       
         &lt;h2 id=&quot;SpringBoot项目的打包与部署&quot;&gt;&lt;a href=&quot;#SpringBoot项目的打包与部署&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot项目的打包与部署&quot;&gt;&lt;/a&gt;SpringBoot项目的打包与部署&lt;/h2&gt;&lt;h3 id=&quot;1
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
-    
-      <category term="springboot" scheme="http://www.herobin.top/tags/springboot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot验证码Kaptcha的使用</title>
-    <link href="http://www.herobin.top/2018/12/28/SpringBoot%E9%AA%8C%E8%AF%81%E7%A0%81Kaptcha%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://www.herobin.top/2018/12/28/SpringBoot验证码Kaptcha的使用/</id>
-    <published>2018-12-28T12:01:51.000Z</published>
-    <updated>2019-01-11T05:46:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>在ssm中kapcha的配置主要写在web.xml中，而springboot中并没有使用web.xml文件，<br>所以我们要重新总结下验证码在springboot中的使用。<br>首先我们要将和web.xml中的Kaptcha的相关配置写入到application.properties中</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#Kaptcha的配置</span><br><span class="line">kaptcha.border=no</span><br><span class="line">kaptcha.textproducer.font.color=red</span><br><span class="line">kaptcha.textproducer.font.size=43</span><br><span class="line">kaptcha.image.width=135</span><br><span class="line">kaptcha.image.height=50</span><br><span class="line">kaptcha.textproducer.char.string=ACDEFHKPRSTWX345679</span><br><span class="line">kaptcha.noise.color=black</span><br><span class="line">kaptcha.textproducer.char.length=4</span><br><span class="line">kaptcha.textproducer.font.names=Arial</span><br></pre></td></tr></table></figure><p>再在MvcConfiguration类中进行配置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">@Value(&quot;$&#123;kaptcha.border&#125;&quot;)</span><br><span class="line">private String border;</span><br><span class="line">@Value(&quot;$&#123;kaptcha.textproducer.font.color&#125;&quot;)</span><br><span class="line">private String fcolor;</span><br><span class="line">@Value(&quot;$&#123;kaptcha.image.width&#125;&quot;)</span><br><span class="line">private String width;</span><br><span class="line">@Value(&quot;$&#123;kaptcha.textproducer.char.string&#125;&quot;)</span><br><span class="line">private String cString;</span><br><span class="line">@Value(&quot;$&#123;kaptcha.image.height&#125;&quot;)</span><br><span class="line">private String height;</span><br><span class="line">@Value(&quot;$&#123;kaptcha.textproducer.font.size&#125;&quot;)</span><br><span class="line">private String fsize;</span><br><span class="line">@Value(&quot;$&#123;kaptcha.noise.color&#125;&quot;)</span><br><span class="line">private String nColor;</span><br><span class="line">@Value(&quot;$&#123;kaptcha.textproducer.char.length&#125;&quot;)</span><br><span class="line">private String clength;</span><br><span class="line">@Value(&quot;$&#123;kaptcha.textproducer.font.names&#125;&quot;)</span><br><span class="line">private String fnames;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 由于web.xml不生效了，需要在这里配置Kaptcha验证码Servlet</span><br><span class="line"> * @return</span><br><span class="line"> * @throws ServletException</span><br><span class="line"> */</span><br><span class="line">@Bean</span><br><span class="line">public ServletRegistrationBean servletRegistrationBean() throws ServletException&#123;</span><br><span class="line">                //只要在前端访问Kaptcha这个路由就会启动这个servlet</span><br><span class="line">ServletRegistrationBean servlet = new ServletRegistrationBean(new KaptchaServlet(),&quot;/Kaptcha&quot;);</span><br><span class="line">servlet.addInitParameter(&quot;keptcha.border&quot;, border);//无边框</span><br><span class="line">servlet.addInitParameter(&quot;kaptcha.textproducer.font.color&quot;, fcolor);//字体颜色</span><br><span class="line">servlet.addInitParameter(&quot;kaptcha.image.width&quot;, width);//图片宽度</span><br><span class="line">servlet.addInitParameter(&quot;kaptcha.textproducer.char.string&quot;, cString);//使用哪些字符生成验证码</span><br><span class="line">servlet.addInitParameter(&quot;kaptcha.image.height&quot;, height);//图片高度</span><br><span class="line">servlet.addInitParameter(&quot;kaptcha.textproducer.font.size&quot;, fsize);//字体大小</span><br><span class="line">servlet.addInitParameter(&quot;kaptcha.noise.color&quot;, nColor);//干扰线的颜色</span><br><span class="line">servlet.addInitParameter(&quot;kaptcha.textproducer.char.length&quot;, clength);//字符个数</span><br><span class="line">servlet.addInitParameter(&quot;kaptcha.textproducer.font.names&quot;, fnames);//字体</span><br><span class="line">return servlet;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>当然还有别忘了pom里面jar包的引入。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 验证码相关 --&gt;</span><br><span class="line">&lt;!-- https://mvnrepository.com/artifact/com.github.penggle/kaptcha --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">&lt;groupId&gt;com.github.penggle&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;kaptcha&lt;/artifactId&gt;</span><br><span class="line">&lt;version&gt;2.3.2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在ssm中kapcha的配置主要写在web.xml中，而springboot中并没有使用web.xml文件，&lt;br&gt;所以我们要重新总结下验证码在springboot中的使用。&lt;br&gt;首先我们要将和web.xml中的Kaptcha的相关配置写入到application.pro
       
     
     </summary>

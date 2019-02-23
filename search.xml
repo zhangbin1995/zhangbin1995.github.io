@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[第一个docker化的java应用]]></title>
+    <url>%2F2019%2F02%2F23%2F%E7%AC%AC%E4%B8%80%E4%B8%AAdocker%E5%8C%96%E7%9A%84java%E5%BA%94%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[更多文章欢迎访问个人博客 www.herobin.top 制作镜像Dockerfile这里制作镜像主要分为三步 Dockerfiledocker buildJpress：http://jpress.io/ (开源java web应用 博客平台) 下载tomcat镜像首先我们的镜像是要依托tomcat运行的，所以先到网易云的镜像中心下载tomcat的镜像docker pull hub.c.163.com/library/tomcat:latest在tomcat镜像的介绍中可以看到使用方法，如找到启动方法，查看tomcat路径等。 新建编辑Dockerfilevi Dockerfile 通过docker build生成镜像这里-t jpress:latest是指定了镜像名字和标签，注意后面有个 . 用于查找当前目录下的构建文件，即Dockerfile用docker images查看，发现有了jpress。 运行容器在tomcat的镜像中心我们可以看到运行指令，执行：docker run -d -p 8888:8080 jpress启动镜像，发现可以访问我们的jpress程序了。这里要正常使用jpress需要配置好数据库信息。我们也可以在docker中安装运行一个mysql数据库。去镜像中心下载mysql镜像：docker pull hub.c.163.com/library/mysql:latest同样可以在介绍中看到使用方式。下载完后新建一个名为jpress的数据库并将mysql运行起来： docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=jpress hub.c.163.com/library/mysql:latest回到网站将信息配置好。注意这里点击下一步的时候失败了，使用docker ps命令发现mysql镜像并没有执行，再次执行run发现启动报错。因为本机有mysql服务正在使用，3306端口是占用状态的，将3306改为3307即可。再下一页配置好网站信息，jpress网站即搭建成功可以正常使用了。]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[docker运行nginx镜像]]></title>
     <url>%2F2019%2F02%2F22%2Fdocker%E8%BF%90%E8%A1%8Cnginx%E9%95%9C%E5%83%8F%2F</url>
     <content type="text"><![CDATA[更多文章欢迎访问个人博客 www.herobin.top 下载并运行nginx镜像在网易云的镜像中心找到nginx的镜像https://c.163yun.com/hub#/m/home/ 复制nginx的下载地址：hub.c.163.com/library/nginx:latest使用docker pull hub.c.163.com/library/nginx:latest下载nginx镜像到本地 这时再使用docker images可以查看到本地已有的nignx镜像 使用docker run hub.c.163.com/library/nginx发现没有任何输出，新建窗口输入docker ps可以查看本机当前运行的所有容器。这时只要通过ctrl+c既可以停止程序，所以我们通常推荐在后台运行镜像 通过加 -d1docker run -d hub.c.163.com/library/nginx 运行后可以通过docker exec命令进入指定镜像：可以看到 docker run nginx镜像成功后返回一串此镜像运行的唯一标识id。 通过docker exec –help查看 docker exec命令帮助。 通过docker exec -it 603 bash来进入已运行的nginx镜像 这里只输入了604因为已经可以唯一标识确定，若不能再多输。 可通过exit命令退出镜像。 可以使用docker stop 603命令来结束nginx镜像的运行。 网络访问nginx运行了docker中的nginx后要怎样才能在网络（浏览器）中访问到nginx呢？ docker网络类型 bridge模式（桥接，默认类型，实现网络独立性）：docker默认的网络设置，此模式会为每一个容器分配Network Namespace、设置IP等，并将一个主机上的Docker容器连接到一个虚拟网桥上。 host模式：容器不会获得一个独立的Network Namespace，而是和宿主机共用一个Network Namespace。容器将不会虚拟出自己的网卡，配置自己的IP等，而是使用宿主机的IP和端口。 none模式：Docker容器拥有自己的Network Namespace，但是，并不为Docker容器进行任何网络配置。docker将不会和外界的任何网络进行通讯。 container模式：新创建的容器和已经存在的一个容器共享一个Network Namespace，而不是和宿主机共享。新创建的容器不会创建自己的网卡，配置自己的IP，而是和一个指定的容器共享IP、端口范围等。 进行访问 docker启动 -p 的使用： docker run -d -p 主机端口:容器端口 容器的名称docker启动 -P 的使用（所有的监听端口都会和主机建立一个映射）： docker run -d -P 容器名称停止docker：docker stop 容器Id -p 的使用 -P 的使用]]></content>
