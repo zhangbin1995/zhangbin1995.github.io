@@ -116,17 +116,17 @@
 <meta property="og:site_name" content="HeroBin&#39;s Blog">
 <meta property="og:description" content="@TOC 更多文章欢迎访问个人博客 www.herobin.top 下载并运行nginx镜像在网易云的镜像中心找到nginx的镜像https://c.163yun.com/hub#/m/home/ 复制nginx的下载地址：hub.c.163.com/library/nginx:latest使用docker pull hub.c.163.com/library/nginx:latest下载ngin">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190222154801493.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190222154959818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190222160001413.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190222160025665.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190222160040439.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190222160049948.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-02-28T13:35:26.001Z">
+<meta property="og:image" content="http://www.herobin.top/uploads/190222java2/1.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/190222java2/3.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/190222java2/4.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/190222java2/5.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/190222java2/6.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/190222java2/7.png">
+<meta property="og:updated_time" content="2019-03-02T08:38:45.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker运行nginx镜像">
 <meta name="twitter:description" content="@TOC 更多文章欢迎访问个人博客 www.herobin.top 下载并运行nginx镜像在网易云的镜像中心找到nginx的镜像https://c.163yun.com/hub#/m/home/ 复制nginx的下载地址：hub.c.163.com/library/nginx:latest使用docker pull hub.c.163.com/library/nginx:latest下载ngin">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190222154801493.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="http://www.herobin.top/uploads/190222java2/1.png">
 
 
 
@@ -419,7 +419,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-28 21:35:26" itemprop="dateModified" datetime="2019-02-28T21:35:26+08:00">2019-02-28</time>
+                <time title="修改时间：2019-03-02 16:38:45" itemprop="dateModified" datetime="2019-03-02T16:38:45+08:00">2019-03-02</time>
               
             
           </span>
@@ -480,8 +480,12 @@
 <h1 id="下载并运行nginx镜像"><a href="#下载并运行nginx镜像" class="headerlink" title="下载并运行nginx镜像"></a>下载并运行nginx镜像</h1><p>在网易云的镜像中心找到nginx的镜像<br><a href="https://c.163yun.com/hub#/m/home/" target="_blank" rel="noopener">https://c.163yun.com/hub#/m/home/</a></p>
 <p>复制nginx的下载地址：hub.c.163.com/library/nginx:latest<br>使用<code>docker pull hub.c.163.com/library/nginx:latest</code><br>下载nginx镜像到本地</p>
 <p>这时再使用<code>docker images</code>可以查看到本地已有的nignx镜像</p>
-<p>使用<code>docker run hub.c.163.com/library/nginx</code><br>发现没有任何输出，新建窗口输入<code>docker ps</code>可以查看本机当前运行的所有容器。<br><img src="https://img-blog.csdnimg.cn/20190222154801493.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这时只要通过<code>ctrl+c</code>既可以停止程序，所以我们通常推荐在后台运行镜像 通过加 <code>-d</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d hub.c.163.com/library/nginx</span><br></pre></td></tr></table></figure></p>
-<p>运行后可以通过docker exec命令进入指定镜像：<br><img src="https://img-blog.csdnimg.cn/20190222154959818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看到</p>
+<p>使用<code>docker run hub.c.163.com/library/nginx</code><br>发现没有任何输出，新建窗口输入<code>docker ps</code>可以查看本机当前运行的所有容器。</p>
+<p><img src="/uploads/190222java2/1.png" alt=""></p>
+<p>这时只要通过<code>ctrl+c</code>既可以停止程序，所以我们通常推荐在后台运行镜像 通过加 <code>-d</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d hub.c.163.com/library/nginx</span><br></pre></td></tr></table></figure></p>
+<p>运行后可以通过docker exec命令进入指定镜像：</p>
+<p><img src="/uploads/190222java2/3.png" alt=""></p>
+<p>可以看到</p>
 <blockquote>
 <ol>
 <li>docker run nginx镜像成功后返回一串此镜像运行的唯一标识id。</li>
@@ -515,8 +519,12 @@
 <h2 id="进行访问"><a href="#进行访问" class="headerlink" title="进行访问"></a>进行访问</h2><blockquote>
 <p>docker启动 -p 的使用： docker run -d -p 主机端口:容器端口 容器的名称<br>docker启动  -P 的使用（所有的监听端口都会和主机建立一个映射）： docker run -d -P 容器名称<br>停止docker：docker stop 容器Id</p>
 </blockquote>
-<p><strong>-p 的使用</strong><br><img src="https://img-blog.csdnimg.cn/20190222160001413.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190222160025665.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><strong>-P 的使用</strong><br><img src="https://img-blog.csdnimg.cn/20190222160040439.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190222160049948.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI0MDk1MDU1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>-p 的使用</strong> (注意这里是小写的p，下面是大写的P)</p>
+<p><img src="/uploads/190222java2/4.png" alt=""></p>
+<p><img src="/uploads/190222java2/5.png" alt=""></p>
+<p><strong>-P 的使用</strong></p>
+<p><img src="/uploads/190222java2/6.png" alt=""></p>
+<p><img src="/uploads/190222java2/7.png" alt=""></p>
 
       
     </div>
@@ -640,7 +648,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">56</span>
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -714,7 +722,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -823,7 +833,7 @@
   <span class="post-meta-divider">|</span>
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共83.2k字</span>
+  <span class="post-count">博客全站共83.7k字</span>
 </div>
  
 

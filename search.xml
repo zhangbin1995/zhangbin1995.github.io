@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[spring集成dubbo开发环境搭建]]></title>
+    <url>%2F2019%2F03%2F02%2Fspring%E9%9B%86%E6%88%90dubbo%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[更多文章欢迎访问个人博客 www.herobin.top 首先新建maven项目选择quickstart为项目原型。 点击项目添加两个module分别命名provider和consumer，原型同样选择quickstart分别作为服务提供者和消费者。（注意新建后暂时没有src文件夹，要等maven配置全部加载完才有，如果过慢，记得检查是否配置好idea的maven配置是否改为aliyun仓库）。这里我们用不到测试用例，可以将test文件删掉。 添加放置资源文件的resources文件夹，并在project structrue中添加进Resources中。 将需要的jar包依赖拷贝到父工程的pom中，这样各个模块就都可以使用了，注意在实际开发中，应该是各个模块分别引入该模块要用到的jar包，再在各模块的resources中新建applicationContext.xml即spring配置文件。 这样简单的spring环境就搭好了，接下来我们要集成dubbo环境。可以参考dubbo用户手册：https://dubbo.gitbooks.io/dubbo-user-book/content/quick-start.html 在provider中新建一个服务接口DemoService和它的实现类。用Spring配置声明暴露服务。 编写服务启动类App.java 至此，我们的provider模块就写好了，将它启动起来。编辑consumer里的applicationContext.xml文件通过spring配置引用远程服务。 这样就已经可以访问到provider接口提供的服务了。编写App类加载consumer的spring配置文件并进行测试。 启动消费者服务，输入zhangbin，得到服务提供者接口的返回值，由此，spring与dubbo集成环境配置成功。 项目代码已放到github：https://github.com/zhangbin1995/springdubbo.git]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>spring</tag>
+        <tag>dubbo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[第一个docker化的java应用]]></title>
     <url>%2F2019%2F02%2F23%2F%E7%AC%AC%E4%B8%80%E4%B8%AAdocker%E5%8C%96%E7%9A%84java%E5%BA%94%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[更多文章欢迎访问个人博客 www.herobin.top 制作镜像Dockerfile这里制作镜像主要分为三步 Dockerfiledocker buildJpress：http://jpress.io/ (开源java web应用 博客平台) 下载tomcat镜像首先我们的镜像是要依托tomcat运行的，所以先到网易云的镜像中心下载tomcat的镜像docker pull hub.c.163.com/library/tomcat:latest在tomcat镜像的介绍中可以看到使用方法，如找到启动方法，查看tomcat路径等。 新建编辑Dockerfilevi Dockerfile 通过docker build生成镜像这里-t jpress:latest是指定了镜像名字和标签，注意后面有个 . 用于查找当前目录下的构建文件，即Dockerfile用docker images查看，发现有了jpress。 运行容器在tomcat的镜像中心我们可以看到运行指令，执行：docker run -d -p 8888:8080 jpress启动镜像，发现可以访问我们的jpress程序了。这里要正常使用jpress需要配置好数据库信息。我们也可以在docker中安装运行一个mysql数据库。去镜像中心下载mysql镜像：docker pull hub.c.163.com/library/mysql:latest同样可以在介绍中看到使用方式。下载完后新建一个名为jpress的数据库并将mysql运行起来： docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=jpress hub.c.163.com/library/mysql:latest回到网站将信息配置好。注意这里点击下一步的时候失败了，使用docker ps命令发现mysql镜像并没有执行，再次执行run发现启动报错。因为本机有mysql服务正在使用，3306端口是占用状态的，将3306改为3307即可。再下一页配置好网站信息，jpress网站即搭建成功可以正常使用了。]]></content>
+    <content type="text"><![CDATA[更多文章欢迎访问个人博客 www.herobin.top 制作镜像Dockerfile这里制作镜像主要分为三步 Dockerfiledocker buildJpress：http://jpress.io/ (开源java web应用 博客平台) 下载tomcat镜像首先我们的镜像是要依托tomcat运行的，所以先到网易云的镜像中心下载tomcat的镜像docker pull hub.c.163.com/library/tomcat:latest在tomcat镜像的介绍中可以看到使用方法，如找到启动方法，查看tomcat路径等。 新建编辑Dockerfilevi Dockerfile 通过docker build生成镜像 这里-t jpress:latest是指定了镜像名字和标签，注意后面有个 . 用于查找当前目录下的构建文件，即Dockerfile用docker images查看，发现有了jpress。 运行容器在tomcat的镜像中心我们可以看到运行指令，执行：docker run -d -p 8888:8080 jpress启动镜像，发现可以访问我们的jpress程序了。 这里要正常使用jpress需要配置好数据库信息。我们也可以在docker中安装运行一个mysql数据库。去镜像中心下载mysql镜像：docker pull hub.c.163.com/library/mysql:latest同样可以在介绍中看到使用方式。 下载完后新建一个名为jpress的数据库并将mysql运行起来： docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=jpress hub.c.163.com/library/mysql:latest回到网站将信息配置好。 注意这里点击下一步的时候失败了，使用docker ps命令发现mysql镜像并没有执行，再次执行run发现启动报错。 因为本机有mysql服务正在使用，3306端口是占用状态的，将3306改为3307即可。再下一页配置好网站信息，jpress网站即搭建成功可以正常使用了。]]></content>
       <categories>
         <category>java</category>
       </categories>
@@ -15,7 +28,7 @@
   <entry>
     <title><![CDATA[docker运行nginx镜像]]></title>
     <url>%2F2019%2F02%2F22%2Fdocker%E8%BF%90%E8%A1%8Cnginx%E9%95%9C%E5%83%8F%2F</url>
-    <content type="text"><![CDATA[@TOC 更多文章欢迎访问个人博客 www.herobin.top 下载并运行nginx镜像在网易云的镜像中心找到nginx的镜像https://c.163yun.com/hub#/m/home/ 复制nginx的下载地址：hub.c.163.com/library/nginx:latest使用docker pull hub.c.163.com/library/nginx:latest下载nginx镜像到本地 这时再使用docker images可以查看到本地已有的nignx镜像 使用docker run hub.c.163.com/library/nginx发现没有任何输出，新建窗口输入docker ps可以查看本机当前运行的所有容器。这时只要通过ctrl+c既可以停止程序，所以我们通常推荐在后台运行镜像 通过加 -d1docker run -d hub.c.163.com/library/nginx 运行后可以通过docker exec命令进入指定镜像：可以看到 docker run nginx镜像成功后返回一串此镜像运行的唯一标识id。 通过docker exec –help查看 docker exec命令帮助。 通过docker exec -it 603 bash来进入已运行的nginx镜像 这里只输入了604因为已经可以唯一标识确定，若不能再多输。 可通过exit命令退出镜像。 可以使用docker stop 603命令来结束nginx镜像的运行。 网络访问nginx运行了docker中的nginx后要怎样才能在网络（浏览器）中访问到nginx呢？ docker网络类型 bridge模式（桥接，默认类型，实现网络独立性）：docker默认的网络设置，此模式会为每一个容器分配Network Namespace、设置IP等，并将一个主机上的Docker容器连接到一个虚拟网桥上。 host模式：容器不会获得一个独立的Network Namespace，而是和宿主机共用一个Network Namespace。容器将不会虚拟出自己的网卡，配置自己的IP等，而是使用宿主机的IP和端口。 none模式：Docker容器拥有自己的Network Namespace，但是，并不为Docker容器进行任何网络配置。docker将不会和外界的任何网络进行通讯。 container模式：新创建的容器和已经存在的一个容器共享一个Network Namespace，而不是和宿主机共享。新创建的容器不会创建自己的网卡，配置自己的IP，而是和一个指定的容器共享IP、端口范围等。 进行访问 docker启动 -p 的使用： docker run -d -p 主机端口:容器端口 容器的名称docker启动 -P 的使用（所有的监听端口都会和主机建立一个映射）： docker run -d -P 容器名称停止docker：docker stop 容器Id -p 的使用 -P 的使用]]></content>
+    <content type="text"><![CDATA[@TOC 更多文章欢迎访问个人博客 www.herobin.top 下载并运行nginx镜像在网易云的镜像中心找到nginx的镜像https://c.163yun.com/hub#/m/home/ 复制nginx的下载地址：hub.c.163.com/library/nginx:latest使用docker pull hub.c.163.com/library/nginx:latest下载nginx镜像到本地 这时再使用docker images可以查看到本地已有的nignx镜像 使用docker run hub.c.163.com/library/nginx发现没有任何输出，新建窗口输入docker ps可以查看本机当前运行的所有容器。 这时只要通过ctrl+c既可以停止程序，所以我们通常推荐在后台运行镜像 通过加 -d1docker run -d hub.c.163.com/library/nginx 运行后可以通过docker exec命令进入指定镜像： 可以看到 docker run nginx镜像成功后返回一串此镜像运行的唯一标识id。 通过docker exec –help查看 docker exec命令帮助。 通过docker exec -it 603 bash来进入已运行的nginx镜像 这里只输入了604因为已经可以唯一标识确定，若不能再多输。 可通过exit命令退出镜像。 可以使用docker stop 603命令来结束nginx镜像的运行。 网络访问nginx运行了docker中的nginx后要怎样才能在网络（浏览器）中访问到nginx呢？ docker网络类型 bridge模式（桥接，默认类型，实现网络独立性）：docker默认的网络设置，此模式会为每一个容器分配Network Namespace、设置IP等，并将一个主机上的Docker容器连接到一个虚拟网桥上。 host模式：容器不会获得一个独立的Network Namespace，而是和宿主机共用一个Network Namespace。容器将不会虚拟出自己的网卡，配置自己的IP等，而是使用宿主机的IP和端口。 none模式：Docker容器拥有自己的Network Namespace，但是，并不为Docker容器进行任何网络配置。docker将不会和外界的任何网络进行通讯。 container模式：新创建的容器和已经存在的一个容器共享一个Network Namespace，而不是和宿主机共享。新创建的容器不会创建自己的网卡，配置自己的IP，而是和一个指定的容器共享IP、端口范围等。 进行访问 docker启动 -p 的使用： docker run -d -p 主机端口:容器端口 容器的名称docker启动 -P 的使用（所有的监听端口都会和主机建立一个映射）： docker run -d -P 容器名称停止docker：docker stop 容器Id -p 的使用 (注意这里是小写的p，下面是大写的P) -P 的使用]]></content>
       <categories>
         <category>java</category>
       </categories>
@@ -40,7 +53,7 @@
   <entry>
     <title><![CDATA[mac下安装docker]]></title>
     <url>%2F2019%2F02%2F22%2Fmac%E4%B8%8B%E5%AE%89%E8%A3%85docker%2F</url>
-    <content type="text"><![CDATA[@TOC 更多文章欢迎访问个人博客 www.herobin.top mac下安装docker下载并安装dockermac版的docker可以直接去docker官网下载桌面版，傻瓜式安装后运行docker，会发现在桌面的右上角出现了docker的图标 验证docker打开终端输入命令：docker version正常出现版本信息即安装成功。]]></content>
+    <content type="text"><![CDATA[@TOC 更多文章欢迎访问个人博客 www.herobin.top mac下安装docker下载并安装dockermac版的docker可以直接去docker官网下载桌面版，傻瓜式安装后运行docker，会发现在桌面的右上角出现了docker的图标 验证docker打开终端输入命令：docker version 正常出现版本信息即安装成功。]]></content>
       <categories>
         <category>java</category>
       </categories>
@@ -254,8 +267,8 @@
       </categories>
       <tags>
         <tag>java</tag>
-        <tag>springboot</tag>
         <tag>spring</tag>
+        <tag>springboot</tag>
       </tags>
   </entry>
   <entry>
