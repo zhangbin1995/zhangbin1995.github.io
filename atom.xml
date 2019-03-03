@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.herobin.top/"/>
-  <updated>2019-03-02T08:25:16.629Z</updated>
+  <updated>2019-03-03T04:34:03.386Z</updated>
   <id>http://www.herobin.top/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>springboot集成dubbo环境搭建</title>
+    <link href="http://www.herobin.top/2019/03/03/springboot%E9%9B%86%E6%88%90dubbo%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    <id>http://www.herobin.top/2019/03/03/springboot集成dubbo环境搭建/</id>
+    <published>2019-03-03T04:31:12.000Z</published>
+    <updated>2019-03-03T04:34:03.386Z</updated>
+    
+    <content type="html"><![CDATA[<p>更多文章欢迎访问个人博客 <a href="http://www.herobin.top">www.herobin.top</a></p><p>新建project</p><p><img src="/uploads/190303java1/1.png" alt=""></p><p>next取好项目名，一路next即可。<br>新建两个module，provider和consumer同样是springboot项目创建步骤同上。<br>将两个模块分别启动，均启动成功，说明springboot没有问题，接下来集成dubbo。<br>SpringBoot版本Dubbo集成中文地址：<a href="https://github.com/alibaba/dubbo-spring-boot-starter/blob/master/README_zh.md" target="_blank" rel="noopener">https://github.com/alibaba/dubbo-spring-boot-starter/blob/master/README_zh.md</a></p><p>将dubbo的依赖引入到两个模块的pom中</p><p><img src="/uploads/190303java1/2.png" alt=""></p><p>在application.properties中添加dubbo的相关配置信息</p><p><img src="/uploads/190303java1/3.png" alt=""></p><p>接下来在ProviderApplication的上添加@EnableDubboConfiguration，表示要开启dubbo功能. (dubbo provider服务可以使用或者不使用web容器)</p><p><img src="/uploads/190303java1/4.png" alt=""></p><p>编写服务提供者的接口和实现类<br>编写你的dubbo服务，只需要添加要发布的服务实现上添加@Service（import com.alibaba.dubbo.config.annotation.Service）注解，其中interfaceClass是要发布服务的接口</p><p><img src="/uploads/190303java1/5.png" alt=""></p><p>启动服务者的Spring Boot应用，观察控制台，可以看到dubbo启动相关信息.<br>至此，provider的dubbo配置成功。</p><p>接下来配置consumer的dubbo配置<br>添加依赖</p><p><img src="/uploads/190303java1/6.png" alt=""></p><p>在application.properties中添加dubbo的相关配置信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.application.name=dubbo-spring-boot-starter</span><br></pre></td></tr></table></figure></p><p>这里这个name是可以自己命名的。</p><p>开启ConsumnerApplication启动类的<code>@EnableDubboConfiguration</code>注解<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@EnableDubboConfiguration</span><br></pre></td></tr></table></figure></p><p>在consumer中编写服务实用类，记得要将provider中的接口DemeService拷贝过来</p><p><img src="/uploads/190303java1/7.png" alt=""></p><p>编写ConsumerApplication类并执行</p><p><img src="/uploads/190303java1/8.png" alt=""></p><p>获得目标输出，springboot集成dubbo环境搭建成功。</p><p>代码github地址：<a href="https://github.com/zhangbin1995/springbootdubbo.git" target="_blank" rel="noopener">https://github.com/zhangbin1995/springbootdubbo.git</a></p><p>当然上面只是简单的springboot+dubbo的环境集成，这样是有瑕疵的。</p><p>我们的上面示例里消费者是直连提供者的，这种方式只可以在测试环境中使用，因为直连提供者限制了分布式的易扩展性，如果提供者部署在多节点，而我们在消费者中是直连写死的状态，那就只会访问一个节点，也违背了我们的分布式的初衷。</p><p>所以通常我们的消费者和提供者是要通过注册中心来注册调用的关于注册中心，后面会继续介绍，本篇博文介绍的springboot+dubbo的集成到此结束。</p><p><img src="/uploads/190303java1/9.png" alt=""></p><p><img src="/uploads/190303java1/10.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;更多文章欢迎访问个人博客 &lt;a href=&quot;http://www.herobin.top&quot;&gt;www.herobin.top&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;新建project&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/uploads/190303java1/1.png&quot; alt=&quot;&quot;&gt;&lt;/
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
+    
+      <category term="springboot" scheme="http://www.herobin.top/tags/springboot/"/>
+    
+      <category term="dubbo" scheme="http://www.herobin.top/tags/dubbo/"/>
+    
+  </entry>
   
   <entry>
     <title>spring集成dubbo开发环境搭建</title>
@@ -528,32 +559,6 @@
       <category term="java" scheme="http://www.herobin.top/tags/java/"/>
     
       <category term="源码" scheme="http://www.herobin.top/tags/%E6%BA%90%E7%A0%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>this is incompatible with sql_mode=only_full_group_by问题解决</title>
-    <link href="http://www.herobin.top/2019/01/02/this-is-incompatible-with-sql-mode-only-full-group-by%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
-    <id>http://www.herobin.top/2019/01/02/this-is-incompatible-with-sql-mode-only-full-group-by问题解决/</id>
-    <published>2019-01-02T10:34:24.000Z</published>
-    <updated>2019-01-13T09:10:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>在编写好xml代码在测试类中测试时报错</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this is incompatible with sql_mode=only_full_group_by</span><br></pre></td></tr></table></figure><p>看一下<code>ONLY_FULL_GROUP_BY</code>的意思是：对于GROUP BY聚合操作，如果在SELECT中的列，没有在GROUP BY中出现，那么这个SQL是不合法的，因为列不在GROUP BY从句中，也就是说查出来的列必须在group by后面出现否则就会报错，或者这个字段出现在聚合函数里面。</p><p>进入到mysql中查看mysql版本 <code>select version();</code><br>查看sql_model参数命令：<code>SELECT @@GLOBAL.sql_mode;</code><br>                           <code>SELECT @@SESSION.sql_mode;</code><br>可以看到当前sql_mode。</p><p><img src="/uploads/190102mysql/1.png" alt=""></p><p>这里是我改过了的，所以已经没有ONLY_FULL_GROUP_BY了。<br>而我们的解决办法也是去掉这里的ONLY_FULL_GROUP_BY。</p><h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p>命令行输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set @@GLOBAL.sql_mode=&apos;&apos;;</span><br><span class="line">set sql_mode =&apos;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&apos;;</span><br></pre></td></tr></table></figure></p><p>默认关掉ONLY_FULL_GROUP_BY！</p><p>这个时候 在用工具select 一下<br><code>SELECT @@sql_mode;</code><br><code>SELECT @@GLOBAL.sql_mode;</code></p><p>发现已经不存在ONLY_FULL_GROUP_BY,代码运行正常。<br>但是如果你重启Mysql服务的话，发现ONLY_FULL_GROUP_BY还是会存在的。</p><h3 id="方法二：（推荐）"><a href="#方法二：（推荐）" class="headerlink" title="方法二：（推荐）"></a>方法二：（推荐）</h3><p>想要彻底解决这个问题还是要去配置文件my.cnf中修改，加入下图内容，保存，重启mysql。</p><p><img src="/uploads/190102mysql/2.png" alt=""></p><p>注意这里开始的时候重启有报错，原因是因为mysql8.0以上已经取消了<br><code>NO_AUTO_CREATE_USER</code>这个关键字，删掉sql语句中的这个关键字即可。</p><p><img src="/uploads/190102mysql/3.png" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service mysqld stop</span><br><span class="line">service mysqld start</span><br></pre></td></tr></table></figure><p>问题解决。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在编写好xml代码在测试类中测试时报错&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td 
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
     
   </entry>
   

@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[springboot集成dubbo环境搭建]]></title>
+    <url>%2F2019%2F03%2F03%2Fspringboot%E9%9B%86%E6%88%90dubbo%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[更多文章欢迎访问个人博客 www.herobin.top 新建project next取好项目名，一路next即可。新建两个module，provider和consumer同样是springboot项目创建步骤同上。将两个模块分别启动，均启动成功，说明springboot没有问题，接下来集成dubbo。SpringBoot版本Dubbo集成中文地址：https://github.com/alibaba/dubbo-spring-boot-starter/blob/master/README_zh.md 将dubbo的依赖引入到两个模块的pom中 在application.properties中添加dubbo的相关配置信息 接下来在ProviderApplication的上添加@EnableDubboConfiguration，表示要开启dubbo功能. (dubbo provider服务可以使用或者不使用web容器) 编写服务提供者的接口和实现类编写你的dubbo服务，只需要添加要发布的服务实现上添加@Service（import com.alibaba.dubbo.config.annotation.Service）注解，其中interfaceClass是要发布服务的接口 启动服务者的Spring Boot应用，观察控制台，可以看到dubbo启动相关信息.至此，provider的dubbo配置成功。 接下来配置consumer的dubbo配置添加依赖 在application.properties中添加dubbo的相关配置信息1spring.application.name=dubbo-spring-boot-starter 这里这个name是可以自己命名的。 开启ConsumnerApplication启动类的@EnableDubboConfiguration注解1@EnableDubboConfiguration 在consumer中编写服务实用类，记得要将provider中的接口DemeService拷贝过来 编写ConsumerApplication类并执行 获得目标输出，springboot集成dubbo环境搭建成功。 代码github地址：https://github.com/zhangbin1995/springbootdubbo.git 当然上面只是简单的springboot+dubbo的环境集成，这样是有瑕疵的。 我们的上面示例里消费者是直连提供者的，这种方式只可以在测试环境中使用，因为直连提供者限制了分布式的易扩展性，如果提供者部署在多节点，而我们在消费者中是直连写死的状态，那就只会访问一个节点，也违背了我们的分布式的初衷。 所以通常我们的消费者和提供者是要通过注册中心来注册调用的关于注册中心，后面会继续介绍，本篇博文介绍的springboot+dubbo的集成到此结束。]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>springboot</tag>
+        <tag>dubbo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[spring集成dubbo开发环境搭建]]></title>
     <url>%2F2019%2F03%2F02%2Fspring%E9%9B%86%E6%88%90dubbo%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
     <content type="text"><![CDATA[更多文章欢迎访问个人博客 www.herobin.top 首先新建maven项目选择quickstart为项目原型。 点击项目添加两个module分别命名provider和consumer，原型同样选择quickstart分别作为服务提供者和消费者。（注意新建后暂时没有src文件夹，要等maven配置全部加载完才有，如果过慢，记得检查是否配置好idea的maven配置是否改为aliyun仓库）。这里我们用不到测试用例，可以将test文件删掉。 添加放置资源文件的resources文件夹，并在project structrue中添加进Resources中。 将需要的jar包依赖拷贝到父工程的pom中，这样各个模块就都可以使用了，注意在实际开发中，应该是各个模块分别引入该模块要用到的jar包，再在各模块的resources中新建applicationContext.xml即spring配置文件。 这样简单的spring环境就搭好了，接下来我们要集成dubbo环境。可以参考dubbo用户手册：https://dubbo.gitbooks.io/dubbo-user-book/content/quick-start.html 在provider中新建一个服务接口DemoService和它的实现类。用Spring配置声明暴露服务。 编写服务启动类App.java 至此，我们的provider模块就写好了，将它启动起来。编辑consumer里的applicationContext.xml文件通过spring配置引用远程服务。 这样就已经可以访问到provider接口提供的服务了。编写App类加载consumer的spring配置文件并进行测试。 启动消费者服务，输入zhangbin，得到服务提供者接口的返回值，由此，spring与dubbo集成环境配置成功。 项目代码已放到github：https://github.com/zhangbin1995/springdubbo.git]]></content>
@@ -267,8 +280,8 @@
       </categories>
       <tags>
         <tag>java</tag>
-        <tag>springboot</tag>
         <tag>spring</tag>
+        <tag>springboot</tag>
       </tags>
   </entry>
   <entry>
