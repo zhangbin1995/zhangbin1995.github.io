@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[springboot集成zookeeper注册中心]]></title>
+    <url>%2F2019%2F03%2F03%2Fspringboot%E9%9B%86%E6%88%90zookeeper%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%2F</url>
+    <content type="text"><![CDATA[更多文章欢迎访问个人博客 www.herobin.top 前面的博客我们配置了springboot集成dubbo开发环境搭建，这里我们在之前的基础上机场zookeeper注册中心。 首先不要忘记在consumer和provider的pom中引入zookeeper的依赖 修改配置文件，由无注册中心的改为zookeeper注册中心的 这时启动我们项目就可以将这个服务注册到zookeeper上了，可以从zookeeper日志上看出。 去consumer消费者中填写注册中心地址 修改消费者接口将原来的直连提供者方式改为zookeeper配置。 启动consumer模块，得到目标输出，springboot配置dubbo成功。]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>springboot</tag>
+        <tag>dubbo</tag>
+        <tag>zookeeper</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[spring集成zookeeper注册中心]]></title>
+    <url>%2F2019%2F03%2F03%2Fspring%E9%9B%86%E6%88%90zookeeper%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%2F</url>
+    <content type="text"><![CDATA[更多文章欢迎访问个人博客 www.herobin.top 在spring+dubbo开发环境搭建好，及下载安装好zookeeper之后（相关步骤在前面的博客中），现在我们来配置spring集成zookeeper注册中心。在provider的application.xml中配置提供者到注册中心zookeeper中，这里zookeeper为本机的zookeeper，zookeeper的默认端口号为2181。1&lt;dubbo:registry address=&quot;zookeeper://localhost:2181&quot;/&gt; 记得将之前没有配置注册中心的写在dubbo:service中的register=&quot;N/A&quot;删掉。 使用命令行 zkServer.sh start-foreground 前台启动zookeeper后，再运行provider程序，可以看到日志输入，即我们服务者接口注册成功了。 接下来我们去consumer服务消费者这边配置，同样是在application.xml中配置注册中心 启动consumer服务，输入得到输出，配置成功。]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>spring</tag>
+        <tag>dubbo</tag>
+        <tag>zookeeper</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[zookeeper下载与安装]]></title>
     <url>%2F2019%2F03%2F03%2Fzookeeper%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[更多文章欢迎访问个人博客 www.herobin.top 在zookeeper官网：zookeeper.apache.org 中点击download进入下载页面 点击进入下载，这里我们下载的版本是3.4.10 下载完成后，拷贝到我们想要放到的路径进行解压，注意路径不要有中文。 注意zookeeper的安装是要建立在jdk的安装上的，不过安装zookeeper的应该也都有jdk了。。。 首先我们要去conf文件夹中修改一个配置文件zoo_sample.cfg改名为zoo.cfg 去bin文件夹下可以看到我们启动执行文件zkServer.sh(windows则为zkServer.cmd)执行该文件./zkServer.sh start，如下图执行成功。 ZooKeeper下载与安装完毕。]]></content>
+    <content type="text"><![CDATA[更多文章欢迎访问个人博客 www.herobin.top 在zookeeper官网：zookeeper.apache.org 中点击download进入下载页面 点击进入下载，这里我们下载的版本是3.4.10 下载完成后，拷贝到我们想要放到的路径进行解压，注意路径不要有中文。 注意zookeeper的安装是要建立在jdk的安装上的，不过安装zookeeper的应该也都有jdk了。。。 首先我们要去conf文件夹中修改一个配置文件zoo_sample.cfg改名为zoo.cfg 去bin文件夹下可以看到我们启动执行文件zkServer.sh(windows则为zkServer.cmd)执行该文件./zkServer.sh start，如下图执行成功。 ZooKeeper下载与安装完毕。 另外说明一下，这里的./zkServer.sh start是后台启动，若要查看日志可用前台启动zkServer.sh start-foreground]]></content>
       <categories>
         <category>java</category>
       </categories>
