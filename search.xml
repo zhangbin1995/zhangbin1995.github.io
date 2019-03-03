@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[zookeeper下载与安装]]></title>
+    <url>%2F2019%2F03%2F03%2Fzookeeper%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[更多文章欢迎访问个人博客 www.herobin.top 在zookeeper官网：zookeeper.apache.org 中点击download进入下载页面 点击进入下载，这里我们下载的版本是3.4.10 下载完成后，拷贝到我们想要放到的路径进行解压，注意路径不要有中文。 注意zookeeper的安装是要建立在jdk的安装上的，不过安装zookeeper的应该也都有jdk了。。。 首先我们要去conf文件夹中修改一个配置文件zoo_sample.cfg改名为zoo.cfg 去bin文件夹下可以看到我们启动执行文件zkServer.sh(windows则为zkServer.cmd)执行该文件./zkServer.sh start，如下图执行成功。 ZooKeeper下载与安装完毕。]]></content>
+      <tags>
+        <tag>java</tag>
+        <tag>zookeeper</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[springboot集成dubbo环境搭建]]></title>
     <url>%2F2019%2F03%2F03%2Fspringboot%E9%9B%86%E6%88%90dubbo%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
     <content type="text"><![CDATA[更多文章欢迎访问个人博客 www.herobin.top 新建project next取好项目名，一路next即可。新建两个module，provider和consumer同样是springboot项目创建步骤同上。将两个模块分别启动，均启动成功，说明springboot没有问题，接下来集成dubbo。SpringBoot版本Dubbo集成中文地址：https://github.com/alibaba/dubbo-spring-boot-starter/blob/master/README_zh.md 将dubbo的依赖引入到两个模块的pom中 在application.properties中添加dubbo的相关配置信息 接下来在ProviderApplication的上添加@EnableDubboConfiguration，表示要开启dubbo功能. (dubbo provider服务可以使用或者不使用web容器) 编写服务提供者的接口和实现类编写你的dubbo服务，只需要添加要发布的服务实现上添加@Service（import com.alibaba.dubbo.config.annotation.Service）注解，其中interfaceClass是要发布服务的接口 启动服务者的Spring Boot应用，观察控制台，可以看到dubbo启动相关信息.至此，provider的dubbo配置成功。 接下来配置consumer的dubbo配置添加依赖 在application.properties中添加dubbo的相关配置信息1spring.application.name=dubbo-spring-boot-starter 这里这个name是可以自己命名的。 开启ConsumnerApplication启动类的@EnableDubboConfiguration注解1@EnableDubboConfiguration 在consumer中编写服务实用类，记得要将provider中的接口DemeService拷贝过来 编写ConsumerApplication类并执行 获得目标输出，springboot集成dubbo环境搭建成功。 代码github地址：https://github.com/zhangbin1995/springbootdubbo.git 当然上面只是简单的springboot+dubbo的环境集成，这样是有瑕疵的。 我们的上面示例里消费者是直连提供者的，这种方式只可以在测试环境中使用，因为直连提供者限制了分布式的易扩展性，如果提供者部署在多节点，而我们在消费者中是直连写死的状态，那就只会访问一个节点，也违背了我们的分布式的初衷。 所以通常我们的消费者和提供者是要通过注册中心来注册调用的关于注册中心，后面会继续介绍，本篇博文介绍的springboot+dubbo的集成到此结束。]]></content>
@@ -280,8 +289,8 @@
       </categories>
       <tags>
         <tag>java</tag>
-        <tag>spring</tag>
         <tag>springboot</tag>
+        <tag>spring</tag>
       </tags>
   </entry>
   <entry>
