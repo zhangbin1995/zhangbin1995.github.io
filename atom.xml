@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.herobin.top/"/>
-  <updated>2019-03-03T06:49:47.946Z</updated>
+  <updated>2019-03-03T07:02:06.639Z</updated>
   <id>http://www.herobin.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.herobin.top/2019/03/03/zookeeper%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/"/>
     <id>http://www.herobin.top/2019/03/03/zookeeper下载与安装/</id>
     <published>2019-03-03T06:47:13.000Z</published>
-    <updated>2019-03-03T06:49:47.946Z</updated>
+    <updated>2019-03-03T07:02:06.639Z</updated>
     
     <content type="html"><![CDATA[<p>更多文章欢迎访问个人博客 <a href="http://www.herobin.top">www.herobin.top</a></p><p>在zookeeper官网：<a href="http://zookeeper.apache.org" target="_blank" rel="noopener">zookeeper.apache.org</a> 中点击download进入下载页面</p><p><img src="/uploads/190303java2/1.png" alt=""></p><p>点击进入下载，这里我们下载的版本是3.4.10</p><p>下载完成后，拷贝到我们想要放到的路径进行解压，注意路径不要有中文。</p><p>注意zookeeper的安装是要建立在jdk的安装上的，不过安装zookeeper的应该也都有jdk了。。。</p><p>首先我们要去conf文件夹中修改一个配置文件<code>zoo_sample.cfg</code>改名为<code>zoo.cfg</code></p><p>去bin文件夹下可以看到我们启动执行文件<code>zkServer.sh</code>(windows则为<code>zkServer.cmd</code>)<br>执行该文件<code>./zkServer.sh start</code>，如下图执行成功。</p><p><img src="/uploads/190303java2/2.png" alt=""></p><p>ZooKeeper下载与安装完毕。</p>]]></content>
     
@@ -34,6 +34,8 @@
       
     
     </summary>
+    
+      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
     
     
       <category term="java" scheme="http://www.herobin.top/tags/java/"/>

@@ -4,6 +4,9 @@
     <title><![CDATA[zookeeper下载与安装]]></title>
     <url>%2F2019%2F03%2F03%2Fzookeeper%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[更多文章欢迎访问个人博客 www.herobin.top 在zookeeper官网：zookeeper.apache.org 中点击download进入下载页面 点击进入下载，这里我们下载的版本是3.4.10 下载完成后，拷贝到我们想要放到的路径进行解压，注意路径不要有中文。 注意zookeeper的安装是要建立在jdk的安装上的，不过安装zookeeper的应该也都有jdk了。。。 首先我们要去conf文件夹中修改一个配置文件zoo_sample.cfg改名为zoo.cfg 去bin文件夹下可以看到我们启动执行文件zkServer.sh(windows则为zkServer.cmd)执行该文件./zkServer.sh start，如下图执行成功。 ZooKeeper下载与安装完毕。]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
       <tags>
         <tag>java</tag>
         <tag>zookeeper</tag>
