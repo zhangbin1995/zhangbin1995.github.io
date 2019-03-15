@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -84,7 +84,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     version: '6.4.2',
     sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -124,11 +124,12 @@
 <meta property="og:image" content="http://www.herobin.top/uploads/190117java1/6.png">
 <meta property="og:image" content="http://www.herobin.top/uploads/190117java1/7.png">
 <meta property="og:image" content="http://www.herobin.top/uploads/190117java1/8.png">
+<meta property="og:image" content="http://www.herobin.top/uploads/190117java1/9.png">
 <meta property="og:image" content="http://www.herobin.top/uploads/190117java1/10.png">
 <meta property="og:image" content="http://www.herobin.top/uploads/190117java1/11.png">
 <meta property="og:image" content="http://www.herobin.top/uploads/190117java1/12.png">
 <meta property="og:image" content="http://www.herobin.top/uploads/190117java1/13.png">
-<meta property="og:updated_time" content="2019-01-18T02:03:56.000Z">
+<meta property="og:updated_time" content="2019-03-14T07:46:12.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java多线程-synchronized关键字">
 <meta name="twitter:description" content="synchronized关键字一 简介Java并发编程这个领域中synchronized关键字一直都是元老级的角色，很久之前很多人都会称它为“重量级锁”。但是，在JavaSE 1.6之后进行了主要包括为了减少获得锁和释放锁带来的性能消耗而引入的偏向锁和轻量级锁以及其它各种优化之后变得在某些情况下并不是那么重了。 本次总结不会介绍synchronized关键字的实现原理，更多的是synchroniz">
@@ -301,9 +302,6 @@
   
 
   
-    
-
-  
 
   
     <div class="site-search">
@@ -346,6 +344,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
           
           <div id="content" class="content">
             
@@ -554,6 +555,7 @@
 <p>运行结果：</p>
 <p><img src="/uploads/190117java1/8.png" alt=""></p>
 <p>可以看出如下图所示，<strong>两个线程使用了同一个“对象监视器”，所以运行结果是同步的</strong>。</p>
+<p><img src="/uploads/190117java1/9.png" alt=""></p>
 <p>那么如果使用不同的对象监视器会出现什么情况呢？</p>
 <p>修改Run.java：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class Run &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Service service = new Service();</span><br><span class="line">        MyObject object1 = new MyObject();</span><br><span class="line">        MyObject object2 = new MyObject();</span><br><span class="line"></span><br><span class="line">        ThreadA a = new ThreadA(service, object1);</span><br><span class="line">        a.setName(&quot;a&quot;);</span><br><span class="line">        a.start();</span><br><span class="line"></span><br><span class="line">        ThreadB b = new ThreadB(service, object2);</span><br><span class="line">        b.setName(&quot;b&quot;);</span><br><span class="line">        b.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -884,7 +886,7 @@
  -->
 
 <!-- 
-  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.4.2</div>
  -->
 
 <div>
@@ -902,7 +904,7 @@
 
 
 
-  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.4.2</div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">
   <div class="powered-by"></div>
@@ -1005,6 +1007,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.2"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
