@@ -353,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2019/03/03/springboot集成zookeeper注册中心/">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2019/05/15/Java的强引用、弱引用、软引用、虚引用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HeroBin">
@@ -372,8 +372,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/03/springboot集成zookeeper注册中心/" itemprop="url">
-                  springboot集成zookeeper注册中心
+                <a class="post-title-link" href="/2019/05/15/Java的强引用、弱引用、软引用、虚引用/" itemprop="url">
+                  Java的强引用、弱引用、软引用、虚引用
                 </a>
               
             
@@ -399,7 +399,7 @@
                 
               
 
-              <time title="创建时间：2019-03-03 16:09:55" itemprop="dateCreated datePublished" datetime="2019-03-03T16:09:55+08:00">2019-03-03</time>
+              <time title="创建时间：2019-05-15 22:58:11 / 修改时间：23:08:55" itemprop="dateCreated datePublished" datetime="2019-05-15T22:58:11+08:00">2019-05-15</time>
             
 
             
@@ -455,15 +455,12 @@
       
         
           
-          更多文章欢迎访问个人博客 www.herobin.top
-前面的博客我们配置了springboot集成dubbo开发环境搭建，这里我们在之前的基础上集成zookeeper注册中心。
-首先不要忘记在consumer和provider的pom中引入zookeeper的依赖
-
-修改配置文件，由无注册中心的
+          1. 强引用（StrongReference）强引用是使用最普遍的引用。如果一个对象具有强引用，那垃圾回收期绝不会回收它。如下：1Object o=new Object();   //  强引用
+当内存空间不足，Java虚拟机宁愿抛出OutOfMemoryError错误，使程序异常终止，也不会靠随意
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/03/03/springboot集成zookeeper注册中心/#more" rel="contents">
+            <a class="btn" href="/2019/05/15/Java的强引用、弱引用、软引用、虚引用/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -629,6 +626,172 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/03/04/Guns集成dubbo分布式开发环境搭建/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2019/03/03/springboot集成zookeeper注册中心/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HeroBin">
+      <meta itemprop="description" content="记录学习生活的点点滴滴">
+      <meta itemprop="image" content="/uploads/we.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HeroBin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/03/springboot集成zookeeper注册中心/" itemprop="url">
+                  springboot集成zookeeper注册中心
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-03 16:09:55" itemprop="dateCreated datePublished" datetime="2019-03-03T16:09:55+08:00">2019-03-03</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          更多文章欢迎访问个人博客 www.herobin.top
+前面的博客我们配置了springboot集成dubbo开发环境搭建，这里我们在之前的基础上集成zookeeper注册中心。
+首先不要忘记在consumer和provider的pom中引入zookeeper的依赖
+
+修改配置文件，由无注册中心的
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/03/springboot集成zookeeper注册中心/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1825,172 +1988,6 @@ Dockerfiledocker buildJpress：http://jpress.io/ (开源java web应用 博客平
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.herobin.top/2019/02/22/mac下安装docker/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HeroBin">
-      <meta itemprop="description" content="记录学习生活的点点滴滴">
-      <meta itemprop="image" content="/uploads/we.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HeroBin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/22/mac下安装docker/" itemprop="url">
-                  mac下安装docker
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-22 13:50:12" itemprop="dateCreated datePublished" datetime="2019-02-22T13:50:12+08:00">2019-02-22</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          @TOC
-更多文章欢迎访问个人博客 www.herobin.top
-mac下安装docker下载并安装dockermac版的docker可以直接去docker官网下载桌面版，傻瓜式安装后运行docker，会发现在桌面的右上角出现了docker的图标
-
-验证docker打开终端输入命令：docker 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/22/mac下安装docker/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2042,7 +2039,7 @@ mac下安装docker下载并安装dockermac版的docker可以直接去docker官�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">62</span>
+                    <span class="site-state-item-count">63</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2224,7 +2221,7 @@ mac下安装docker下载并安装dockermac版的docker可以直接去docker官�
   <span class="post-meta-divider">|</span>
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共86k字</span>
+  <span class="post-count">博客全站共88k字</span>
 </div>
  
 
