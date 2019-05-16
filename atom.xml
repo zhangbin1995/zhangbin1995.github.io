@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.herobin.top/"/>
-  <updated>2019-05-15T15:14:25.280Z</updated>
+  <updated>2019-05-16T14:29:27.228Z</updated>
   <id>http://www.herobin.top/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java面试基础篇</title>
+    <link href="http://www.herobin.top/2019/05/16/Java%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    <id>http://www.herobin.top/2019/05/16/Java面试基础篇/</id>
+    <published>2019-05-16T14:13:08.000Z</published>
+    <updated>2019-05-16T14:29:27.228Z</updated>
+    
+    <content type="html"><![CDATA[<p>Java面试基础篇</p><table><thead><tr><th>基础总结</th><th>博客地址</th></tr></thead><tbody><tr><td>Java语言基础常识</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88531257" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>J2EE基础知识</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88687741" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java的强引用、弱引用、软引用、虚引用</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88528214" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java12 新特性</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88723597" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java异常详解</td><td></td></tr><tr><td>Java IO 详解</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Java面试基础篇&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;基础总结&lt;/th&gt;
+&lt;th&gt;博客地址&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Java语言基础常识&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://blog.
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
+    
+      <category term="面试" scheme="http://www.herobin.top/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Java的强引用、弱引用、软引用、虚引用</title>
@@ -543,31 +581,6 @@
       
       
         &lt;h1 id=&quot;等待-通知（wait-notify）机制&quot;&gt;&lt;a href=&quot;#等待-通知（wait-notify）机制&quot; class=&quot;headerlink&quot; title=&quot;等待/通知（wait/notify）机制&quot;&gt;&lt;/a&gt;等待/通知（wait/notify）机制&lt;/h1&gt;&lt;
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java多线程-volatile关键字</title>
-    <link href="http://www.herobin.top/2019/01/18/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B-volatile%E5%85%B3%E9%94%AE%E5%AD%97/"/>
-    <id>http://www.herobin.top/2019/01/18/Java多线程-volatile关键字/</id>
-    <published>2019-01-18T02:05:34.000Z</published>
-    <updated>2019-01-18T02:28:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="volatile关键字"><a href="#volatile关键字" class="headerlink" title="volatile关键字"></a>volatile关键字</h1><h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一 简介"></a>一 简介</h2><p><strong>Java中的“volatile关键字”：</strong></p><p>在 JDK1.2 之前，Java的内存模型实现总是从<strong>主存（即共享内存）读取变量</strong>，是不需要进行特别的注意的。而在当前的 Java 内存模型下，线程可以把变量保存<strong>本地内存</strong>（比如机器的寄存器）中，而不是直接在主存中进行读写。这就可能造成一个线程在主存中修改了一个变量的值，而另外一个线程还继续使用它在寄存器中的变量值的拷贝，造成<strong>数据的不一致</strong>。 </p><p><img src="/uploads/190118java1/1.png" alt=""></p><p>要解决这个问题，就需要把变量声明为 <strong>volatile</strong>，这就指示 JVM，这个变量是不稳定的，每次使用它都到主存中进行读取。 </p><p><img src="/uploads/190118java1/2.png" alt=""></p><h2 id="二-volatile关键字的可见性"><a href="#二-volatile关键字的可见性" class="headerlink" title="二 volatile关键字的可见性"></a>二 volatile关键字的可见性</h2><p><strong>volatile 修饰的成员变量</strong>在每次被线程访问时，都强迫<strong>从主存（共享内存）中重读该成员变量的值</strong>。而且，当成员变量发生变化时，<strong>强迫线程将变化值回写到主存（共享内存）</strong>。这样在任何时刻，<strong>两个不同的线程总是看到某个成员变量的同一个值</strong>，这样也就保证了同步数据的<strong>可见性</strong>。</p><p>RunThread.java</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Created by binzhang on 19/1/16.</span><br><span class="line"> */</span><br><span class="line">public class RunThread extends Thread&#123;</span><br><span class="line">    private boolean isRunning = true;</span><br><span class="line">    int m;</span><br><span class="line">    public boolean isRunning() &#123;</span><br><span class="line">        return isRunning;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setRunning(boolean isRunning) &#123;</span><br><span class="line">        this.isRunning = isRunning;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        System.out.println(&quot;进入run了&quot;);</span><br><span class="line">        while (isRunning == true) &#123;</span><br><span class="line">            int a=2;</span><br><span class="line">            int b=3;</span><br><span class="line">            int c=a+b;</span><br><span class="line">            m=c;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(m);</span><br><span class="line">        System.out.println(&quot;线程被停止了！&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Run.java</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Created by binzhang on 19/1/16.</span><br><span class="line"> */</span><br><span class="line">public class Run &#123;</span><br><span class="line">    public static void main(String[] args) throws InterruptedException &#123;</span><br><span class="line">        RunThread thread = new RunThread();</span><br><span class="line"></span><br><span class="line">        thread.start();</span><br><span class="line">        Thread.sleep(1000);</span><br><span class="line">        thread.setRunning(false);</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;已经赋值为false&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运行结果：</p><p><img src="/uploads/190118java1/3.png" alt=""></p><p>RunThread类中的isRunning变量没有加上<strong>volatile关键字</strong>时，运行以上代码会出现<strong>死循环</strong>，这是因为isRunning变量虽然被修改但是没有被写到<strong>主存</strong>中，这也就导致该线程在<strong>本地内存中</strong>的值一直为true，这样就导致了死循环的产生。</p><p>解决办法也很简单：isRunning变量前加上<strong>volatile关键字</strong>即可。 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">volatile private boolean isRunning = true;</span><br></pre></td></tr></table></figure><p>这样运行就不会出现死循环了。<br>加上volatile关键字后的运行结果： </p><p><img src="/uploads/190118java1/4.png" alt=""></p><p>奇怪的是如果我们在while循环代码里加上任意一个输出语句或者sleep方法你会发现死循环也会停止，不管isRunning变量是否被加上volatile关键字。</p><p><img src="/uploads/190118java1/5.png" alt=""></p><p>这是为什么呢？</p><p><strong>因为：JVM会尽力保证内存的可见性，即使这个变量没有加同步关键字</strong>。换句话说，只要CPU有时间，JVM会尽力去保证变量值的更新。这种与volatile关键字的不同在于，volatile关键字会强制的保证线程的可见性。而不加这个关键字，JVM也会尽力去保证可见性，但是如果CPU一直有其他的事情在处理，它也没办法。最开始的代码，一直处于死循环中，CPU处于一直占用的状态，这个时候CPU没有时间，JVM也不能强制要求CPU分点时间去取最新的变量值。<strong>而加了输出或者sleep语句之后，CPU就有可能有时间去保证内存的可见性，于是while循环可以被终止</strong>。</p><h2 id="三-volatile关键字能保证原子性吗？"><a href="#三-volatile关键字能保证原子性吗？" class="headerlink" title="三 volatile关键字能保证原子性吗？"></a>三 volatile关键字能保证原子性吗？</h2><p>没有确切的说法，《Java并发编程艺术》这本书上说保证但是在自增操作（非原子操作）上不保证，《Java多线程编程核心艺术》这本书说不保证。不过应该是<strong>volatile无法保证对变量原子性的，要保证数据的原子性还是要使用synchronized关键字</strong>。</p><h2 id="四-synchronized关键字和volatile关键字比较"><a href="#四-synchronized关键字和volatile关键字比较" class="headerlink" title="四 synchronized关键字和volatile关键字比较"></a>四 synchronized关键字和volatile关键字比较</h2><p><strong>volatile关键字</strong>是线程同步的<strong>轻量级实现</strong>，所以<strong>volatile性能肯定比synchronized关键字要好</strong>。但是<strong>volatile关键字只能用于变量而synchronized关键字可以修饰方法以及代码块</strong>。synchronized关键字在JavaSE1.6之后进行了主要包括为了减少获得锁和释放锁带来的性能消耗而引入的偏向锁和轻量级锁以及其它各种优化之后执行效率有了显著提升，<strong>实际开发中使用synchronized关键字还是更多一些</strong>。</p><p><strong>多线程访问volatile关键字不会发生阻塞，而synchronized关键字可能会发生阻塞</strong></p><p><strong>volatile关键字能保证数据的可见性，但不能保证数据的原子性。synchronized关键字两者都能保证。</strong></p><p><strong>volatile关键字用于解决变量在多个线程之间的可见性，而ynchronized关键字解决的是多个线程之间访问资源的同步性。</strong></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;volatile关键字&quot;&gt;&lt;a href=&quot;#volatile关键字&quot; class=&quot;headerlink&quot; title=&quot;volatile关键字&quot;&gt;&lt;/a&gt;volatile关键字&lt;/h1&gt;&lt;h2 id=&quot;一-简介&quot;&gt;&lt;a href=&quot;#一-简介&quot; class=&quot;
       
     
     </summary>
