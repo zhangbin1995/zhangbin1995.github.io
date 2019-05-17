@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[RabbitMQ整合SpringBoot2.x]]></title>
+    <url>%2F2019%2F05%2F17%2FRabbitMQ%E6%95%B4%E5%90%88SpringBoot2-x%2F</url>
+    <content type="text"><![CDATA[SpringBoot与RabbitMQ集成非常简单，不需要做任何的额外设置，只需要两步即可： step1：引入相关依赖 step2：对application.properties进行配置 首先新建两个项目一个生产者producer一个消费者consumer，项目结构分别如图 这里只做简单的demo演示，所以只用到三个类，实体类Order，消息发送类OrderSender，消息接收类OrderReceiver。 producer配置编写在pom中都引入需要用到的依赖1234567891011121314151617181920212223242526272829303132333435&lt;!-- rabbitmq依赖 --&gt;&lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-amqp&lt;/artifactId&gt;&lt;/dependency&gt;&lt;!-- 工具类依赖包 --&gt;&lt;dependency&gt; &lt;groupId&gt;org.apache.commons&lt;/groupId&gt; &lt;artifactId&gt;commons-lang3&lt;/artifactId&gt;&lt;/dependency&gt;&lt;dependency&gt; &lt;groupId&gt;commons-io&lt;/groupId&gt; &lt;artifactId&gt;commons-io&lt;/artifactId&gt; &lt;version&gt;2.4&lt;/version&gt;&lt;/dependency&gt;&lt;dependency&gt; &lt;groupId&gt;com.alibaba&lt;/groupId&gt; &lt;artifactId&gt;fastjson&lt;/artifactId&gt; &lt;version&gt;1.1.26&lt;/version&gt;&lt;/dependency&gt;&lt;dependency&gt; &lt;groupId&gt;javax.servlet&lt;/groupId&gt; &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt; &lt;scope&gt;provided&lt;/scope&gt;&lt;/dependency&gt;&lt;dependency&gt; &lt;groupId&gt;log4j&lt;/groupId&gt; &lt;artifactId&gt;log4j&lt;/artifactId&gt; &lt;version&gt;1.2.17&lt;/version&gt;&lt;/dependency&gt; 配置producer的application.properties：123456789# springboot整合rabbitmq基本配置：spring.rabbitmq.addresses=127.0.0.1:5672spring.rabbitmq.username=guestspring.rabbitmq.password=guestspring.rabbitmq.virtual-host=/spring.rabbitmq.connection-timeout=15000server.servlet.context-path=/server.port=8001 新建好订单实体类Order1234567891011121314151617181920212223242526272829303132333435363738394041424344454647package com.herobin.springboot.entity;import java.io.Serializable;public class Order implements Serializable&#123; private static final long serialVersionUID = 8763696299123564381L; private String id; private String name; private String messageId; //存储消息发送的唯一标识 public Order() &#123; &#125; public Order(String id, String name, String messageId) &#123; this.id = id; this.name = name; this.messageId = messageId; &#125; public String getId() &#123; return id; &#125; public void setId(String id) &#123; this.id = id; &#125; public String getName() &#123; return name; &#125; public void setName(String name) &#123; this.name = name; &#125; public String getMessageId() &#123; return messageId; &#125; public void setMessageId(String messageId) &#123; this.messageId = messageId; &#125; &#125; 在producer包下新建一个订单消息发送类OrderSender12345678910111213141516171819202122232425262728package com.herobin.springboot.producer;import org.springframework.amqp.rabbit.connection.CorrelationData;import org.springframework.amqp.rabbit.core.RabbitTemplate;import org.springframework.beans.factory.annotation.Autowired;import org.springframework.stereotype.Component;import com.herobin.springboot.entity.Order;@Componentpublic class OrderSender &#123; @Autowired private RabbitTemplate rabbitTemplate; public void sendOrder(Order order) throws Exception&#123; // 设置消息的唯一id CorrelationData correlationData = new CorrelationData(); correlationData.setId(order.getMessageId()); // 这里我们传送的exchange为order-exchange，记得要去RabbitMQ的控制台创建好 配置好喝队列的绑定关系 rabbitTemplate.convertAndSend("order-exchange", //exchange "order.abcd", //routingKey order, //object 消息体内容 correlationData ); //correlationData 消息唯一id &#125; &#125; 在控制台创建好我们要用的exchange交换机和queue队列并绑定 点击我们的交换机与我们队列绑定 这里.# 和.*是有区别的，前者.#适用与各种配置场景（多点），如order.a.b.c，而后者.*只能配置一个点的，如order.a，order.abc，无法识别order.abc.def这种两个点的场景。 现在我们可以去测试方法里进行测试了 启动测试，测试成功。 去控制台queue队列下我们可以看到已经有了一条队列 说明我们的消息队列发送（生产消息）成功。 consumer配置编写pom和application.properties配置consumer的pom用到的和producer都是一样的，application.properties只要将端口号变更一下，再加入消费端的配置就好了 123456789101112131415# springboot整合rabbitmq基本配置 spring.rabbitmq.addresses=127.0.0.1:5672spring.rabbitmq.username=guestspring.rabbitmq.password=guestspring.rabbitmq.virtual-host=/spring.rabbitmq.connection-timeout=15000# springboot整合rabbitmq消费端配置spring.rabbitmq.listener.simple.concurrency=5spring.rabbitmq.listener.simple.max-concurrency=10spring.rabbitmq.listener.simple.acknowledge-mode=manualspring.rabbitmq.listener.simple.prefetch=1server.servlet.context-path=/server.port=8002 在消费端的entity下也新建好Order实体类编写消费消息类OrderReceiver123456789101112131415161718192021222324252627282930313233343536373839package com.herobin.springboot.consumer;import java.util.Map;import org.springframework.amqp.rabbit.annotation.Exchange;import org.springframework.amqp.rabbit.annotation.Queue;import org.springframework.amqp.rabbit.annotation.QueueBinding;import org.springframework.amqp.rabbit.annotation.RabbitHandler;import org.springframework.amqp.rabbit.annotation.RabbitListener;import org.springframework.amqp.support.AmqpHeaders;import org.springframework.messaging.handler.annotation.Headers;import org.springframework.messaging.handler.annotation.Payload;import org.springframework.stereotype.Component;import com.herobin.springboot.entity.Order;import com.rabbitmq.client.Channel;@Componentpublic class OrderReceiver &#123; @RabbitListener(bindings = @QueueBinding( value = @Queue(value = "order-queue", durable = "true"), exchange = @Exchange(name = "order-exchange", durable = "true", type = "topic"), key = "order.*" ) ) @RabbitHandler public void onOrderMessage(@Payload Order order, @Headers Map&lt;String, Object&gt; headers, Channel channel) throws Exception&#123; // 消费者操作 System.err.println("----------收到消息，开始消费----------"); System.err.println("订单ID：" + order.getId()); Long deliveryTag = (Long)headers.get(AmqpHeaders.DELIVERY_TAG); // ACK 确认签收消息 channel.basicAck(deliveryTag, false); &#125; &#125; 这里的@RabbitListener是非常强大的即使我们没有在控制台创建order-exchange和order-queue在执行了启动类之后也会帮我们自动创建好。 启动我们的consumer程序，清空控制台（方便直观显示消息信息），再去启动producer的测试方法发送消息 回到consumer的console发现输出了消息 至此，实现了rabbitmq整合springboot简单的消息发送与接收。]]></content>
+      <categories>
+        <category>MQ</category>
+      </categories>
+      <tags>
+        <tag>MQ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[mac安装启动RabbitMQ]]></title>
+    <url>%2F2019%2F05%2F17%2Fmac%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8RabbitMQ%2F</url>
+    <content type="text"><![CDATA[mac安装启动RabbitMQ]]></content>
+      <categories>
+        <category>MQ</category>
+      </categories>
+      <tags>
+        <tag>MQ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac下ActiveMQ的下载与安装]]></title>
+    <url>%2F2019%2F05%2F17%2FMac%E4%B8%8BActiveMQ%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[首先在activemq官网下载压缩包 解压后进入/bin/macosx目录下通过./activemq start命令启动控制台出现Starting ActiveMQ Broker… 启动成功 在浏览器输入 127.0.0.1:8161/admin/默认的用户名和密码都是admin如图启动成功]]></content>
+      <categories>
+        <category>MQ</category>
+      </categories>
+      <tags>
+        <tag>MQ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[mac 打开虚拟机报错 打不开 /dev/vmmon：Broken pipe]]></title>
+    <url>%2F2019%2F05%2F17%2Fmac%20%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%8A%A5%E9%94%99%20%E6%89%93%E4%B8%8D%E5%BC%80%20%3Adev%3Avmmon%EF%BC%9ABroken%20pipe%2F</url>
+    <content type="text"><![CDATA[解决办法：去系统偏好设置 ——&gt; 安全性与隐私下的通用中可以看到VMware已被阻止载入，点击允许即可。]]></content>
+      <categories>
+        <category>报错</category>
+      </categories>
+      <tags>
+        <tag>报错</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[推送github报错“The remote end hung up unexpectedly”解决办法]]></title>
+    <url>%2F2019%2F05%2F17%2F%E6%8E%A8%E9%80%81github%E6%8A%A5%E9%94%99%E2%80%9CThe%20remote%20end%20hung%20up%20unexpectedly%E2%80%9D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[推送项目到github时先是卡住然后过了很久报错The remote end hung up unexpectedly原因是推送的文件太大。 解决方法：在目录的隐藏文件.git中修改config文件增加如下代码： 12[http]postBuffer = 524288000 这里是修改提交的缓存为500M。修改之后重新推送即可。]]></content>
+      <categories>
+        <category>报错</category>
+      </categories>
+      <tags>
+        <tag>报错</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java面试基础篇]]></title>
     <url>%2F2019%2F05%2F16%2FJava%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80%E7%AF%87%2F</url>
     <content type="text"><![CDATA[Java面试基础篇 基础总结 博客地址 Java语言基础常识 点击跳转 J2EE基础知识 点击跳转 Java的强引用、弱引用、软引用、虚引用 点击跳转 Java12 新特性 点击跳转 Java异常详解 Java IO 详解]]></content>
