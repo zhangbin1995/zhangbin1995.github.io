@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.herobin.top/"/>
-  <updated>2019-05-19T12:14:44.488Z</updated>
+  <updated>2019-05-19T14:29:48.350Z</updated>
   <id>http://www.herobin.top/</id>
   
   <author>
@@ -15,6 +15,229 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【置顶】博客迁移至CSDN</title>
+    <link href="http://www.herobin.top/2019/05/19/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%87%B3CSDN/"/>
+    <id>http://www.herobin.top/2019/05/19/博客迁移至CSDN/</id>
+    <published>2019-05-19T14:28:08.000Z</published>
+    <updated>2019-05-19T14:29:48.350Z</updated>
+    
+    <content type="html"><![CDATA[<p>博客迁移至csdn，后续更新将主要在csdn中进行。欢迎关注：</p><ul><li><a href="https://blog.csdn.net/qq_24095055" target="_blank" rel="noopener">进击的Z同学</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;博客迁移至csdn，后续更新将主要在csdn中进行。欢迎关注：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/qq_24095055&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;进击的Z同学&lt;/a&gt;&lt;/li&gt;
+&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【置顶】消息中间件专题</title>
+    <link href="http://www.herobin.top/2019/05/19/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%93%E9%A2%98/"/>
+    <id>http://www.herobin.top/2019/05/19/消息中间件专题/</id>
+    <published>2019-05-19T13:51:27.000Z</published>
+    <updated>2019-05-19T14:27:17.614Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="消息中间件专题汇总"><a href="#消息中间件专题汇总" class="headerlink" title="消息中间件专题汇总"></a>消息中间件专题汇总</h1><table><thead><tr><th>目录</th><th>博客链接</th></tr></thead><tbody><tr><td>消息中间件基础</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88974751" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Mac下ActiveMQ的下载与安装</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88974051" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>mac安装启动RabbitMQ</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88993147" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>RabbitMQ消息中间件基础概念入门</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88998542" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>RabbitMQ整合SpringBoot2.x</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/89017142" target="_blank" rel="noopener">点击跳转</a></td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;消息中间件专题汇总&quot;&gt;&lt;a href=&quot;#消息中间件专题汇总&quot; class=&quot;headerlink&quot; title=&quot;消息中间件专题汇总&quot;&gt;&lt;/a&gt;消息中间件专题汇总&lt;/h1&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;目录&lt;/th&gt;
+&lt;th&gt;博客链接&lt;/th
+      
+    
+    </summary>
+    
+      <category term="MQ" scheme="http://www.herobin.top/categories/MQ/"/>
+    
+    
+      <category term="MQ" scheme="http://www.herobin.top/tags/MQ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【置顶】SpringBoot专题</title>
+    <link href="http://www.herobin.top/2019/05/19/Spring%20Boot%20%E4%B8%93%E9%A2%98/"/>
+    <id>http://www.herobin.top/2019/05/19/Spring Boot 专题/</id>
+    <published>2019-05-19T13:48:41.000Z</published>
+    <updated>2019-05-19T13:50:53.599Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Spring-Boot-专题"><a href="#Spring-Boot-专题" class="headerlink" title="Spring Boot 专题"></a>Spring Boot 专题</h1><table><thead><tr><th>目录</th><th>博客链接</th></tr></thead><tbody><tr><td>两小时学会SpringBoot</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/90290614" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>设置IDEA可以启动多个Spring Boot程序</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/90293425" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>SpringBoot Profile多环境配置</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/89089167" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Spring Boot启动流程</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/89098786" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>springboot集成dubbo环境搭建</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88086775" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>springboot集成zookeeper注册中心</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88089452" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>springboot集成jpa自动创建更新时间</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/86711263" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>springboot使用lombok省略set和get方法</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/86712042" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Spring Boot面试题整理</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88749291" target="_blank" rel="noopener">点击跳转</a></td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Spring-Boot-专题&quot;&gt;&lt;a href=&quot;#Spring-Boot-专题&quot; class=&quot;headerlink&quot; title=&quot;Spring Boot 专题&quot;&gt;&lt;/a&gt;Spring Boot 专题&lt;/h1&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
+    
+    
+      <category term="springboot" scheme="http://www.herobin.top/tags/springboot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【置顶】SpringCloud学习笔记</title>
+    <link href="http://www.herobin.top/2019/05/19/SpringCloud%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://www.herobin.top/2019/05/19/SpringCloud学习笔记/</id>
+    <published>2019-05-19T13:45:34.000Z</published>
+    <updated>2019-05-19T13:47:27.908Z</updated>
+    
+    <content type="html"><![CDATA[<table><thead><tr><th>目录</th><th>博客链接</th></tr></thead><tbody><tr><td>SpringCloud简介</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/90299036" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>SpringCloud学习笔记 - eureka注册中心</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/89843051" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>SpringCloud服务发现 - eureka使用及高可用配置</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/90312528" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>SpringCloud服务发现 - consul</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/90312986" target="_blank" rel="noopener">点击跳转</a></td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;目录&lt;/th&gt;
+&lt;th&gt;博客链接&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;SpringCloud简介&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://blog.csdn.net/qq_2409
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
+    
+    
+      <category term="springcloud" scheme="http://www.herobin.top/tags/springcloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【置顶】Java面试归纳总结</title>
+    <link href="http://www.herobin.top/2019/05/19/Java%E9%9D%A2%E8%AF%95%E5%BD%92%E7%BA%B3%E6%80%BB%E7%BB%93/"/>
+    <id>http://www.herobin.top/2019/05/19/Java面试归纳总结/</id>
+    <published>2019-05-19T13:40:33.000Z</published>
+    <updated>2019-05-19T13:44:53.939Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Java面试总结"><a href="#Java面试总结" class="headerlink" title="Java面试总结"></a>Java面试总结</h1><table><thead><tr><th>分类</th><th>链接</th></tr></thead><tbody><tr><td>Java面试之基础篇</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88530106" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java面试之集合篇</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88547339" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java面试之多线程篇</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88550739" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java面试之JVM篇</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88573407" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java面试之框架篇</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88663201" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java面试之数据库篇</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/90267186" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java知识体系之Redis篇</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/89394558" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java面试之分布式专题</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88757944" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java面试之数据结构篇</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88593724" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java面试之算法篇</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88969907" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java面试之设计模式篇</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88690826" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java面试之计算机网络篇</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/89889107" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java面试之操作系统篇</td><td></td></tr><tr><td>Java面试之真实面试经历篇</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88530158" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java面试之附加篇</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88688810" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java面试之优化专题</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/88970861" target="_blank" rel="noopener">点击跳转</a></td></tr><tr><td>Java面试之场景题汇总</td><td><a href="https://blog.csdn.net/qq_24095055/article/details/89517949" target="_blank" rel="noopener">点击跳转</a></td></tr></tbody></table><p>持续更新中…</p><p>跳转均为本人csdn博客地址，后续也将以csdn为主，欢迎关注^_^</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Java面试总结&quot;&gt;&lt;a href=&quot;#Java面试总结&quot; class=&quot;headerlink&quot; title=&quot;Java面试总结&quot;&gt;&lt;/a&gt;Java面试总结&lt;/h1&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;分类&lt;/th&gt;
+&lt;th&gt;链接&lt;/th&gt;
+&lt;/tr
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线程池技术及其示例</title>
+    <link href="http://www.herobin.top/2019/05/19/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%85%B6%E7%A4%BA%E4%BE%8B/"/>
+    <id>http://www.herobin.top/2019/05/19/线程池技术及其示例/</id>
+    <published>2019-05-19T13:35:56.000Z</published>
+    <updated>2019-05-19T13:39:01.454Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="线程池技术及其示例"><a href="#线程池技术及其示例" class="headerlink" title="线程池技术及其示例"></a>线程池技术及其示例</h1><p>对于服务端的程序，经常面对成千上万的任务提交到服务器汇总，如果采用一个任务一个线程的方式，那么将会创建数以万计的线程，这不是一个好的选择。因为这会使操作系统频繁的进行线程上下文切换，无故增加系统的负载，而线程的创建和消亡都是需要耗费系统资源的，也无疑浪费了系统资源。</p><p>线程池技术能够很好的解决这个问题，它预先创建了若干数量的线程，并且不能由用户直接对线程的创建进行控制，在这个前提下重复使用固定或较为固定数目的线程来完成任务的执行。这样做的好处是，一方面，消除了频繁创建和消亡线程的系统资源开销，另一方面，面对过量任务的提交能够平缓的劣化。</p><p>下面是一个简单的线程池接口定义</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ThreadPool</span>&lt;<span class="title">Job</span> <span class="keyword">extends</span> <span class="title">Runnable</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">// 执行一个Job，这个Job需要实现Runnable</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">execute</span><span class="params">(Job job)</span></span>;</span><br><span class="line">    <span class="comment">// 关闭线程池</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">shutdown</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">// 增加工作者线程</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addWorkers</span><span class="params">(<span class="keyword">int</span> num)</span></span>;</span><br><span class="line">    <span class="comment">// 减少工作者线程</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">removeWorker</span><span class="params">(<span class="keyword">int</span> num)</span></span>;</span><br><span class="line">    <span class="comment">// 得到正在等待执行的任务数量</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getJobSize</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>客户端可以通过execute(Job)方法将Job提交入线程池执行，而客户端自身不用等待Job的执行完成。除了execute(Job)方法以外，线程池接口提供了增大/减少工作者线程以及关闭线程池的方法。这里工作者线程代表着一个重复执行Job的线程，而每个由客户端提交的Job都将进入到一个工作队列中等待工作者线程的处理。</p><p>下面是线程池接口的默认实现</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.LinkedList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.atomic.AtomicLong;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DefaultThreadPool</span>&lt;<span class="title">Job</span> <span class="keyword">extends</span> <span class="title">Runnable</span>&gt; <span class="keyword">implements</span> <span class="title">ThreadPool</span>&lt;<span class="title">Job</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 线程池最大限制数</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MAX_WORKER_NUMBER = <span class="number">10</span>;</span><br><span class="line">    <span class="comment">// 线程池默认的数量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_WORKER_NUMBERS = <span class="number">5</span>;</span><br><span class="line">    <span class="comment">// 线程池最小的数量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MIN_WORKER_NUMBERS = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 这是一个工作队列，将会向里面插入工作</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> LinkedList&lt;Job&gt; jobs = <span class="keyword">new</span> LinkedList&lt;Job&gt;();</span><br><span class="line">    <span class="comment">// 工作者列表  Woker是自定义的。。。在最后面</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> List&lt;Worker&gt; workers = Collections.synchronizedList(<span class="keyword">new</span> ArrayList&lt;Worker&gt;());</span><br><span class="line">    <span class="comment">// 工作者线程的数量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> workerNum = DEFAULT_WORKER_NUMBERS;</span><br><span class="line">    <span class="comment">// 线程编号生成</span></span><br><span class="line">    <span class="keyword">private</span> AtomicLong threadNum = <span class="keyword">new</span> AtomicLong();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DefaultThreadPool</span><span class="params">()</span></span>&#123;</span><br><span class="line">        initialWorkers(DEFAULT_WORKER_NUMBERS);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DefaultThreadPool</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">        workerNum = num &gt; MAX_WORKER_NUMBER ? MAX_WORKER_NUMBER : num &lt; MIN_WORKER_NUMBERS ? MIN_WORKER_NUMBERS : num;</span><br><span class="line">        initialWorkers(workerNum);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化线程工作者</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initialWorkers</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; num ; i ++)&#123;</span><br><span class="line">            Worker worker = <span class="keyword">new</span> Worker();</span><br><span class="line">            workers.add(worker);</span><br><span class="line">            <span class="comment">// 一个工作者对应一个线程  worker &lt;-&gt; thread  用来执行Job</span></span><br><span class="line">            Thread thread = <span class="keyword">new</span> Thread(worker, <span class="string">"ThreadPool-Worker-"</span> + threadNum.incrementAndGet());</span><br><span class="line">            thread.start();</span><br><span class="line">            workers.add(worker);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">(Job job)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (job != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="comment">// 添加一个工作，然后进行通知</span></span><br><span class="line">            <span class="keyword">synchronized</span> (jobs)&#123;</span><br><span class="line">                jobs.addLast(job);</span><br><span class="line">                jobs.notify();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shutdown</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (Worker worker : workers)&#123;</span><br><span class="line">            <span class="comment">// 可以理解为停止每个线程</span></span><br><span class="line">            worker.shutdown();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addWorkers</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (jobs)&#123;</span><br><span class="line">            <span class="comment">// 限制新增的Worker数量不能超过最大值</span></span><br><span class="line">            <span class="keyword">if</span> (num + <span class="keyword">this</span>.workerNum &gt; MAX_WORKER_NUMBER)&#123;</span><br><span class="line">                num = MAX_WORKER_NUMBER - <span class="keyword">this</span>.workerNum;</span><br><span class="line">            &#125;</span><br><span class="line">            initialWorkers(num);</span><br><span class="line">            <span class="keyword">this</span>.workerNum += num;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeWorker</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (jobs)&#123;</span><br><span class="line">            <span class="keyword">if</span> (num &gt;= <span class="keyword">this</span>.workerNum)&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"beyond workNum"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 按照给定的数量停止 Worker</span></span><br><span class="line">            <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (count &lt; num)&#123;</span><br><span class="line">                Worker worker = workers.get(count);</span><br><span class="line">                <span class="keyword">if</span> (workers.remove(worker))&#123;</span><br><span class="line">                    worker.shutdown();</span><br><span class="line">                    count ++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">this</span>.workerNum -= count;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getJobSize</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> jobs.size();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 工作者，负责消费任务</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Worker</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 是否工作</span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">boolean</span> running = <span class="keyword">true</span>;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">while</span> (running)&#123;</span><br><span class="line">                Job job = <span class="keyword">null</span>;</span><br><span class="line">                <span class="keyword">synchronized</span> (jobs)&#123;</span><br><span class="line">                    <span class="comment">// 如果工作者列表是空的，那么就wait</span></span><br><span class="line">                    <span class="keyword">while</span> (jobs.isEmpty())&#123;</span><br><span class="line">                        <span class="keyword">try</span>&#123;</span><br><span class="line">                            jobs.wait();</span><br><span class="line">                        &#125;<span class="keyword">catch</span> (InterruptedException ex)&#123;</span><br><span class="line">                            <span class="comment">// 感知到外部对WorkerThread的中断操作，返回</span></span><br><span class="line">                            Thread.currentThread().interrupt();</span><br><span class="line">                            <span class="keyword">return</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">// 取出一个Job</span></span><br><span class="line">                    job = jobs.removeFirst();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (job != <span class="keyword">null</span>)&#123;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        job.run();</span><br><span class="line">                    &#125;<span class="keyword">catch</span> (Exception ex)&#123;</span><br><span class="line">                        <span class="comment">// 忽略 Job 执行中的 Exception</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shutdown</span><span class="params">()</span></span>&#123;</span><br><span class="line">            running = <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>测试类编写</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ThreadPool tp = <span class="keyword">new</span> DefaultThreadPool();</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; count ; i++)&#123;</span><br><span class="line">            tp.execute(<span class="keyword">new</span> Task(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Task</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Task</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.num = num;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Task"</span> + num + <span class="string">" running..."</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep((<span class="keyword">int</span>)(Math.random()*<span class="number">5000</span>) + <span class="number">1000</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (InterruptedException e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Task0 running...</span><br><span class="line">Task1 running...</span><br><span class="line">Task2 running...</span><br><span class="line">Task3 running...</span><br><span class="line">Task4 running...</span><br><span class="line">Task5 running... <span class="comment">// 从这开始是后面陆续出现的</span></span><br><span class="line">Task6 running...</span><br><span class="line">Task7 running...</span><br><span class="line">Task8 running...</span><br><span class="line">Task9 running...</span><br></pre></td></tr></table></figure><p>因为核心线程池大小默认是5，所以开始有五个执行，又我们在执行方法中设定了线程睡眠时间1-6秒范围，所以后面的五个是陆续执行的。</p><p>从线程的实现可以看到，当客户端调用execute(Job)方法时，会不断地向任务列表jobs中添加Job，而每个工作者线程会不断地从jobs上取出一个Job进行执行，当jobs为空时，工作者线程进入等待状态。</p><p>添加一个Job后，对工作队列jobs调用了其notify()方法，而不是notifyAll()方法，因为能够确定有工作者线程被唤醒，这时使用notify()方法将会比notifyAll()方法获得更小的开销（避免将等待队列中的线程全部移动到阻塞队列中）。</p><p>可以看到，线程池的本质就是使用了一个线程安全的工作队列连接工作者线程和客户端线程，客户端线程将任务放入工作队列后便返回，而工作者线程则不断地从工作队列上取出工作并执行。当工作队列为空时，所有的工作者线程均等待在工作队列上，当有客户端提交了一个任务之后会通知任意一个工作者线程，随着大量的任务被提交，更多的工作者线程会被唤醒。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;线程池技术及其示例&quot;&gt;&lt;a href=&quot;#线程池技术及其示例&quot; class=&quot;headerlink&quot; title=&quot;线程池技术及其示例&quot;&gt;&lt;/a&gt;线程池技术及其示例&lt;/h1&gt;&lt;p&gt;对于服务端的程序，经常面对成千上万的任务提交到服务器汇总，如果采用一个任务一个线程的
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
+    
+    
+      <category term="多线程" scheme="http://www.herobin.top/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java中双检锁里volatile的作用</title>
+    <link href="http://www.herobin.top/2019/05/19/Java%E4%B8%AD%E5%8F%8C%E6%A3%80%E9%94%81%E9%87%8Cvolatile%E7%9A%84%E4%BD%9C%E7%94%A8/"/>
+    <id>http://www.herobin.top/2019/05/19/Java中双检锁里volatile的作用/</id>
+    <published>2019-05-19T13:28:46.000Z</published>
+    <updated>2019-05-19T13:35:08.450Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>)</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="饿汉式-线程安全"><a href="#饿汉式-线程安全" class="headerlink" title="饿汉式(线程安全)"></a>饿汉式(线程安全)</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="双检锁-线程安全"><a href="#双检锁-线程安全" class="headerlink" title="双检锁(线程安全)"></a>双检锁(线程安全)</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>)&#123; <span class="comment">// 第一次检查</span></span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton.class)&#123;</span><br><span class="line">                <span class="keyword">if</span> (instance == <span class="keyword">null</span>) <span class="comment">// 第二次检查</span></span><br><span class="line">                    instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="Java中双检锁里volatile的作用"><a href="#Java中双检锁里volatile的作用" class="headerlink" title="Java中双检锁里volatile的作用"></a>Java中双检锁里volatile的作用</h1><p>双检锁中在第二次检查后创建对象的代码</p><p><code>instance = new Singleton();</code></p><p>可以分解为如下的3行伪代码</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">memory = allocate(); <span class="comment">// 1.分配对象的内存空间</span></span><br><span class="line">ctorInstance(memory); <span class="comment">// 2.初始化对象</span></span><br><span class="line">instance = memory; <span class="comment">// 3.设置instance指向刚分配的内存地址</span></span><br></pre></td></tr></table></figure><p>上面3行伪代码中的2和3之间，可能会被重排序。2和3之间重排序之后的执行时序如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">memory = allocate(); <span class="comment">// 1.分配对象的内存空间</span></span><br><span class="line">instance = memory; <span class="comment">// 3.设置instance指向刚分配的内存空间</span></span><br><span class="line">ctorInstance(memory); <span class="comment">// 2.初始化对象</span></span><br></pre></td></tr></table></figure><p>这样在多线程下可能会发生问题，即当线程A执行完里面的1、3过程时，线程B在判断出instance不为空就会直接访问instance引用的对象。此时，线程B将会访问一个还未初始化的对象。</p><p>当声明对象的引用为volatile后，3行伪代码中的2和3之间的重排序，在多线程环境下将会被禁止，保证了线程安全的延迟初始化。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;懒汉式&quot;&gt;&lt;a href=&quot;#懒汉式&quot; class=&quot;headerlink&quot; title=&quot;懒汉式&quot;&gt;&lt;/a&gt;懒汉式&lt;/h1&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;sp
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
+    
+    
+      <category term="多线程" scheme="http://www.herobin.top/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="设计模式" scheme="http://www.herobin.top/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java多线程-手写一个死锁的例子</title>
+    <link href="http://www.herobin.top/2019/05/19/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%AD%BB%E9%94%81%E7%9A%84%E4%BE%8B%E5%AD%90/"/>
+    <id>http://www.herobin.top/2019/05/19/Java多线程-手写一个死锁的例子/</id>
+    <published>2019-05-19T13:23:54.000Z</published>
+    <updated>2019-05-19T13:27:56.728Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Java多线程-手写一个死锁的例子"><a href="#Java多线程-手写一个死锁的例子" class="headerlink" title="Java多线程-手写一个死锁的例子"></a>Java多线程-手写一个死锁的例子</h1><p>下面是一个多线程死锁的例子</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeadLockDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object lock1 = <span class="keyword">new</span> Object();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Object lock2 = <span class="keyword">new</span> Object();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> DeadLockDemo().deadLock();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">deadLock</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Thread t1 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="keyword">synchronized</span> (lock1)&#123;</span><br><span class="line">                    System.out.println(<span class="string">"thread1 get lock1"</span>);</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        Thread.sleep(<span class="number">100</span>);</span><br><span class="line">                    &#125;<span class="keyword">catch</span> (InterruptedException e)&#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">synchronized</span> (lock2)&#123;</span><br><span class="line">                        System.out.println(<span class="string">"thread1 get lock2"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(<span class="string">"thread1 end"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        Thread t2 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="keyword">synchronized</span> (lock2)&#123;</span><br><span class="line">                    System.out.println(<span class="string">"thread2 get lock2"</span>);</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        Thread.sleep(<span class="number">100</span>);</span><br><span class="line">                    &#125;<span class="keyword">catch</span> (InterruptedException e)&#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">synchronized</span> (lock1)&#123;</span><br><span class="line">                        System.out.println(<span class="string">"thread2 get lock1"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(<span class="string">"thread2 end"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        t1.start();</span><br><span class="line">        t2.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>执行结果：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">thread1 get lock1</span><br><span class="line">thread2 get lock2</span><br><span class="line"><span class="comment">// 后面无限期等待下去</span></span><br></pre></td></tr></table></figure><p>两个线程相互得到锁1，锁2，然后线程1等待线程2释放锁2，线程2等待线程1释放锁1，两者各不相互，这样形成死锁。</p><p>那么如何避免和解决死锁问题呢？</p><p>1、按顺序加锁</p><p>上个例子线程间加锁的顺序各不一致，导致死锁，如果每个线程都按同一个的加锁顺序这样就不会出现死锁。</p><p>2、获取锁时限</p><p>每个获取锁的时候加上个时限，如果超过某个时间就放弃获取锁之类的。</p><p>3、死锁检测</p><p>按线程间获取锁的关系检测线程间是否发生死锁，如果发生死锁就执行一定的策略，如终断线程或回滚操作等。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Java多线程-手写一个死锁的例子&quot;&gt;&lt;a href=&quot;#Java多线程-手写一个死锁的例子&quot; class=&quot;headerlink&quot; title=&quot;Java多线程-手写一个死锁的例子&quot;&gt;&lt;/a&gt;Java多线程-手写一个死锁的例子&lt;/h1&gt;&lt;p&gt;下面是一个多线程死锁
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
+    
+    
+      <category term="多线程" scheme="http://www.herobin.top/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot启动流程</title>
@@ -351,244 +574,6 @@
       <category term="dubbo" scheme="http://www.herobin.top/tags/dubbo/"/>
     
       <category term="zookeeper" scheme="http://www.herobin.top/tags/zookeeper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>spring集成zookeeper注册中心</title>
-    <link href="http://www.herobin.top/2019/03/03/spring%E9%9B%86%E6%88%90zookeeper%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83/"/>
-    <id>http://www.herobin.top/2019/03/03/spring集成zookeeper注册中心/</id>
-    <published>2019-03-03T07:58:34.000Z</published>
-    <updated>2019-03-03T08:00:10.082Z</updated>
-    
-    <content type="html"><![CDATA[<p>更多文章欢迎访问个人博客 <a href="http://www.herobin.top">www.herobin.top</a></p><p>在spring+dubbo开发环境搭建好，及下载安装好zookeeper之后（相关步骤在前面的博客中），现在我们来配置spring集成zookeeper注册中心。<br>在provider的<code>application.xml</code>中配置提供者到注册中心zookeeper中，这里zookeeper为本机的zookeeper，zookeeper的默认端口号为<code>2181</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;dubbo:registry address=&quot;zookeeper://localhost:2181&quot;/&gt;</span><br></pre></td></tr></table></figure></p><p><img src="/uploads/190303java3/1.png" alt=""></p><p>记得将之前没有配置注册中心的写在<code>dubbo:service</code>中的<code>register=&quot;N/A&quot;</code>删掉。</p><p>使用命令行 <code>zkServer.sh start-foreground</code> 前台启动zookeeper后，再运行provider程序，可以看到日志输入，即我们服务者接口注册成功了。</p><p><img src="/uploads/190303java3/2.png" alt=""></p><p>接下来我们去consumer服务消费者这边配置，同样是在<code>application.xml</code>中配置注册中心</p><p><img src="/uploads/190303java3/3.png" alt=""></p><p>启动consumer服务，输入得到输出，配置成功。</p><p><img src="/uploads/190303java3/4.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;更多文章欢迎访问个人博客 &lt;a href=&quot;http://www.herobin.top&quot;&gt;www.herobin.top&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;在spring+dubbo开发环境搭建好，及下载安装好zookeeper之后（相关步骤在前面的博客中），现在我们来配置sprin
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
-    
-      <category term="dubbo" scheme="http://www.herobin.top/tags/dubbo/"/>
-    
-      <category term="spring" scheme="http://www.herobin.top/tags/spring/"/>
-    
-      <category term="zookeeper" scheme="http://www.herobin.top/tags/zookeeper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>zookeeper下载与安装</title>
-    <link href="http://www.herobin.top/2019/03/03/zookeeper%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/"/>
-    <id>http://www.herobin.top/2019/03/03/zookeeper下载与安装/</id>
-    <published>2019-03-03T06:47:13.000Z</published>
-    <updated>2019-03-03T07:17:35.342Z</updated>
-    
-    <content type="html"><![CDATA[<p>更多文章欢迎访问个人博客 <a href="http://www.herobin.top">www.herobin.top</a></p><p>在zookeeper官网：<a href="http://zookeeper.apache.org" target="_blank" rel="noopener">zookeeper.apache.org</a> 中点击download进入下载页面</p><p><img src="/uploads/190303java2/1.png" alt=""></p><p>点击进入下载，这里我们下载的版本是3.4.10</p><p>下载完成后，拷贝到我们想要放到的路径进行解压，注意路径不要有中文。</p><p>注意zookeeper的安装是要建立在jdk的安装上的，不过安装zookeeper的应该也都有jdk了。。。</p><p>首先我们要去conf文件夹中修改一个配置文件<code>zoo_sample.cfg</code>改名为<code>zoo.cfg</code></p><p>去bin文件夹下可以看到我们启动执行文件<code>zkServer.sh</code>(windows则为<code>zkServer.cmd</code>)<br>执行该文件<code>./zkServer.sh start</code>，如下图执行成功。</p><p><img src="/uploads/190303java2/2.png" alt=""></p><p>ZooKeeper下载与安装完毕。</p><p>另外说明一下，这里的<code>./zkServer.sh start</code>是后台启动，若要查看日志可用前台启动<br><code>zkServer.sh start-foreground</code></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;更多文章欢迎访问个人博客 &lt;a href=&quot;http://www.herobin.top&quot;&gt;www.herobin.top&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;在zookeeper官网：&lt;a href=&quot;http://zookeeper.apache.org&quot; target=&quot;_blan
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
-    
-      <category term="zookeeper" scheme="http://www.herobin.top/tags/zookeeper/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>springboot集成dubbo环境搭建</title>
-    <link href="http://www.herobin.top/2019/03/03/springboot%E9%9B%86%E6%88%90dubbo%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    <id>http://www.herobin.top/2019/03/03/springboot集成dubbo环境搭建/</id>
-    <published>2019-03-03T04:31:12.000Z</published>
-    <updated>2019-03-03T04:34:03.386Z</updated>
-    
-    <content type="html"><![CDATA[<p>更多文章欢迎访问个人博客 <a href="http://www.herobin.top">www.herobin.top</a></p><p>新建project</p><p><img src="/uploads/190303java1/1.png" alt=""></p><p>next取好项目名，一路next即可。<br>新建两个module，provider和consumer同样是springboot项目创建步骤同上。<br>将两个模块分别启动，均启动成功，说明springboot没有问题，接下来集成dubbo。<br>SpringBoot版本Dubbo集成中文地址：<a href="https://github.com/alibaba/dubbo-spring-boot-starter/blob/master/README_zh.md" target="_blank" rel="noopener">https://github.com/alibaba/dubbo-spring-boot-starter/blob/master/README_zh.md</a></p><p>将dubbo的依赖引入到两个模块的pom中</p><p><img src="/uploads/190303java1/2.png" alt=""></p><p>在application.properties中添加dubbo的相关配置信息</p><p><img src="/uploads/190303java1/3.png" alt=""></p><p>接下来在ProviderApplication的上添加@EnableDubboConfiguration，表示要开启dubbo功能. (dubbo provider服务可以使用或者不使用web容器)</p><p><img src="/uploads/190303java1/4.png" alt=""></p><p>编写服务提供者的接口和实现类<br>编写你的dubbo服务，只需要添加要发布的服务实现上添加@Service（import com.alibaba.dubbo.config.annotation.Service）注解，其中interfaceClass是要发布服务的接口</p><p><img src="/uploads/190303java1/5.png" alt=""></p><p>启动服务者的Spring Boot应用，观察控制台，可以看到dubbo启动相关信息.<br>至此，provider的dubbo配置成功。</p><p>接下来配置consumer的dubbo配置<br>添加依赖</p><p><img src="/uploads/190303java1/6.png" alt=""></p><p>在application.properties中添加dubbo的相关配置信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.application.name=dubbo-spring-boot-starter</span><br></pre></td></tr></table></figure></p><p>这里这个name是可以自己命名的。</p><p>开启ConsumnerApplication启动类的<code>@EnableDubboConfiguration</code>注解<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@EnableDubboConfiguration</span><br></pre></td></tr></table></figure></p><p>在consumer中编写服务实用类，记得要将provider中的接口DemeService拷贝过来</p><p><img src="/uploads/190303java1/7.png" alt=""></p><p>编写ConsumerApplication类并执行</p><p><img src="/uploads/190303java1/8.png" alt=""></p><p>获得目标输出，springboot集成dubbo环境搭建成功。</p><p>代码github地址：<a href="https://github.com/zhangbin1995/springbootdubbo.git" target="_blank" rel="noopener">https://github.com/zhangbin1995/springbootdubbo.git</a></p><p>当然上面只是简单的springboot+dubbo的环境集成，这样是有瑕疵的。</p><p>我们的上面示例里消费者是直连提供者的，这种方式只可以在测试环境中使用，因为直连提供者限制了分布式的易扩展性，如果提供者部署在多节点，而我们在消费者中是直连写死的状态，那就只会访问一个节点，也违背了我们的分布式的初衷。</p><p>所以通常我们的消费者和提供者是要通过注册中心来注册调用的关于注册中心，后面会继续介绍，本篇博文介绍的springboot+dubbo的集成到此结束。</p><p><img src="/uploads/190303java1/9.png" alt=""></p><p><img src="/uploads/190303java1/10.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;更多文章欢迎访问个人博客 &lt;a href=&quot;http://www.herobin.top&quot;&gt;www.herobin.top&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;新建project&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/uploads/190303java1/1.png&quot; alt=&quot;&quot;&gt;&lt;/
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
-    
-      <category term="springboot" scheme="http://www.herobin.top/tags/springboot/"/>
-    
-      <category term="dubbo" scheme="http://www.herobin.top/tags/dubbo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>spring集成dubbo开发环境搭建</title>
-    <link href="http://www.herobin.top/2019/03/02/spring%E9%9B%86%E6%88%90dubbo%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    <id>http://www.herobin.top/2019/03/02/spring集成dubbo开发环境搭建/</id>
-    <published>2019-03-02T08:21:15.000Z</published>
-    <updated>2019-03-02T08:25:16.630Z</updated>
-    
-    <content type="html"><![CDATA[<p>更多文章欢迎访问个人博客 <a href="http://www.herobin.top">www.herobin.top</a></p><p>首先新建maven项目选择quickstart为项目原型。</p><p><img src="/uploads/190302java1/1.png" alt=""></p><p>点击项目添加两个module分别命名provider和consumer，原型同样选择quickstart分别作为服务提供者和消费者。（注意新建后暂时没有src文件夹，要等maven配置全部加载完才有，如果过慢，记得检查是否配置好idea的maven配置是否改为aliyun仓库）。<br>这里我们用不到测试用例，可以将test文件删掉。</p><p>添加放置资源文件的resources文件夹，并在project structrue中添加进Resources中。</p><p><img src="/uploads/190302java1/2.png" alt=""></p><p>将需要的jar包依赖拷贝到父工程的pom中，这样各个模块就都可以使用了，注意在实际开发中，应该是各个模块分别引入该模块要用到的jar包，再在各模块的resources中新建applicationContext.xml即spring配置文件。</p><p><img src="/uploads/190302java1/3.png" alt=""></p><p>这样简单的spring环境就搭好了，接下来我们要集成dubbo环境。<br>可以参考dubbo用户手册：<a href="https://dubbo.gitbooks.io/dubbo-user-book/content/quick-start.html" target="_blank" rel="noopener">https://dubbo.gitbooks.io/dubbo-user-book/content/quick-start.html</a></p><p><img src="/uploads/190302java1/4.png" alt=""></p><p>在provider中新建一个服务接口DemoService和它的实现类。<br>用Spring配置声明暴露服务。</p><p><img src="/uploads/190302java1/5.png" alt=""></p><p>编写服务启动类App.java</p><p><img src="/uploads/190302java1/6.png" alt=""></p><p>至此，我们的provider模块就写好了，将它启动起来。<br>编辑consumer里的applicationContext.xml文件通过spring配置引用远程服务。</p><p><img src="/uploads/190302java1/7.png" alt=""></p><p>这样就已经可以访问到provider接口提供的服务了。<br>编写App类加载consumer的spring配置文件并进行测试。</p><p><img src="/uploads/190302java1/8.png" alt=""></p><p>启动消费者服务，输入zhangbin，得到服务提供者接口的返回值，由此，spring与dubbo集成环境配置成功。</p><p>项目代码已放到github：<a href="https://github.com/zhangbin1995/springdubbo.git" target="_blank" rel="noopener">https://github.com/zhangbin1995/springdubbo.git</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;更多文章欢迎访问个人博客 &lt;a href=&quot;http://www.herobin.top&quot;&gt;www.herobin.top&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;首先新建maven项目选择quickstart为项目原型。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/uploads/190302ja
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
-    
-      <category term="dubbo" scheme="http://www.herobin.top/tags/dubbo/"/>
-    
-      <category term="spring" scheme="http://www.herobin.top/tags/spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一个docker化的java应用</title>
-    <link href="http://www.herobin.top/2019/02/23/%E7%AC%AC%E4%B8%80%E4%B8%AAdocker%E5%8C%96%E7%9A%84java%E5%BA%94%E7%94%A8/"/>
-    <id>http://www.herobin.top/2019/02/23/第一个docker化的java应用/</id>
-    <published>2019-02-23T02:30:24.000Z</published>
-    <updated>2019-03-02T08:44:07.148Z</updated>
-    
-    <content type="html"><![CDATA[<p>更多文章欢迎访问个人博客 <a href="http://www.herobin.top">www.herobin.top</a></p><h1 id="制作镜像Dockerfile"><a href="#制作镜像Dockerfile" class="headerlink" title="制作镜像Dockerfile"></a>制作镜像Dockerfile</h1><p>这里制作镜像主要分为三步</p><blockquote><p>Dockerfile<br>docker build<br>Jpress：<a href="http://jpress.io/" target="_blank" rel="noopener">http://jpress.io/</a> (开源java web应用 博客平台)</p></blockquote><h2 id="下载tomcat镜像"><a href="#下载tomcat镜像" class="headerlink" title="下载tomcat镜像"></a>下载tomcat镜像</h2><p>首先我们的镜像是要依托tomcat运行的，所以先到网易云的镜像中心下载tomcat的镜像<br><code>docker pull hub.c.163.com/library/tomcat:latest</code><br>在tomcat镜像的介绍中可以看到使用方法，如找到启动方法，查看tomcat路径等。</p><p><img src="/uploads/190222java3/1.png" alt=""></p><h2 id="新建编辑Dockerfile"><a href="#新建编辑Dockerfile" class="headerlink" title="新建编辑Dockerfile"></a>新建编辑Dockerfile</h2><p><code>vi Dockerfile</code> </p><p><img src="/uploads/190222java3/2.png" alt=""></p><h2 id="通过docker-build生成镜像"><a href="#通过docker-build生成镜像" class="headerlink" title="通过docker build生成镜像"></a>通过docker build生成镜像</h2><p><img src="/uploads/190222java3/3.png" alt=""></p><p>这里<code>-t jpress:latest</code>是指定了镜像名字和标签，注意后面有个 . 用于查找当前目录下的构建文件，即Dockerfile<br>用<code>docker images</code>查看，发现有了jpress。</p><p><img src="/uploads/190222java3/4.png" alt=""></p><h2 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h2><p>在tomcat的镜像中心我们可以看到运行指令，执行：<br><code>docker run -d -p 8888:8080 jpress</code><br>启动镜像，发现可以访问我们的jpress程序了。</p><p><img src="/uploads/190222java3/5.png" alt=""></p><p>这里要正常使用jpress需要配置好数据库信息。<br>我们也可以在docker中安装运行一个mysql数据库。<br>去镜像中心下载mysql镜像：<br><code>docker pull hub.c.163.com/library/mysql:latest</code><br>同样可以在介绍中看到使用方式。</p><p><img src="/uploads/190222java3/6.png" alt=""></p><p>下载完后新建一个名为jpress的数据库并将mysql运行起来：<br> <code>docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=jpress hub.c.163.com/library/mysql:latest</code><br>回到网站将信息配置好。</p><p><img src="/uploads/190222java3/7.png" alt=""></p><p>注意这里点击下一步的时候失败了，使用docker ps命令发现mysql镜像并没有执行，再次执行run发现启动报错。</p><p><img src="/uploads/190222java3/8.png" alt=""></p><p>因为本机有mysql服务正在使用，3306端口是占用状态的，将3306改为3307即可。<br>再下一页配置好网站信息，jpress网站即搭建成功可以正常使用了。</p><p><img src="/uploads/190222java3/9.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;更多文章欢迎访问个人博客 &lt;a href=&quot;http://www.herobin.top&quot;&gt;www.herobin.top&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;制作镜像Dockerfile&quot;&gt;&lt;a href=&quot;#制作镜像Dockerfile&quot; class=&quot;headerlink
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
-    
-      <category term="服务器" scheme="http://www.herobin.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker运行nginx镜像</title>
-    <link href="http://www.herobin.top/2019/02/22/docker%E8%BF%90%E8%A1%8Cnginx%E9%95%9C%E5%83%8F/"/>
-    <id>http://www.herobin.top/2019/02/22/docker运行nginx镜像/</id>
-    <published>2019-02-22T08:09:17.000Z</published>
-    <updated>2019-03-02T08:38:45.258Z</updated>
-    
-    <content type="html"><![CDATA[<p>@<a href="mac下安装docker">TOC</a></p><p>更多文章欢迎访问个人博客 <a href="http://www.herobin.top">www.herobin.top</a></p><h1 id="下载并运行nginx镜像"><a href="#下载并运行nginx镜像" class="headerlink" title="下载并运行nginx镜像"></a>下载并运行nginx镜像</h1><p>在网易云的镜像中心找到nginx的镜像<br><a href="https://c.163yun.com/hub#/m/home/" target="_blank" rel="noopener">https://c.163yun.com/hub#/m/home/</a></p><p>复制nginx的下载地址：hub.c.163.com/library/nginx:latest<br>使用<code>docker pull hub.c.163.com/library/nginx:latest</code><br>下载nginx镜像到本地</p><p>这时再使用<code>docker images</code>可以查看到本地已有的nignx镜像</p><p>使用<code>docker run hub.c.163.com/library/nginx</code><br>发现没有任何输出，新建窗口输入<code>docker ps</code>可以查看本机当前运行的所有容器。</p><p><img src="/uploads/190222java2/1.png" alt=""></p><p>这时只要通过<code>ctrl+c</code>既可以停止程序，所以我们通常推荐在后台运行镜像 通过加 <code>-d</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d hub.c.163.com/library/nginx</span><br></pre></td></tr></table></figure></p><p>运行后可以通过docker exec命令进入指定镜像：</p><p><img src="/uploads/190222java2/3.png" alt=""></p><p>可以看到</p><blockquote><ol><li>docker run nginx镜像成功后返回一串此镜像运行的唯一标识id。</li><li>通过docker exec –help查看 docker exec命令帮助。</li><li>通过docker exec -it 603 bash来进入已运行的nginx镜像  这里只输入了604因为已经可以唯一标识确定，若不能再多输。</li><li>可通过exit命令退出镜像。</li><li>可以使用docker stop 603命令来结束nginx镜像的运行。</li></ol></blockquote><h1 id="网络访问nginx"><a href="#网络访问nginx" class="headerlink" title="网络访问nginx"></a>网络访问nginx</h1><p>运行了docker中的nginx后要怎样才能在网络（浏览器）中访问到nginx呢？</p><h2 id="docker网络类型"><a href="#docker网络类型" class="headerlink" title="docker网络类型"></a>docker网络类型</h2><blockquote><ul><li><ol><li>bridge模式（桥接，默认类型，实现网络独立性）：docker默认的网络设置，此模式会为每一个容器分配Network Namespace、设置IP等，并将一个主机上的Docker容器连接到一个虚拟网桥上。</li></ol></li><li><ol start="2"><li>host模式：容器不会获得一个独立的Network Namespace，而是和宿主机共用一个Network Namespace。容器将不会虚拟出自己的网卡，配置自己的IP等，而是使用宿主机的IP和端口。</li></ol></li><li><ol start="3"><li>none模式：Docker容器拥有自己的Network Namespace，但是，并不为Docker容器进行任何网络配置。docker将不会和外界的任何网络进行通讯。</li></ol></li><li><ol start="4"><li>container模式：新创建的容器和已经存在的一个容器共享一个Network Namespace，而不是和宿主机共享。新创建的容器不会创建自己的网卡，配置自己的IP，而是和一个指定的容器共享IP、端口范围等。</li></ol></li></ul></blockquote><h2 id="进行访问"><a href="#进行访问" class="headerlink" title="进行访问"></a>进行访问</h2><blockquote><p>docker启动 -p 的使用： docker run -d -p 主机端口:容器端口 容器的名称<br>docker启动  -P 的使用（所有的监听端口都会和主机建立一个映射）： docker run -d -P 容器名称<br>停止docker：docker stop 容器Id</p></blockquote><p><strong>-p 的使用</strong> (注意这里是小写的p，下面是大写的P)</p><p><img src="/uploads/190222java2/4.png" alt=""></p><p><img src="/uploads/190222java2/5.png" alt=""></p><p><strong>-P 的使用</strong></p><p><img src="/uploads/190222java2/6.png" alt=""></p><p><img src="/uploads/190222java2/7.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;@&lt;a href=&quot;mac下安装docker&quot;&gt;TOC&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;更多文章欢迎访问个人博客 &lt;a href=&quot;http://www.herobin.top&quot;&gt;www.herobin.top&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;下载并运行nginx镜像&quot;&gt;&lt;a hre
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
-    
-      <category term="服务器" scheme="http://www.herobin.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-      <category term="docker" scheme="http://www.herobin.top/tags/docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>centos下安装docker</title>
-    <link href="http://www.herobin.top/2019/02/22/centos%E4%B8%8B%E5%AE%89%E8%A3%85docker/"/>
-    <id>http://www.herobin.top/2019/02/22/centos下安装docker/</id>
-    <published>2019-02-22T06:08:05.000Z</published>
-    <updated>2019-02-22T06:09:06.810Z</updated>
-    
-    <content type="html"><![CDATA[<p>更多文章欢迎访问个人博客 <a href="http://www.herobin.top">www.herobin.top</a></p><h2 id="1-检查内核版本"><a href="#1-检查内核版本" class="headerlink" title="1. 检查内核版本"></a>1. 检查内核版本</h2><p><code>uname -r</code><br>返回的值大于3.10即可。</p><h2 id="2-使用sudo或root权限的用户登录终端。"><a href="#2-使用sudo或root权限的用户登录终端。" class="headerlink" title="2. 使用sudo或root权限的用户登录终端。"></a>2. 使用sudo或root权限的用户登录终端。</h2><h2 id="3-卸载旧版本（如果安装过旧版本的话）"><a href="#3-卸载旧版本（如果安装过旧版本的话）" class="headerlink" title="3. 卸载旧版本（如果安装过旧版本的话）"></a>3. 卸载旧版本（如果安装过旧版本的话）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ yum remove docker \</span><br><span class="line">docker-common \</span><br><span class="line">docker-selinux \</span><br><span class="line">docker-engine</span><br></pre></td></tr></table></figure><h2 id="4-安装需要的软件包"><a href="#4-安装需要的软件包" class="headerlink" title="4. 安装需要的软件包"></a>4. 安装需要的软件包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#yum-util提供yum-config-manager功能</span><br><span class="line">#另外两个是devicemapper驱动依赖的</span><br><span class="line">$ yum install -y yum-utils \</span><br><span class="line">  device-mapper-persistent-data \</span><br><span class="line">  lvm2</span><br></pre></td></tr></table></figure><h2 id="5-设置yum源"><a href="#5-设置yum源" class="headerlink" title="5. 设置yum源"></a>5. 设置yum源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ yum-config-manager \</span><br><span class="line">    --add-repo \</span><br><span class="line">    https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure><h2 id="6-安装docker"><a href="#6-安装docker" class="headerlink" title="6. 安装docker"></a>6. 安装docker</h2><h3 id="6-1-安装最新版本"><a href="#6-1-安装最新版本" class="headerlink" title="6.1. 安装最新版本"></a>6.1. 安装最新版本</h3><p><code>yum install -y docker-ce</code></p><h3 id="6-2-安装指定版本"><a href="#6-2-安装指定版本" class="headerlink" title="6.2. 安装指定版本"></a>6.2. 安装指定版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#查询版本列表</span><br><span class="line">$ yum list docker-ce --showduplicates | sort -r</span><br><span class="line">已加载插件：fastestmirror, langpacks</span><br><span class="line">已安装的软件包</span><br><span class="line">可安装的软件包</span><br><span class="line"> * updates: mirrors.163.com</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line"> * extras: mirrors.163.com</span><br><span class="line">docker-ce.x86_64            17.09.1.ce-1.el7.centos            docker-ce-stable</span><br><span class="line">docker-ce.x86_64            17.09.0.ce-1.el7.centos            docker-ce-stable</span><br><span class="line">...</span><br><span class="line">#指定版本安装(这里的例子是安装上面列表中的第二个)</span><br><span class="line">$ yum install -y docker-ce-17.09.0.ce</span><br></pre></td></tr></table></figure><h2 id="7-启动docker"><a href="#7-启动docker" class="headerlink" title="7. 启动docker"></a>7. 启动docker</h2><p><code>systemctl start docker.service</code></p><h2 id="8-验证安装是否成功（有client和service两部分表示docker安装启动都成功了）"><a href="#8-验证安装是否成功（有client和service两部分表示docker安装启动都成功了）" class="headerlink" title="8.验证安装是否成功（有client和service两部分表示docker安装启动都成功了）"></a>8.验证安装是否成功（有client和service两部分表示docker安装启动都成功了）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ docker version</span><br><span class="line">Client:</span><br><span class="line"> Version:      17.09.0-ce</span><br><span class="line"> API version:  1.32</span><br><span class="line"> Go version:   go1.8.3</span><br><span class="line"> Git commit:   afdb6d4</span><br><span class="line"> Built:        Tue Sep 26 22:41:23 2017</span><br><span class="line"> OS/Arch:      linux/amd64</span><br><span class="line"></span><br><span class="line">Server:</span><br><span class="line"> Version:      17.09.0-ce</span><br><span class="line"> API version:  1.32 (minimum version 1.12)</span><br><span class="line"> Go version:   go1.8.3</span><br><span class="line"> Git commit:   afdb6d4</span><br><span class="line"> Built:        Tue Sep 26 22:42:49 2017</span><br><span class="line"> OS/Arch:      linux/amd64</span><br><span class="line"> Experimental: false</span><br></pre></td></tr></table></figure><p>原文链接：<br><a href="https://www.imooc.com/article/16448" target="_blank" rel="noopener">https://www.imooc.com/article/16448</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;更多文章欢迎访问个人博客 &lt;a href=&quot;http://www.herobin.top&quot;&gt;www.herobin.top&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;1-检查内核版本&quot;&gt;&lt;a href=&quot;#1-检查内核版本&quot; class=&quot;headerlink&quot; title=&quot;1. 
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
-    
-      <category term="服务器" scheme="http://www.herobin.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mac下安装docker</title>
-    <link href="http://www.herobin.top/2019/02/22/mac%E4%B8%8B%E5%AE%89%E8%A3%85docker/"/>
-    <id>http://www.herobin.top/2019/02/22/mac下安装docker/</id>
-    <published>2019-02-22T05:50:12.000Z</published>
-    <updated>2019-03-02T08:27:39.152Z</updated>
-    
-    <content type="html"><![CDATA[<p>@<a href="mac下安装docker">TOC</a></p><p>更多文章欢迎访问个人博客 <a href="http://www.herobin.top">www.herobin.top</a></p><h1 id="mac下安装docker"><a href="#mac下安装docker" class="headerlink" title="mac下安装docker"></a>mac下安装docker</h1><h2 id="下载并安装docker"><a href="#下载并安装docker" class="headerlink" title="下载并安装docker"></a>下载并安装docker</h2><p>mac版的docker可以直接去docker官网下载桌面版，傻瓜式安装后运行docker，会发现在桌面的右上角出现了docker的图标</p><p><img src="/uploads/190222java1/1.png" alt=""></p><h2 id="验证docker"><a href="#验证docker" class="headerlink" title="验证docker"></a>验证docker</h2><p>打开终端输入命令：docker version</p><p><img src="/uploads/190222java1/2.png" alt=""></p><p>正常出现版本信息即安装成功。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;@&lt;a href=&quot;mac下安装docker&quot;&gt;TOC&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;更多文章欢迎访问个人博客 &lt;a href=&quot;http://www.herobin.top&quot;&gt;www.herobin.top&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;mac下安装docker&quot;&gt;&lt;a hre
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://www.herobin.top/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://www.herobin.top/tags/java/"/>
-    
-      <category term="docker" scheme="http://www.herobin.top/tags/docker/"/>
     
   </entry>
   
